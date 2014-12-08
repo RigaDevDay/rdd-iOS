@@ -1,0 +1,626 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B7B16D011A361966005267AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D001A361966005267AF /* main.m */; };
+		B7B16D041A361966005267AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D031A361966005267AF /* AppDelegate.m */; };
+		B7B16D071A361966005267AF /* ShowcaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D061A361966005267AF /* ShowcaseViewController.m */; };
+		B7B16D0A1A361966005267AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7B16D081A361966005267AF /* Main.storyboard */; };
+		B7B16D0C1A361966005267AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7B16D0B1A361966005267AF /* Images.xcassets */; };
+		B7B16D0F1A361966005267AF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7B16D0D1A361966005267AF /* LaunchScreen.xib */; };
+		B7B16D1B1A361966005267AF /* RigaDevDayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D1A1A361966005267AF /* RigaDevDayTests.m */; };
+		B7B16D2A1A361B2D005267AF /* SpeakerInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D291A361B2D005267AF /* SpeakerInfoViewController.m */; };
+		B7B16D2E1A361B7A005267AF /* SpeechInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D2D1A361B7A005267AF /* SpeechInfoViewController.m */; };
+		B7B16D321A361BAC005267AF /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D311A361BAC005267AF /* ScheduleViewController.m */; };
+		B7B16D361A361BD0005267AF /* BookmarksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D351A361BD0005267AF /* BookmarksViewController.m */; };
+		B7B16D3A1A361BE8005267AF /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D391A361BE8005267AF /* AboutViewController.m */; };
+		B7B16D3E1A361D16005267AF /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D3D1A361D16005267AF /* DataManager.m */; };
+		B7B16D421A361D33005267AF /* EventObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D411A361D33005267AF /* EventObject.m */; };
+		B7B16D471A361D75005267AF /* ScheduleObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D461A361D75005267AF /* ScheduleObject.m */; };
+		B7B16D4C1A361DDA005267AF /* SpeakerObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D4B1A361DDA005267AF /* SpeakerObject.m */; };
+		B7B16D4F1A36201B005267AF /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D4E1A36201B005267AF /* SWRevealViewController.m */; };
+		B7B16D551A362646005267AF /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D541A362646005267AF /* NavigationViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B7B16D151A361966005267AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B7B16CF31A361966005267AF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B7B16CFA1A361966005267AF;
+			remoteInfo = RigaDevDay;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B7B16CFB1A361966005267AF /* RigaDevDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RigaDevDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7B16CFF1A361966005267AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7B16D001A361966005267AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B7B16D021A361966005267AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B7B16D031A361966005267AF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B7B16D051A361966005267AF /* ShowcaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowcaseViewController.h; sourceTree = "<group>"; };
+		B7B16D061A361966005267AF /* ShowcaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowcaseViewController.m; sourceTree = "<group>"; };
+		B7B16D091A361966005267AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B7B16D0B1A361966005267AF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B7B16D0E1A361966005267AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		B7B16D141A361966005267AF /* RigaDevDayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RigaDevDayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7B16D191A361966005267AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7B16D1A1A361966005267AF /* RigaDevDayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RigaDevDayTests.m; sourceTree = "<group>"; };
+		B7B16D281A361B2D005267AF /* SpeakerInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakerInfoViewController.h; path = RigaDevDay/Controllers/SpeakerInfoViewController.h; sourceTree = "<group>"; };
+		B7B16D291A361B2D005267AF /* SpeakerInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerInfoViewController.m; path = RigaDevDay/Controllers/SpeakerInfoViewController.m; sourceTree = "<group>"; };
+		B7B16D2C1A361B7A005267AF /* SpeechInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeechInfoViewController.h; path = RigaDevDay/Controllers/SpeechInfoViewController.h; sourceTree = "<group>"; };
+		B7B16D2D1A361B7A005267AF /* SpeechInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeechInfoViewController.m; path = RigaDevDay/Controllers/SpeechInfoViewController.m; sourceTree = "<group>"; };
+		B7B16D301A361BAC005267AF /* ScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleViewController.h; path = RigaDevDay/Controllers/ScheduleViewController.h; sourceTree = "<group>"; };
+		B7B16D311A361BAC005267AF /* ScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleViewController.m; path = RigaDevDay/Controllers/ScheduleViewController.m; sourceTree = "<group>"; };
+		B7B16D341A361BD0005267AF /* BookmarksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookmarksViewController.h; path = RigaDevDay/Controllers/BookmarksViewController.h; sourceTree = "<group>"; };
+		B7B16D351A361BD0005267AF /* BookmarksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookmarksViewController.m; path = RigaDevDay/Controllers/BookmarksViewController.m; sourceTree = "<group>"; };
+		B7B16D381A361BE8005267AF /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutViewController.h; path = RigaDevDay/Controllers/AboutViewController.h; sourceTree = "<group>"; };
+		B7B16D391A361BE8005267AF /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutViewController.m; path = RigaDevDay/Controllers/AboutViewController.m; sourceTree = "<group>"; };
+		B7B16D3C1A361D16005267AF /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = CustomClasses/DataManager.h; sourceTree = "<group>"; };
+		B7B16D3D1A361D16005267AF /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataManager.m; path = CustomClasses/DataManager.m; sourceTree = "<group>"; };
+		B7B16D401A361D33005267AF /* EventObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventObject.h; path = CustomClasses/EventObject.h; sourceTree = "<group>"; };
+		B7B16D411A361D33005267AF /* EventObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventObject.m; path = CustomClasses/EventObject.m; sourceTree = "<group>"; };
+		B7B16D451A361D75005267AF /* ScheduleObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleObject.h; path = CustomClasses/ScheduleObject.h; sourceTree = "<group>"; };
+		B7B16D461A361D75005267AF /* ScheduleObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleObject.m; path = CustomClasses/ScheduleObject.m; sourceTree = "<group>"; };
+		B7B16D4A1A361DDA005267AF /* SpeakerObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakerObject.h; path = CustomClasses/SpeakerObject.h; sourceTree = "<group>"; };
+		B7B16D4B1A361DDA005267AF /* SpeakerObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerObject.m; path = CustomClasses/SpeakerObject.m; sourceTree = "<group>"; };
+		B7B16D4D1A36201B005267AF /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = RigaDevDay/Libs/SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
+		B7B16D4E1A36201B005267AF /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = RigaDevDay/Libs/SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
+		B7B16D531A362646005267AF /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NavigationViewController.h; path = Controllers/NavigationViewController.h; sourceTree = "<group>"; };
+		B7B16D541A362646005267AF /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NavigationViewController.m; path = Controllers/NavigationViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B7B16CF81A361966005267AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7B16D111A361966005267AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B7B16CF21A361966005267AF = {
+			isa = PBXGroup;
+			children = (
+				B7B16CFD1A361966005267AF /* RigaDevDay */,
+				B7B16D171A361966005267AF /* RigaDevDayTests */,
+			);
+			sourceTree = "<group>";
+		};
+		B7B16CFC1A361966005267AF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B7B16CFB1A361966005267AF /* RigaDevDay.app */,
+				B7B16D141A361966005267AF /* RigaDevDayTests.xctest */,
+			);
+			name = Products;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		B7B16CFD1A361966005267AF /* RigaDevDay */ = {
+			isa = PBXGroup;
+			children = (
+				B7B16D261A361A46005267AF /* Controllers */,
+				B7B16D3F1A361D19005267AF /* CustomClasses */,
+				B7B16D501A36201F005267AF /* Libs */,
+				B7B16CFE1A361966005267AF /* Supporting Files */,
+			);
+			path = RigaDevDay;
+			sourceTree = "<group>";
+		};
+		B7B16CFE1A361966005267AF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B7B16D241A3619B0005267AF /* Resources */,
+				B7B16CFC1A361966005267AF /* Products */,
+				B7B16D021A361966005267AF /* AppDelegate.h */,
+				B7B16D031A361966005267AF /* AppDelegate.m */,
+				B7B16CFF1A361966005267AF /* Info.plist */,
+				B7B16D001A361966005267AF /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B7B16D171A361966005267AF /* RigaDevDayTests */ = {
+			isa = PBXGroup;
+			children = (
+				B7B16D1A1A361966005267AF /* RigaDevDayTests.m */,
+				B7B16D181A361966005267AF /* Supporting Files */,
+			);
+			path = RigaDevDayTests;
+			sourceTree = "<group>";
+		};
+		B7B16D181A361966005267AF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B7B16D191A361966005267AF /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B7B16D241A3619B0005267AF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B7B16D0B1A361966005267AF /* Images.xcassets */,
+				B7B16D251A3619C8005267AF /* LaunchSceen */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		B7B16D251A3619C8005267AF /* LaunchSceen */ = {
+			isa = PBXGroup;
+			children = (
+				B7B16D0D1A361966005267AF /* LaunchScreen.xib */,
+			);
+			name = LaunchSceen;
+			sourceTree = "<group>";
+		};
+		B7B16D261A361A46005267AF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B7B16D3B1A361BEB005267AF /* About */,
+				B7B16D371A361BD3005267AF /* Bookmarks */,
+				B7B16D331A361BAF005267AF /* Schedule */,
+				B7B16D2F1A361B7E005267AF /* SpeechInfo */,
+				B7B16D2B1A361B32005267AF /* SpeakerInfo */,
+				B7B16D271A361A52005267AF /* Showcase */,
+				B7B16D561A36264B005267AF /* Navigation */,
+				B7B16D081A361966005267AF /* Main.storyboard */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		B7B16D271A361A52005267AF /* Showcase */ = {
+			isa = PBXGroup;
+			children = (
+				B7B16D051A361966005267AF /* ShowcaseViewController.h */,
+				B7B16D061A361966005267AF /* ShowcaseViewController.m */,
+			);
+			name = Showcase;
+			sourceTree = "<group>";
+		};
+		B7B16D2B1A361B32005267AF /* SpeakerInfo */ = {
+			isa = PBXGroup;
+			children = (
+				B7B16D281A361B2D005267AF /* SpeakerInfoViewController.h */,
+				B7B16D291A361B2D005267AF /* SpeakerInfoViewController.m */,
+			);
+			name = SpeakerInfo;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		B7B16D2F1A361B7E005267AF /* SpeechInfo */ = {
+			isa = PBXGroup;
+			children = (
+				B7B16D2C1A361B7A005267AF /* SpeechInfoViewController.h */,
+				B7B16D2D1A361B7A005267AF /* SpeechInfoViewController.m */,
+			);
+			name = SpeechInfo;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		B7B16D331A361BAF005267AF /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				B7B16D301A361BAC005267AF /* ScheduleViewController.h */,
+				B7B16D311A361BAC005267AF /* ScheduleViewController.m */,
+			);
+			name = Schedule;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		B7B16D371A361BD3005267AF /* Bookmarks */ = {
+			isa = PBXGroup;
+			children = (
+				B7B16D341A361BD0005267AF /* BookmarksViewController.h */,
+				B7B16D351A361BD0005267AF /* BookmarksViewController.m */,
+			);
+			name = Bookmarks;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		B7B16D3B1A361BEB005267AF /* About */ = {
+			isa = PBXGroup;
+			children = (
+				B7B16D381A361BE8005267AF /* AboutViewController.h */,
+				B7B16D391A361BE8005267AF /* AboutViewController.m */,
+			);
+			name = About;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		B7B16D3F1A361D19005267AF /* CustomClasses */ = {
+			isa = PBXGroup;
+			children = (
+				B7B16D431A361D37005267AF /* DataManager */,
+				B7B16D481A361D78005267AF /* Objects */,
+			);
+			name = CustomClasses;
+			sourceTree = "<group>";
+		};
+		B7B16D431A361D37005267AF /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				B7B16D3C1A361D16005267AF /* DataManager.h */,
+				B7B16D3D1A361D16005267AF /* DataManager.m */,
+			);
+			name = DataManager;
+			sourceTree = "<group>";
+		};
+		B7B16D481A361D78005267AF /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				B7B16D401A361D33005267AF /* EventObject.h */,
+				B7B16D411A361D33005267AF /* EventObject.m */,
+				B7B16D4A1A361DDA005267AF /* SpeakerObject.h */,
+				B7B16D4B1A361DDA005267AF /* SpeakerObject.m */,
+				B7B16D451A361D75005267AF /* ScheduleObject.h */,
+				B7B16D461A361D75005267AF /* ScheduleObject.m */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
+		B7B16D501A36201F005267AF /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				B7B16D521A362056005267AF /* SlideOutController */,
+			);
+			name = Libs;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		B7B16D521A362056005267AF /* SlideOutController */ = {
+			isa = PBXGroup;
+			children = (
+				B7B16D4D1A36201B005267AF /* SWRevealViewController.h */,
+				B7B16D4E1A36201B005267AF /* SWRevealViewController.m */,
+			);
+			name = SlideOutController;
+			sourceTree = "<group>";
+		};
+		B7B16D561A36264B005267AF /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				B7B16D531A362646005267AF /* NavigationViewController.h */,
+				B7B16D541A362646005267AF /* NavigationViewController.m */,
+			);
+			name = Navigation;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B7B16CFA1A361966005267AF /* RigaDevDay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B7B16D1E1A361966005267AF /* Build configuration list for PBXNativeTarget "RigaDevDay" */;
+			buildPhases = (
+				B7B16CF71A361966005267AF /* Sources */,
+				B7B16CF81A361966005267AF /* Frameworks */,
+				B7B16CF91A361966005267AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RigaDevDay;
+			productName = RigaDevDay;
+			productReference = B7B16CFB1A361966005267AF /* RigaDevDay.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B7B16D131A361966005267AF /* RigaDevDayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B7B16D211A361966005267AF /* Build configuration list for PBXNativeTarget "RigaDevDayTests" */;
+			buildPhases = (
+				B7B16D101A361966005267AF /* Sources */,
+				B7B16D111A361966005267AF /* Frameworks */,
+				B7B16D121A361966005267AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B7B16D161A361966005267AF /* PBXTargetDependency */,
+			);
+			name = RigaDevDayTests;
+			productName = RigaDevDayTests;
+			productReference = B7B16D141A361966005267AF /* RigaDevDayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B7B16CF31A361966005267AF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Deniss Kaibagarovs";
+				TargetAttributes = {
+					B7B16CFA1A361966005267AF = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					B7B16D131A361966005267AF = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = B7B16CFA1A361966005267AF;
+					};
+				};
+			};
+			buildConfigurationList = B7B16CF61A361966005267AF /* Build configuration list for PBXProject "RigaDevDay" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B7B16CF21A361966005267AF;
+			productRefGroup = B7B16CFC1A361966005267AF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B7B16CFA1A361966005267AF /* RigaDevDay */,
+				B7B16D131A361966005267AF /* RigaDevDayTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B7B16CF91A361966005267AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7B16D0A1A361966005267AF /* Main.storyboard in Resources */,
+				B7B16D0F1A361966005267AF /* LaunchScreen.xib in Resources */,
+				B7B16D0C1A361966005267AF /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7B16D121A361966005267AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B7B16CF71A361966005267AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7B16D4F1A36201B005267AF /* SWRevealViewController.m in Sources */,
+				B7B16D2A1A361B2D005267AF /* SpeakerInfoViewController.m in Sources */,
+				B7B16D551A362646005267AF /* NavigationViewController.m in Sources */,
+				B7B16D321A361BAC005267AF /* ScheduleViewController.m in Sources */,
+				B7B16D471A361D75005267AF /* ScheduleObject.m in Sources */,
+				B7B16D3A1A361BE8005267AF /* AboutViewController.m in Sources */,
+				B7B16D071A361966005267AF /* ShowcaseViewController.m in Sources */,
+				B7B16D041A361966005267AF /* AppDelegate.m in Sources */,
+				B7B16D2E1A361B7A005267AF /* SpeechInfoViewController.m in Sources */,
+				B7B16D361A361BD0005267AF /* BookmarksViewController.m in Sources */,
+				B7B16D4C1A361DDA005267AF /* SpeakerObject.m in Sources */,
+				B7B16D3E1A361D16005267AF /* DataManager.m in Sources */,
+				B7B16D011A361966005267AF /* main.m in Sources */,
+				B7B16D421A361D33005267AF /* EventObject.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7B16D101A361966005267AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7B16D1B1A361966005267AF /* RigaDevDayTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B7B16D161A361966005267AF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B7B16CFA1A361966005267AF /* RigaDevDay */;
+			targetProxy = B7B16D151A361966005267AF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B7B16D081A361966005267AF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7B16D091A361966005267AF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B7B16D0D1A361966005267AF /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7B16D0E1A361966005267AF /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B7B16D1C1A361966005267AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B7B16D1D1A361966005267AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B7B16D1F1A361966005267AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RigaDevDay/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B7B16D201A361966005267AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RigaDevDay/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B7B16D221A361966005267AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RigaDevDayTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RigaDevDay.app/RigaDevDay";
+			};
+			name = Debug;
+		};
+		B7B16D231A361966005267AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RigaDevDayTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RigaDevDay.app/RigaDevDay";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B7B16CF61A361966005267AF /* Build configuration list for PBXProject "RigaDevDay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7B16D1C1A361966005267AF /* Debug */,
+				B7B16D1D1A361966005267AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B7B16D1E1A361966005267AF /* Build configuration list for PBXNativeTarget "RigaDevDay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7B16D1F1A361966005267AF /* Debug */,
+				B7B16D201A361966005267AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B7B16D211A361966005267AF /* Build configuration list for PBXNativeTarget "RigaDevDayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7B16D221A361966005267AF /* Debug */,
+				B7B16D231A361966005267AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B7B16CF31A361966005267AF /* Project object */;
+}

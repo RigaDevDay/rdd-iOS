@@ -9,7 +9,9 @@
 #import "NavigationViewController.h"
 static NSString *simpleTableIdentifier = @"TableCell";
 
-@interface NavigationViewController () <UITableViewDataSource,UITableViewDelegate>
+@interface NavigationViewController () <UITableViewDataSource,UITableViewDelegate> {
+    NSArray *_navigationArray;
+}
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -18,7 +20,10 @@ static NSString *simpleTableIdentifier = @"TableCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    _navigationArray = @[@"About", @"Speakers", @"Schedule", @"Venue", @"Organizers", @"My Bookmarks"];
+     // Small UI Improvments
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.tableView.contentInset = UIEdgeInsetsMake(21, 0, 0, 0);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,31 +34,25 @@ static NSString *simpleTableIdentifier = @"TableCell";
 #pragma mark Table View delegates
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return [_navigationArray count];
 }
 
-// Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
-// Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(indexPath.row > [_navigationArray count])
+        return 0;
+    return 45;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
-    }
-    
-    cell.textLabel.text = @"Menu Element";
+    UITableViewCell *cell = [super tableView:tableView
+                       cellForRowAtIndexPath:indexPath];
     return cell;
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"Cell %@ selected",[_navigationArray objectAtIndex:indexPath.row]);
 }
-*/
 
 @end

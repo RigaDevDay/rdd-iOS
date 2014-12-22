@@ -7,8 +7,10 @@
 //
 
 #import "SpeakerInfoViewController.h"
+#import "SWRevealViewController.h"
 
 @interface SpeakerInfoViewController ()
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonMenu;
 
 @end
 
@@ -16,6 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.buttonMenu.target = self.revealViewController;
+    self.buttonMenu.action = @selector(revealToggle:);
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     // Do any additional setup after loading the view.
 }
 

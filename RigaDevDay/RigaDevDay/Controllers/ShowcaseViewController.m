@@ -8,6 +8,7 @@
 
 #import "ShowcaseViewController.h"
 #import "SWRevealViewController.h"
+#import "ShowCaseCell.h"
 
 @interface ShowcaseViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonMenu;
@@ -46,8 +47,9 @@
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
-//    cell.backgroundColor = [UIColor colorWithPatternImage:[self.results objectAtIndex:indexPath.row]];
+    ShowCaseCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ShowCaseCell" forIndexPath:indexPath];
+//    NSString *backroundImageName = [NSString stringWithFormat:@"backstage_%i.jpeg",arc4random() % 12];
+//    cell.imageViewBackground.image = [UIImage imageNamed:backroundImageName];
     return cell;
 }
 

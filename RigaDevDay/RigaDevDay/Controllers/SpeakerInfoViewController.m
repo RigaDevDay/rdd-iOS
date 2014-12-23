@@ -31,8 +31,6 @@
     [super viewDidLoad];
     self.buttonMenu.target = self;
     self.buttonMenu.action = @selector(backButtonPress);
-//    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {

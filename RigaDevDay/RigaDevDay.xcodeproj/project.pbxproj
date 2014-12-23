@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		97F8893B1A49A84E00A135C9 /* SpeakersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F8893A1A49A84E00A135C9 /* SpeakersViewController.m */; };
+		97F8893D1A49B35500A135C9 /* icon_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 97F8893C1A49B35500A135C9 /* icon_back.png */; };
+		97F889411A49B46E00A135C9 /* back_button_VECTOR.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 97F889401A49B46E00A135C9 /* back_button_VECTOR.pdf */; };
+		97F889441A49B64600A135C9 /* VenueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F889431A49B64600A135C9 /* VenueViewController.m */; };
+		97F889461A49B6D300A135C9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F889451A49B6D300A135C9 /* MapKit.framework */; };
+		97F8894A1A49BBEF00A135C9 /* MKMapView+ZoomLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F889491A49BBEF00A135C9 /* MKMapView+ZoomLevel.m */; };
 		B70EEB571A485258008CD9C6 /* MHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B70EEB561A485258008CD9C6 /* MHTabBarController.m */; };
 		B70F610A1A483F96004EA563 /* backstage_1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B70F60C21A483F96004EA563 /* backstage_1.jpeg */; };
 		B70F610B1A483F96004EA563 /* backstage_10.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B70F60C31A483F96004EA563 /* backstage_10.jpeg */; };
@@ -116,6 +121,13 @@
 /* Begin PBXFileReference section */
 		97F889391A49A84E00A135C9 /* SpeakersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakersViewController.h; path = RigaDevDay/Controllers/SpeakersViewController.h; sourceTree = "<group>"; };
 		97F8893A1A49A84E00A135C9 /* SpeakersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakersViewController.m; path = RigaDevDay/Controllers/SpeakersViewController.m; sourceTree = "<group>"; };
+		97F8893C1A49B35500A135C9 /* icon_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_back.png; sourceTree = "<group>"; };
+		97F889401A49B46E00A135C9 /* back_button_VECTOR.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = back_button_VECTOR.pdf; sourceTree = "<group>"; };
+		97F889421A49B64600A135C9 /* VenueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VenueViewController.h; path = Controllers/VenueViewController.h; sourceTree = "<group>"; };
+		97F889431A49B64600A135C9 /* VenueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VenueViewController.m; path = Controllers/VenueViewController.m; sourceTree = "<group>"; };
+		97F889451A49B6D300A135C9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		97F889481A49BBEF00A135C9 /* MKMapView+ZoomLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MKMapView+ZoomLevel.h"; path = "RigaDevDay/Libs/MKMapView+ZoomLevel.h"; sourceTree = "<group>"; };
+		97F889491A49BBEF00A135C9 /* MKMapView+ZoomLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MKMapView+ZoomLevel.m"; path = "RigaDevDay/Libs/MKMapView+ZoomLevel.m"; sourceTree = "<group>"; };
 		B70EEB551A485258008CD9C6 /* MHTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHTabBarController.h; path = RigaDevDay/Libs/MHTabBarController/MHTabBarController.h; sourceTree = "<group>"; };
 		B70EEB561A485258008CD9C6 /* MHTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHTabBarController.m; path = RigaDevDay/Libs/MHTabBarController/MHTabBarController.m; sourceTree = "<group>"; };
 		B70F60C21A483F96004EA563 /* backstage_1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backstage_1.jpeg; sourceTree = "<group>"; };
@@ -235,6 +247,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97F889461A49B6D300A135C9 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +261,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		97F889471A49B6D900A135C9 /* Venue */ = {
+			isa = PBXGroup;
+			children = (
+				97F889421A49B64600A135C9 /* VenueViewController.h */,
+				97F889431A49B64600A135C9 /* VenueViewController.m */,
+			);
+			name = Venue;
+			sourceTree = "<group>";
+		};
+		97F8894B1A49BBF900A135C9 /* MapView + Zoom */ = {
+			isa = PBXGroup;
+			children = (
+				97F889481A49BBEF00A135C9 /* MKMapView+ZoomLevel.h */,
+				97F889491A49BBEF00A135C9 /* MKMapView+ZoomLevel.m */,
+			);
+			name = "MapView + Zoom";
+			sourceTree = "<group>";
+		};
 		B70EEB581A48525F008CD9C6 /* MHTabBarController */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,10 +295,12 @@
 				B70F60C31A483F96004EA563 /* backstage_10.jpeg */,
 				B70F60C41A483F96004EA563 /* backstage_11.jpeg */,
 				B70F60C51A483F96004EA563 /* backstage_12.jpeg */,
+				97F8893C1A49B35500A135C9 /* icon_back.png */,
 				B70F60C61A483F96004EA563 /* backstage_13.jpeg */,
 				B70F60C71A483F96004EA563 /* backstage_14.jpeg */,
 				B70F60C81A483F96004EA563 /* backstage_15.jpeg */,
 				B70F60C91A483F96004EA563 /* backstage_16.jpeg */,
+				97F889401A49B46E00A135C9 /* back_button_VECTOR.pdf */,
 				B70F60CA1A483F96004EA563 /* backstage_17.jpeg */,
 				B70F60CB1A483F96004EA563 /* backstage_18.jpeg */,
 				B70F60CC1A483F96004EA563 /* backstage_19.jpeg */,
@@ -341,6 +374,7 @@
 		B7B16CF21A361966005267AF = {
 			isa = PBXGroup;
 			children = (
+				97F889451A49B6D300A135C9 /* MapKit.framework */,
 				B7B16CFD1A361966005267AF /* RigaDevDay */,
 				B7B16D171A361966005267AF /* RigaDevDayTests */,
 			);
@@ -422,6 +456,7 @@
 				B7B16D371A361BD3005267AF /* Bookmarks */,
 				B7B16D331A361BAF005267AF /* Schedule */,
 				B7B16D2F1A361B7E005267AF /* SpeechInfo */,
+				97F889471A49B6D900A135C9 /* Venue */,
 				B7B16D2B1A361B32005267AF /* Speakers */,
 				B7B16D271A361A52005267AF /* Showcase */,
 				B7B16D561A36264B005267AF /* Navigation */,
@@ -527,6 +562,7 @@
 		B7B16D501A36201F005267AF /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				97F8894B1A49BBF900A135C9 /* MapView + Zoom */,
 				B70EEB581A48525F008CD9C6 /* MHTabBarController */,
 				B7B16D521A362056005267AF /* SlideOutController */,
 			);
@@ -648,6 +684,7 @@
 				B70F612B1A483F96004EA563 /* icon_menu_about.png in Resources */,
 				B70F610F1A483F96004EA563 /* backstage_14.jpeg in Resources */,
 				B70F61481A483F96004EA563 /* speaker_29.png in Resources */,
+				97F889411A49B46E00A135C9 /* back_button_VECTOR.pdf in Resources */,
 				B70F612D1A483F96004EA563 /* icon_menu_organizers.png in Resources */,
 				B70F61391A483F96004EA563 /* speaker_15.png in Resources */,
 				B70F61221A483F96004EA563 /* backstage_31.jpeg in Resources */,
@@ -702,6 +739,7 @@
 				B70F61231A483F96004EA563 /* backstage_4.jpeg in Resources */,
 				B70F61341A483F96004EA563 /* speaker_10.png in Resources */,
 				B70F614A1A483F96004EA563 /* speaker_30.png in Resources */,
+				97F8893D1A49B35500A135C9 /* icon_back.png in Resources */,
 				B70F61171A483F96004EA563 /* backstage_21.jpeg in Resources */,
 				B70F611A1A483F96004EA563 /* backstage_24.jpeg in Resources */,
 				B70F61401A483F96004EA563 /* speaker_21.png in Resources */,
@@ -727,6 +765,7 @@
 			files = (
 				B70F61561A4846C6004EA563 /* ShowCaseCell.m in Sources */,
 				B7B16D4F1A36201B005267AF /* SWRevealViewController.m in Sources */,
+				97F8894A1A49BBEF00A135C9 /* MKMapView+ZoomLevel.m in Sources */,
 				97F8893B1A49A84E00A135C9 /* SpeakersViewController.m in Sources */,
 				B7B16D2A1A361B2D005267AF /* SpeakerInfoViewController.m in Sources */,
 				B7B16D551A362646005267AF /* NavigationViewController.m in Sources */,
@@ -735,6 +774,7 @@
 				B7B16D471A361D75005267AF /* ScheduleObject.m in Sources */,
 				B7B16D3A1A361BE8005267AF /* AboutViewController.m in Sources */,
 				B7B16D041A361966005267AF /* AppDelegate.m in Sources */,
+				97F889441A49B64600A135C9 /* VenueViewController.m in Sources */,
 				B7B16D2E1A361B7A005267AF /* SpeechInfoViewController.m in Sources */,
 				B7B16D361A361BD0005267AF /* BookmarksViewController.m in Sources */,
 				B70F61591A4846EB004EA563 /* ShowcaseViewController.m in Sources */,

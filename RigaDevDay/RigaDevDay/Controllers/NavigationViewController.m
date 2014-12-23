@@ -20,7 +20,7 @@ static NSString *simpleTableIdentifier = @"TableCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _navigationArray = @[@"About", @"Speakers", @"Schedule", @"Venue", @"Organizers", @"My Bookmarks"];
+    _navigationArray = @[@"Home",@"About", @"Speakers", @"Schedule", @"Venue", @"Organizers", @"My Bookmarks"];
      // Small UI Improvments
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.tableView.contentInset = UIEdgeInsetsMake(21, 0, 0, 0);
@@ -35,13 +35,6 @@ static NSString *simpleTableIdentifier = @"TableCell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [_navigationArray count];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if(indexPath.row > [_navigationArray count])
-        return 0;
-    return 45;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

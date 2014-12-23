@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		97F8893B1A49A84E00A135C9 /* SpeakersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F8893A1A49A84E00A135C9 /* SpeakersViewController.m */; };
 		B70EEB571A485258008CD9C6 /* MHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B70EEB561A485258008CD9C6 /* MHTabBarController.m */; };
 		B70F610A1A483F96004EA563 /* backstage_1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B70F60C21A483F96004EA563 /* backstage_1.jpeg */; };
 		B70F610B1A483F96004EA563 /* backstage_10.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B70F60C31A483F96004EA563 /* backstage_10.jpeg */; };
@@ -113,6 +114,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		97F889391A49A84E00A135C9 /* SpeakersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakersViewController.h; path = RigaDevDay/Controllers/SpeakersViewController.h; sourceTree = "<group>"; };
+		97F8893A1A49A84E00A135C9 /* SpeakersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakersViewController.m; path = RigaDevDay/Controllers/SpeakersViewController.m; sourceTree = "<group>"; };
 		B70EEB551A485258008CD9C6 /* MHTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHTabBarController.h; path = RigaDevDay/Libs/MHTabBarController/MHTabBarController.h; sourceTree = "<group>"; };
 		B70EEB561A485258008CD9C6 /* MHTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHTabBarController.m; path = RigaDevDay/Libs/MHTabBarController/MHTabBarController.m; sourceTree = "<group>"; };
 		B70F60C21A483F96004EA563 /* backstage_1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backstage_1.jpeg; sourceTree = "<group>"; };
@@ -419,7 +422,7 @@
 				B7B16D371A361BD3005267AF /* Bookmarks */,
 				B7B16D331A361BAF005267AF /* Schedule */,
 				B7B16D2F1A361B7E005267AF /* SpeechInfo */,
-				B7B16D2B1A361B32005267AF /* SpeakerInfo */,
+				B7B16D2B1A361B32005267AF /* Speakers */,
 				B7B16D271A361A52005267AF /* Showcase */,
 				B7B16D561A36264B005267AF /* Navigation */,
 				B7B16D081A361966005267AF /* Main.storyboard */,
@@ -438,13 +441,15 @@
 			name = Showcase;
 			sourceTree = "<group>";
 		};
-		B7B16D2B1A361B32005267AF /* SpeakerInfo */ = {
+		B7B16D2B1A361B32005267AF /* Speakers */ = {
 			isa = PBXGroup;
 			children = (
+				97F889391A49A84E00A135C9 /* SpeakersViewController.h */,
+				97F8893A1A49A84E00A135C9 /* SpeakersViewController.m */,
 				B7B16D281A361B2D005267AF /* SpeakerInfoViewController.h */,
 				B7B16D291A361B2D005267AF /* SpeakerInfoViewController.m */,
 			);
-			name = SpeakerInfo;
+			name = Speakers;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -722,6 +727,7 @@
 			files = (
 				B70F61561A4846C6004EA563 /* ShowCaseCell.m in Sources */,
 				B7B16D4F1A36201B005267AF /* SWRevealViewController.m in Sources */,
+				97F8893B1A49A84E00A135C9 /* SpeakersViewController.m in Sources */,
 				B7B16D2A1A361B2D005267AF /* SpeakerInfoViewController.m in Sources */,
 				B7B16D551A362646005267AF /* NavigationViewController.m in Sources */,
 				B70EEB571A485258008CD9C6 /* MHTabBarController.m in Sources */,

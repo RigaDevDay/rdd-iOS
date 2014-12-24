@@ -12,7 +12,7 @@
 
 @property (strong, nonatomic) NSString *bio;
 @property (strong, nonatomic) NSString *company;
-//@property (strong, nonatomic) NSString *contacts;
+@property (strong, nonatomic) NSDictionary *contacts;
 @property (strong, nonatomic) NSString *country;
 @property (assign, nonatomic) NSInteger id;
 @property (strong, nonatomic) NSString *name;

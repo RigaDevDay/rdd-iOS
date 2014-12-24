@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EventCategory.h"
 #import "SpeakerObject.h"
 #import "ScheduleObject.h"
 
@@ -15,5 +16,6 @@
 + (DataManager *)sharedInstance;
 
 - (NSArray *)getAllSpeakers;
+- (NSArray *)getScheduleForHall:(NSInteger)roomID;
 
 @end

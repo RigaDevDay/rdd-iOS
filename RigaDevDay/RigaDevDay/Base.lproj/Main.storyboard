@@ -1189,7 +1189,7 @@
                                     <constraint firstAttribute="width" constant="320" id="uRp-32-wab"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" id="icJ-re-Mfe">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" id="icJ-re-Mfe" customClass="ScheduleTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="icJ-re-Mfe" id="mEl-ZG-cCf">
@@ -1201,7 +1201,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Presentation Short Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAq-7K-VVs">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Presentation SubTitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAq-7K-VVs">
                                                     <rect key="frame" x="8" y="25" width="257" height="19"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1224,6 +1224,12 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="labelPresentationDescription" destination="Vm9-Of-241" id="Z3a-xc-sqy"/>
+                                            <outlet property="labelPresentationSubTitle" destination="JAq-7K-VVs" id="m3v-rj-pgn"/>
+                                            <outlet property="labelSpeakerName" destination="f4K-l6-1ii" id="Evx-Ep-hri"/>
+                                            <outlet property="labelStartTime" destination="oj8-rl-hwh" id="Qkd-TJ-GQB"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="default">
@@ -1558,6 +1564,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="qxn-fx-64F"/>
-        <segue reference="4Qg-H3-HSl"/>
+        <segue reference="Nkk-aN-FU8"/>
     </inferredMetricsTieBreakers>
 </document>

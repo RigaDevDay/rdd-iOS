@@ -8,8 +8,12 @@
 
 #import "ScheduleViewController.h"
 #import "SWRevealViewController.h"
+#import "ScheduleTableViewCell.h"
+#import "DataManager.h"
 
-@interface ScheduleViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface ScheduleViewController () <UITableViewDataSource, UITableViewDelegate> {
+    NSArray *firstHallSchedule;
+}
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonMenu;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -23,6 +27,8 @@
     self.buttonMenu.target = self.revealViewController;
     self.buttonMenu.action = @selector(revealToggle:);
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
+    firstHallSchedule = [[DataManager sharedInstance] getScheduleForHall:1];
     // Do any additional setup after loading the view.
 }
 
@@ -32,11 +38,14 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 12;
+    return [firstHallSchedule count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    EventObject *event = firstHallSchedule[indexPath.row];
+    ScheduleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    cell.labelPresentationDescription.text = event.eventDescription;
+    cell.labelPresentationSubTitle.text = event.subTitle;
     return cell;
 }
 

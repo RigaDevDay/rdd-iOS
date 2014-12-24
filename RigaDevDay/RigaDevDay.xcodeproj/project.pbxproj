@@ -142,6 +142,8 @@
 		B7FDD0EA1A4AC1560001C098 /* startuphunt.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0C91A4AC1560001C098 /* startuphunt.png */; };
 		B7FDD0EB1A4AC1560001C098 /* techhub.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0CA1A4AC1560001C098 /* techhub.png */; };
 		B7FDD1141A4B21110001C098 /* SpeakerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD1131A4B21110001C098 /* SpeakerTableViewCell.m */; };
+		B7FDD11F1A4B45820001C098 /* EventCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD11E1A4B45820001C098 /* EventCategory.m */; };
+		B7FDD1221A4B4FDD0001C098 /* ScheduleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD1211A4B4FDD0001C098 /* ScheduleTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -316,6 +318,10 @@
 		B7FDD0EC1A4B16A40001C098 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B7FDD1121A4B21110001C098 /* SpeakerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakerTableViewCell.h; path = RigaDevDay/Controllers/SpeakerTableViewCell.h; sourceTree = "<group>"; };
 		B7FDD1131A4B21110001C098 /* SpeakerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerTableViewCell.m; path = RigaDevDay/Controllers/SpeakerTableViewCell.m; sourceTree = "<group>"; };
+		B7FDD11D1A4B45820001C098 /* EventCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventCategory.h; path = CustomClasses/EventCategory.h; sourceTree = "<group>"; };
+		B7FDD11E1A4B45820001C098 /* EventCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventCategory.m; path = CustomClasses/EventCategory.m; sourceTree = "<group>"; };
+		B7FDD1201A4B4FDD0001C098 /* ScheduleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleTableViewCell.h; path = RigaDevDay/Controllers/ScheduleTableViewCell.h; sourceTree = "<group>"; };
+		B7FDD1211A4B4FDD0001C098 /* ScheduleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleTableViewCell.m; path = RigaDevDay/Controllers/ScheduleTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -583,6 +589,8 @@
 			children = (
 				B7B16D301A361BAC005267AF /* ScheduleViewController.h */,
 				B7B16D311A361BAC005267AF /* ScheduleViewController.m */,
+				B7FDD1201A4B4FDD0001C098 /* ScheduleTableViewCell.h */,
+				B7FDD1211A4B4FDD0001C098 /* ScheduleTableViewCell.m */,
 			);
 			name = Schedule;
 			path = ..;
@@ -629,6 +637,8 @@
 		B7B16D481A361D78005267AF /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				B7FDD11D1A4B45820001C098 /* EventCategory.h */,
+				B7FDD11E1A4B45820001C098 /* EventCategory.m */,
 				B7B16D401A361D33005267AF /* EventObject.h */,
 				B7B16D411A361D33005267AF /* EventObject.m */,
 				B7B16D4A1A361DDA005267AF /* SpeakerObject.h */,
@@ -947,12 +957,14 @@
 				B7B16D321A361BAC005267AF /* ScheduleViewController.m in Sources */,
 				B7B16D471A361D75005267AF /* ScheduleObject.m in Sources */,
 				B7B16D3A1A361BE8005267AF /* AboutViewController.m in Sources */,
+				B7FDD1221A4B4FDD0001C098 /* ScheduleTableViewCell.m in Sources */,
 				B7B16D041A361966005267AF /* AppDelegate.m in Sources */,
 				97F889441A49B64600A135C9 /* VenueViewController.m in Sources */,
 				B7B16D2E1A361B7A005267AF /* SpeechInfoViewController.m in Sources */,
 				B7B16D361A361BD0005267AF /* BookmarksViewController.m in Sources */,
 				B70F61591A4846EB004EA563 /* ShowcaseViewController.m in Sources */,
 				B7FDD1141A4B21110001C098 /* SpeakerTableViewCell.m in Sources */,
+				B7FDD11F1A4B45820001C098 /* EventCategory.m in Sources */,
 				B7B16D4C1A361DDA005267AF /* SpeakerObject.m in Sources */,
 				B7FDD0A81A4ABFFE0001C098 /* OrganizersTableViewCell.m in Sources */,
 				B7FDD09D1A4ABB1B0001C098 /* OrganizersViewController.m in Sources */,

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DataManager.h"
 
 @interface SpeakerInfoViewController : UIViewController
+
+@property (strong, nonatomic) SpeakerObject *speaker;
 
 @end

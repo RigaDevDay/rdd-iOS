@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SpeakerObject.h"
+#import "ScheduleObject.h"
 
 @interface DataManager : NSObject
+
++ (DataManager *)sharedInstance;
+
+- (NSArray *)getAllSpeakers;
 
 @end

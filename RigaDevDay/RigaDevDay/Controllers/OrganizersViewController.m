@@ -80,11 +80,6 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"WEB_VIEW_SEGUE" sender:nil];
-}
-
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 4;
 }

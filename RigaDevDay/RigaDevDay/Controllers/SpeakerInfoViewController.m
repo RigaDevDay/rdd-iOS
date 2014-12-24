@@ -31,6 +31,7 @@
     [super viewDidLoad];
     self.buttonMenu.target = self;
     self.buttonMenu.action = @selector(backButtonPress);
+    [self setUpInfo];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -69,6 +70,14 @@
     [self.buttonSpeech setBackgroundColor: selected ? [UIColor whiteColor] : [UIColor blackColor]];
     [self.buttonSpeech setTitleColor:selected ? [UIColor blackColor] : [UIColor whiteColor] forState:UIControlStateNormal];
     self.labelTileAndLocation.hidden = !selected;
+}
+
+- (void)setUpInfo {
+    self.labelSpeakerName.text = self.speaker.name;
+    self.labelWorkPlace.text = self.speaker.company;
+    self.textViewInformation.text = self.speaker.bio;
+    self.imageViewProfile.image = [UIImage imageNamed:[NSString stringWithFormat:@"speaker_%li",(long)self.speaker.id]];
+    self.imageViewBackground.image = [UIImage imageNamed:[NSString stringWithFormat:@"backstage_%li.jpeg",(long)self.speaker.id]];
 }
 
 @end

@@ -107,7 +107,6 @@
 		B7B16D4F1A36201B005267AF /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D4E1A36201B005267AF /* SWRevealViewController.m */; };
 		B7B16D551A362646005267AF /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D541A362646005267AF /* NavigationViewController.m */; };
 		B7FDD09D1A4ABB1B0001C098 /* OrganizersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD09C1A4ABB1B0001C098 /* OrganizersViewController.m */; };
-		B7FDD0A11A4ABD410001C098 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD0A01A4ABD410001C098 /* WebViewController.m */; };
 		B7FDD0A81A4ABFFE0001C098 /* OrganizersTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD0A71A4ABFFE0001C098 /* OrganizersTableViewCell.m */; };
 		B7FDD0CB1A4AC1560001C098 /* 4finance_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0AA1A4AC1560001C098 /* 4finance_logo.png */; };
 		B7FDD0CC1A4AC1560001C098 /* accenture.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0AB1A4AC1560001C098 /* accenture.png */; };
@@ -142,6 +141,7 @@
 		B7FDD0E91A4AC1560001C098 /* startup-latvia.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0C81A4AC1560001C098 /* startup-latvia.png */; };
 		B7FDD0EA1A4AC1560001C098 /* startuphunt.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0C91A4AC1560001C098 /* startuphunt.png */; };
 		B7FDD0EB1A4AC1560001C098 /* techhub.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0CA1A4AC1560001C098 /* techhub.png */; };
+		B7FDD1141A4B21110001C098 /* SpeakerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD1131A4B21110001C098 /* SpeakerTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -278,8 +278,6 @@
 		B7B16D541A362646005267AF /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NavigationViewController.m; path = Controllers/NavigationViewController.m; sourceTree = "<group>"; };
 		B7FDD09B1A4ABB1B0001C098 /* OrganizersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrganizersViewController.h; path = Controllers/OrganizersViewController.h; sourceTree = "<group>"; };
 		B7FDD09C1A4ABB1B0001C098 /* OrganizersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrganizersViewController.m; path = Controllers/OrganizersViewController.m; sourceTree = "<group>"; };
-		B7FDD09F1A4ABD410001C098 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebViewController.h; path = Controllers/WebViewController.h; sourceTree = "<group>"; };
-		B7FDD0A01A4ABD410001C098 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewController.m; path = Controllers/WebViewController.m; sourceTree = "<group>"; };
 		B7FDD0A61A4ABFFE0001C098 /* OrganizersTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrganizersTableViewCell.h; path = Controllers/OrganizersTableViewCell.h; sourceTree = "<group>"; };
 		B7FDD0A71A4ABFFE0001C098 /* OrganizersTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrganizersTableViewCell.m; path = Controllers/OrganizersTableViewCell.m; sourceTree = "<group>"; };
 		B7FDD0AA1A4AC1560001C098 /* 4finance_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4finance_logo.png; sourceTree = "<group>"; };
@@ -315,6 +313,9 @@
 		B7FDD0C81A4AC1560001C098 /* startup-latvia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "startup-latvia.png"; sourceTree = "<group>"; };
 		B7FDD0C91A4AC1560001C098 /* startuphunt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startuphunt.png; sourceTree = "<group>"; };
 		B7FDD0CA1A4AC1560001C098 /* techhub.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = techhub.png; sourceTree = "<group>"; };
+		B7FDD0EC1A4B16A40001C098 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B7FDD1121A4B21110001C098 /* SpeakerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakerTableViewCell.h; path = RigaDevDay/Controllers/SpeakerTableViewCell.h; sourceTree = "<group>"; };
+		B7FDD1131A4B21110001C098 /* SpeakerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerTableViewCell.m; path = RigaDevDay/Controllers/SpeakerTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -560,6 +561,8 @@
 				97F8893A1A49A84E00A135C9 /* SpeakersViewController.m */,
 				B7B16D281A361B2D005267AF /* SpeakerInfoViewController.h */,
 				B7B16D291A361B2D005267AF /* SpeakerInfoViewController.m */,
+				B7FDD1121A4B21110001C098 /* SpeakerTableViewCell.h */,
+				B7FDD1131A4B21110001C098 /* SpeakerTableViewCell.m */,
 			);
 			name = Speakers;
 			path = ..;
@@ -639,6 +642,7 @@
 		B7B16D501A36201F005267AF /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				B7FDD0EC1A4B16A40001C098 /* SystemConfiguration.framework */,
 				97F889451A49B6D300A135C9 /* MapKit.framework */,
 				97F8894B1A49BBF900A135C9 /* MapView + Zoom */,
 				B70EEB581A48525F008CD9C6 /* MHTabBarController */,
@@ -680,8 +684,6 @@
 		B7FDD0A21A4ABD450001C098 /* WebView */ = {
 			isa = PBXGroup;
 			children = (
-				B7FDD09F1A4ABD410001C098 /* WebViewController.h */,
-				B7FDD0A01A4ABD410001C098 /* WebViewController.m */,
 			);
 			name = WebView;
 			sourceTree = "<group>";
@@ -936,7 +938,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B70F61561A4846C6004EA563 /* ShowCaseCell.m in Sources */,
-				B7FDD0A11A4ABD410001C098 /* WebViewController.m in Sources */,
 				B7B16D4F1A36201B005267AF /* SWRevealViewController.m in Sources */,
 				97F8894A1A49BBEF00A135C9 /* MKMapView+ZoomLevel.m in Sources */,
 				97F8893B1A49A84E00A135C9 /* SpeakersViewController.m in Sources */,
@@ -951,6 +952,7 @@
 				B7B16D2E1A361B7A005267AF /* SpeechInfoViewController.m in Sources */,
 				B7B16D361A361BD0005267AF /* BookmarksViewController.m in Sources */,
 				B70F61591A4846EB004EA563 /* ShowcaseViewController.m in Sources */,
+				B7FDD1141A4B21110001C098 /* SpeakerTableViewCell.m in Sources */,
 				B7B16D4C1A361DDA005267AF /* SpeakerObject.m in Sources */,
 				B7FDD0A81A4ABFFE0001C098 /* OrganizersTableViewCell.m in Sources */,
 				B7FDD09D1A4ABB1B0001C098 /* OrganizersViewController.m in Sources */,

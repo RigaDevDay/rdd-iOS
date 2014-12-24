@@ -10,4 +10,13 @@
 
 @interface SpeakerObject : NSObject
 
+@property (strong, nonatomic) NSString *bio;
+@property (strong, nonatomic) NSString *company;
+//@property (strong, nonatomic) NSString *contacts;
+@property (strong, nonatomic) NSString *country;
+@property (assign, nonatomic) NSInteger id;
+@property (strong, nonatomic) NSString *name;
+@property (assign, nonatomic) NSInteger order;
+@property (assign, nonatomic) NSInteger type;
+
 @end

@@ -1189,7 +1189,7 @@
                                     <constraint firstAttribute="width" constant="320" id="uRp-32-wab"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" id="icJ-re-Mfe" customClass="ScheduleTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PresentationCell" id="icJ-re-Mfe" customClass="ScheduleTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="icJ-re-Mfe" id="mEl-ZG-cCf">
@@ -1231,6 +1231,34 @@
                                             <outlet property="labelStartTime" destination="oj8-rl-hwh" id="Qkd-TJ-GQB"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="GlobalMetupCell" id="NcP-pk-5xy" customClass="GlobalMetupTableViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NcP-pk-5xy" id="mBP-9L-xLO">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Presentation Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eue-aQ-RSh">
+                                                    <rect key="frame" x="8" y="24" width="223" height="21"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_bookmark.png" translatesAutoresizingMaskIntoConstraints="NO" id="DzA-vM-PLO">
+                                                    <rect key="frame" x="278" y="30" width="25" height="25"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yi8-g2-R2N">
+                                                    <rect key="frame" x="270" y="3" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                                    <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="labelPresentationName" destination="Eue-aQ-RSh" id="psb-3o-NLU"/>
+                                            <outlet property="labelStartTime" destination="yi8-g2-R2N" id="Bx5-Wx-h2u"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -1245,7 +1273,7 @@
                                     <outlet property="delegate" destination="b3H-Ra-zYv" id="TFT-pp-tW0"/>
                                 </connections>
                             </tableView>
-                            <tabBar contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7d-PX-KYl">
+                            <tabBar contentMode="scaleToFill" barStyle="black" translucent="NO" itemPositioning="centered" translatesAutoresizingMaskIntoConstraints="NO" id="u7d-PX-KYl">
                                 <rect key="frame" x="0.0" y="367" width="320" height="49"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
@@ -1253,16 +1281,18 @@
                                     <constraint firstAttribute="height" constant="49" id="nAP-Di-bn7"/>
                                 </constraints>
                                 <items>
-                                    <tabBarItem systemItem="more" id="nEF-CV-AR6">
-                                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
-                                    </tabBarItem>
-                                    <tabBarItem systemItem="more" id="fcj-AT-KYq"/>
-                                    <tabBarItem systemItem="more" id="OZR-Xt-UEZ"/>
-                                    <tabBarItem systemItem="more" id="8dp-f2-BDl"/>
+                                    <tabBarItem tag="1" title="Track 1" id="nEF-CV-AR6"/>
+                                    <tabBarItem tag="2" title="Track 2" id="Lul-EP-58V"/>
+                                    <tabBarItem tag="3" title="Track 3" id="fcj-AT-KYq"/>
+                                    <tabBarItem tag="4" title="Track 4" id="OZR-Xt-UEZ"/>
+                                    <tabBarItem tag="5" title="Track 5" id="8dp-f2-BDl"/>
                                 </items>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="b3H-Ra-zYv" id="Alh-bR-4yA"/>
+                                </connections>
                             </tabBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1304,6 +1334,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="buttonMenu" destination="32N-QF-Bzw" id="h6s-XO-qlh"/>
+                        <outlet property="tabBarController" destination="u7d-PX-KYl" id="2ps-3F-FgU"/>
                         <outlet property="tableView" destination="huc-da-NiE" id="3wF-XF-oeW"/>
                         <segue destination="pjE-XR-wLh" kind="push" identifier="SPEAKER_SPEECH_INFO_SEGUEUE" id="Nkk-aN-FU8"/>
                     </connections>
@@ -1563,7 +1594,7 @@
         <image name="speaker_1.png" width="126" height="138"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qxn-fx-64F"/>
+        <segue reference="cVm-aZ-C91"/>
         <segue reference="Nkk-aN-FU8"/>
     </inferredMetricsTieBreakers>
 </document>

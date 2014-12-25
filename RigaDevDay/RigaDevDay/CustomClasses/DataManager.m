@@ -95,12 +95,13 @@
     
     for (NSDictionary *eventCategory in scheduleArray) {
         EventCategory *eCategory = [EventCategory new];
-        eCategory.endTime = eventCategory[@"endTime"];
-        eCategory.startTime = eventCategory[@"time"];
+//        eCategory.endTime = eventCategory[@"endTime"];
+//        eCategory.startTime = eventCategory[@"time"];
         eCategory.events = [NSMutableArray new];
         NSArray *events = eventCategory[@"events"];
         for (NSDictionary *event in events) {
             EventObject *eventObject = [EventObject new];
+            eventObject.startTime = eventCategory[@"time"];
             eventObject.eventDescription = event[@"title"] ? event[@"title"] :
             event[@"description"];
             eventObject.subTitle = event[@"subtitle"] ? event[@"subtitle"] : @"";

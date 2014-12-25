@@ -106,6 +106,7 @@
 		B7B16D4C1A361DDA005267AF /* SpeakerObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D4B1A361DDA005267AF /* SpeakerObject.m */; };
 		B7B16D4F1A36201B005267AF /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D4E1A36201B005267AF /* SWRevealViewController.m */; };
 		B7B16D551A362646005267AF /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D541A362646005267AF /* NavigationViewController.m */; };
+		B7FA0F1D1A4C731F002BD598 /* GlobalMetupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7FA0F1C1A4C731F002BD598 /* GlobalMetupTableViewCell.m */; };
 		B7FDD09D1A4ABB1B0001C098 /* OrganizersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD09C1A4ABB1B0001C098 /* OrganizersViewController.m */; };
 		B7FDD0A81A4ABFFE0001C098 /* OrganizersTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD0A71A4ABFFE0001C098 /* OrganizersTableViewCell.m */; };
 		B7FDD0CB1A4AC1560001C098 /* 4finance_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0AA1A4AC1560001C098 /* 4finance_logo.png */; };
@@ -278,6 +279,8 @@
 		B7B16D4E1A36201B005267AF /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = RigaDevDay/Libs/SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
 		B7B16D531A362646005267AF /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NavigationViewController.h; path = Controllers/NavigationViewController.h; sourceTree = "<group>"; };
 		B7B16D541A362646005267AF /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NavigationViewController.m; path = Controllers/NavigationViewController.m; sourceTree = "<group>"; };
+		B7FA0F1B1A4C731F002BD598 /* GlobalMetupTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GlobalMetupTableViewCell.h; path = RigaDevDay/Controllers/GlobalMetupTableViewCell.h; sourceTree = "<group>"; };
+		B7FA0F1C1A4C731F002BD598 /* GlobalMetupTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GlobalMetupTableViewCell.m; path = RigaDevDay/Controllers/GlobalMetupTableViewCell.m; sourceTree = "<group>"; };
 		B7FDD09B1A4ABB1B0001C098 /* OrganizersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrganizersViewController.h; path = Controllers/OrganizersViewController.h; sourceTree = "<group>"; };
 		B7FDD09C1A4ABB1B0001C098 /* OrganizersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrganizersViewController.m; path = Controllers/OrganizersViewController.m; sourceTree = "<group>"; };
 		B7FDD0A61A4ABFFE0001C098 /* OrganizersTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrganizersTableViewCell.h; path = Controllers/OrganizersTableViewCell.h; sourceTree = "<group>"; };
@@ -591,6 +594,8 @@
 				B7B16D311A361BAC005267AF /* ScheduleViewController.m */,
 				B7FDD1201A4B4FDD0001C098 /* ScheduleTableViewCell.h */,
 				B7FDD1211A4B4FDD0001C098 /* ScheduleTableViewCell.m */,
+				B7FA0F1B1A4C731F002BD598 /* GlobalMetupTableViewCell.h */,
+				B7FA0F1C1A4C731F002BD598 /* GlobalMetupTableViewCell.m */,
 			);
 			name = Schedule;
 			path = ..;
@@ -961,6 +966,7 @@
 				B7B16D041A361966005267AF /* AppDelegate.m in Sources */,
 				97F889441A49B64600A135C9 /* VenueViewController.m in Sources */,
 				B7B16D2E1A361B7A005267AF /* SpeechInfoViewController.m in Sources */,
+				B7FA0F1D1A4C731F002BD598 /* GlobalMetupTableViewCell.m in Sources */,
 				B7B16D361A361BD0005267AF /* BookmarksViewController.m in Sources */,
 				B70F61591A4846EB004EA563 /* ShowcaseViewController.m in Sources */,
 				B7FDD1141A4B21110001C098 /* SpeakerTableViewCell.m in Sources */,

@@ -9,14 +9,16 @@
 #import "ScheduleViewController.h"
 #import "SWRevealViewController.h"
 #import "ScheduleTableViewCell.h"
+#import "GlobalMetupTableViewCell.h"
 #import "DataManager.h"
 
-@interface ScheduleViewController () <UITableViewDataSource, UITableViewDelegate> {
-    NSArray *firstHallSchedule;
+@interface ScheduleViewController () <UITableViewDataSource, UITableViewDelegate,UITabBarDelegate> {
+    NSArray *_currentHallSchedule;
 }
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonMenu;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UITabBar *tabBarController;
 
 @end
 
@@ -28,7 +30,7 @@
     self.buttonMenu.action = @selector(revealToggle:);
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
-    firstHallSchedule = [[DataManager sharedInstance] getScheduleForHall:1];
+    _currentHallSchedule = [[DataManager sharedInstance] getScheduleForHall:1];
     // Do any additional setup after loading the view.
 }
 
@@ -38,19 +40,36 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [firstHallSchedule count];
+    return [_currentHallSchedule count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    EventObject *event = firstHallSchedule[indexPath.row];
-    ScheduleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    cell.labelPresentationDescription.text = event.eventDescription;
-    cell.labelPresentationSubTitle.text = event.subTitle;
-    return cell;
+    EventObject *event = _currentHallSchedule[indexPath.row];
+    if (![event.subTitle isEqualToString:@""]) {
+        ScheduleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PresentationCell"];
+        cell.labelPresentationSubTitle.text = event.subTitle;
+        cell.labelPresentationDescription.text = event.eventDescription;
+        cell.labelStartTime.text = event.startTime;
+        
+        return cell;
+
+    } else {
+        GlobalMetupTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GlobalMetupCell"];
+        cell.labelPresentationName.text = event.eventDescription;
+        cell.labelStartTime.text = event.startTime;
+        return cell;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"SPEAKER_SPEECH_INFO_SEGUEUE" sender:nil];
+    if ([[tableView cellForRowAtIndexPath:indexPath] isKindOfClass:[ScheduleTableViewCell class]]) {
+        [self performSegueWithIdentifier:@"SPEAKER_SPEECH_INFO_SEGUEUE" sender:nil];
+    }
+}
+
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
+    _currentHallSchedule = [[DataManager sharedInstance] getScheduleForHall:item.tag];
+    [self.tableView reloadData];
 }
 
 @end

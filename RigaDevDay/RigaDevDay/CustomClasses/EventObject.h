@@ -10,6 +10,7 @@
 
 @interface EventObject : NSObject
 
+@property (strong, nonatomic) NSString *startTime;
 @property (strong, nonatomic) NSString *eventDescription;
 @property (strong, nonatomic) NSString *subTitle;
 @property (strong, nonatomic) NSDictionary *speakers;

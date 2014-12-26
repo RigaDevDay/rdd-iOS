@@ -508,7 +508,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speaker Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuq-Nl-LGj">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speaker Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fuq-Nl-LGj">
                                 <rect key="frame" x="82" y="123" width="156" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="Smp-Dw-NEM"/>
@@ -526,7 +526,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work Place" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p6B-bI-CKE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work Place" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="p6B-bI-CKE">
                                 <rect key="frame" x="107" y="145" width="107" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="1Pd-Bd-y3I"/>
@@ -648,7 +648,7 @@
                                     <action selector="onAboutButtonPress:" destination="pjE-XR-wLh" eventType="touchUpInside" id="B62-qX-E2w"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time and location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Kf-2i-zji">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time and location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3Kf-2i-zji">
                                 <rect key="frame" x="10" y="207" width="150" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="S16-8u-fgF"/>
@@ -658,7 +658,7 @@
                                 <color key="textColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speech Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FL-T1-iSs">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speech Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6FL-T1-iSs">
                                 <rect key="frame" x="10" y="229" width="294" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="K6T-YJ-OsS"/>
@@ -680,9 +680,25 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="ApO-c3-W78" userLabel="Text">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ykp-Jn-d7z" userLabel="Blog Butoon">
+                                <rect key="frame" x="10" y="229" width="294" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="2wB-Hr-zab"/>
+                                    <constraint firstAttribute="width" constant="294" id="CWV-d8-PEE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <state key="normal" title="Blog">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onBlogButtonPress:" destination="pjE-XR-wLh" eventType="touchUpInside" id="Ulm-GN-obn"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ApO-c3-W78" userLabel="Text">
                                 <rect key="frame" x="6" y="260" width="308" height="156"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="156" id="7G5-SP-p0e"/>
                                     <constraint firstAttribute="height" constant="156" id="7L8-vo-1hb"/>
@@ -698,6 +714,7 @@
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="7G5-SP-p0e"/>
@@ -769,8 +786,10 @@
                             <constraint firstItem="378-bB-WUC" firstAttribute="leading" secondItem="ueJ-FD-2w7" secondAttribute="leadingMargin" constant="-16" id="Aq1-0F-qhy"/>
                             <constraint firstItem="6FL-T1-iSs" firstAttribute="top" secondItem="5sA-HX-ffC" secondAttribute="bottom" constant="22" id="B7W-kc-IKT"/>
                             <constraint firstItem="5sA-HX-ffC" firstAttribute="leading" secondItem="378-bB-WUC" secondAttribute="trailing" id="BoW-vE-8cg"/>
+                            <constraint firstItem="ApO-c3-W78" firstAttribute="top" secondItem="Ykp-Jn-d7z" secondAttribute="bottom" constant="3" id="Bqa-Wj-Z6R"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ApO-c3-W78" secondAttribute="trailing" constant="-8" id="CEF-Vz-UGN"/>
                             <constraint firstItem="6FL-T1-iSs" firstAttribute="leading" secondItem="ueJ-FD-2w7" secondAttribute="leadingMargin" constant="-6" id="DDc-sC-M1e"/>
+                            <constraint firstItem="Ykp-Jn-d7z" firstAttribute="top" secondItem="3Kf-2i-zji" secondAttribute="bottom" constant="1" id="Dez-Ef-5iv"/>
                             <constraint firstItem="ApO-c3-W78" firstAttribute="top" secondItem="6FL-T1-iSs" secondAttribute="bottom" constant="3" id="EjO-Qj-WJG"/>
                             <constraint firstItem="3Kf-2i-zji" firstAttribute="top" secondItem="378-bB-WUC" secondAttribute="bottom" id="Ftq-Eg-s6j"/>
                             <constraint firstItem="3Kf-2i-zji" firstAttribute="top" secondItem="378-bB-WUC" secondAttribute="bottom" id="GBQ-Vf-pMM"/>
@@ -798,6 +817,7 @@
                             <constraint firstItem="fuq-Nl-LGj" firstAttribute="top" secondItem="Fba-lo-vLn" secondAttribute="bottom" constant="8" id="TEq-lp-wUz"/>
                             <constraint firstItem="fuq-Nl-LGj" firstAttribute="top" secondItem="Fba-lo-vLn" secondAttribute="bottom" constant="8" id="TLw-HU-Ny7"/>
                             <constraint firstItem="3Kf-2i-zji" firstAttribute="top" secondItem="378-bB-WUC" secondAttribute="bottom" id="USf-bJ-Qfd"/>
+                            <constraint firstItem="Ykp-Jn-d7z" firstAttribute="leading" secondItem="ueJ-FD-2w7" secondAttribute="leadingMargin" constant="-6" id="UbP-Pt-eD6"/>
                             <constraint firstItem="6FL-T1-iSs" firstAttribute="leading" secondItem="ueJ-FD-2w7" secondAttribute="leadingMargin" constant="-6" id="Uuc-DV-uxQ"/>
                             <constraint firstItem="Fba-lo-vLn" firstAttribute="top" secondItem="ERK-4C-ywB" secondAttribute="bottom" constant="17" id="VN0-KJ-bGL"/>
                             <constraint firstItem="378-bB-WUC" firstAttribute="top" secondItem="p6B-bI-CKE" secondAttribute="bottom" constant="10" id="VO1-UD-WcA"/>
@@ -957,6 +977,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="buttonAbout" destination="5sA-HX-ffC" id="M08-q9-dLj"/>
+                        <outlet property="buttonBlog" destination="Ykp-Jn-d7z" id="L44-Hm-egc"/>
                         <outlet property="buttonBookmark" destination="PgD-Po-Sca" id="uZJ-mt-Ced"/>
                         <outlet property="buttonMenu" destination="T3d-Xv-Q9l" id="jJI-aH-URc"/>
                         <outlet property="buttonSpeech" destination="378-bB-WUC" id="cTo-Kl-jhS"/>

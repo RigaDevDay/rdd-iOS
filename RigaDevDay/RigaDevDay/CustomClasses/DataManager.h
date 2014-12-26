@@ -17,5 +17,6 @@
 
 - (NSArray *)getAllSpeakers;
 - (NSArray *)getScheduleForHall:(NSInteger)roomID;
+- (EventObject *)getEventForSpeakerWithID:(NSInteger)speakerID;
 
 @end

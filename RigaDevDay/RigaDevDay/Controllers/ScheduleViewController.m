@@ -10,10 +10,12 @@
 #import "SWRevealViewController.h"
 #import "ScheduleTableViewCell.h"
 #import "GlobalMetupTableViewCell.h"
+#import "SpeakerInfoViewController.h"
 #import "DataManager.h"
 
 @interface ScheduleViewController () <UITableViewDataSource, UITableViewDelegate,UITabBarDelegate> {
     NSArray *_currentHallSchedule;
+    EventObject *_selectedEventObject;
 }
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonMenu;
@@ -47,6 +49,7 @@
     EventObject *event = _currentHallSchedule[indexPath.row];
     if (![event.subTitle isEqualToString:@""]) {
         ScheduleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PresentationCell"];
+        cell.labelSpeakerName.text = [self getSpeakerStringFromArray:event.speakers];
         cell.labelPresentationSubTitle.text = event.subTitle;
         cell.labelPresentationDescription.text = event.eventDescription;
         cell.labelStartTime.text = event.startTime;
@@ -63,6 +66,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([[tableView cellForRowAtIndexPath:indexPath] isKindOfClass:[ScheduleTableViewCell class]]) {
+        _selectedEventObject = _currentHallSchedule[indexPath.row];
         [self performSegueWithIdentifier:@"SPEAKER_SPEECH_INFO_SEGUEUE" sender:nil];
     }
 }
@@ -70,6 +74,20 @@
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
     _currentHallSchedule = [[DataManager sharedInstance] getScheduleForHall:item.tag];
     [self.tableView reloadData];
+}
+
+- (NSString *)getSpeakerStringFromArray:(NSArray *)speakersArray {
+    NSString *returnString = @"";
+    for (SpeakerObject *speaker in speakersArray) {
+       returnString = [returnString stringByAppendingFormat:@"%@, ",speaker.name];
+    }
+    return [returnString substringToIndex:[returnString length] - 2];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    SpeakerInfoViewController *destController = [segue destinationViewController];
+    destController.speaker = [_selectedEventObject.speakers firstObject];
 }
 
 @end

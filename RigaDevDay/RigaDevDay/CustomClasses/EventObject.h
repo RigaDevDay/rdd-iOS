@@ -13,7 +13,8 @@
 @property (strong, nonatomic) NSString *startTime;
 @property (strong, nonatomic) NSString *eventDescription;
 @property (strong, nonatomic) NSString *subTitle;
-@property (strong, nonatomic) NSDictionary *speakers;
+@property (assign, nonatomic) NSInteger hallID; // 1, 2, 3, 4, 5
+@property (strong, nonatomic) NSMutableArray *speakers;
 
 
 @end

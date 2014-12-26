@@ -59,12 +59,15 @@
     for (NSDictionary *info in jsonArray) {
         SpeakerObject *newSpeaker = [SpeakerObject new];
         newSpeaker.bio = info[@"bio"];
+        newSpeaker.bio = [newSpeaker.bio stringByReplacingOccurrencesOfString:@"</br>" withString:@""];
         newSpeaker.company = info[@"company"];
         newSpeaker.country = info[@"country"];
         newSpeaker.id = [info[@"id"] integerValue];
         newSpeaker.name = info[@"name"];
         newSpeaker.order = [info[@"order"] integerValue];
-        newSpeaker.contacts = info[@"contacts"];
+        NSDictionary *contacts = info[@"contacts"];
+        if (contacts[@"twitter"]) newSpeaker.twitter = contacts[@"twitter"];
+        if (contacts[@"blog"]) newSpeaker.blog = contacts[@"blog"];
         [_speakersArray addObject:newSpeaker];
     }
 }
@@ -95,25 +98,38 @@
     
     for (NSDictionary *eventCategory in scheduleArray) {
         EventCategory *eCategory = [EventCategory new];
-//        eCategory.endTime = eventCategory[@"endTime"];
-//        eCategory.startTime = eventCategory[@"time"];
         eCategory.events = [NSMutableArray new];
         NSArray *events = eventCategory[@"events"];
+        NSInteger hallID = 1;
         for (NSDictionary *event in events) {
             EventObject *eventObject = [EventObject new];
             eventObject.startTime = eventCategory[@"time"];
             eventObject.eventDescription = event[@"title"] ? event[@"title"] :
             event[@"description"];
+            eventObject.eventDescription = [eventObject.eventDescription stringByReplacingOccurrencesOfString:@"</br>" withString:@""];
             eventObject.subTitle = event[@"subtitle"] ? event[@"subtitle"] : @"";
             if (event[@"speakers"]) {
-                eventObject.speakers = event[@"speakers"];
+                NSArray *speakersIDArray = event[@"speakers"];
+                eventObject.speakers = [NSMutableArray new];
+                for (NSString *speakerIDSTR in speakersIDArray) {
+                    SpeakerObject *speaker = [self getSpeakerWithID:[speakerIDSTR integerValue]];
+                    [eventObject.speakers addObject:speaker];
+                };
             }
+            eventObject.hallID = hallID++;
             [eCategory.events addObject:eventObject];
         }
         eCategory.order = order++;
         [_eventsCategoryArray addObject:eCategory];
     }
     NSLog(@"something");
+}
+
+- (SpeakerObject *)getSpeakerWithID:(NSInteger)speakerID {
+    for (SpeakerObject *speaker in _speakersArray) {
+        if (speaker.id == speakerID) return speaker;
+    }
+    return nil;
 }
 
 - (NSArray *)getScheduleForHall:(NSInteger)roomID {
@@ -136,6 +152,17 @@
             break;
         default:
             break;
+    }
+    return nil;
+}
+
+- (EventObject *)getEventForSpeakerWithID:(NSInteger)speakerID {
+    for (EventCategory *eCategory in _eventsCategoryArray) {
+        for (EventObject *event in eCategory.events) {
+            for (SpeakerObject *speaker in event.speakers) {
+                if (speaker.id == speakerID) return event;
+            }
+        }
     }
     return nil;
 }

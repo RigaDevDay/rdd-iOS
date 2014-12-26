@@ -20,4 +20,8 @@
     // Configure the view for the selected state
 }
 
+- (IBAction)onBookmarkButtonPress:(id)sender {
+    [self.delegate bookmarkButtonPressedOnCell:self];
+}
+
 @end

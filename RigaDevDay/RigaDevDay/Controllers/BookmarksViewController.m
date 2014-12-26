@@ -12,7 +12,7 @@
 #import "SpeakerInfoViewController.h"
 #import "DataManager.h"
 
-@interface BookmarksViewController () <UITableViewDelegate, UITableViewDataSource> {
+@interface BookmarksViewController () <UITableViewDelegate, UITableViewDataSource, ScheduleTableViewCellDelegate> {
     NSArray *_bookmaredEventsArray;
     EventObject *_seletedEventObject;
 }
@@ -28,8 +28,13 @@
     self.buttonMenu.target = self.revealViewController;
     self.buttonMenu.action = @selector(revealToggle:);
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    _bookmaredEventsArray = [[DataManager sharedInstance] getAllBookmarkedEvents];
     // Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    _bookmaredEventsArray = [[DataManager sharedInstance] getAllBookmarkedEvents];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,9 +46,6 @@
     return [_bookmaredEventsArray count];
 }
 
-// Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
-// Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
-
 - (ScheduleTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     EventObject *event = _bookmaredEventsArray[indexPath.row];
@@ -52,6 +54,16 @@
     cell.labelPresentationSubTitle.text = event.subTitle;
     cell.labelPresentationDescription.text = event.eventDescription;
     cell.labelStartTime.text = event.startTime;
+    cell.labelStartTime.textColor = [self hasSameTimeEventAs:event] ? [UIColor redColor] : [UIColor grayColor];
+    
+    SpeakerObject *speaker = [event.speakers firstObject];
+    if ([[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.id]) {
+        [cell.buttonBookmark setImage:[[DataManager sharedInstance] getActiveBookmarkImage] forState:UIControlStateNormal];
+    } else {
+        [cell.buttonBookmark setImage:[[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO] forState:UIControlStateNormal];
+    }
+
+    cell.delegate = self;
     
     return cell;
 }
@@ -73,6 +85,28 @@
 {
     SpeakerInfoViewController *destController = [segue destinationViewController];
     destController.speaker = [_seletedEventObject.speakers firstObject];
+}
+
+#pragma mark Bookmakrs
+
+- (void)bookmarkButtonPressedOnCell:(ScheduleTableViewCell *)cell {
+    EventObject *event = [_bookmaredEventsArray objectAtIndex:[self.tableView indexPathForCell:cell].row];
+    SpeakerObject *speaker = [event.speakers firstObject];
+    
+    BOOL isBookmarked = [[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.id];
+    [cell.buttonBookmark setImage:isBookmarked ? [[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO] : [[DataManager sharedInstance] getActiveBookmarkImage] forState:UIControlStateNormal];
+    
+    [[DataManager sharedInstance] changeSpeakerBookmarkStateTo:!isBookmarked forSpeakerID:speaker.id];
+    _bookmaredEventsArray = [[DataManager sharedInstance] getAllBookmarkedEvents];
+    [self.tableView reloadData];
+}
+
+- (BOOL)hasSameTimeEventAs:(EventObject *)event {
+    for (EventObject *bEvent in _bookmaredEventsArray) {
+        if ([bEvent isEqual:event])continue;
+        if ([bEvent.startTime isEqualToString:event.startTime]) return YES;
+    }
+    return NO;
 }
 
 @end

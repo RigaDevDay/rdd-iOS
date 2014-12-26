@@ -12,6 +12,10 @@
     NSMutableArray *_speakersArray;
     NSMutableArray *_eventsCategoryArray;
     NSMutableSet *_bookmarkedSpeakers;
+    
+    UIImage *_bookMarkActive;
+    UIImage *_bookmarkInActive;
+    UIImage *_bookmarkInActiveForInfo;
 }
 
 @end
@@ -209,6 +213,8 @@
     return returnArray;
 }
 
+#pragma mark Bookmarks
+
 - (void)setupBookmarks {
      NSArray *bookmarks = (NSArray*)[[NSUserDefaults standardUserDefaults] valueForKey:@"BookmarksArrayKey"];
     if (!bookmarks) {
@@ -216,6 +222,10 @@
     } else {
         _bookmarkedSpeakers = [NSMutableSet setWithArray:bookmarks];
     }
+    
+    _bookMarkActive = [UIImage imageNamed:@"icon_bookmark.png"];
+    _bookmarkInActive = [UIImage imageNamed:@"icon_menu_bookmark.png"];
+    _bookmarkInActiveForInfo = [UIImage imageNamed:@"icon_bookmark_empty.png"];
 }
 
 - (void)changeSpeakerBookmarkStateTo:(BOOL)saved forSpeakerID:(NSInteger)speakerID {
@@ -245,6 +255,15 @@
         }
     }
     return returnArray;
+}
+
+- (UIImage *)getActiveBookmarkImage {
+    return _bookMarkActive;
+}
+
+- (UIImage *)getInActiveBookmarkImageForInfo:(BOOL)forInfo {
+    if (forInfo) return _bookmarkInActiveForInfo;
+    return _bookmarkInActive;
 }
 
 @end

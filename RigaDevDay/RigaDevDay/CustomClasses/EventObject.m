@@ -10,4 +10,13 @@
 
 @implementation EventObject
 
+- (BOOL)isEqual:(id)object {
+    EventObject *eventOjbect = object;
+    if (![self.startTime isEqualToString:eventOjbect.startTime]) return NO;
+    if (![self.eventDescription isEqualToString:eventOjbect.eventDescription]) return NO;
+    if (![self.subTitle isEqualToString:eventOjbect.subTitle]) return NO;
+    if (self.hallID != eventOjbect.hallID) return NO;
+    return YES;
+}
+
 @end

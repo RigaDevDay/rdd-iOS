@@ -89,6 +89,9 @@
 		B70F61531A484386004EA563 /* ic_drawer.png in Resources */ = {isa = PBXBuildFile; fileRef = B70F61521A484386004EA563 /* ic_drawer.png */; };
 		B70F61561A4846C6004EA563 /* ShowCaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B70F61551A4846C6004EA563 /* ShowCaseCell.m */; };
 		B70F61591A4846EB004EA563 /* ShowcaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B70F61581A4846EB004EA563 /* ShowcaseViewController.m */; };
+		B7657A861A4DADE900EDAA28 /* Hall_imag.png in Resources */ = {isa = PBXBuildFile; fileRef = B7657A851A4DADE900EDAA28 /* Hall_imag.png */; };
+		B7657A891A4DAEA900EDAA28 /* Hall_imag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B7657A871A4DAEA900EDAA28 /* Hall_imag@2x.png */; };
+		B7657A8A1A4DAEA900EDAA28 /* Hall_imag@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B7657A881A4DAEA900EDAA28 /* Hall_imag@3x.png */; };
 		B7B16D011A361966005267AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D001A361966005267AF /* main.m */; };
 		B7B16D041A361966005267AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D031A361966005267AF /* AppDelegate.m */; };
 		B7B16D0A1A361966005267AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7B16D081A361966005267AF /* Main.storyboard */; };
@@ -246,6 +249,9 @@
 		B70F61551A4846C6004EA563 /* ShowCaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShowCaseCell.m; path = Controllers/ShowCaseCell.m; sourceTree = "<group>"; };
 		B70F61571A4846EB004EA563 /* ShowcaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShowcaseViewController.h; path = Controllers/ShowcaseViewController.h; sourceTree = "<group>"; };
 		B70F61581A4846EB004EA563 /* ShowcaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShowcaseViewController.m; path = Controllers/ShowcaseViewController.m; sourceTree = "<group>"; };
+		B7657A851A4DADE900EDAA28 /* Hall_imag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hall_imag.png; sourceTree = "<group>"; };
+		B7657A871A4DAEA900EDAA28 /* Hall_imag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hall_imag@2x.png"; sourceTree = "<group>"; };
+		B7657A881A4DAEA900EDAA28 /* Hall_imag@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hall_imag@3x.png"; sourceTree = "<group>"; };
 		B7B16CFB1A361966005267AF /* RigaDevDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RigaDevDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7B16CFF1A361966005267AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7B16D001A361966005267AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -401,10 +407,13 @@
 				B70F60D61A483F96004EA563 /* backstage_28.jpeg */,
 				B70F60D71A483F96004EA563 /* backstage_29.jpeg */,
 				B70F60D81A483F96004EA563 /* backstage_3.jpeg */,
+				B7657A851A4DADE900EDAA28 /* Hall_imag.png */,
 				B70F60D91A483F96004EA563 /* backstage_30.jpeg */,
 				B70F60DA1A483F96004EA563 /* backstage_31.jpeg */,
 				B70F60DB1A483F96004EA563 /* backstage_4.jpeg */,
 				B70F60DC1A483F96004EA563 /* backstage_5.jpeg */,
+				B7657A871A4DAEA900EDAA28 /* Hall_imag@2x.png */,
+				B7657A881A4DAEA900EDAA28 /* Hall_imag@3x.png */,
 				B70F60DD1A483F96004EA563 /* backstage_6.jpeg */,
 				B70F60DE1A483F96004EA563 /* backstage_7.jpeg */,
 				B70F60DF1A483F96004EA563 /* backstage_8.jpeg */,
@@ -860,6 +869,7 @@
 				B70F61111A483F96004EA563 /* backstage_16.jpeg in Resources */,
 				B70F61511A483F96004EA563 /* speaker_9.png in Resources */,
 				B70F613B1A483F96004EA563 /* speaker_17.png in Resources */,
+				B7657A891A4DAEA900EDAA28 /* Hall_imag@2x.png in Resources */,
 				B70F61471A483F96004EA563 /* speaker_28.png in Resources */,
 				B7FDD0D91A4AC1560001C098 /* jug.png in Resources */,
 				B70F61331A483F96004EA563 /* speaker_1.png in Resources */,
@@ -879,6 +889,7 @@
 				B70F613A1A483F96004EA563 /* speaker_16.png in Resources */,
 				B70F61201A483F96004EA563 /* backstage_3.jpeg in Resources */,
 				B70F61321A483F96004EA563 /* speaker_0.png in Resources */,
+				B7657A8A1A4DAEA900EDAA28 /* Hall_imag@3x.png in Resources */,
 				B7FDD0D41A4AC1560001C098 /* gtug_sthlm.png in Resources */,
 				B70F610B1A483F96004EA563 /* backstage_10.jpeg in Resources */,
 				B70F612F1A483F96004EA563 /* icon_menu_speakers.png in Resources */,
@@ -918,6 +929,7 @@
 				B70F61451A483F96004EA563 /* speaker_26.png in Resources */,
 				B70F61101A483F96004EA563 /* backstage_15.jpeg in Resources */,
 				B70F61411A483F96004EA563 /* speaker_22.png in Resources */,
+				B7657A861A4DADE900EDAA28 /* Hall_imag.png in Resources */,
 				B70F61231A483F96004EA563 /* backstage_4.jpeg in Resources */,
 				B7FDD0E71A4AC1560001C098 /* riga-comm.png in Resources */,
 				B70F61341A483F96004EA563 /* speaker_10.png in Resources */,

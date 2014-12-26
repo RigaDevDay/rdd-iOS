@@ -7,11 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+@class ScheduleTableViewCell;
+@protocol ScheduleTableViewCellDelegate <NSObject>
+
+- (void)bookmarkButtonPressedOnCell:(ScheduleTableViewCell *)cell;
+
+@end
 
 @interface ScheduleTableViewCell : UITableViewCell
+
+@property id<ScheduleTableViewCellDelegate> delegate;
+
 @property (weak, nonatomic) IBOutlet UILabel *labelSpeakerName;
 @property (weak, nonatomic) IBOutlet UILabel *labelPresentationDescription;
 @property (weak, nonatomic) IBOutlet UILabel *labelPresentationSubTitle;
 @property (weak, nonatomic) IBOutlet UILabel *labelStartTime;
+@property (weak, nonatomic) IBOutlet UIButton *buttonBookmark;
 
 @end

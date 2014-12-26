@@ -15,8 +15,6 @@
 @interface SpeakersViewController () <UITableViewDataSource, UITableViewDelegate, SpeakerTableViewCellDelegate> {
     NSArray *_speakersArray;
     SpeakerObject *_selectedSpeaker;
-    UIImage *bookMarkActive;
-    UIImage *bookmarkInActive;
 }
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonMenu;
@@ -32,11 +30,13 @@
     self.buttonMenu.action = @selector(revealToggle:);
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
-    bookMarkActive = [UIImage imageNamed:@"icon_bookmark.png"];
-    bookmarkInActive = [UIImage imageNamed:@"icon_menu_bookmark.png"];
-    
     _speakersArray = [[DataManager sharedInstance] getAllSpeakers];
     // Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,9 +56,9 @@
     cell.labelName.text = speaker.name;
     cell.labelPresentation.text = speaker.bio;
     if ([[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.id]) {
-        [cell.buttonBookmark setImage:bookMarkActive forState:UIControlStateNormal];
+        [cell.buttonBookmark setImage:[[DataManager sharedInstance] getActiveBookmarkImage] forState:UIControlStateNormal];
     } else {
-        [cell.buttonBookmark setImage:bookmarkInActive forState:UIControlStateNormal];
+        [cell.buttonBookmark setImage:[[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO] forState:UIControlStateNormal];
     }
     
     return cell;
@@ -77,13 +77,8 @@
 
 - (void)bookmarkButtonPressedOnCell:(SpeakerTableViewCell *)cell {
     SpeakerObject *speaker = [_speakersArray objectAtIndex:[self.tableView indexPathForCell:cell].row];
-    if ([[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.id]) {
-        [cell.buttonBookmark setImage:bookmarkInActive forState:UIControlStateNormal];
-        [[DataManager sharedInstance] changeSpeakerBookmarkStateTo:NO forSpeakerID:speaker.id];
-    } else {
-        [cell.buttonBookmark setImage:bookMarkActive forState:UIControlStateNormal];
-        [[DataManager sharedInstance] changeSpeakerBookmarkStateTo:YES forSpeakerID:speaker.id];
-    }
-
+    BOOL isBookmarked = [[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.id];
+    [cell.buttonBookmark setImage:isBookmarked ? [[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO] : [[DataManager sharedInstance] getActiveBookmarkImage] forState:UIControlStateNormal];
+    [[DataManager sharedInstance] changeSpeakerBookmarkStateTo:!isBookmarked forSpeakerID:speaker.id];
 }
 @end

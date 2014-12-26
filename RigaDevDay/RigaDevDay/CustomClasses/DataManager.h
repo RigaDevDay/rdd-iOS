@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "EventCategory.h"
 #import "SpeakerObject.h"
 #import "ScheduleObject.h"
@@ -23,5 +24,9 @@
 - (void)changeSpeakerBookmarkStateTo:(BOOL)saved forSpeakerID:(NSInteger)speakerID;
 - (BOOL)isSpeakerBookmarkedWithID:(NSInteger)speakerID;
 - (NSArray *)getAllBookmarkedEvents;
+
+
+- (UIImage *)getActiveBookmarkImage;
+- (UIImage *)getInActiveBookmarkImageForInfo:(BOOL)forInfo;
 
 @end

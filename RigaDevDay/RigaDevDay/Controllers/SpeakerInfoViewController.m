@@ -54,7 +54,9 @@
 }
 
 - (IBAction)onBookmarkButtonPress:(id)sender {
-    [[DataManager sharedInstance] changeSpeakerBookmarkStateTo:YES forSpeakerID:self.speaker.id];
+    BOOL isBookmarked = [[DataManager sharedInstance] isSpeakerBookmarkedWithID:self.speaker.id];
+    [self.buttonBookmark setImage:isBookmarked ? [[DataManager sharedInstance] getInActiveBookmarkImageForInfo:YES] : [[DataManager sharedInstance] getActiveBookmarkImage] forState:UIControlStateNormal];
+    [[DataManager sharedInstance] changeSpeakerBookmarkStateTo:!isBookmarked forSpeakerID:self.speaker.id];
 }
 - (IBAction)onBlogButtonPress:(id)sender {
     if (self.speaker.blog) [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.speaker.blog]];
@@ -94,6 +96,9 @@
     self.imageViewProfile.image = [UIImage imageNamed:[NSString stringWithFormat:@"speaker_%li",(long)self.speaker.id]];
     self.imageViewBackground.image = [UIImage imageNamed:[NSString stringWithFormat:@"backstage_%li.jpeg",(long)self.speaker.id]];
     [self.buttonBlog setTitle:[self getBlogAndURLSrting] forState:UIControlStateNormal];
+    BOOL isBookmarked = [[DataManager sharedInstance] isSpeakerBookmarkedWithID:self.speaker.id];
+    
+    [self.buttonBookmark setImage:isBookmarked ? [[DataManager sharedInstance] getActiveBookmarkImage] : [[DataManager sharedInstance] getInActiveBookmarkImageForInfo:YES] forState:UIControlStateNormal];
     
     // Evnet Info
     self.labelTileAndLocation.text = [self getEventTimeAndLocationString];

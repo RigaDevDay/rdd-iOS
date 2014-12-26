@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface GlobalMetupTableViewCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UILabel *labelPresentationName;
 @property (weak, nonatomic) IBOutlet UILabel *labelStartTime;
 

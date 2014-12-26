@@ -11,6 +11,7 @@
 @interface DataManager () {
     NSMutableArray *_speakersArray;
     NSMutableArray *_eventsCategoryArray;
+    NSMutableSet *_bookmarkedSpeakers;
 }
 
 @end
@@ -33,6 +34,7 @@
     if (self) {
         [self setupSpeakers];
         [self setupEventArray];
+        [self setupBookmarks];
     }
     return self;
 }
@@ -203,6 +205,44 @@
     NSMutableArray *returnArray = [NSMutableArray new];
     for (EventCategory *eCategory in _eventsCategoryArray) {
         [returnArray addObject:[eCategory.events count] > 1 ? eCategory.events[4] : eCategory.events[0]];
+    }
+    return returnArray;
+}
+
+- (void)setupBookmarks {
+     NSArray *bookmarks = (NSArray*)[[NSUserDefaults standardUserDefaults] valueForKey:@"BookmarksArrayKey"];
+    if (!bookmarks) {
+        _bookmarkedSpeakers = [NSMutableSet new];
+    } else {
+        _bookmarkedSpeakers = [NSMutableSet setWithArray:bookmarks];
+    }
+}
+
+- (void)changeSpeakerBookmarkStateTo:(BOOL)saved forSpeakerID:(NSInteger)speakerID {
+    
+    if (saved) {
+        [_bookmarkedSpeakers addObject:[NSNumber numberWithLong:speakerID]];
+    } else {
+        [_bookmarkedSpeakers removeObject:[NSNumber numberWithLong:speakerID]];
+    }
+    [[NSUserDefaults standardUserDefaults] setValue:[_bookmarkedSpeakers allObjects]  forKey:@"BookmarksArrayKey"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (BOOL)isSpeakerBookmarkedWithID:(NSInteger)speakerID {
+    return [_bookmarkedSpeakers containsObject:[NSNumber numberWithLong:speakerID]];
+}
+
+- (NSArray *)getAllBookmarkedEvents {
+    NSMutableArray *returnArray = [NSMutableArray new];
+    for (EventCategory *eCategory in _eventsCategoryArray) {
+        for (EventObject *event in eCategory.events) {
+            for (SpeakerObject *speaker in event.speakers) {
+                if ([_bookmarkedSpeakers containsObject:[NSNumber numberWithLong:speaker.id]]) {
+                    [returnArray addObject:event];
+                }
+            }
+        }
     }
     return returnArray;
 }

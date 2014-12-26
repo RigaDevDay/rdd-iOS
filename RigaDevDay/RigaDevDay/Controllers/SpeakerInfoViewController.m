@@ -54,7 +54,7 @@
 }
 
 - (IBAction)onBookmarkButtonPress:(id)sender {
-    
+    [[DataManager sharedInstance] changeSpeakerBookmarkStateTo:YES forSpeakerID:self.speaker.id];
 }
 - (IBAction)onBlogButtonPress:(id)sender {
     if (self.speaker.blog) [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.speaker.blog]];

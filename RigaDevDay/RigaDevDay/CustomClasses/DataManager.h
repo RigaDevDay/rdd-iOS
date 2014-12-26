@@ -19,4 +19,9 @@
 - (NSArray *)getScheduleForHall:(NSInteger)roomID;
 - (EventObject *)getEventForSpeakerWithID:(NSInteger)speakerID;
 
+
+- (void)changeSpeakerBookmarkStateTo:(BOOL)saved forSpeakerID:(NSInteger)speakerID;
+- (BOOL)isSpeakerBookmarkedWithID:(NSInteger)speakerID;
+- (NSArray *)getAllBookmarkedEvents;
+
 @end

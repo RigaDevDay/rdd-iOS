@@ -18,6 +18,7 @@
 }
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonMenu;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UILabel *labelNoBookmarks;
 
 @end
 
@@ -28,12 +29,14 @@
     self.buttonMenu.target = self.revealViewController;
     self.buttonMenu.action = @selector(revealToggle:);
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     // Do any additional setup after loading the view.
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     _bookmaredEventsArray = [[DataManager sharedInstance] getAllBookmarkedEvents];
+    self.labelNoBookmarks.hidden = [_bookmaredEventsArray count] ? YES : NO;
     [self.tableView reloadData];
 }
 

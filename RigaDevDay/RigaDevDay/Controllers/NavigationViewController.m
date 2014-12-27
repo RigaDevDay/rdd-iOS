@@ -20,7 +20,7 @@ static NSString *simpleTableIdentifier = @"TableCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _navigationArray = @[@"Home",@"About", @"Speakers", @"Schedule", @"Venue", @"Organizers", @"My Bookmarks"];
+    _navigationArray = @[@"Speakers", @"Schedule", @"Venue", @"Organizers", @"My Bookmarks"];
      // Small UI Improvments
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.tableView.contentInset = UIEdgeInsetsMake(21, 0, 0, 0);

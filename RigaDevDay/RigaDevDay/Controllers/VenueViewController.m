@@ -12,9 +12,11 @@
 #import "MKMapView+ZoomLevel.h"
 #import "SWRevealViewController.h"
 
-@interface VenueViewController () <MKMapViewDelegate>
-@property (strong, nonatomic) IBOutlet MKMapView *mapView;
+@interface VenueViewController () <MKMapViewDelegate, CLLocationManagerDelegate>
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonMenu;
+
 
 @end
 
@@ -29,12 +31,26 @@
     
     self.mapView.delegate = self;
     self.mapView.showsUserLocation = YES;
+    
+
+    self.locationManager = [[CLLocationManager alloc]init];
+    self.locationManager.delegate = self;
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [self.locationManager requestWhenInUseAuthorization];
+    }
+    [self.locationManager startUpdatingLocation];
     // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.mapView setShowsUserLocation: YES];
 }
 
 - (void)mapViewDidFinishLoadingMap:(MKMapView *)mapView {
@@ -45,6 +61,11 @@
 {
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 800, 800);
     [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+     didUpdateLocations:(NSArray *)locations {
+    
 }
 
 @end

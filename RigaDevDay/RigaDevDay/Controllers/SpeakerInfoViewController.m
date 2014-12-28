@@ -43,6 +43,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+//    CGRect buttonFrame = self.buttonSpeech.frame;
+//    buttonFrame.origin.y = self.imageViewBackground.frame.size.height;
+//    self.buttonSpeech.frame = buttonFrame;
+}
+
 #pragma mark Buttons
 
 - (void)backButtonPress {
@@ -90,6 +101,11 @@
 }
 
 - (void)setUpInfo {
+    
+    // Small UI improvements
+    [self.buttonTwitter.imageView setContentMode:UIViewContentModeScaleAspectFit];
+    [self.buttonBookmark.imageView setContentMode:UIViewContentModeScaleAspectFit];
+    
     // Speaker Info
     self.labelSpeakerName.text = self.speaker.name;
     self.labelWorkPlace.text = self.speaker.company;

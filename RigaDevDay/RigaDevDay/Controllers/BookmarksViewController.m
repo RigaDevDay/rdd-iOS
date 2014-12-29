@@ -101,6 +101,7 @@
     
     [[DataManager sharedInstance] changeSpeakerBookmarkStateTo:!isBookmarked forSpeakerID:speaker.id];
     _bookmaredEventsArray = [[DataManager sharedInstance] getAllBookmarkedEvents];
+    self.labelNoBookmarks.hidden = [_bookmaredEventsArray count] ? YES : NO;
     [self.tableView reloadData];
 }
 

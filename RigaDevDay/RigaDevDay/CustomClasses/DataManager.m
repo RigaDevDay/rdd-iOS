@@ -57,6 +57,7 @@
     // Get the data
     NSURLResponse *response;
     NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
+    if (![data length]) return;
     
     // Now create a NSDictionary from the JSON data
     NSError *error;
@@ -95,6 +96,7 @@
     // Get the data
     NSURLResponse *response;
     NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
+    if (![data length]) return;
     
     // Now create a NSDictionary from the JSON data
     NSError *error;
@@ -264,6 +266,29 @@
 - (UIImage *)getInActiveBookmarkImageForInfo:(BOOL)forInfo {
     if (forInfo) return _bookmarkInActiveForInfo;
     return _bookmarkInActive;
+}
+
+- (NSString *)getInfoStoryboardSegue {
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+        CGSize result = [[UIScreen mainScreen] bounds].size;
+        CGFloat scale = [UIScreen mainScreen].scale;
+        result = CGSizeMake(result.width * scale, result.height * scale);
+        
+        if(result.height == 1136){
+            return @"SPEAKER_SPEECH_INFO_SEGUEUE_4";
+            
+        } else if(result.height == 1334){
+            return @"SPEAKER_SPEECH_INFO_SEGUEUE_4.7";
+        } else if(result.height == 2208){
+            return @"SPEAKER_SPEECH_INFO_SEGUEUE_5.5";
+        } else if(result.height == 960){
+            return @"SPEAKER_SPEECH_INFO_SEGUEUE_3.5";
+        }
+        
+    } else {
+        return @"SPEAKER_SPEECH_INFO_SEGUEUE_ipad";
+    }
+    return nil;
 }
 
 @end

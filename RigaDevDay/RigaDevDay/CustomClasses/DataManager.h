@@ -29,4 +29,6 @@
 - (UIImage *)getActiveBookmarkImage;
 - (UIImage *)getInActiveBookmarkImageForInfo:(BOOL)forInfo;
 
+- (NSString *)getInfoStoryboardSegue;
+
 @end

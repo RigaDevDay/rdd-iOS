@@ -2812,6 +2812,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backstage_1.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="mfe-R7-jZz" userLabel="Background ImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="394"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="A2g-M4-VmO"/>
+                                    <constraint firstAttribute="height" constant="177" id="HfF-TO-osu"/>
+                                    <constraint firstAttribute="width" constant="768" id="I70-MB-hax"/>
+                                    <constraint firstAttribute="width" constant="320" id="JlJ-qk-tYi"/>
+                                    <constraint firstAttribute="width" constant="320" id="KDj-LY-Khq"/>
+                                    <constraint firstAttribute="height" constant="394" id="Lka-EJ-wl9"/>
+                                    <constraint firstAttribute="width" constant="768" id="MaN-YE-wBZ"/>
+                                    <constraint firstAttribute="width" constant="768" id="Mje-QU-wAu"/>
+                                    <constraint firstAttribute="height" constant="177" id="ZIK-yx-RAO"/>
+                                    <constraint firstAttribute="width" constant="320" id="dQQ-kW-6tP"/>
+                                    <constraint firstAttribute="height" constant="177" id="dem-yY-TWW"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="177" id="e4a-hU-nMR"/>
+                                    <constraint firstAttribute="width" constant="320" id="gOe-Mr-T0y"/>
+                                    <constraint firstAttribute="width" constant="320" id="gre-Bo-SPW"/>
+                                    <constraint firstAttribute="height" constant="177" id="lWX-8E-DD7"/>
+                                    <constraint firstAttribute="width" constant="320" id="lzb-2D-eD2"/>
+                                    <constraint firstAttribute="height" constant="177" id="mHf-cR-R0N"/>
+                                    <constraint firstAttribute="height" constant="394" id="mLY-Lc-5HK"/>
+                                    <constraint firstAttribute="height" constant="177" id="oKK-5I-ugC"/>
+                                    <constraint firstAttribute="width" constant="320" id="vn9-kg-LLA"/>
+                                    <constraint firstAttribute="height" constant="177" id="wgL-8c-Dem"/>
+                                    <constraint firstAttribute="height" constant="394" id="xM2-JR-M4q"/>
+                                    <constraint firstAttribute="width" constant="320" id="zol-Zj-GEd"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="A2g-M4-VmO"/>
+                                        <exclude reference="HfF-TO-osu"/>
+                                        <exclude reference="I70-MB-hax"/>
+                                        <exclude reference="JlJ-qk-tYi"/>
+                                        <exclude reference="KDj-LY-Khq"/>
+                                        <exclude reference="Lka-EJ-wl9"/>
+                                        <exclude reference="Mje-QU-wAu"/>
+                                        <exclude reference="ZIK-yx-RAO"/>
+                                        <exclude reference="dQQ-kW-6tP"/>
+                                        <exclude reference="dem-yY-TWW"/>
+                                        <exclude reference="e4a-hU-nMR"/>
+                                        <exclude reference="gOe-Mr-T0y"/>
+                                        <exclude reference="gre-Bo-SPW"/>
+                                        <exclude reference="lWX-8E-DD7"/>
+                                        <exclude reference="lzb-2D-eD2"/>
+                                        <exclude reference="mHf-cR-R0N"/>
+                                        <exclude reference="mLY-Lc-5HK"/>
+                                        <exclude reference="oKK-5I-ugC"/>
+                                        <exclude reference="vn9-kg-LLA"/>
+                                        <exclude reference="wgL-8c-Dem"/>
+                                        <exclude reference="xM2-JR-M4q"/>
+                                        <exclude reference="zol-Zj-GEd"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="speaker_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="BRw-AJ-FQM" userLabel="Profile ImageView">
                                 <rect key="frame" x="331" y="103" width="107" height="102"/>
                                 <constraints>
@@ -3014,6 +3068,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="onBookmarkButtonPress:" destination="pjE-XR-wLh" eventType="touchUpInside" id="cxZ-n2-8iL"/>
+                                    <action selector="onBookmarkButtonPress:" destination="IZ7-VW-m3a" eventType="touchUpInside" id="glE-n5-g5u"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qhm-Qi-wpf">
@@ -3093,6 +3148,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="onAboutButtonPress:" destination="pjE-XR-wLh" eventType="touchUpInside" id="2IZ-tv-nkR"/>
+                                    <action selector="onAboutButtonPress:" destination="IZ7-VW-m3a" eventType="touchUpInside" id="Tz1-eP-bWt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9M-bd-8ng" userLabel="Twitter">
@@ -3141,6 +3197,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <action selector="onTwitterButtonPress:" destination="IZ7-VW-m3a" eventType="touchUpInside" id="Iml-wh-vOU"/>
                                     <action selector="onTwitterButtonPress:" destination="pjE-XR-wLh" eventType="touchUpInside" id="W69-6v-w4V"/>
                                 </connections>
                             </button>
@@ -3325,6 +3382,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="onSpeechButtonPress:" destination="pjE-XR-wLh" eventType="touchUpInside" id="bpe-mf-dCF"/>
+                                    <action selector="onSpeechButtonPress:" destination="IZ7-VW-m3a" eventType="touchUpInside" id="n7m-Ag-HpF"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time and location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QYc-vx-6vG">
@@ -3413,63 +3471,10 @@
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <action selector="onBlogButtonPress:" destination="IZ7-VW-m3a" eventType="touchUpInside" id="UQE-XM-lE8"/>
                                     <action selector="onBlogButtonPress:" destination="pjE-XR-wLh" eventType="touchUpInside" id="e3q-VN-E0M"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backstage_1.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="mfe-R7-jZz" userLabel="Background ImageView">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="394"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="A2g-M4-VmO"/>
-                                    <constraint firstAttribute="height" constant="177" id="HfF-TO-osu"/>
-                                    <constraint firstAttribute="width" constant="768" id="I70-MB-hax"/>
-                                    <constraint firstAttribute="width" constant="320" id="JlJ-qk-tYi"/>
-                                    <constraint firstAttribute="width" constant="320" id="KDj-LY-Khq"/>
-                                    <constraint firstAttribute="height" constant="394" id="Lka-EJ-wl9"/>
-                                    <constraint firstAttribute="width" constant="768" id="MaN-YE-wBZ"/>
-                                    <constraint firstAttribute="width" constant="768" id="Mje-QU-wAu"/>
-                                    <constraint firstAttribute="height" constant="177" id="ZIK-yx-RAO"/>
-                                    <constraint firstAttribute="width" constant="320" id="dQQ-kW-6tP"/>
-                                    <constraint firstAttribute="height" constant="177" id="dem-yY-TWW"/>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="177" id="e4a-hU-nMR"/>
-                                    <constraint firstAttribute="width" constant="320" id="gOe-Mr-T0y"/>
-                                    <constraint firstAttribute="width" constant="320" id="gre-Bo-SPW"/>
-                                    <constraint firstAttribute="height" constant="177" id="lWX-8E-DD7"/>
-                                    <constraint firstAttribute="width" constant="320" id="lzb-2D-eD2"/>
-                                    <constraint firstAttribute="height" constant="177" id="mHf-cR-R0N"/>
-                                    <constraint firstAttribute="height" constant="394" id="mLY-Lc-5HK"/>
-                                    <constraint firstAttribute="height" constant="177" id="oKK-5I-ugC"/>
-                                    <constraint firstAttribute="width" constant="320" id="vn9-kg-LLA"/>
-                                    <constraint firstAttribute="height" constant="177" id="wgL-8c-Dem"/>
-                                    <constraint firstAttribute="height" constant="394" id="xM2-JR-M4q"/>
-                                    <constraint firstAttribute="width" constant="320" id="zol-Zj-GEd"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="A2g-M4-VmO"/>
-                                        <exclude reference="HfF-TO-osu"/>
-                                        <exclude reference="I70-MB-hax"/>
-                                        <exclude reference="JlJ-qk-tYi"/>
-                                        <exclude reference="KDj-LY-Khq"/>
-                                        <exclude reference="Lka-EJ-wl9"/>
-                                        <exclude reference="Mje-QU-wAu"/>
-                                        <exclude reference="ZIK-yx-RAO"/>
-                                        <exclude reference="dQQ-kW-6tP"/>
-                                        <exclude reference="dem-yY-TWW"/>
-                                        <exclude reference="e4a-hU-nMR"/>
-                                        <exclude reference="gOe-Mr-T0y"/>
-                                        <exclude reference="gre-Bo-SPW"/>
-                                        <exclude reference="lWX-8E-DD7"/>
-                                        <exclude reference="lzb-2D-eD2"/>
-                                        <exclude reference="mHf-cR-R0N"/>
-                                        <exclude reference="mLY-Lc-5HK"/>
-                                        <exclude reference="oKK-5I-ugC"/>
-                                        <exclude reference="vn9-kg-LLA"/>
-                                        <exclude reference="wgL-8c-Dem"/>
-                                        <exclude reference="xM2-JR-M4q"/>
-                                        <exclude reference="zol-Zj-GEd"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -3543,6 +3548,7 @@
                                 <exclude reference="m7c-RT-ZJf"/>
                                 <exclude reference="sps-O2-30a"/>
                                 <exclude reference="xsX-LG-wZ0"/>
+                                <exclude reference="PXr-zF-cx3"/>
                                 <exclude reference="ct5-vW-LSt"/>
                             </mask>
                         </variation>
@@ -3554,7 +3560,19 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
+                        <outlet property="buttonAbout" destination="Qhm-Qi-wpf" id="adB-Bk-21A"/>
+                        <outlet property="buttonBlog" destination="VX1-HR-ehF" id="cDF-Ic-PCG"/>
+                        <outlet property="buttonBookmark" destination="KIb-nn-2cB" id="31k-mU-HBz"/>
                         <outlet property="buttonMenu" destination="YFg-1D-vEu" id="kIa-Bs-TGo"/>
+                        <outlet property="buttonSpeech" destination="3g5-vD-3Ge" id="ulg-VT-n6I"/>
+                        <outlet property="buttonTwitter" destination="t9M-bd-8ng" id="LyJ-Nc-6Cj"/>
+                        <outlet property="imageViewBackground" destination="mfe-R7-jZz" id="9O3-Pi-hG5"/>
+                        <outlet property="imageViewProfile" destination="BRw-AJ-FQM" id="W1h-ql-Bs3"/>
+                        <outlet property="labelMainTitle" destination="hF7-5n-jau" id="4WQ-ng-bZI"/>
+                        <outlet property="labelSpeakerName" destination="azb-zp-ZWp" id="xsq-3i-J3W"/>
+                        <outlet property="labelTileAndLocation" destination="QYc-vx-6vG" id="k6W-7M-EML"/>
+                        <outlet property="labelWorkPlace" destination="bmb-re-1lw" id="FPz-t8-OVT"/>
+                        <outlet property="textViewInformation" destination="wLZ-mu-ysB" id="npd-iz-ZOw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BFe-e8-zyy" userLabel="First Responder" sceneMemberID="firstResponder"/>

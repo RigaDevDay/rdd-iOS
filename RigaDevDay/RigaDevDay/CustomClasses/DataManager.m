@@ -43,20 +43,30 @@
     return self;
 }
 
+- (NSData *)dataFromJSONFileNamed:(NSString *)fileName
+{
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    NSString *resource = [bundle pathForResource:fileName ofType:@"json"];
+    NSData *jsonData = [NSData dataWithContentsOfFile:resource];
+    return jsonData;
+}
+
+
 - (void)setupSpeakers {
     
     _speakersArray = [NSMutableArray new];
     
-    // Create a NSURLRequest with the given URL
-    NSURL *url = [NSURL URLWithString:@"https://raw.githubusercontent.com/RigaDevDay/RigaDevDay.github.io/master/data/speakers.json"];
-
-    NSURLRequest *request = [NSURLRequest requestWithURL:url
-                                             cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
-                                         timeoutInterval:30.0];
-    
-    // Get the data
-    NSURLResponse *response;
-    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
+//    // Create a NSURLRequest with the given URL
+//    NSURL *url = [NSURL URLWithString:@"https://raw.githubusercontent.com/RigaDevDay/RigaDevDay.github.io/master/data/speakers.json"];
+//
+//    NSURLRequest *request = [NSURLRequest requestWithURL:url
+//                                             cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+//                                         timeoutInterval:30.0];
+//    
+//    // Get the data
+//    NSURLResponse *response;
+//    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
+    NSData *data = [self dataFromJSONFileNamed:@"speakers"];
     if (![data length]) return;
     
     // Now create a NSDictionary from the JSON data
@@ -86,16 +96,17 @@
 - (void)setupEventArray {
     _eventsCategoryArray = [NSMutableArray new];
     
-    // Create a NSURLRequest with the given URL
-    NSURL *url = [NSURL URLWithString:@"https://raw.githubusercontent.com/RigaDevDay/RigaDevDay.github.io/master/data/schedule.json"];
-    
-    NSURLRequest *request = [NSURLRequest requestWithURL:url
-                                             cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
-                                         timeoutInterval:30.0];
-    
-    // Get the data
-    NSURLResponse *response;
-    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
+//    // Create a NSURLRequest with the given URL
+//    NSURL *url = [NSURL URLWithString:@"https://raw.githubusercontent.com/RigaDevDay/RigaDevDay.github.io/master/data/schedule.json"];
+//    
+//    NSURLRequest *request = [NSURLRequest requestWithURL:url
+//                                             cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+//                                         timeoutInterval:30.0];
+//    
+//    // Get the data
+//    NSURLResponse *response;
+//    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
+    NSData *data = [self dataFromJSONFileNamed:@"schedule"];
     if (![data length]) return;
     
     // Now create a NSDictionary from the JSON data

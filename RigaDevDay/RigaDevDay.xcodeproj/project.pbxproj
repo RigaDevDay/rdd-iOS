@@ -97,6 +97,8 @@
 		B71B18831A5141CC00A295B1 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B71B187C1A5141CC00A295B1 /* Default.png */; };
 		B71B18841A5141CC00A295B1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71B187D1A5141CC00A295B1 /* Default@2x.png */; };
 		B71B18861A5142EE00A295B1 /* LaunchScreenPNG.png in Resources */ = {isa = PBXBuildFile; fileRef = B71B18851A5142EE00A295B1 /* LaunchScreenPNG.png */; };
+		B7519A021A517F350036E2D6 /* schedule.json in Resources */ = {isa = PBXBuildFile; fileRef = B7519A001A517F350036E2D6 /* schedule.json */; };
+		B7519A031A517F350036E2D6 /* speakers.json in Resources */ = {isa = PBXBuildFile; fileRef = B7519A011A517F350036E2D6 /* speakers.json */; };
 		B7657A861A4DADE900EDAA28 /* Hall_imag.png in Resources */ = {isa = PBXBuildFile; fileRef = B7657A851A4DADE900EDAA28 /* Hall_imag.png */; };
 		B7657A891A4DAEA900EDAA28 /* Hall_imag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B7657A871A4DAEA900EDAA28 /* Hall_imag@2x.png */; };
 		B7657A8A1A4DAEA900EDAA28 /* Hall_imag@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B7657A881A4DAEA900EDAA28 /* Hall_imag@3x.png */; };
@@ -265,6 +267,8 @@
 		B71B187C1A5141CC00A295B1 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		B71B187D1A5141CC00A295B1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		B71B18851A5142EE00A295B1 /* LaunchScreenPNG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreenPNG.png; sourceTree = "<group>"; };
+		B7519A001A517F350036E2D6 /* schedule.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = schedule.json; path = RigaDevDay/Resources/schedule.json; sourceTree = SOURCE_ROOT; };
+		B7519A011A517F350036E2D6 /* speakers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = speakers.json; path = RigaDevDay/Resources/speakers.json; sourceTree = SOURCE_ROOT; };
 		B7657A851A4DADE900EDAA28 /* Hall_imag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hall_imag.png; sourceTree = "<group>"; };
 		B7657A871A4DAEA900EDAA28 /* Hall_imag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hall_imag@2x.png"; sourceTree = "<group>"; };
 		B7657A881A4DAEA900EDAA28 /* Hall_imag@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hall_imag@3x.png"; sourceTree = "<group>"; };
@@ -559,6 +563,8 @@
 		B7B16D241A3619B0005267AF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B7519A001A517F350036E2D6 /* schedule.json */,
+				B7519A011A517F350036E2D6 /* speakers.json */,
 				B7FDD0A91A4AC1560001C098 /* OrganizersLogo */,
 				B7B16D0B1A361966005267AF /* Images.xcassets */,
 				B70F60C11A483F96004EA563 /* drawable */,
@@ -942,6 +948,7 @@
 				B70F612C1A483F96004EA563 /* icon_menu_bookmark.png in Resources */,
 				B70F61491A483F96004EA563 /* speaker_3.png in Resources */,
 				B71B187E1A5141CC00A295B1 /* Default-568h@2x.png in Resources */,
+				B7519A031A517F350036E2D6 /* speakers.json in Resources */,
 				B70F61371A483F96004EA563 /* speaker_13.png in Resources */,
 				B70F611F1A483F96004EA563 /* backstage_29.jpeg in Resources */,
 				B70F61151A483F96004EA563 /* backstage_2.jpeg in Resources */,
@@ -969,6 +976,7 @@
 				B70F61211A483F96004EA563 /* backstage_30.jpeg in Resources */,
 				B7FDD0CF1A4AC1560001C098 /* enjoy.png in Resources */,
 				B70F61301A483F96004EA563 /* icon_menu_venue.png in Resources */,
+				B7519A021A517F350036E2D6 /* schedule.json in Resources */,
 				B70F61461A483F96004EA563 /* speaker_27.png in Resources */,
 				B7FDD0DB1A4AC1560001C098 /* jug_vilnius.png in Resources */,
 				B70F61241A483F96004EA563 /* backstage_5.jpeg in Resources */,

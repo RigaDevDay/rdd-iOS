@@ -119,6 +119,8 @@
 		B7B16D4C1A361DDA005267AF /* SpeakerObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D4B1A361DDA005267AF /* SpeakerObject.m */; };
 		B7B16D4F1A36201B005267AF /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D4E1A36201B005267AF /* SWRevealViewController.m */; };
 		B7B16D551A362646005267AF /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D541A362646005267AF /* NavigationViewController.m */; };
+		B7BFBA421A52B91100B46385 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7FDD0EC1A4B16A40001C098 /* SystemConfiguration.framework */; };
+		B7BFBA451A52B93600B46385 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B7BFBA441A52B93600B46385 /* Reachability.m */; };
 		B7FA0F1D1A4C731F002BD598 /* GlobalMetupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7FA0F1C1A4C731F002BD598 /* GlobalMetupTableViewCell.m */; };
 		B7FDD09D1A4ABB1B0001C098 /* OrganizersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD09C1A4ABB1B0001C098 /* OrganizersViewController.m */; };
 		B7FDD0A81A4ABFFE0001C098 /* OrganizersTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD0A71A4ABFFE0001C098 /* OrganizersTableViewCell.m */; };
@@ -305,6 +307,8 @@
 		B7B16D4E1A36201B005267AF /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = RigaDevDay/Libs/SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
 		B7B16D531A362646005267AF /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NavigationViewController.h; path = Controllers/NavigationViewController.h; sourceTree = "<group>"; };
 		B7B16D541A362646005267AF /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NavigationViewController.m; path = Controllers/NavigationViewController.m; sourceTree = "<group>"; };
+		B7BFBA431A52B93600B46385 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = RigaDevDay/Libs/Reachability.h; sourceTree = "<group>"; };
+		B7BFBA441A52B93600B46385 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = RigaDevDay/Libs/Reachability.m; sourceTree = "<group>"; };
 		B7FA0F1B1A4C731F002BD598 /* GlobalMetupTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GlobalMetupTableViewCell.h; path = RigaDevDay/Controllers/GlobalMetupTableViewCell.h; sourceTree = "<group>"; };
 		B7FA0F1C1A4C731F002BD598 /* GlobalMetupTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GlobalMetupTableViewCell.m; path = RigaDevDay/Controllers/GlobalMetupTableViewCell.m; sourceTree = "<group>"; };
 		B7FDD09B1A4ABB1B0001C098 /* OrganizersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrganizersViewController.h; path = Controllers/OrganizersViewController.h; sourceTree = "<group>"; };
@@ -358,6 +362,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7BFBA421A52B91100B46385 /* SystemConfiguration.framework in Frameworks */,
 				97F889461A49B6D300A135C9 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -705,6 +710,8 @@
 		B7B16D501A36201F005267AF /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				B7BFBA431A52B93600B46385 /* Reachability.h */,
+				B7BFBA441A52B93600B46385 /* Reachability.m */,
 				B7FDD0EC1A4B16A40001C098 /* SystemConfiguration.framework */,
 				97F889451A49B6D300A135C9 /* MapKit.framework */,
 				97F8894B1A49BBF900A135C9 /* MapView + Zoom */,
@@ -1019,6 +1026,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7BFBA451A52B93600B46385 /* Reachability.m in Sources */,
 				B70F61561A4846C6004EA563 /* ShowCaseCell.m in Sources */,
 				B7B16D4F1A36201B005267AF /* SWRevealViewController.m in Sources */,
 				97F8894A1A49BBEF00A135C9 /* MKMapView+ZoomLevel.m in Sources */,

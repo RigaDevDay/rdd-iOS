@@ -36,12 +36,27 @@
     
     self.tabBarController.selectedImageTintColor = [UIColor whiteColor];
     [self.tabBarController setSelectedItem:[self.tabBarController.items firstObject]];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reloadScheduleData)
+                                                 name:@"UpdateSchedule" object:nil];
     // Do any additional setup after loading the view.
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.tableView reloadData];
+}
+
+- (void)reloadScheduleData {
+    _currentHallSchedule = [[DataManager sharedInstance] getScheduleForHall:1];
+    [self.tableView reloadData];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning {

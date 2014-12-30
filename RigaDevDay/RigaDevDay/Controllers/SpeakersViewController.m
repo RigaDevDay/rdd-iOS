@@ -31,12 +31,26 @@
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
     _speakersArray = [[DataManager sharedInstance] getAllSpeakers];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reloadScheduleData)
+                                                 name:@"UpdateSchedule" object:nil];
     // Do any additional setup after loading the view.
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.tableView reloadData];
+}
+
+- (void)reloadScheduleData {
+    _speakersArray = [[DataManager sharedInstance] getAllSpeakers];
+    [self.tableView reloadData];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning {

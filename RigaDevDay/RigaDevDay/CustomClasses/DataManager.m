@@ -7,6 +7,10 @@
 //
 
 #import "DataManager.h"
+#import "Reachability.h"
+
+#define SCHEDULE_VERSION_KEY @"scheduleVersion"
+#define SPEAKERS_VERSION_KEY @"speakersVersion"
 
 @interface DataManager () {
     NSMutableArray *_speakersArray;
@@ -16,6 +20,9 @@
     UIImage *_bookMarkActive;
     UIImage *_bookmarkInActive;
     UIImage *_bookmarkInActiveForInfo;
+    
+    NSString *_schedulePath;
+    NSString *_speakersPath;
 }
 
 @end
@@ -36,6 +43,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
+        [self updateScheduleIfNeeded];
         [self setupSpeakers];
         [self setupEventArray];
         [self setupBookmarks];
@@ -55,18 +63,7 @@
 - (void)setupSpeakers {
     
     _speakersArray = [NSMutableArray new];
-    
-//    // Create a NSURLRequest with the given URL
-//    NSURL *url = [NSURL URLWithString:@"https://raw.githubusercontent.com/RigaDevDay/RigaDevDay.github.io/master/data/speakers.json"];
-//
-//    NSURLRequest *request = [NSURLRequest requestWithURL:url
-//                                             cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
-//                                         timeoutInterval:30.0];
-//    
-//    // Get the data
-//    NSURLResponse *response;
-//    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
-    NSData *data = [self dataFromJSONFileNamed:@"speakers"];
+     NSData *data = [NSData dataWithContentsOfFile:_speakersPath];
     if (![data length]) return;
     
     // Now create a NSDictionary from the JSON data
@@ -95,18 +92,7 @@
 
 - (void)setupEventArray {
     _eventsCategoryArray = [NSMutableArray new];
-    
-//    // Create a NSURLRequest with the given URL
-//    NSURL *url = [NSURL URLWithString:@"https://raw.githubusercontent.com/RigaDevDay/RigaDevDay.github.io/master/data/schedule.json"];
-//    
-//    NSURLRequest *request = [NSURLRequest requestWithURL:url
-//                                             cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
-//                                         timeoutInterval:30.0];
-//    
-//    // Get the data
-//    NSURLResponse *response;
-//    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
-    NSData *data = [self dataFromJSONFileNamed:@"schedule"];
+    NSData *data = [NSData dataWithContentsOfFile:_schedulePath];
     if (![data length]) return;
     
     // Now create a NSDictionary from the JSON data
@@ -300,6 +286,123 @@
         return @"SPEAKER_SPEECH_INFO_SEGUEUE_ipad";
     }
     return nil;
+}
+
+- (void)updateScheduleIfNeeded {
+    // Copy to drive in needed
+    NSArray *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [path firstObject];
+    _schedulePath = [documentsDirectory stringByAppendingPathComponent:@"schedule.json"];
+    _speakersPath = [documentsDirectory stringByAppendingPathComponent:@"speakers.json"];
+    
+    // Check for schedule
+    if (![[NSFileManager defaultManager] fileExistsAtPath:_schedulePath]) {
+        NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+        NSString *resourcePath = [bundle pathForResource:@"schedule" ofType:@"json"];
+        NSError *error;
+        [[NSFileManager defaultManager] copyItemAtPath:resourcePath toPath:_schedulePath error:&error];
+        if (error) {
+            NSLog(@"%@", [error localizedDescription]);
+        }
+        // update user defines
+        [[NSUserDefaults standardUserDefaults] setValue:@"1" forKey:SCHEDULE_VERSION_KEY];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    // Check for speakers
+    if (![[NSFileManager defaultManager] fileExistsAtPath:_speakersPath]) {
+        NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+        NSString *resourcePath = [bundle pathForResource:@"speakers" ofType:@"json"];
+        NSError *error;
+        [[NSFileManager defaultManager] copyItemAtPath:resourcePath toPath:_speakersPath error:&error];
+        if (error) {
+            NSLog(@"%@", [error localizedDescription]);
+        }
+        // Update user defines
+        [[NSUserDefaults standardUserDefaults] setValue:@"1" forKey:SPEAKERS_VERSION_KEY];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    
+    // Check for Interner
+    Reachability* reach = [Reachability reachabilityWithHostname:@"www.google.com"];
+    
+    // Set the blocks
+    reach.reachableBlock = ^(Reachability*reach)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"REACHABLE!");
+            [self checkForJSONs];
+        });
+    };
+    
+    [reach startNotifier];
+    
+   
+    // Download JSON
+    // Parse JSON
+    // Check with Local Version
+}
+
+- (void)checkForJSONs {
+    // Check JSONS version
+    NSString *currentScheduleVersion = [[NSUserDefaults standardUserDefaults] valueForKey:SCHEDULE_VERSION_KEY];
+    NSString *currentSpeakersVersion = [[NSUserDefaults standardUserDefaults] valueForKey:SPEAKERS_VERSION_KEY];
+
+    NSURL *url = [NSURL URLWithString:@"https://raw.githubusercontent.com/RigaDevDay/RigaDevDay.github.io/master/data/version.json"];
+
+    NSURLRequest *request = [NSURLRequest requestWithURL:url
+                                             cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+                                         timeoutInterval:30.0];
+
+    // Get the data
+    NSURLResponse *response;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
+    if (![data length]) return;
+    // Now create a NSDictionary from the JSON data
+    NSError *error;
+    NSDictionary *versionDirct = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+    NSNumber *latestScheduleVersion = versionDirct[@"scheduleVersion"];
+    NSNumber *latestSpeakerVersion = versionDirct[@"speakersVersion"];
+    
+    if (![currentScheduleVersion isEqualToString:[latestScheduleVersion stringValue]]) {
+        // Update Schedule JSON
+        NSURL *url = [NSURL URLWithString:@"https://raw.githubusercontent.com/RigaDevDay/RigaDevDay.github.io/master/data/schedule.json"];
+        
+        NSURLRequest *request = [NSURLRequest requestWithURL:url
+                                                 cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+                                             timeoutInterval:30.0];
+        
+        // Get the data
+        NSURLResponse *response;
+        NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
+        if (![data length]) return;
+        [data writeToFile:_schedulePath atomically:YES];
+        
+        //Update Version
+        [[NSUserDefaults standardUserDefaults] setValue:[latestScheduleVersion stringValue] forKey:SCHEDULE_VERSION_KEY];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        [self setupEventArray];
+    }
+    if (![currentSpeakersVersion isEqualToString:[latestSpeakerVersion stringValue]]) {
+        // Update Speaker JSON
+        NSURL *url = [NSURL URLWithString:@"https://raw.githubusercontent.com/RigaDevDay/RigaDevDay.github.io/master/data/speakers.json"];
+        
+        NSURLRequest *request = [NSURLRequest requestWithURL:url
+                                                 cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+                                             timeoutInterval:30.0];
+        
+        // Get the data
+        NSURLResponse *response;
+        NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
+        if (![data length]) return;
+        [data writeToFile:_speakersPath atomically:YES];
+        
+        //Update Version
+        [[NSUserDefaults standardUserDefaults] setValue:[latestSpeakerVersion stringValue] forKey:SPEAKERS_VERSION_KEY];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        [self setupSpeakers];
+    }
 }
 
 @end

@@ -30,6 +30,7 @@
     self.buttonMenu.action = @selector(revealToggle:);
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
     // Do any additional setup after loading the view.
 }
 

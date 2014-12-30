@@ -31,4 +31,6 @@
 
 - (NSString *)getInfoStoryboardSegue;
 
+- (void)updateScheduleIfNeeded;
+
 @end

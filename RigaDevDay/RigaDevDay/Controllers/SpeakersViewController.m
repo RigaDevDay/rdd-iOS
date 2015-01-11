@@ -70,9 +70,9 @@
     cell.labelName.text = speaker.name;
     cell.labelPresentation.text = speaker.bio;
     if ([[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.id]) {
-        [cell.buttonBookmark setImage:[[DataManager sharedInstance] getActiveBookmarkImage] forState:UIControlStateNormal];
+        [cell.buttonImage setImage:[[DataManager sharedInstance] getActiveBookmarkImage]];
     } else {
-        [cell.buttonBookmark setImage:[[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO] forState:UIControlStateNormal];
+        [cell.buttonImage setImage:[[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO]];
     }
     
     return cell;
@@ -92,7 +92,7 @@
 - (void)bookmarkButtonPressedOnCell:(SpeakerTableViewCell *)cell {
     SpeakerObject *speaker = [_speakersArray objectAtIndex:[self.tableView indexPathForCell:cell].row];
     BOOL isBookmarked = [[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.id];
-    [cell.buttonBookmark setImage:isBookmarked ? [[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO] : [[DataManager sharedInstance] getActiveBookmarkImage] forState:UIControlStateNormal];
+    [cell.buttonImage setImage:isBookmarked ? [[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO] : [[DataManager sharedInstance] getActiveBookmarkImage]];
     [[DataManager sharedInstance] changeSpeakerBookmarkStateTo:!isBookmarked forSpeakerID:speaker.id];
 }
 

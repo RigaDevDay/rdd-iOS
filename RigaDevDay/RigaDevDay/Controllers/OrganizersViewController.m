@@ -63,7 +63,6 @@
     switch (indexPath.section) {
         case 0:
             cell.logoImageView.image = section1[indexPath.row];
-            cell.logoImageView.frame = [self bestRectForImageViewInCell:cell];
             break;
         case 1:
             cell.logoImageView.image = section2[indexPath.row];
@@ -162,6 +161,8 @@
     [section3 addObject:[UIImage imageNamed:@"enjoy.png"]];
     [section3 addObject:[UIImage imageNamed:@"kursors.png"]];
     [section3 addObject:[UIImage imageNamed:@"pluralsight.png"]];
+    [section3 addObject:[UIImage imageNamed:@"BdaLogo.png"]];
+    [section3 addObject:[UIImage imageNamed:@"MCE_black_normal_large.png"]];
     
     for (int i = 0; i < [section3 count]; i++) {
         UIImage *image = section3[i];
@@ -228,6 +229,140 @@
     
     //return image
     return imageOut;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSString *webURL = @"";
+
+    if (indexPath.section == 0) {
+        switch (indexPath.row) {
+            case 0:
+                webURL = @"http://gdgriga.lv/";
+                break;
+            case 1:
+                webURL = @"http://jug.lv/";
+                break;
+            case 2:
+                webURL = @"http://lvoug.lv/";
+                break;
+            default:
+                break;
+        }
+    } else if (indexPath.section == 1) {
+        switch (indexPath.row) {
+            case 0:
+                webURL = @"http://ok.ru/";
+                break;
+            case 1:
+                webURL = @"https://developers.google.com/";
+                break;
+            case 2:
+                webURL = @"http://www.ctco.lv/";
+                break;
+            case 3:
+                webURL = @"http://www.4finance.com/";
+                break;
+            case 4:
+                webURL = @"http://www.ideaportriga.com/";
+                break;
+            case 5:
+                webURL = @"http://www.rubylight.com/";
+                break;
+            case 6:
+                webURL = @"http://www.accenture.com/us-en/pages/index.aspx";
+                break;
+            case 7:
+                webURL = @"http://www.innowate.com/";
+                break;
+            case 8:
+                webURL = @"http://www.game-insight.com/en";
+                break;
+            case 9:
+                webURL = @"https://www.openshift.com/";
+                break;
+            case 10:
+                webURL = @"http://neueda.lv/";
+                break;
+            default:
+                break;
+        }
+    } else if (indexPath.section == 2) {
+        switch (indexPath.row) {
+            case 0:
+                webURL = @"http://www.oreilly.com/";
+                break;
+            case 1:
+                webURL = @"http://community.oraclepressbooks.com/";
+                break;
+            case 2:
+                webURL = @"https://github.com/";
+                break;
+            case 3:
+                webURL = @"http://riga.techhub.com/";
+                break;
+            case 4:
+                webURL = @"http://rigacomm.com/";
+                break;
+            case 5:
+                webURL = @"http://startuphunt.lv/";
+                break;
+            case 6:
+                webURL = @"http://www.enjoyrecruitment.lv/lv/personala-atlase";
+                break;
+            case 7:
+                webURL = @"http://www.kursors.lv/";
+                break;
+            case 8:
+                webURL = @"http://www.pluralsight.com/";
+                break;
+            case 9:
+                webURL = @"http://www.bda.lv/bda4/";
+                break;
+            case 10:
+                webURL = @"http://mceconf.com/";
+                break;
+            default:
+                break;
+        }
+    } else if (indexPath.section == 3) {
+        switch (indexPath.row) {
+            case 0:
+                webURL = @"http://jug.ua/";
+                break;
+            case 1:
+                webURL = @"http://kaunas-jug.lt/";
+                break;
+            case 2:
+                webURL = @"http://vilnius-jug.lt/";
+                break;
+            case 3:
+                webURL = @"https://sites.google.com/site/stockholmgtug/";
+                break;
+            case 4:
+                webURL = @"http://www.meetup.com/Latvian-Developers-Network/";
+                break;
+            case 5:
+                webURL = @"http://startuplatvia.eu/";
+                break;
+            case 6:
+                webURL = @"http://www.devclub.eu/";
+                break;
+            case 7:
+                webURL = @"http://www.javaguru.lv/";
+                break;
+            case 8:
+                webURL = @"http://www.progmeistars.lv/";
+                break;
+            case 9:
+                webURL = @"https://www.ouge.eu/wp/";
+                break;
+            default:
+                break;
+        }
+    }
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:webURL]];
 }
 
 @end

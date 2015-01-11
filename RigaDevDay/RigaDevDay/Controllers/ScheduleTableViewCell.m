@@ -12,6 +12,8 @@
 
 - (void)awakeFromNib {
     // Initialization code
+//   
+//    [self.buttonBookmark.imageView setContentMode:UIViewContentModeScaleAspectFit];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

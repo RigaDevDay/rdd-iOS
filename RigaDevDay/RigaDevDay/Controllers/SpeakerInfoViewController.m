@@ -25,6 +25,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *labelMainTitle;
 @property (strong, nonatomic) IBOutlet UITextView *textViewInformation;
 @property (weak, nonatomic) IBOutlet UIButton *buttonBlog;
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewCountry;
 
 @end
 
@@ -89,6 +90,7 @@
     self.labelTileAndLocation.hidden = selected;
     self.labelMainTitle.hidden = selected;
     self.buttonBlog.hidden = !selected;
+    self.imageViewCountry.hidden = !selected;
 }
 
 - (void)setSpeechButtonSelected:(BOOL)selected {
@@ -98,6 +100,7 @@
     self.labelTileAndLocation.hidden = !selected;
     self.labelMainTitle.hidden = !selected;
     self.buttonBlog.hidden = selected;
+    self.imageViewCountry.hidden = selected;
 }
 
 - (void)setUpInfo {
@@ -113,6 +116,7 @@
     self.imageViewBackground.image = [UIImage imageNamed:[NSString stringWithFormat:@"backstage_%li.jpeg",(long)self.speaker.id]];
     [self.buttonBlog setTitle:[self getBlogAndURLSrting] forState:UIControlStateNormal];
     BOOL isBookmarked = [[DataManager sharedInstance] isSpeakerBookmarkedWithID:self.speaker.id];
+    [self.imageViewCountry setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",self.speaker.country]]];
     
     [self.buttonBookmark setImage:isBookmarked ? [[DataManager sharedInstance] getActiveBookmarkImage] : [[DataManager sharedInstance] getInActiveBookmarkImageForInfo:YES] forState:UIControlStateNormal];
     

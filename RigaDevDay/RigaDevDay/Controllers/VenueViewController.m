@@ -80,22 +80,11 @@
     rigaPlazaCoord.latitude = 56.9253666;
     rigaPlazaCoord.longitude = 24.102882;
     
-    CLLocationCoordinate2D islandHotelCoord;
-    islandHotelCoord.latitude = 56.9511414;
-    islandHotelCoord.longitude = 24.0841795;
-    
     MKPointAnnotation *rigaPlazaAnnotation = [[MKPointAnnotation alloc] init];
     rigaPlazaAnnotation.coordinate = rigaPlazaCoord;
     rigaPlazaAnnotation.title = @"Riga Plaza";
     rigaPlazaAnnotation.subtitle = @"Conference Place";
     [annotations addObject:rigaPlazaAnnotation];
-    
-    
-    MKPointAnnotation *islandHotelAnotation = [[MKPointAnnotation alloc] init];
-    islandHotelAnotation.coordinate = islandHotelCoord;
-    islandHotelAnotation.title = @"Islande Hotel";
-    islandHotelAnotation.subtitle = @"Workshop Place";
-    [annotations addObject:islandHotelAnotation];
 
     [self.mapView addAnnotations:annotations];
 }

@@ -36,7 +36,6 @@
     return 13;
 }
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-#warning TODO
     if (indexPath.item == 0 || indexPath.item == 5) {
         return CGSizeMake(312, 160);
     }

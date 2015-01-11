@@ -62,9 +62,9 @@
     
     SpeakerObject *speaker = [event.speakers firstObject];
     if ([[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.id]) {
-        [cell.buttonBookmark setImage:[[DataManager sharedInstance] getActiveBookmarkImage] forState:UIControlStateNormal];
+        [cell.buttonImageView setImage:[[DataManager sharedInstance] getActiveBookmarkImage]];
     } else {
-        [cell.buttonBookmark setImage:[[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO] forState:UIControlStateNormal];
+        [cell.buttonImageView setImage:[[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO]];
     }
 
     cell.delegate = self;
@@ -98,7 +98,7 @@
     SpeakerObject *speaker = [event.speakers firstObject];
     
     BOOL isBookmarked = [[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.id];
-    [cell.buttonBookmark setImage:isBookmarked ? [[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO] : [[DataManager sharedInstance] getActiveBookmarkImage] forState:UIControlStateNormal];
+    [cell.buttonImageView setImage:isBookmarked ? [[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO] : [[DataManager sharedInstance] getActiveBookmarkImage]];
     
     [[DataManager sharedInstance] changeSpeakerBookmarkStateTo:!isBookmarked forSpeakerID:speaker.id];
     _bookmaredEventsArray = [[DataManager sharedInstance] getAllBookmarkedEvents];

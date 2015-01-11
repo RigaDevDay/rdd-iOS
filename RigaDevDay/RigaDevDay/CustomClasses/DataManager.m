@@ -305,7 +305,7 @@
             NSLog(@"%@", [error localizedDescription]);
         }
         // update user defines
-        [[NSUserDefaults standardUserDefaults] setValue:@"1" forKey:SCHEDULE_VERSION_KEY];
+        [[NSUserDefaults standardUserDefaults] setValue:@"2" forKey:SCHEDULE_VERSION_KEY];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
     // Check for speakers
@@ -318,7 +318,7 @@
             NSLog(@"%@", [error localizedDescription]);
         }
         // Update user defines
-        [[NSUserDefaults standardUserDefaults] setValue:@"1" forKey:SPEAKERS_VERSION_KEY];
+        [[NSUserDefaults standardUserDefaults] setValue:@"2" forKey:SPEAKERS_VERSION_KEY];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
     

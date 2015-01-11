@@ -23,5 +23,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelPresentationSubTitle;
 @property (weak, nonatomic) IBOutlet UILabel *labelStartTime;
 @property (weak, nonatomic) IBOutlet UIButton *buttonBookmark;
+@property (weak, nonatomic) IBOutlet UIImageView *buttonImageView;
 
 @end

@@ -23,6 +23,7 @@
     
     NSString *_schedulePath;
     NSString *_speakersPath;
+    Reachability* _reach;
 }
 
 @end
@@ -170,6 +171,20 @@
         }
     }
     return nil;
+}
+
+- (NSArray *)getEventsForSpeakerWithID:(NSInteger)speakerID {
+    NSMutableArray *array = [NSMutableArray new];
+    
+    for (EventCategory *eCategory in _eventsCategoryArray) {
+        for (EventObject *event in eCategory.events) {
+            for (SpeakerObject *speaker in event.speakers) {
+                if (speaker.id == speakerID) [array addObject:event];
+            }
+        }
+    }
+    
+    return [array copy];;
 }
 
 - (NSArray *)getScheduleForFirstHall {
@@ -323,10 +338,11 @@
     }
     
     // Check for Interner
-    Reachability* reach = [Reachability reachabilityWithHostname:@"www.google.com"];
-    
+    if(!_reach) {
+        _reach = [Reachability reachabilityWithHostname:@"www.google.com"];
+    }
     // Set the blocks
-    reach.reachableBlock = ^(Reachability*reach)
+    _reach.reachableBlock = ^(Reachability*reach)
     {
         dispatch_async(dispatch_get_main_queue(), ^{
             NSLog(@"REACHABLE!");
@@ -334,7 +350,7 @@
         });
     };
     
-    [reach startNotifier];
+    [_reach startNotifier];
     
    
     // Download JSON
@@ -343,6 +359,8 @@
 }
 
 - (void)checkForJSONs {
+    
+    [_reach stopNotifier];
     // Check JSONS version
     NSString *currentScheduleVersion = [[NSUserDefaults standardUserDefaults] valueForKey:SCHEDULE_VERSION_KEY];
     NSString *currentSpeakersVersion = [[NSUserDefaults standardUserDefaults] valueForKey:SPEAKERS_VERSION_KEY];
@@ -351,7 +369,7 @@
 
     NSURLRequest *request = [NSURLRequest requestWithURL:url
                                              cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
-                                         timeoutInterval:30.0];
+                                         timeoutInterval:3.0];
 
     // Get the data
     NSURLResponse *response;
@@ -369,7 +387,7 @@
         
         NSURLRequest *request = [NSURLRequest requestWithURL:url
                                                  cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
-                                             timeoutInterval:30.0];
+                                             timeoutInterval:3.0];
         
         // Get the data
         NSURLResponse *response;

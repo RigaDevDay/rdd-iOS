@@ -11,6 +11,7 @@
 
 @interface SpeakerInfoViewController () {
     EventObject *_event;
+    NSArray *_evenets;
 }
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonMenu;
 @property (strong, nonatomic) IBOutlet UIImageView *imageViewBackground;
@@ -35,9 +36,35 @@
     [super viewDidLoad];
     self.buttonMenu.target = self;
     self.buttonMenu.action = @selector(backButtonPress);
-    _event = [[DataManager sharedInstance] getEventForSpeakerWithID:self.speaker.id];
+    
+    
+    UISwipeGestureRecognizer * swipeleft=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeleft:)];
+    swipeleft.direction=UISwipeGestureRecognizerDirectionLeft;
+    [self.view addGestureRecognizer:swipeleft];
+    
+    UISwipeGestureRecognizer * swiperight=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swiperight:)];
+    swiperight.direction=UISwipeGestureRecognizerDirectionRight;
+    [self.view addGestureRecognizer:swiperight];
+    
+    if (self.reloadedObject) {
+        _event = self.reloadedObject;
+    } else {
+        _event = [[DataManager sharedInstance] getEventForSpeakerWithID:self.speaker.id];
+    }
     [self setUpInfo];
+    [self setAboutButtonSelected:NO];
+    [self setSpeechButtonSelected:YES];
 }
+
+-(void)swipeleft:(UISwipeGestureRecognizer*)gestureRecognizer
+{
+    [self refreshSpeakerSpeachForward:YES];
+}
+
+- (void)swiperight:(UISwipeGestureRecognizer*)gestureRecognizer {
+    [self refreshSpeakerSpeachForward:NO];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -135,6 +162,34 @@
         return [NSString stringWithFormat:@"Blog %@",self.speaker.blog];
     }
     return @"";
+}
+
+- (void)refreshSpeakerSpeachForward:(BOOL)forward {
+    if (!self.imageViewCountry.hidden) return; // not update speach while in info
+    
+    NSArray *events = [[DataManager sharedInstance] getEventsForSpeakerWithID:self.speaker.id];
+    int arrayCount = (int)[events count];
+    int startPossition = (int)[events indexOfObject:_event];
+    self.reloadedObject = nil;
+    
+    if (forward) { // swipe left
+        for (; startPossition < arrayCount; startPossition++) {
+            EventObject *event = [events objectAtIndex:startPossition];
+            if (![event isEqual:_event]) {
+                self.reloadedObject = event;
+            }
+        }
+    } else { // swipe right
+        for (; startPossition >= 0; startPossition--) {
+            EventObject *event = [events objectAtIndex:startPossition];
+            if (![event isEqual:_event]) {
+                self.reloadedObject = event;
+            }
+        }
+    }
+    if (self.reloadedObject){
+        [self viewDidLoad];
+    }
 }
 
 @end

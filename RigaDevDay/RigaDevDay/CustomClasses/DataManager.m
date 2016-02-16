@@ -365,7 +365,7 @@
     NSString *currentScheduleVersion = [[NSUserDefaults standardUserDefaults] valueForKey:SCHEDULE_VERSION_KEY];
     NSString *currentSpeakersVersion = [[NSUserDefaults standardUserDefaults] valueForKey:SPEAKERS_VERSION_KEY];
 
-    NSURL *url = [NSURL URLWithString:@"https://raw.githubusercontent.com/RigaDevDay/RigaDevDay.github.io/master/data/version.json"];
+    NSURL *url = [NSURL URLWithString:@"https://raw.githubusercontent.com/RigaDevDay/2015/master/data/version.json"];
 
     NSURLRequest *request = [NSURLRequest requestWithURL:url
                                              cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
@@ -383,7 +383,7 @@
     
     if (![currentScheduleVersion isEqualToString:[latestScheduleVersion stringValue]]) {
         // Update Schedule JSON
-        NSURL *url = [NSURL URLWithString:@"https://raw.githubusercontent.com/RigaDevDay/RigaDevDay.github.io/master/data/schedule.json"];
+        NSURL *url = [NSURL URLWithString:@"https://raw.githubusercontent.com/RigaDevDay/2015/master/data/schedule.json"];
         
         NSURLRequest *request = [NSURLRequest requestWithURL:url
                                                  cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
@@ -403,7 +403,7 @@
     }
     if (![currentSpeakersVersion isEqualToString:[latestSpeakerVersion stringValue]]) {
         // Update Speaker JSON
-        NSURL *url = [NSURL URLWithString:@"https://raw.githubusercontent.com/RigaDevDay/RigaDevDay.github.io/master/data/speakers.json"];
+        NSURL *url = [NSURL URLWithString:@"https://raw.githubusercontent.com/RigaDevDay/2015/master/data/speakers.json"];
         
         NSURLRequest *request = [NSURLRequest requestWithURL:url
                                                  cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData

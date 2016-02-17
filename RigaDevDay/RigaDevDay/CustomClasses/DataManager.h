@@ -10,10 +10,17 @@
 #import <UIKit/UIKit.h>
 #import "Interval.h"
 #import "Speaker.h"
+#import "Day.h"
+#import "Room.h"
 
 @interface DataManager : NSObject
 
 + (DataManager *)sharedInstance;
+@property (strong, nonatomic) Day *selectedDay;
+@property (strong, nonatomic) Room *selectedRoom;
+
+- (NSArray *)eventsForDay:(Day *)day andRoom:(Room *)room;
+- (NSArray *)eventsForDayOrder:(int)dayOrder andRoomOrder:(int)roomOrder;
 
 - (NSArray *)getAllSpeakers;
 - (NSArray *)getScheduleForHall:(NSInteger)roomID;

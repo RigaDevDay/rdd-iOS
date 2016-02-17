@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F1605" minimumToolsVersion="Xcode 7.0">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Xcode 7.0">
     <entity name="Day" representedClassName="Day" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -26,6 +26,7 @@
     </entity>
     <entity name="Room" representedClassName="Room" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="days" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Day" inverseName="rooms" inverseEntity="Day" syncable="YES"/>
         <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="room" inverseEntity="Event" syncable="YES"/>
     </entity>
@@ -46,11 +47,11 @@
         <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="tags" inverseEntity="Event" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Speaker" positionX="-450" positionY="-153" width="128" height="193"/>
-        <element name="Event" positionX="16" positionY="-118" width="128" height="163"/>
-        <element name="Interval" positionX="-261" positionY="-192" width="128" height="118"/>
         <element name="Day" positionX="-38" positionY="-459" width="128" height="118"/>
+        <element name="Event" positionX="16" positionY="-118" width="128" height="165"/>
+        <element name="Interval" positionX="-261" positionY="-192" width="128" height="118"/>
+        <element name="Room" positionX="268" positionY="-412" width="128" height="105"/>
+        <element name="Speaker" positionX="-450" positionY="-153" width="128" height="193"/>
         <element name="Tag" positionX="277" positionY="-84" width="128" height="73"/>
-        <element name="Room" positionX="268" positionY="-412" width="128" height="88"/>
     </elements>
 </model>

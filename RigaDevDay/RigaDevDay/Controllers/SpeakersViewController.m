@@ -86,7 +86,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     SpeakerInfoViewController *destController = [segue destinationViewController];
-    destController.speaker = _selectedSpeaker;
+//    destController.event = self.ps;
 }
 
 - (void)bookmarkButtonPressedOnCell:(SpeakerTableViewCell *)cell {

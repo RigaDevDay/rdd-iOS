@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cp2-fC-y6q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cp2-fC-y6q">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -6154,11 +6154,11 @@
         <image name="twitter-menu.png" width="54" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="gb7-sd-ro1"/>
         <segue reference="WJ5-Q1-sZF"/>
-        <segue reference="07D-Rm-8ka"/>
-        <segue reference="6ab-zx-uvF"/>
-        <segue reference="P0U-HV-t91"/>
-        <segue reference="dyT-kZ-d2E"/>
-        <segue reference="DLS-5Y-Kcz"/>
+        <segue reference="5N1-RO-oVG"/>
+        <segue reference="LIW-EN-O2r"/>
+        <segue reference="Nkk-aN-FU8"/>
+        <segue reference="W2h-3b-E8L"/>
     </inferredMetricsTieBreakers>
 </document>

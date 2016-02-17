@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "DataManager.h"
+#import "Event.h"
 
 @interface SpeakerInfoViewController : UIViewController
 
-@property (strong, nonatomic) Speaker *speaker;
-@property (strong, nonatomic) Event *reloadedObject;
+@property (strong, nonatomic) Event *event;
+//@property (strong, nonatomic) Event *reloadedObject;
 
 @end

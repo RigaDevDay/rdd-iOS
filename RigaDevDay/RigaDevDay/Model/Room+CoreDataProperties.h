@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Room (CoreDataProperties)
 
+@property (nullable, nonatomic, retain) NSNumber *order;
 @property (nullable, nonatomic, retain) NSString *name;
 @property (nullable, nonatomic, retain) NSSet<Event *> *events;
 @property (nullable, nonatomic, retain) NSSet<Day *> *days;

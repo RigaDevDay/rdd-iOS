@@ -52,11 +52,83 @@
     self = [super init];
     if (self) {
         [self updateScheduleIfNeeded];
-        //        [self setupSpeakers];
         [self setupEventArray];
-        [self setupBookmarks];
+        //        [self setupBookmarks];
     }
     return self;
+}
+
+- (Day *)selectedDay {
+    if (!_selectedDay) {
+        // Select first day by default
+        NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+        [request setEntity: [NSEntityDescription entityForName:NSStringFromClass([Day class]) inManagedObjectContext: appDelegate.managedObjectContext]];
+        [request setPredicate:[NSPredicate predicateWithFormat:@"order == 1"]];
+        request.fetchLimit = 1;
+        NSError *error = nil;
+        
+        NSArray *results = [appDelegate.managedObjectContext executeFetchRequest:request error:&error];
+        if (!error) {
+            if ([results count]) {
+                _selectedDay = [results firstObject];
+            }
+        }
+    }
+    return _selectedDay;
+}
+- (Room *)selectedRoom {
+    if (!_selectedRoom) {
+        // Select first room by default
+        NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+        [request setEntity: [NSEntityDescription entityForName:NSStringFromClass([Room class]) inManagedObjectContext: appDelegate.managedObjectContext]];
+        [request setPredicate:[NSPredicate predicateWithFormat:@"order == 1"]];
+//        [request setPredicate:[NSPredicate predicateWithFormat:@"name == ", @"Room 1"]];
+        request.fetchLimit = 1;
+        NSError *error = nil;
+        
+        NSArray *results = [appDelegate.managedObjectContext executeFetchRequest:request error:&error];
+        if (!error) {
+            if ([results count]) {
+                _selectedRoom = [results firstObject];
+            }
+        }
+    }
+    return _selectedRoom;
+}
+
+
+- (NSArray *)eventsForDay:(Day *)day andRoom:(Room *)room {
+    NSArray *events  = [NSArray array];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    [request setEntity: [NSEntityDescription entityForName:NSStringFromClass([Event class]) inManagedObjectContext: appDelegate.managedObjectContext]];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"interval.day = %@ && (room = %@ || room == nil)", day, room]];
+    [request setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"interval.order" ascending:YES]]];
+    NSError *error = nil;
+    
+    NSArray *results = [appDelegate.managedObjectContext executeFetchRequest:request error:&error];
+    if (!error) {
+        return results;
+    }
+    return events;
+}
+
+- (NSArray *)eventsForDayOrder:(int)dayOrder andRoomOrder:(int)roomOrder {
+    NSArray *events  = [NSArray array];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    [request setEntity: [NSEntityDescription entityForName:NSStringFromClass([Event class]) inManagedObjectContext: appDelegate.managedObjectContext]];
+//    [request setPredicate:[NSPredicate predicateWithFormat:@"room.order == %@ AND interval.day.order == %@", roomOrder, dayOrder]];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"room.order = %@ && interval.day.order = %@", [NSNumber numberWithInt:roomOrder], [NSNumber numberWithInt:dayOrder]]];
+    NSError *error = nil;
+    
+    NSArray *results = [appDelegate.managedObjectContext executeFetchRequest:request error:&error];
+    if (!error) {
+        return results;
+    }
+    return events;
 }
 
 - (NSData *)dataFromJSONFileNamed:(NSString *)fileName
@@ -67,32 +139,6 @@
     return jsonData;
 }
 
-
-//- (void)setupSpeakers {
-//
-//    _speakersArray = [NSMutableArray new];
-//     NSData *data = [NSData dataWithContentsOfFile:_speakersPath];
-//    if (![data length]) return;
-//
-//    // Now create a NSDictionary from the JSON data
-//    NSError *error;
-//    NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-//
-//    for (NSDictionary *info in jsonArray) {
-//        Speaker *newSpeaker = [Speaker new];
-////        newSpeaker.bio = info[@"bio"];
-////        newSpeaker.bio = [newSpeaker.bio stringByReplacingOccurrencesOfString:@"</br>" withString:@""];
-//        newSpeaker.company = info[@"company"];
-//        newSpeaker.country = info[@"country"];
-//        newSpeaker.speakerID = [info[@"id"] integerValue];
-//        newSpeaker.name = info[@"name"];
-////        newSpeaker.order = [info[@"order"] integerValue];
-//        NSDictionary *contacts = info[@"contacts"];
-//        if (contacts[@"twitter"]) newSpeaker.twitterURL = contacts[@"twitter"];
-//        if (contacts[@"blog"]) newSpeaker.blogURL = contacts[@"blog"];
-//        [_speakersArray addObject:newSpeaker];
-//    }
-//}
 
 - (NSArray *)getAllSpeakers {
     return _speakersArray;
@@ -137,9 +183,6 @@
                 speaker.speakerDesc = speakerDict[@"description"];
             }
             
-            [appDelegate saveContext];
-            
-            
             NSArray *days = jsonDict[@"days"];
             int order = 1;
             for (NSDictionary *dayDict in days) {
@@ -152,184 +195,148 @@
                 
                 NSDictionary *scheduleDict = dayDict[@"schedule"];
                 NSArray *roomNames = scheduleDict[@"roomNames"];
+                int roomOrder = 1;
                 
                 for (NSString *roomName in roomNames) {
                     Room *room = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Room class])
                                                                inManagedObjectContext:managedObjectContext];
                     room.name = roomName;
+                    room.order = [NSNumber numberWithInt:roomOrder];
+                    roomOrder++;
                     [room addDaysObject:day];
                 }
                 
                 NSArray *intervals = scheduleDict[@"schedule"];
-                order = 1;
+                int intervalOrder = 1;
                 for (NSDictionary *intervalDict in intervals) {
                     Interval *interval = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Interval class])
                                                                        inManagedObjectContext:managedObjectContext];
-                    interval.order = [NSNumber numberWithInt:order];
-                    order++;
+                    interval.order = [NSNumber numberWithInt:intervalOrder];
+                    intervalOrder++;
                     interval.startTime = intervalDict[@"time"];
                     interval.endTime = intervalDict[@"endTime"];
                     interval.day = day;
                     
                     int eventCount = 0;
                     NSArray *events = intervalDict[@"events"];
-                    for (NSDictionary *eventDict in events) {
+                    
+                    if (events.count == 1) {
                         Event *event = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Event class])
                                                                      inManagedObjectContext:managedObjectContext];
-                        event.title = eventDict[@"title"];
-                        event.subtitle = eventDict[@"subtitle"];
-                        event.eventDesc = eventDict[@"description"];
+                        event.title = events[0][@"title"];
+                        event.subtitle = (events[0][@"subtitle"]) ? events[0][@"subtitle"] : nil;
                         event.interval = interval;
+                    } else {
                         
-                        NSFetchRequest *request = [[NSFetchRequest alloc] init];
-                        
-                        [request setEntity: [NSEntityDescription entityForName:NSStringFromClass([Room class]) inManagedObjectContext: appDelegate.managedObjectContext]];
-                        [request setPredicate:[NSPredicate predicateWithFormat:@"ANY days == %@ AND name LIKE %@", day, roomNames[eventCount]]];
-                        request.fetchLimit = 1;
-                        NSError *error = nil;
-                        
-                        NSArray *results = [appDelegate.managedObjectContext executeFetchRequest:request error:&error];
-                        if (!error) {
-                            if ([results count]) {
-                                event.room = [results firstObject];
-                            }
-                        }
-                        
-                        
-                        NSArray *speakers = eventDict[@"speakers"];
-                        for (NSString *speakerID in speakers) {
+                        for (NSDictionary *eventDict in events) {
+                            Event *event = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Event class])
+                                                                         inManagedObjectContext:managedObjectContext];
+                            event.subtitle = eventDict[@"subtitle"];
+                            event.eventDesc = eventDict[@"description"];
+                            event.interval = interval;
+                            
                             NSFetchRequest *request = [[NSFetchRequest alloc] init];
                             
-                            [request setEntity: [NSEntityDescription entityForName:NSStringFromClass([Speaker class]) inManagedObjectContext: appDelegate.managedObjectContext]];
-                            [request setPredicate:[NSPredicate predicateWithFormat:@"speakerID == %@", speakerID]];
+                            [request setEntity: [NSEntityDescription entityForName:NSStringFromClass([Room class]) inManagedObjectContext: appDelegate.managedObjectContext]];
+                            [request setPredicate:[NSPredicate predicateWithFormat:@"ANY days == %@ AND name LIKE %@", day, roomNames[eventCount]]];
+                            eventCount++;
                             request.fetchLimit = 1;
                             NSError *error = nil;
                             
                             NSArray *results = [appDelegate.managedObjectContext executeFetchRequest:request error:&error];
                             if (!error) {
                                 if ([results count]) {
-                                    [event addSpeakersObject:[results firstObject]] ;
+                                    event.room = [results firstObject];
                                 }
                             }
-                        }
-                        
-                        NSArray *tags = eventDict[@"tags"];
-                        for (NSString *tagName in tags) {
-                            NSFetchRequest *request = [[NSFetchRequest alloc] init];
                             
-                            [request setEntity: [NSEntityDescription entityForName:NSStringFromClass([Tag class]) inManagedObjectContext: appDelegate.managedObjectContext]];
-                            [request setPredicate:[NSPredicate predicateWithFormat:@"name == %@", tagName]];
-                            request.fetchLimit = 1;
-                            NSError *error = nil;
                             
-                            NSArray *results = [appDelegate.managedObjectContext executeFetchRequest:request error:&error];
-                            if (!error) {
-                                Tag *tag;
-                                if ([results count]) {
-                                    tag  = [results firstObject];
-                                } else {
-                                    tag = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Tag class])
-                                                                        inManagedObjectContext:managedObjectContext];
-                                    tag.name = tagName;
+                            NSArray *speakers = eventDict[@"speakers"];
+                            for (NSString *speakerID in speakers) {
+                                NSFetchRequest *request = [[NSFetchRequest alloc] init];
+                                
+                                [request setEntity: [NSEntityDescription entityForName:NSStringFromClass([Speaker class]) inManagedObjectContext: appDelegate.managedObjectContext]];
+                                [request setPredicate:[NSPredicate predicateWithFormat:@"speakerID == %@", speakerID]];
+                                request.fetchLimit = 1;
+                                NSError *error = nil;
+                                
+                                NSArray *results = [appDelegate.managedObjectContext executeFetchRequest:request error:&error];
+                                if (!error) {
+                                    if ([results count]) {
+                                        [event addSpeakersObject:[results firstObject]] ;
+                                    }
                                 }
-                                [event addTagsObject:tag];
+                            }
+                            
+                            NSArray *tags = eventDict[@"tags"];
+                            for (NSString *tagName in tags) {
+                                NSFetchRequest *request = [[NSFetchRequest alloc] init];
+                                
+                                [request setEntity: [NSEntityDescription entityForName:NSStringFromClass([Tag class]) inManagedObjectContext: appDelegate.managedObjectContext]];
+                                [request setPredicate:[NSPredicate predicateWithFormat:@"name == %@", tagName]];
+                                request.fetchLimit = 1;
+                                NSError *error = nil;
+                                
+                                NSArray *results = [appDelegate.managedObjectContext executeFetchRequest:request error:&error];
+                                if (!error) {
+                                    Tag *tag;
+                                    if ([results count]) {
+                                        tag  = [results firstObject];
+                                    } else {
+                                        tag = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Tag class])
+                                                                            inManagedObjectContext:managedObjectContext];
+                                        tag.name = tagName;
+                                    }
+                                    [event addTagsObject:tag];
+                                }
                             }
                         }
                     }
                 }
             }
+            [appDelegate saveContext];
         }
     }
-    
-    
-    
-    
-    //    int order = 0;
-    
-    //    for (NSDictionary *eventCategory in scheduleArray) {
-    //        Interval *eCategory = [Interval new];
-    //        eCategory.events = [NSMutableArray new];
-    //        NSArray *events = eventCategory[@"events"];
-    //        NSInteger hallID = 1;
-    //        for (NSDictionary *event in events) {
-    //            Event *eventObject = [Event new];
-    //            eventObject.startTime = eventCategory[@"time"];
-    //            eventObject.eventDescription = event[@"title"] ? event[@"title"] :
-    //            event[@"description"];
-    //            eventObject.eventDescription = [eventObject.eventDescription stringByReplacingOccurrencesOfString:@"</br>" withString:@""];
-    //            eventObject.subTitle = event[@"subtitle"] ? event[@"subtitle"] : @"";
-    //            if (event[@"speakers"]) {
-    //                NSArray *speakersIDArray = event[@"speakers"];
-    //                eventObject.speakers = [NSMutableArray new];
-    //                for (NSString *speakerIDSTR in speakersIDArray) {
-    //                    Speaker *speaker = [self getSpeakerWithID:[speakerIDSTR integerValue]];
-    //                    [eventObject.speakers addObject:speaker];
-    //                };
-    //            }
-    //            eventObject.hallID = hallID++;
-    //            [eCategory.events addObject:eventObject];
-    //        }
-    //        eCategory.order = order++;
-    //        [_eventsCategoryArray addObject:eCategory];
-    //    }
-    //    NSLog(@"something");
 }
 
-- (Speaker *)getSpeakerWithID:(NSInteger)speakerID {
-    for (Speaker *speaker in _speakersArray) {
-        if (speaker.speakerID == speakerID) return speaker;
+- (NSArray *)scheduleForHall:(Room *)room andDay:(Day *)day {
+    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity: [NSEntityDescription entityForName:NSStringFromClass([Event class]) inManagedObjectContext: appDelegate.managedObjectContext]];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"room == %@ AND ANY interval.day == %@", room, day]];
+    
+    NSError *error = nil;
+    NSArray *results = [appDelegate.managedObjectContext executeFetchRequest:request error:&error];
+    if (!error) {
+        return results;
     }
     return nil;
 }
 
-- (NSArray *)getScheduleForHall:(NSInteger)roomID {
-    
-//    switch (roomID) {
-//        case 1:
-//            return [self getScheduleForFirstHall];
-//            break;
-//        case 2:
-//            return [self getScheduleForSecondHall];
-//            break;
-//        case 3:
-//            return [self getScheduleForThirdHall];
-//            break;
-//        case 4:
-//            return [self getScheduleForFourthHall];
-//            break;
-//        case 5:
-//            return [self getScheduleForFifthhHall];
-//            break;
-//        default:
-//            break;
+//- (Event *)getEventForSpeakerWithID:(NSInteger)speakerID {
+//    for (Interval *eCategory in _eventsCategoryArray) {
+//        for (Event *event in eCategory.events) {
+//            for (Speaker *speaker in event.speakers) {
+//                if (speaker.speakerID == speakerID) return event;
+//            }
+//        }
 //    }
-    return nil;
-}
-
-- (Event *)getEventForSpeakerWithID:(NSInteger)speakerID {
-    for (Interval *eCategory in _eventsCategoryArray) {
-        for (Event *event in eCategory.events) {
-            for (Speaker *speaker in event.speakers) {
-                if (speaker.speakerID == speakerID) return event;
-            }
-        }
-    }
-    return nil;
-}
-
-- (NSArray *)getEventsForSpeakerWithID:(NSInteger)speakerID {
-    NSMutableArray *array = [NSMutableArray new];
-    
-    for (Interval *eCategory in _eventsCategoryArray) {
-        for (Event *event in eCategory.events) {
-            for (Speaker *speaker in event.speakers) {
-                if (speaker.speakerID == speakerID) [array addObject:event];
-            }
-        }
-    }
-    
-    return [array copy];;
-}
+//    return nil;
+//}
+//
+//- (NSArray *)getEventsForSpeakerWithID:(NSInteger)speakerID {
+//    NSMutableArray *array = [NSMutableArray new];
+//
+//    for (Interval *eCategory in _eventsCategoryArray) {
+//        for (Event *event in eCategory.events) {
+//            for (Speaker *speaker in event.speakers) {
+//                if (speaker.speakerID == speakerID) [array addObject:event];
+//            }
+//        }
+//    }
+//
+//    return [array copy];
+//}
 
 //- (NSArray *)getScheduleForFirstHall {
 //    NSMutableArray *returnArray = [NSMutableArray new];
@@ -505,31 +512,7 @@
 - (void)checkForJSONs {
     
     [_reach stopNotifier];
-    // Check JSONS version
     
-    //    NSString *currentSpeakersVersion = [[NSUserDefaults standardUserDefaults] valueForKey:SPEAKERS_VERSION_KEY];
-    //
-    //    NSURL *url = [NSURL URLWithString:@"https://raw.githubusercontent.com/RigaDevDay/2015/master/data/version.json"];
-    //
-    //
-    //
-    //    NSURLRequest *request = [NSURLRequest requestWithURL:url
-    //                                             cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
-    //                                         timeoutInterval:3.0];
-    //
-    //    // Get the data
-    //    NSURLResponse *response;
-    //    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
-    //    if (![data length]) return;
-    //    // Now create a NSDictionary from the JSON data
-    //    NSError *error;
-    //    NSDictionary *versionDirct = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-    //    NSNumber *latestScheduleVersion = versionDirct[@"scheduleVersion"];
-    ////    NSNumber *latestSpeakerVersion = versionDirct[@"speakersVersion"];
-    //
-    //    if (![currentScheduleVersion isEqualToString:[latestScheduleVersion stringValue]]) {
-    // Update Schedule JSON
-    //        NSURL *url = [NSURL URLWithString:@"https://raw.githubusercontent.com/RigaDevDay/2015/master/data/schedule.json"];
     NSURL *url = [NSURL URLWithString:@"https://raw.githubusercontent.com/RigaDevDay/RigaDevDay.github.io/58b43589bbe2f24e39f8925117c31c20fac47037/assets/data/main.json"];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url
@@ -546,26 +529,5 @@
     
     [self setupEventArray];
 }
-//    if (![currentSpeakersVersion isEqualToString:[latestSpeakerVersion stringValue]]) {
-//        // Update Speaker JSON
-//        NSURL *url = [NSURL URLWithString:@"https://raw.githubusercontent.com/RigaDevDay/2015/master/data/speakers.json"];
-//
-//        NSURLRequest *request = [NSURLRequest requestWithURL:url
-//                                                 cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
-//                                             timeoutInterval:30.0];
-//
-//        // Get the data
-//        NSURLResponse *response;
-//        NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
-//        if (![data length]) return;
-//        [data writeToFile:_speakersPath atomically:YES];
-//
-//        //Update Version
-//        [[NSUserDefaults standardUserDefaults] setValue:[latestSpeakerVersion stringValue] forKey:SPEAKERS_VERSION_KEY];
-//        [[NSUserDefaults standardUserDefaults] synchronize];
-//
-//        [self setupSpeakers];
-//    }
-//}
 
 @end

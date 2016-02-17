@@ -12,11 +12,11 @@
 #import "GlobalMetupTableViewCell.h"
 #import "SpeakerInfoViewController.h"
 #import "DataManager.h"
+#import "Event.h"
 
-@interface ScheduleViewController () <UITableViewDataSource, UITableViewDelegate, UITabBarDelegate, ScheduleTableViewCellDelegate> {
-    NSArray *_currentHallSchedule;
-    Event *_selectedEventObject;
-}
+@interface ScheduleViewController () <UITableViewDataSource, UITableViewDelegate, UITabBarDelegate, ScheduleTableViewCellDelegate>
+@property (nonatomic, strong) NSArray *pEvents;
+@property (nonatomic, strong) Event *pSelectedEvent;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonMenu;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -32,9 +32,8 @@
     self.buttonMenu.action = @selector(revealToggle:);
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
-    
-    
-    _currentHallSchedule = [[DataManager sharedInstance] getScheduleForHall:1];
+    DataManager *dataManager = [DataManager sharedInstance];
+    self.pEvents = [dataManager eventsForDay:dataManager.selectedDay andRoom:dataManager.selectedRoom];
     
     self.tabBarController.selectedImageTintColor = [UIColor whiteColor];
     [self.tabBarController setSelectedItem:[self.tabBarController.items firstObject]];
@@ -51,7 +50,8 @@
 }
 
 - (void)reloadScheduleData {
-    _currentHallSchedule = [[DataManager sharedInstance] getScheduleForHall:1];
+    //TODO
+//    _currentHallSchedule = [[DataManager sharedInstance] getScheduleForHall:1];
     [self.tableView reloadData];
 }
 
@@ -67,62 +67,63 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [_currentHallSchedule count];
+    return [self.pEvents count];
 }
 
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    Event *event = _currentHallSchedule[indexPath.row];
-//    if (![event.subTitle isEqualToString:@""]) {
-//        ScheduleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PresentationCell"];
-//        cell.labelSpeakerName.text = [self getSpeakerStringFromArray:event.speakers];
-//        cell.labelPresentationSubTitle.text = event.subTitle;
-//        cell.labelPresentationDescription.text = event.eventDescription;
-//        cell.labelStartTime.text = event.startTime;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    Event *event = self.pEvents[indexPath.row];
+    if (event.title == nil) {
+        ScheduleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PresentationCell"];
+        cell.labelSpeakerName.text = [self speakerStringFromSpeakers:event.speakers];
+        cell.labelPresentationSubTitle.text = event.subtitle;
+        cell.labelPresentationDescription.text = event.eventDesc;
+        cell.labelStartTime.text = event.interval.startTime;
 //        Speaker *speaker = [event.speakers firstObject];
 //        if ([[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.speakerID]) {
 //            [cell.buttonImageView setImage:[[DataManager sharedInstance] getActiveBookmarkImage]];
 //        } else {
 //            [cell.buttonImageView setImage:[[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO]];
 //        }
-//        
-//        cell.delegate = self;
-//        
-//        return cell;
-//
-//    } else {
-//        GlobalMetupTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GlobalMetupCell"];
-//        cell.labelPresentationName.text = event.eventDescription;
-//        cell.labelStartTime.text = event.startTime;
-//        return cell;
-//    }
-//}
+        
+        cell.delegate = self;
+        
+        return cell;
+    } else {
+        GlobalMetupTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GlobalMetupCell"];
+        cell.labelPresentationName.text = (event.title.length) ? event.title : (event.subtitle.length) ? event.subtitle : @"Event";
+        cell.labelStartTime.text = event.interval.startTime;
+        return cell;
+    }
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([[tableView cellForRowAtIndexPath:indexPath] isKindOfClass:[ScheduleTableViewCell class]]) {
-        _selectedEventObject = _currentHallSchedule[indexPath.row];
+        self.pSelectedEvent = self.pEvents[indexPath.row];
        [self performSegueWithIdentifier:[[DataManager sharedInstance] getInfoStoryboardSegue] sender:nil];
     }
 }
 
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
-    _currentHallSchedule = [[DataManager sharedInstance] getScheduleForHall:item.tag];
+    DataManager *dataManager = [DataManager sharedInstance];
+    self.pEvents = [dataManager eventsForDayOrder:1 andRoomOrder:(int)item.tag];
+//    _currentHallSchedule = [[DataManager sharedInstance] getScheduleForHall:item.tag];
     [self.tableView reloadData];
 }
 
-- (NSString *)getSpeakerStringFromArray:(NSArray *)speakersArray {
+- (NSString *)speakerStringFromSpeakers:(NSSet *)speakers {
     NSString *returnString = @"";
-    for (Speaker *speaker in speakersArray) {
+    for (Speaker *speaker in [speakers allObjects]) {
        returnString = [returnString stringByAppendingFormat:@"%@, ",speaker.name];
     }
-    return [returnString substringToIndex:[returnString length] - 2];
+    return returnString;
 }
 
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-//{
-//    SpeakerInfoViewController *destController = [segue destinationViewController];
-//    destController.speaker = [_selectedEventObject.speakers firstObject];
-//}
-//
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    SpeakerInfoViewController *destController = [segue destinationViewController];
+    destController.event = self.pSelectedEvent;
+}
+
 //- (void)bookmarkButtonPressedOnCell:(ScheduleTableViewCell *)cell {
 //    Event *event = [_currentHallSchedule objectAtIndex:[self.tableView indexPathForCell:cell].row];
 //    Speaker *speaker = [event.speakers firstObject];

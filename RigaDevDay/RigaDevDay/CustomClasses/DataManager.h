@@ -8,9 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "EventCategory.h"
-#import "SpeakerObject.h"
-#import "ScheduleObject.h"
+#import "Interval.h"
+#import "Speaker.h"
 
 @interface DataManager : NSObject
 
@@ -18,7 +17,7 @@
 
 - (NSArray *)getAllSpeakers;
 - (NSArray *)getScheduleForHall:(NSInteger)roomID;
-- (EventObject *)getEventForSpeakerWithID:(NSInteger)speakerID;
+- (Event *)getEventForSpeakerWithID:(NSInteger)speakerID;
 - (NSArray *)getEventsForSpeakerWithID:(NSInteger)speakerID;
 
 - (void)changeSpeakerBookmarkStateTo:(BOOL)saved forSpeakerID:(NSInteger)speakerID;

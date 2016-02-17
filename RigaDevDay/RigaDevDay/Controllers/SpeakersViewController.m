@@ -14,7 +14,7 @@
 
 @interface SpeakersViewController () <UITableViewDataSource, UITableViewDelegate, SpeakerTableViewCellDelegate> {
     NSArray *_speakersArray;
-    SpeakerObject *_selectedSpeaker;
+    Speaker *_selectedSpeaker;
 }
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonMenu;
@@ -64,12 +64,12 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    SpeakerObject *speaker = _speakersArray[indexPath.row];
+    Speaker *speaker = _speakersArray[indexPath.row];
     SpeakerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SpeakerCell"];
     cell.delegate = self;
     cell.labelName.text = speaker.name;
-    cell.labelPresentation.text = speaker.bio;
-    if ([[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.id]) {
+//    cell.labelPresentation.text = speaker.bio;
+    if ([[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.speakerID]) {
         [cell.buttonImage setImage:[[DataManager sharedInstance] getActiveBookmarkImage]];
     } else {
         [cell.buttonImage setImage:[[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO]];
@@ -90,10 +90,10 @@
 }
 
 - (void)bookmarkButtonPressedOnCell:(SpeakerTableViewCell *)cell {
-    SpeakerObject *speaker = [_speakersArray objectAtIndex:[self.tableView indexPathForCell:cell].row];
-    BOOL isBookmarked = [[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.id];
+    Speaker *speaker = [_speakersArray objectAtIndex:[self.tableView indexPathForCell:cell].row];
+    BOOL isBookmarked = [[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.speakerID];
     [cell.buttonImage setImage:isBookmarked ? [[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO] : [[DataManager sharedInstance] getActiveBookmarkImage]];
-    [[DataManager sharedInstance] changeSpeakerBookmarkStateTo:!isBookmarked forSpeakerID:speaker.id];
+    [[DataManager sharedInstance] changeSpeakerBookmarkStateTo:!isBookmarked forSpeakerID:speaker.speakerID];
 }
 
 @end

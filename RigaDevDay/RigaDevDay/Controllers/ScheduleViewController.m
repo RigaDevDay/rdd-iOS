@@ -15,7 +15,7 @@
 
 @interface ScheduleViewController () <UITableViewDataSource, UITableViewDelegate, UITabBarDelegate, ScheduleTableViewCellDelegate> {
     NSArray *_currentHallSchedule;
-    EventObject *_selectedEventObject;
+    Event *_selectedEventObject;
 }
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonMenu;
@@ -70,32 +70,32 @@
     return [_currentHallSchedule count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    EventObject *event = _currentHallSchedule[indexPath.row];
-    if (![event.subTitle isEqualToString:@""]) {
-        ScheduleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PresentationCell"];
-        cell.labelSpeakerName.text = [self getSpeakerStringFromArray:event.speakers];
-        cell.labelPresentationSubTitle.text = event.subTitle;
-        cell.labelPresentationDescription.text = event.eventDescription;
-        cell.labelStartTime.text = event.startTime;
-        SpeakerObject *speaker = [event.speakers firstObject];
-        if ([[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.id]) {
-            [cell.buttonImageView setImage:[[DataManager sharedInstance] getActiveBookmarkImage]];
-        } else {
-            [cell.buttonImageView setImage:[[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO]];
-        }
-        
-        cell.delegate = self;
-        
-        return cell;
-
-    } else {
-        GlobalMetupTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GlobalMetupCell"];
-        cell.labelPresentationName.text = event.eventDescription;
-        cell.labelStartTime.text = event.startTime;
-        return cell;
-    }
-}
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    Event *event = _currentHallSchedule[indexPath.row];
+//    if (![event.subTitle isEqualToString:@""]) {
+//        ScheduleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PresentationCell"];
+//        cell.labelSpeakerName.text = [self getSpeakerStringFromArray:event.speakers];
+//        cell.labelPresentationSubTitle.text = event.subTitle;
+//        cell.labelPresentationDescription.text = event.eventDescription;
+//        cell.labelStartTime.text = event.startTime;
+//        Speaker *speaker = [event.speakers firstObject];
+//        if ([[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.speakerID]) {
+//            [cell.buttonImageView setImage:[[DataManager sharedInstance] getActiveBookmarkImage]];
+//        } else {
+//            [cell.buttonImageView setImage:[[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO]];
+//        }
+//        
+//        cell.delegate = self;
+//        
+//        return cell;
+//
+//    } else {
+//        GlobalMetupTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GlobalMetupCell"];
+//        cell.labelPresentationName.text = event.eventDescription;
+//        cell.labelStartTime.text = event.startTime;
+//        return cell;
+//    }
+//}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([[tableView cellForRowAtIndexPath:indexPath] isKindOfClass:[ScheduleTableViewCell class]]) {
@@ -111,26 +111,26 @@
 
 - (NSString *)getSpeakerStringFromArray:(NSArray *)speakersArray {
     NSString *returnString = @"";
-    for (SpeakerObject *speaker in speakersArray) {
+    for (Speaker *speaker in speakersArray) {
        returnString = [returnString stringByAppendingFormat:@"%@, ",speaker.name];
     }
     return [returnString substringToIndex:[returnString length] - 2];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    SpeakerInfoViewController *destController = [segue destinationViewController];
-    destController.speaker = [_selectedEventObject.speakers firstObject];
-}
-
-- (void)bookmarkButtonPressedOnCell:(ScheduleTableViewCell *)cell {
-    EventObject *event = [_currentHallSchedule objectAtIndex:[self.tableView indexPathForCell:cell].row];
-    SpeakerObject *speaker = [event.speakers firstObject];
-    
-    BOOL isBookmarked = [[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.id];
-    [cell.buttonImageView setImage:isBookmarked ? [[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO] : [[DataManager sharedInstance] getActiveBookmarkImage]];
-    
-    [[DataManager sharedInstance] changeSpeakerBookmarkStateTo:!isBookmarked forSpeakerID:speaker.id];
-}
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    SpeakerInfoViewController *destController = [segue destinationViewController];
+//    destController.speaker = [_selectedEventObject.speakers firstObject];
+//}
+//
+//- (void)bookmarkButtonPressedOnCell:(ScheduleTableViewCell *)cell {
+//    Event *event = [_currentHallSchedule objectAtIndex:[self.tableView indexPathForCell:cell].row];
+//    Speaker *speaker = [event.speakers firstObject];
+//    
+//    BOOL isBookmarked = [[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.speakerID];
+//    [cell.buttonImageView setImage:isBookmarked ? [[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO] : [[DataManager sharedInstance] getActiveBookmarkImage]];
+//    
+//    [[DataManager sharedInstance] changeSpeakerBookmarkStateTo:!isBookmarked forSpeakerID:speaker.speakerID];
+//}
 
 @end

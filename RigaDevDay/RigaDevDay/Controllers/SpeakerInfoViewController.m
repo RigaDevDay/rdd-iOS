@@ -10,7 +10,7 @@
 #import "SWRevealViewController.h"
 
 @interface SpeakerInfoViewController () {
-    EventObject *_event;
+    Event *_event;
     NSArray *_evenets;
 }
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonMenu;
@@ -49,7 +49,7 @@
     if (self.reloadedObject) {
         _event = self.reloadedObject;
     } else {
-        _event = [[DataManager sharedInstance] getEventForSpeakerWithID:self.speaker.id];
+        _event = [[DataManager sharedInstance] getEventForSpeakerWithID:self.speaker.speakerID];
     }
     [self setUpInfo];
     [self setAboutButtonSelected:NO];
@@ -89,16 +89,16 @@
 }
 
 - (IBAction)onTwitterButtonPress:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://twitter.com/%@",self.speaker.twitter]]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://twitter.com/%@",self.speaker.twitterURL]]];
 }
 
 - (IBAction)onBookmarkButtonPress:(id)sender {
-    BOOL isBookmarked = [[DataManager sharedInstance] isSpeakerBookmarkedWithID:self.speaker.id];
+    BOOL isBookmarked = [[DataManager sharedInstance] isSpeakerBookmarkedWithID:self.speaker.speakerID];
     [self.buttonBookmark setImage:isBookmarked ? [[DataManager sharedInstance] getInActiveBookmarkImageForInfo:YES] : [[DataManager sharedInstance] getActiveBookmarkImage] forState:UIControlStateNormal];
-    [[DataManager sharedInstance] changeSpeakerBookmarkStateTo:!isBookmarked forSpeakerID:self.speaker.id];
+    [[DataManager sharedInstance] changeSpeakerBookmarkStateTo:!isBookmarked forSpeakerID:self.speaker.speakerID];
 }
 - (IBAction)onBlogButtonPress:(id)sender {
-    if (self.speaker.blog) [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.speaker.blog]];
+    if (self.speaker.blogURL) [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.speaker.blogURL]];
 }
 
 - (IBAction)onSpeechButtonPress:(id)sender {
@@ -111,7 +111,7 @@
 }
 
 - (void)setAboutButtonSelected:(BOOL)selected {
-    if (selected) self.textViewInformation.text = self.speaker.bio;
+//    if (selected) self.textViewInformation.text = self.speaker.bio;
     [self.buttonAbout setBackgroundColor: selected ? [UIColor whiteColor] : [UIColor blackColor]];
     [self.buttonAbout setTitleColor:selected ? [UIColor blackColor] : [UIColor whiteColor] forState:UIControlStateNormal];
     self.labelTileAndLocation.hidden = selected;
@@ -121,7 +121,7 @@
 }
 
 - (void)setSpeechButtonSelected:(BOOL)selected {
-    if (selected) self.textViewInformation.text = _event.eventDescription;
+//    if (selected) self.textViewInformation.text = _event.eventDescription;
     [self.buttonSpeech setBackgroundColor: selected ? [UIColor whiteColor] : [UIColor blackColor]];
     [self.buttonSpeech setTitleColor:selected ? [UIColor blackColor] : [UIColor whiteColor] forState:UIControlStateNormal];
     self.labelTileAndLocation.hidden = !selected;
@@ -139,27 +139,27 @@
     // Speaker Info
     self.labelSpeakerName.text = self.speaker.name;
     self.labelWorkPlace.text = self.speaker.company;
-    self.imageViewProfile.image = [UIImage imageNamed:[NSString stringWithFormat:@"speaker_%li",(long)self.speaker.id]];
-    self.imageViewBackground.image = [UIImage imageNamed:[NSString stringWithFormat:@"backstage_%li.jpeg",(long)self.speaker.id]];
+    self.imageViewProfile.image = [UIImage imageNamed:[NSString stringWithFormat:@"speaker_%li",(long)self.speaker.speakerID]];
+    self.imageViewBackground.image = [UIImage imageNamed:[NSString stringWithFormat:@"backstage_%li.jpeg",(long)self.speaker.speakerID]];
     [self.buttonBlog setTitle:[self getBlogAndURLSrting] forState:UIControlStateNormal];
-    BOOL isBookmarked = [[DataManager sharedInstance] isSpeakerBookmarkedWithID:self.speaker.id];
+    BOOL isBookmarked = [[DataManager sharedInstance] isSpeakerBookmarkedWithID:self.speaker.speakerID];
     [self.imageViewCountry setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",self.speaker.country]]];
     
     [self.buttonBookmark setImage:isBookmarked ? [[DataManager sharedInstance] getActiveBookmarkImage] : [[DataManager sharedInstance] getInActiveBookmarkImageForInfo:YES] forState:UIControlStateNormal];
     
     // Evnet Info
-    self.labelTileAndLocation.text = [self getEventTimeAndLocationString];
-    self.labelMainTitle.text = _event.subTitle;
-    self.textViewInformation.text = _event.eventDescription;
+//    self.labelTileAndLocation.text = [self getEventTimeAndLocationString];
+//    self.labelMainTitle.text = _event.subTitle;
+//    self.textViewInformation.text = _event.eventDescription;
 }
 
-- (NSString *)getEventTimeAndLocationString {
-    return [NSString stringWithFormat:@"%@ - Hall %li",_event.startTime, (long)_event.hallID];
-}
+//- (NSString *)getEventTimeAndLocationString {
+////    return [NSString stringWithFormat:@"%@ - Hall %li",_event.startTime, (long)_event.hallID];
+//}
 
 - (NSString *)getBlogAndURLSrting {
-    if (self.speaker.blog)  {
-        return [NSString stringWithFormat:@"Blog %@",self.speaker.blog];
+    if (self.speaker.blogURL)  {
+        return [NSString stringWithFormat:@"Blog %@",self.speaker.blogURL];
     }
     return @"";
 }
@@ -167,29 +167,29 @@
 - (void)refreshSpeakerSpeachForward:(BOOL)forward {
     if (!self.imageViewCountry.hidden) return; // not update speach while in info
     
-    NSArray *events = [[DataManager sharedInstance] getEventsForSpeakerWithID:self.speaker.id];
-    int arrayCount = (int)[events count];
-    int startPossition = (int)[events indexOfObject:_event];
-    self.reloadedObject = nil;
-    
-    if (forward) { // swipe left
-        for (; startPossition < arrayCount; startPossition++) {
-            EventObject *event = [events objectAtIndex:startPossition];
-            if (![event isEqual:_event]) {
-                self.reloadedObject = event;
-            }
-        }
-    } else { // swipe right
-        for (; startPossition >= 0; startPossition--) {
-            EventObject *event = [events objectAtIndex:startPossition];
-            if (![event isEqual:_event]) {
-                self.reloadedObject = event;
-            }
-        }
-    }
-    if (self.reloadedObject){
-        [self viewDidLoad];
-    }
+//    NSArray *events = [[DataManager sharedInstance] getEventsForSpeakerWithID:self.speaker.speakerID];
+//    int arrayCount = (int)[events count];
+//    int startPossition = (int)[events indexOfObject:_event];
+//    self.reloadedObject = nil;
+//    
+//    if (forward) { // swipe left
+//        for (; startPossition < arrayCount; startPossition++) {
+//            Event *event = [events objectAtIndex:startPossition];
+//            if (![event isEqual:_event]) {
+//                self.reloadedObject = event;
+//            }
+//        }
+//    } else { // swipe right
+//        for (; startPossition >= 0; startPossition--) {
+//            Event *event = [events objectAtIndex:startPossition];
+//            if (![event isEqual:_event]) {
+//                self.reloadedObject = event;
+//            }
+//        }
+//    }
+//    if (self.reloadedObject){
+//        [self viewDidLoad];
+//    }
 }
 
 @end

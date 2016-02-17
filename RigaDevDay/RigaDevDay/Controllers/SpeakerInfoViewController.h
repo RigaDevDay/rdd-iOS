@@ -11,7 +11,7 @@
 
 @interface SpeakerInfoViewController : UIViewController
 
-@property (strong, nonatomic) SpeakerObject *speaker;
-@property (strong, nonatomic) EventObject *reloadedObject;
+@property (strong, nonatomic) Speaker *speaker;
+@property (strong, nonatomic) Event *reloadedObject;
 
 @end

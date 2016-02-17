@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38B571F41C74A6B70033E40E /* ScheduleModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 38B571F21C74A6B70033E40E /* ScheduleModel.xcdatamodeld */; };
+		38B571F61C74A7370033E40E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B571F51C74A7370033E40E /* CoreData.framework */; };
+		38B5725A1C74AE650033E40E /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B572431C74AE640033E40E /* Event+CoreDataProperties.m */; };
+		38B5725B1C74AE650033E40E /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B572451C74AE640033E40E /* Event.m */; };
+		38B5725E1C74AE650033E40E /* Tag+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B5724B1C74AE640033E40E /* Tag+CoreDataProperties.m */; };
+		38B5725F1C74AE650033E40E /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B5724D1C74AE640033E40E /* Tag.m */; };
+		38B572601C74AE650033E40E /* Interval+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B5724F1C74AE640033E40E /* Interval+CoreDataProperties.m */; };
+		38B572611C74AE650033E40E /* Interval.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B572511C74AE640033E40E /* Interval.m */; };
+		38B572641C74AE650033E40E /* Speaker+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B572571C74AE650033E40E /* Speaker+CoreDataProperties.m */; };
+		38B572651C74AE650033E40E /* Speaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B572591C74AE650033E40E /* Speaker.m */; };
+		38B5727A1C74B9E40033E40E /* Day+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B572731C74B9E40033E40E /* Day+CoreDataProperties.m */; };
+		38B5727B1C74B9E40033E40E /* Day.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B572751C74B9E40033E40E /* Day.m */; };
+		38B5727C1C74B9E40033E40E /* Room+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B572771C74B9E40033E40E /* Room+CoreDataProperties.m */; };
+		38B5727D1C74B9E40033E40E /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B572791C74B9E40033E40E /* Room.m */; };
 		97F8893B1A49A84E00A135C9 /* SpeakersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F8893A1A49A84E00A135C9 /* SpeakersViewController.m */; };
 		97F8893D1A49B35500A135C9 /* icon_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 97F8893C1A49B35500A135C9 /* icon_back.png */; };
 		97F889411A49B46E00A135C9 /* back_button_VECTOR.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 97F889401A49B46E00A135C9 /* back_button_VECTOR.pdf */; };
@@ -114,9 +128,6 @@
 		B7B16D361A361BD0005267AF /* BookmarksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D351A361BD0005267AF /* BookmarksViewController.m */; };
 		B7B16D3A1A361BE8005267AF /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D391A361BE8005267AF /* AboutViewController.m */; };
 		B7B16D3E1A361D16005267AF /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D3D1A361D16005267AF /* DataManager.m */; };
-		B7B16D421A361D33005267AF /* EventObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D411A361D33005267AF /* EventObject.m */; };
-		B7B16D471A361D75005267AF /* ScheduleObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D461A361D75005267AF /* ScheduleObject.m */; };
-		B7B16D4C1A361DDA005267AF /* SpeakerObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D4B1A361DDA005267AF /* SpeakerObject.m */; };
 		B7B16D4F1A36201B005267AF /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D4E1A36201B005267AF /* SWRevealViewController.m */; };
 		B7B16D551A362646005267AF /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D541A362646005267AF /* NavigationViewController.m */; };
 		B7BFBA421A52B91100B46385 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7FDD0EC1A4B16A40001C098 /* SystemConfiguration.framework */; };
@@ -180,7 +191,6 @@
 		B7FDD0EA1A4AC1560001C098 /* startuphunt.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0C91A4AC1560001C098 /* startuphunt.png */; };
 		B7FDD0EB1A4AC1560001C098 /* techhub.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0CA1A4AC1560001C098 /* techhub.png */; };
 		B7FDD1141A4B21110001C098 /* SpeakerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD1131A4B21110001C098 /* SpeakerTableViewCell.m */; };
-		B7FDD11F1A4B45820001C098 /* EventCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD11E1A4B45820001C098 /* EventCategory.m */; };
 		B7FDD1221A4B4FDD0001C098 /* ScheduleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD1211A4B4FDD0001C098 /* ScheduleTableViewCell.m */; };
 /* End PBXBuildFile section */
 
@@ -195,6 +205,32 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		38B571F31C74A6B70033E40E /* ScheduleModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ScheduleModel.xcdatamodel; sourceTree = "<group>"; };
+		38B571F51C74A7370033E40E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		38B572421C74AE640033E40E /* Event+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Event+CoreDataProperties.h"; path = "Model/Event+CoreDataProperties.h"; sourceTree = "<group>"; };
+		38B572431C74AE640033E40E /* Event+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Event+CoreDataProperties.m"; path = "Model/Event+CoreDataProperties.m"; sourceTree = "<group>"; };
+		38B572441C74AE640033E40E /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Event.h; path = Model/Event.h; sourceTree = "<group>"; };
+		38B572451C74AE640033E40E /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Event.m; path = Model/Event.m; sourceTree = "<group>"; };
+		38B5724A1C74AE640033E40E /* Tag+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Tag+CoreDataProperties.h"; path = "Model/Tag+CoreDataProperties.h"; sourceTree = "<group>"; };
+		38B5724B1C74AE640033E40E /* Tag+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Tag+CoreDataProperties.m"; path = "Model/Tag+CoreDataProperties.m"; sourceTree = "<group>"; };
+		38B5724C1C74AE640033E40E /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tag.h; path = Model/Tag.h; sourceTree = "<group>"; };
+		38B5724D1C74AE640033E40E /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tag.m; path = Model/Tag.m; sourceTree = "<group>"; };
+		38B5724E1C74AE640033E40E /* Interval+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Interval+CoreDataProperties.h"; path = "Model/Interval+CoreDataProperties.h"; sourceTree = "<group>"; };
+		38B5724F1C74AE640033E40E /* Interval+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Interval+CoreDataProperties.m"; path = "Model/Interval+CoreDataProperties.m"; sourceTree = "<group>"; };
+		38B572501C74AE640033E40E /* Interval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Interval.h; path = Model/Interval.h; sourceTree = "<group>"; };
+		38B572511C74AE640033E40E /* Interval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Interval.m; path = Model/Interval.m; sourceTree = "<group>"; };
+		38B572561C74AE650033E40E /* Speaker+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Speaker+CoreDataProperties.h"; path = "Model/Speaker+CoreDataProperties.h"; sourceTree = "<group>"; };
+		38B572571C74AE650033E40E /* Speaker+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Speaker+CoreDataProperties.m"; path = "Model/Speaker+CoreDataProperties.m"; sourceTree = "<group>"; };
+		38B572581C74AE650033E40E /* Speaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Speaker.h; path = Model/Speaker.h; sourceTree = "<group>"; };
+		38B572591C74AE650033E40E /* Speaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Speaker.m; path = Model/Speaker.m; sourceTree = "<group>"; };
+		38B572721C74B9E40033E40E /* Day+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Day+CoreDataProperties.h"; path = "Model/Day+CoreDataProperties.h"; sourceTree = "<group>"; };
+		38B572731C74B9E40033E40E /* Day+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Day+CoreDataProperties.m"; path = "Model/Day+CoreDataProperties.m"; sourceTree = "<group>"; };
+		38B572741C74B9E40033E40E /* Day.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Day.h; path = Model/Day.h; sourceTree = "<group>"; };
+		38B572751C74B9E40033E40E /* Day.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Day.m; path = Model/Day.m; sourceTree = "<group>"; };
+		38B572761C74B9E40033E40E /* Room+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Room+CoreDataProperties.h"; path = "Model/Room+CoreDataProperties.h"; sourceTree = "<group>"; };
+		38B572771C74B9E40033E40E /* Room+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Room+CoreDataProperties.m"; path = "Model/Room+CoreDataProperties.m"; sourceTree = "<group>"; };
+		38B572781C74B9E40033E40E /* Room.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Room.h; path = Model/Room.h; sourceTree = "<group>"; };
+		38B572791C74B9E40033E40E /* Room.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Room.m; path = Model/Room.m; sourceTree = "<group>"; };
 		97F889391A49A84E00A135C9 /* SpeakersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakersViewController.h; path = RigaDevDay/Controllers/SpeakersViewController.h; sourceTree = "<group>"; };
 		97F8893A1A49A84E00A135C9 /* SpeakersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakersViewController.m; path = RigaDevDay/Controllers/SpeakersViewController.m; sourceTree = "<group>"; };
 		97F8893C1A49B35500A135C9 /* icon_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_back.png; sourceTree = "<group>"; };
@@ -319,12 +355,6 @@
 		B7B16D391A361BE8005267AF /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutViewController.m; path = RigaDevDay/Controllers/AboutViewController.m; sourceTree = "<group>"; };
 		B7B16D3C1A361D16005267AF /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = CustomClasses/DataManager.h; sourceTree = "<group>"; };
 		B7B16D3D1A361D16005267AF /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataManager.m; path = CustomClasses/DataManager.m; sourceTree = "<group>"; };
-		B7B16D401A361D33005267AF /* EventObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventObject.h; path = CustomClasses/EventObject.h; sourceTree = "<group>"; };
-		B7B16D411A361D33005267AF /* EventObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventObject.m; path = CustomClasses/EventObject.m; sourceTree = "<group>"; };
-		B7B16D451A361D75005267AF /* ScheduleObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleObject.h; path = CustomClasses/ScheduleObject.h; sourceTree = "<group>"; };
-		B7B16D461A361D75005267AF /* ScheduleObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleObject.m; path = CustomClasses/ScheduleObject.m; sourceTree = "<group>"; };
-		B7B16D4A1A361DDA005267AF /* SpeakerObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakerObject.h; path = CustomClasses/SpeakerObject.h; sourceTree = "<group>"; };
-		B7B16D4B1A361DDA005267AF /* SpeakerObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerObject.m; path = CustomClasses/SpeakerObject.m; sourceTree = "<group>"; };
 		B7B16D4D1A36201B005267AF /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = RigaDevDay/Libs/SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
 		B7B16D4E1A36201B005267AF /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = RigaDevDay/Libs/SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
 		B7B16D531A362646005267AF /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NavigationViewController.h; path = Controllers/NavigationViewController.h; sourceTree = "<group>"; };
@@ -396,8 +426,6 @@
 		B7FDD0EC1A4B16A40001C098 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B7FDD1121A4B21110001C098 /* SpeakerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakerTableViewCell.h; path = RigaDevDay/Controllers/SpeakerTableViewCell.h; sourceTree = "<group>"; };
 		B7FDD1131A4B21110001C098 /* SpeakerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerTableViewCell.m; path = RigaDevDay/Controllers/SpeakerTableViewCell.m; sourceTree = "<group>"; };
-		B7FDD11D1A4B45820001C098 /* EventCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventCategory.h; path = CustomClasses/EventCategory.h; sourceTree = "<group>"; };
-		B7FDD11E1A4B45820001C098 /* EventCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventCategory.m; path = CustomClasses/EventCategory.m; sourceTree = "<group>"; };
 		B7FDD1201A4B4FDD0001C098 /* ScheduleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleTableViewCell.h; path = RigaDevDay/Controllers/ScheduleTableViewCell.h; sourceTree = "<group>"; };
 		B7FDD1211A4B4FDD0001C098 /* ScheduleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleTableViewCell.m; path = RigaDevDay/Controllers/ScheduleTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -407,6 +435,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38B571F61C74A7370033E40E /* CoreData.framework in Frameworks */,
 				B7BFBA421A52B91100B46385 /* SystemConfiguration.framework in Frameworks */,
 				97F889461A49B6D300A135C9 /* MapKit.framework in Frameworks */,
 			);
@@ -422,6 +451,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38B571DF1C749FD40033E40E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				38B5720B1C74AB980033E40E /* ManagedObjects */,
+				38B571F71C74AB590033E40E /* Objects */,
+				38B571F21C74A6B70033E40E /* ScheduleModel.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		38B571F71C74AB590033E40E /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
+		38B5720B1C74AB980033E40E /* ManagedObjects */ = {
+			isa = PBXGroup;
+			children = (
+				38B572721C74B9E40033E40E /* Day+CoreDataProperties.h */,
+				38B572731C74B9E40033E40E /* Day+CoreDataProperties.m */,
+				38B572741C74B9E40033E40E /* Day.h */,
+				38B572751C74B9E40033E40E /* Day.m */,
+				38B572761C74B9E40033E40E /* Room+CoreDataProperties.h */,
+				38B572771C74B9E40033E40E /* Room+CoreDataProperties.m */,
+				38B572781C74B9E40033E40E /* Room.h */,
+				38B572791C74B9E40033E40E /* Room.m */,
+				38B572421C74AE640033E40E /* Event+CoreDataProperties.h */,
+				38B572431C74AE640033E40E /* Event+CoreDataProperties.m */,
+				38B572441C74AE640033E40E /* Event.h */,
+				38B572451C74AE640033E40E /* Event.m */,
+				38B5724A1C74AE640033E40E /* Tag+CoreDataProperties.h */,
+				38B5724B1C74AE640033E40E /* Tag+CoreDataProperties.m */,
+				38B5724C1C74AE640033E40E /* Tag.h */,
+				38B5724D1C74AE640033E40E /* Tag.m */,
+				38B5724E1C74AE640033E40E /* Interval+CoreDataProperties.h */,
+				38B5724F1C74AE640033E40E /* Interval+CoreDataProperties.m */,
+				38B572501C74AE640033E40E /* Interval.h */,
+				38B572511C74AE640033E40E /* Interval.m */,
+				38B572561C74AE650033E40E /* Speaker+CoreDataProperties.h */,
+				38B572571C74AE650033E40E /* Speaker+CoreDataProperties.m */,
+				38B572581C74AE650033E40E /* Speaker.h */,
+				38B572591C74AE650033E40E /* Speaker.m */,
+			);
+			name = ManagedObjects;
+			sourceTree = "<group>";
+		};
 		97F889471A49B6D900A135C9 /* Venue */ = {
 			isa = PBXGroup;
 			children = (
@@ -573,6 +650,7 @@
 		B7B16CFD1A361966005267AF /* RigaDevDay */ = {
 			isa = PBXGroup;
 			children = (
+				38B571DF1C749FD40033E40E /* Model */,
 				B7B16D261A361A46005267AF /* Controllers */,
 				B7B16D3F1A361D19005267AF /* CustomClasses */,
 				B7B16D501A36201F005267AF /* Libs */,
@@ -725,7 +803,6 @@
 			isa = PBXGroup;
 			children = (
 				B7B16D431A361D37005267AF /* DataManager */,
-				B7B16D481A361D78005267AF /* Objects */,
 			);
 			name = CustomClasses;
 			sourceTree = "<group>";
@@ -739,26 +816,12 @@
 			name = DataManager;
 			sourceTree = "<group>";
 		};
-		B7B16D481A361D78005267AF /* Objects */ = {
-			isa = PBXGroup;
-			children = (
-				B7FDD11D1A4B45820001C098 /* EventCategory.h */,
-				B7FDD11E1A4B45820001C098 /* EventCategory.m */,
-				B7B16D401A361D33005267AF /* EventObject.h */,
-				B7B16D411A361D33005267AF /* EventObject.m */,
-				B7B16D4A1A361DDA005267AF /* SpeakerObject.h */,
-				B7B16D4B1A361DDA005267AF /* SpeakerObject.m */,
-				B7B16D451A361D75005267AF /* ScheduleObject.h */,
-				B7B16D461A361D75005267AF /* ScheduleObject.m */,
-			);
-			name = Objects;
-			sourceTree = "<group>";
-		};
 		B7B16D501A36201F005267AF /* Libs */ = {
 			isa = PBXGroup;
 			children = (
 				B7BFBA431A52B93600B46385 /* Reachability.h */,
 				B7BFBA441A52B93600B46385 /* Reachability.m */,
+				38B571F51C74A7370033E40E /* CoreData.framework */,
 				B7FDD0EC1A4B16A40001C098 /* SystemConfiguration.framework */,
 				97F889451A49B6D300A135C9 /* MapKit.framework */,
 				97F8894B1A49BBF900A135C9 /* MapView + Zoom */,
@@ -920,12 +983,12 @@
 		B7B16CF31A361966005267AF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
-				ORGANIZATIONNAME = "Deniss Kaibagarovs";
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Riga Dev Day";
 				TargetAttributes = {
 					B7B16CFA1A361966005267AF = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = 99TE4Z2NY7;
+						DevelopmentTeam = KR8KYSY563;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 0;
@@ -1124,33 +1187,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38B5727C1C74B9E40033E40E /* Room+CoreDataProperties.m in Sources */,
 				B7BFBA451A52B93600B46385 /* Reachability.m in Sources */,
 				B70F61561A4846C6004EA563 /* ShowCaseCell.m in Sources */,
 				B7B16D4F1A36201B005267AF /* SWRevealViewController.m in Sources */,
 				97F8894A1A49BBEF00A135C9 /* MKMapView+ZoomLevel.m in Sources */,
+				38B5727B1C74B9E40033E40E /* Day.m in Sources */,
 				97F8893B1A49A84E00A135C9 /* SpeakersViewController.m in Sources */,
 				B7B16D2A1A361B2D005267AF /* SpeakerInfoViewController.m in Sources */,
+				38B572641C74AE650033E40E /* Speaker+CoreDataProperties.m in Sources */,
 				B7B16D551A362646005267AF /* NavigationViewController.m in Sources */,
 				B70EEB571A485258008CD9C6 /* MHTabBarController.m in Sources */,
 				B7B16D321A361BAC005267AF /* ScheduleViewController.m in Sources */,
-				B7B16D471A361D75005267AF /* ScheduleObject.m in Sources */,
+				38B5725A1C74AE650033E40E /* Event+CoreDataProperties.m in Sources */,
+				38B572611C74AE650033E40E /* Interval.m in Sources */,
 				B7B16D3A1A361BE8005267AF /* AboutViewController.m in Sources */,
+				38B571F41C74A6B70033E40E /* ScheduleModel.xcdatamodeld in Sources */,
 				B7FDD1221A4B4FDD0001C098 /* ScheduleTableViewCell.m in Sources */,
 				B7B16D041A361966005267AF /* AppDelegate.m in Sources */,
+				38B5725E1C74AE650033E40E /* Tag+CoreDataProperties.m in Sources */,
 				97F889441A49B64600A135C9 /* VenueViewController.m in Sources */,
 				B7B16D2E1A361B7A005267AF /* SpeechInfoViewController.m in Sources */,
+				38B5725B1C74AE650033E40E /* Event.m in Sources */,
 				B7FA0F1D1A4C731F002BD598 /* GlobalMetupTableViewCell.m in Sources */,
 				B7B16D361A361BD0005267AF /* BookmarksViewController.m in Sources */,
+				38B5727A1C74B9E40033E40E /* Day+CoreDataProperties.m in Sources */,
 				B70F61591A4846EB004EA563 /* ShowcaseViewController.m in Sources */,
 				B7FDD1141A4B21110001C098 /* SpeakerTableViewCell.m in Sources */,
-				B7FDD11F1A4B45820001C098 /* EventCategory.m in Sources */,
-				B7B16D4C1A361DDA005267AF /* SpeakerObject.m in Sources */,
 				B7FDD0A81A4ABFFE0001C098 /* OrganizersTableViewCell.m in Sources */,
+				38B5725F1C74AE650033E40E /* Tag.m in Sources */,
+				38B572601C74AE650033E40E /* Interval+CoreDataProperties.m in Sources */,
+				38B5727D1C74B9E40033E40E /* Room.m in Sources */,
 				B7FB3D451A62CCD2000A73E9 /* TwitterViewController.m in Sources */,
 				B7FDD09D1A4ABB1B0001C098 /* OrganizersViewController.m in Sources */,
 				B7B16D3E1A361D16005267AF /* DataManager.m in Sources */,
 				B7B16D011A361966005267AF /* main.m in Sources */,
-				B7B16D421A361D33005267AF /* EventObject.m in Sources */,
+				38B572651C74AE650033E40E /* Speaker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1212,6 +1284,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1276,12 +1349,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: DENISS KAIBAGAROVS (99TE4Z2NY7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = RigaDevDay/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mobi.sudo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4b37086d-0f40-4973-b159-2555efa9396a";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1292,12 +1366,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: DENISS KAIBAGAROVS (99TE4Z2NY7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = RigaDevDay/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mobi.sudo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4b37086d-0f40-4973-b159-2555efa9396a";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1316,6 +1391,7 @@
 				);
 				INFOPLIST_FILE = RigaDevDayTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mobi.sudo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RigaDevDay.app/RigaDevDay";
 			};
@@ -1331,6 +1407,7 @@
 				);
 				INFOPLIST_FILE = RigaDevDayTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mobi.sudo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RigaDevDay.app/RigaDevDay";
 			};
@@ -1367,6 +1444,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		38B571F21C74A6B70033E40E /* ScheduleModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				38B571F31C74A6B70033E40E /* ScheduleModel.xcdatamodel */,
+			);
+			currentVersion = 38B571F31C74A6B70033E40E /* ScheduleModel.xcdatamodel */;
+			path = ScheduleModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B7B16CF31A361966005267AF /* Project object */;
 }

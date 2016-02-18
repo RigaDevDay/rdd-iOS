@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cp2-fC-y6q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cp2-fC-y6q">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -5799,8 +5799,8 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="buttonMenu" destination="32N-QF-Bzw" id="h6s-XO-qlh"/>
+                        <outlet property="iboTableView" destination="huc-da-NiE" id="uoc-ku-iAk"/>
                         <outlet property="tabBarController" destination="u7d-PX-KYl" id="2ps-3F-FgU"/>
-                        <outlet property="tableView" destination="huc-da-NiE" id="3wF-XF-oeW"/>
                         <segue destination="pjE-XR-wLh" kind="push" identifier="SPEAKER_SPEECH_INFO_SEGUEUE_3.5" id="Nkk-aN-FU8"/>
                         <segue destination="VGs-Et-mdn" kind="push" identifier="SPEAKER_SPEECH_INFO_SEGUEUE_4" id="LIW-EN-O2r"/>
                         <segue destination="aNU-Uy-BXS" kind="push" identifier="SPEAKER_SPEECH_INFO_SEGUEUE_4.7" id="5N1-RO-oVG"/>

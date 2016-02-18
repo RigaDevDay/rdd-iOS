@@ -52,7 +52,7 @@
     self = [super init];
     if (self) {
         [self updateScheduleIfNeeded];
-        [self setupEventArray];
+//        [self setupEventArray];
         //        [self setupBookmarks];
     }
     return self;
@@ -80,22 +80,26 @@
 - (Room *)selectedRoom {
     if (!_selectedRoom) {
         // Select first room by default
-        NSFetchRequest *request = [[NSFetchRequest alloc] init];
-        AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-        [request setEntity: [NSEntityDescription entityForName:NSStringFromClass([Room class]) inManagedObjectContext: appDelegate.managedObjectContext]];
-        [request setPredicate:[NSPredicate predicateWithFormat:@"order == 1"]];
-//        [request setPredicate:[NSPredicate predicateWithFormat:@"name == ", @"Room 1"]];
-        request.fetchLimit = 1;
-        NSError *error = nil;
-        
-        NSArray *results = [appDelegate.managedObjectContext executeFetchRequest:request error:&error];
-        if (!error) {
-            if ([results count]) {
-                _selectedRoom = [results firstObject];
-            }
-        }
+        _selectedRoom = [self p_roomWithOrder:1];
     }
     return _selectedRoom;
+}
+
+- (Room *)p_roomWithOrder:(int)order {
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    [request setEntity: [NSEntityDescription entityForName:NSStringFromClass([Room class]) inManagedObjectContext: appDelegate.managedObjectContext]];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"order == %@",[NSNumber numberWithInt:order]]];
+    request.fetchLimit = 1;
+    NSError *error = nil;
+    
+    NSArray *results = [appDelegate.managedObjectContext executeFetchRequest:request error:&error];
+    if (!error) {
+        if ([results count]) {
+            return [results firstObject];
+        }
+    }
+    return nil;
 }
 
 
@@ -113,6 +117,10 @@
         return results;
     }
     return events;
+}
+
+- (void)selectRoomWithOrder:(NSInteger)order {
+    self.selectedRoom = [self p_roomWithOrder:(int)order];
 }
 
 - (NSArray *)eventsForDayOrder:(int)dayOrder andRoomOrder:(int)roomOrder {
@@ -182,6 +190,8 @@
                 speaker.blogURL = (speakerDict[@"blog"]) ? speakerDict[@"blog"] : @"";
                 speaker.speakerDesc = speakerDict[@"description"];
             }
+            [appDelegate saveContext];
+
             
             NSArray *days = jsonDict[@"days"];
             int order = 1;
@@ -206,6 +216,8 @@
                     [room addDaysObject:day];
                 }
                 
+                [appDelegate saveContext];
+                
                 NSArray *intervals = scheduleDict[@"schedule"];
                 int intervalOrder = 1;
                 for (NSDictionary *intervalDict in intervals) {
@@ -217,6 +229,8 @@
                     interval.endTime = intervalDict[@"endTime"];
                     interval.day = day;
                     
+                     [appDelegate saveContext];
+                    
                     int eventCount = 0;
                     NSArray *events = intervalDict[@"events"];
                     
@@ -226,6 +240,7 @@
                         event.title = events[0][@"title"];
                         event.subtitle = (events[0][@"subtitle"]) ? events[0][@"subtitle"] : nil;
                         event.interval = interval;
+                         [appDelegate saveContext];
                     } else {
                         
                         for (NSDictionary *eventDict in events) {
@@ -249,24 +264,27 @@
                                     event.room = [results firstObject];
                                 }
                             }
-                            
+                            [appDelegate saveContext];
                             
                             NSArray *speakers = eventDict[@"speakers"];
-                            for (NSString *speakerID in speakers) {
+                            for (int i = 0; i < speakers.count; i++) {
                                 NSFetchRequest *request = [[NSFetchRequest alloc] init];
                                 
                                 [request setEntity: [NSEntityDescription entityForName:NSStringFromClass([Speaker class]) inManagedObjectContext: appDelegate.managedObjectContext]];
-                                [request setPredicate:[NSPredicate predicateWithFormat:@"speakerID == %@", speakerID]];
+                                [request setPredicate:[NSPredicate predicateWithFormat:@"speakerID == %@", speakers[i]]];
                                 request.fetchLimit = 1;
                                 NSError *error = nil;
                                 
                                 NSArray *results = [appDelegate.managedObjectContext executeFetchRequest:request error:&error];
                                 if (!error) {
                                     if ([results count]) {
+//                                        Speaker *speaker = [results firstObject];
+//                                        [speaker addEventsObject:event];
                                         [event addSpeakersObject:[results firstObject]] ;
                                     }
                                 }
                             }
+                            [appDelegate saveContext];
                             
                             NSArray *tags = eventDict[@"tags"];
                             for (NSString *tagName in tags) {
@@ -290,6 +308,7 @@
                                     [event addTagsObject:tag];
                                 }
                             }
+                                [appDelegate saveContext];
                         }
                     }
                 }
@@ -488,6 +507,8 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
     
+    [self checkForJSONs];
+    
     // Check for Interner
     if(!_reach) {
         _reach = [Reachability reachabilityWithHostname:@"www.google.com"];
@@ -497,7 +518,7 @@
     {
         dispatch_async(dispatch_get_main_queue(), ^{
             NSLog(@"REACHABLE!");
-            [self checkForJSONs];
+//            [self checkForJSONs];
         });
     };
     

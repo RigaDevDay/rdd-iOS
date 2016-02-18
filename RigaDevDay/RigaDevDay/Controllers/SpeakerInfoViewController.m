@@ -113,7 +113,8 @@
 }
 
 - (void)setAboutButtonSelected:(BOOL)selected {
-//    if (selected) self.textViewInformation.text = self.speaker.bio;
+    Speaker *speaker = [self.event.speakers anyObject];
+    if (selected) self.textViewInformation.text = speaker.speakerDesc;
     [self.buttonAbout setBackgroundColor: selected ? [UIColor whiteColor] : [UIColor blackColor]];
     [self.buttonAbout setTitleColor:selected ? [UIColor blackColor] : [UIColor whiteColor] forState:UIControlStateNormal];
     self.labelTileAndLocation.hidden = selected;
@@ -123,7 +124,7 @@
 }
 
 - (void)setSpeechButtonSelected:(BOOL)selected {
-//    if (selected) self.textViewInformation.text = _event.eventDescription;
+    if (selected) self.textViewInformation.text = self.event.eventDesc;
     [self.buttonSpeech setBackgroundColor: selected ? [UIColor whiteColor] : [UIColor blackColor]];
     [self.buttonSpeech setTitleColor:selected ? [UIColor blackColor] : [UIColor whiteColor] forState:UIControlStateNormal];
     self.labelTileAndLocation.hidden = !selected;
@@ -151,14 +152,14 @@
     [self.buttonBookmark setImage:[self.event.isFavorite boolValue] ? [[DataManager sharedInstance] getActiveBookmarkImage] : [[DataManager sharedInstance] getInActiveBookmarkImageForInfo:YES] forState:UIControlStateNormal];
     
     // Evnet Info
-//    self.labelTileAndLocation.text = [self getEventTimeAndLocationString];
-//    self.labelMainTitle.text = _event.subTitle;
-//    self.textViewInformation.text = _event.eventDescription;
+    self.labelTileAndLocation.text = [self getEventTimeAndLocationString];
+    self.labelMainTitle.text = self.event.subtitle;
+    self.textViewInformation.text = self.event.eventDesc;
 }
 
-//- (NSString *)getEventTimeAndLocationString {
-////    return [NSString stringWithFormat:@"%@ - Hall %li",_event.startTime, (long)_event.hallID];
-//}
+- (NSString *)getEventTimeAndLocationString {
+    return [NSString stringWithFormat:@"%@ - %@, %@",self.event.interval.startTime, self.event.interval.endTime, self.event.room.name];
+}
 
 - (NSString *)getBlogAndURLSrting {
     Speaker *speaker = [self.event.speakers anyObject];

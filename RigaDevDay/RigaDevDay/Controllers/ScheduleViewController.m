@@ -19,7 +19,7 @@
 @property (nonatomic, strong) Event *pSelectedEvent;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonMenu;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UITableView *iboTableView;
 @property (weak, nonatomic) IBOutlet UITabBar *tabBarController;
 
 @end
@@ -46,13 +46,13 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.tableView reloadData];
+    [self.iboTableView reloadData];
 }
 
 - (void)reloadScheduleData {
     //TODO
 //    _currentHallSchedule = [[DataManager sharedInstance] getScheduleForHall:1];
-    [self.tableView reloadData];
+    [self.iboTableView reloadData];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -74,7 +74,7 @@
     Event *event = self.pEvents[indexPath.row];
     if (event.title == nil) {
         ScheduleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PresentationCell"];
-        cell.labelSpeakerName.text = [self speakerStringFromSpeakers:event.speakers];
+        cell.labelSpeakerName.text = [self speakerStringFromSpeakers:[event speakers]];
         cell.labelPresentationSubTitle.text = event.subtitle;
         cell.labelPresentationDescription.text = event.eventDesc;
         cell.labelStartTime.text = event.interval.startTime;
@@ -105,9 +105,9 @@
 
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
     DataManager *dataManager = [DataManager sharedInstance];
-    self.pEvents = [dataManager eventsForDayOrder:1 andRoomOrder:(int)item.tag];
-//    _currentHallSchedule = [[DataManager sharedInstance] getScheduleForHall:item.tag];
-    [self.tableView reloadData];
+    [dataManager selectRoomWithOrder:item.tag];
+    self.pEvents = [dataManager eventsForDay:dataManager.selectedDay andRoom:dataManager.selectedRoom];
+    [self.iboTableView reloadData];
 }
 
 - (NSString *)speakerStringFromSpeakers:(NSSet *)speakers {
@@ -118,13 +118,12 @@
     return returnString;
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     SpeakerInfoViewController *destController = [segue destinationViewController];
     destController.event = self.pSelectedEvent;
 }
-
-//- (void)bookmarkButtonPressedOnCell:(ScheduleTableViewCell *)cell {
+//
+- (void)bookmarkButtonPressedOnCell:(ScheduleTableViewCell *)cell {
 //    Event *event = [_currentHallSchedule objectAtIndex:[self.tableView indexPathForCell:cell].row];
 //    Speaker *speaker = [event.speakers firstObject];
 //    
@@ -132,6 +131,6 @@
 //    [cell.buttonImageView setImage:isBookmarked ? [[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO] : [[DataManager sharedInstance] getActiveBookmarkImage]];
 //    
 //    [[DataManager sharedInstance] changeSpeakerBookmarkStateTo:!isBookmarked forSpeakerID:speaker.speakerID];
-//}
+}
 
 @end

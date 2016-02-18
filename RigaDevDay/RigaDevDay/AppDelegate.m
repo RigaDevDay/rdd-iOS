@@ -74,22 +74,33 @@
     }
     
     // Create the coordinator and store
-    
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"ScheduleModel.sqlite"];
     NSError *error = nil;
-    NSString *failureReason = @"There was an error creating or loading the application's saved data.";
     if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
-        // Report any error we got.
-        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-        dict[NSLocalizedDescriptionKey] = @"Failed to initialize the application's saved data";
-        dict[NSLocalizedFailureReasonErrorKey] = failureReason;
-        dict[NSUnderlyingErrorKey] = error;
-        error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:9999 userInfo:dict];
-        // Replace this with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
+        NSURL *walURL = [[storeURL URLByDeletingPathExtension] URLByAppendingPathExtension:@"sqlite-wal"];
+        NSURL *shmURL = [[storeURL URLByDeletingPathExtension] URLByAppendingPathExtension:@"sqlite-shm"];
+        
+        BOOL result = YES;
+        
+        for (NSURL *url in @[storeURL, walURL, shmURL]) {
+            if ([[NSFileManager defaultManager] fileExistsAtPath:url.path]) {
+                result = [[NSFileManager defaultManager] removeItemAtURL:url error:&error];
+            }
+        }
+        
+        if (result) {
+            [_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error];
+            if (error) {
+                NSLog(@"Error creating DB: %@", error.localizedDescription);
+            } else {
+                NSLog(@"Successfully created DB");
+            }
+        } else {
+            NSLog(@"An error has occurred while deleting DB error: %@", error);
+        }
+    } else {
+          NSLog(@"Successfully connected to DB");
     }
     
     return _persistentStoreCoordinator;

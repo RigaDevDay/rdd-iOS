@@ -78,6 +78,8 @@
         cell.labelPresentationSubTitle.text = event.subtitle;
         cell.labelPresentationDescription.text = event.eventDesc;
         cell.labelStartTime.text = event.interval.startTime;
+        
+//        cell.backgroundColor = (indexPath.row % 2 == 0) ? [UIColor lightGrayColor] : [UIColor whiteColor];
 //        Speaker *speaker = [event.speakers firstObject];
 //        if ([[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.speakerID]) {
 //            [cell.buttonImageView setImage:[[DataManager sharedInstance] getActiveBookmarkImage]];
@@ -92,14 +94,25 @@
         GlobalMetupTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GlobalMetupCell"];
         cell.labelPresentationName.text = (event.title.length) ? event.title : (event.subtitle.length) ? event.subtitle : @"Event";
         cell.labelStartTime.text = event.interval.startTime;
+//        cell.backgroundColor = (indexPath.row % 2 == 0) ? [UIColor lightGrayColor] : [UIColor whiteColor];
         return cell;
+    }
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    Event *event = self.pEvents[indexPath.row];
+    if (event.title == nil) {
+        return 70.0f;
+    } else {
+        return 50.0f;
     }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([[tableView cellForRowAtIndexPath:indexPath] isKindOfClass:[ScheduleTableViewCell class]]) {
         self.pSelectedEvent = self.pEvents[indexPath.row];
-       [self performSegueWithIdentifier:[[DataManager sharedInstance] getInfoStoryboardSegue] sender:nil];
+       [self performSegueWithIdentifier:@"EventSegue" sender:nil];
     }
 }
 

@@ -36,6 +36,11 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+
+    [self p_reloadBookmarks];
+}
+
+- (void)p_reloadBookmarks {
     self.pBookmaredEvents = [[DataManager sharedInstance] allBookmarks];
     self.labelNoBookmarks.hidden = [self.pBookmaredEvents count] ? YES : NO;
     [self.tableView reloadData];
@@ -52,32 +57,27 @@
 
 - (ScheduleTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-//    Event *event = _bookmaredEventsArray[indexPath.row];
+    Event *event = self.pBookmaredEvents[indexPath.row];
     ScheduleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PresentationCell"];
-//    cell.labelSpeakerName.text = [self getSpeakerStringFromArray:event.speakers];
-//    cell.labelPresentationSubTitle.text = event.subTitle;
-//    cell.labelPresentationDescription.text = event.eventDescription;
-//    cell.labelStartTime.text = event.startTime;
-//    cell.labelStartTime.textColor = [self hasSameTimeEventAs:event] ? [UIColor redColor] : [UIColor grayColor];
+    cell.labelSpeakerName.text = [self getSpeakerStringFromArray:event.speakers];
+    cell.labelPresentationSubTitle.text = (event.subtitle.length) ? event.subtitle : @"Event";
+    cell.labelPresentationDescription.text = event.eventDesc;
+    cell.labelStartTime.text = event.interval.startTime;
+    cell.labelStartTime.textColor = [self hasSameTimeEventAs:event] ? [UIColor redColor] : [UIColor grayColor];
     
-//    Speaker *speaker = [event.speakers firstObject];
-//    if ([[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.speakerID]) {
-//        [cell.buttonImageView setImage:[[DataManager sharedInstance] getActiveBookmarkImage]];
-//    } else {
-//        [cell.buttonImageView setImage:[[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO]];
-//    }
+           [cell.buttonImageView setImage:[event.isFavorite boolValue] ? [UIImage imageNamed:@"icon_bookmark.png"] : [UIImage imageNamed:@"icon_menu_bookmark.png"]];
 
     cell.delegate = self;
     
     return cell;
 }
 
-- (NSString *)getSpeakerStringFromArray:(NSArray *)speakersArray {
+- (NSString *)getSpeakerStringFromArray:(NSSet *)speakers {
     NSString *returnString = @"";
-    for (Speaker *speaker in speakersArray) {
+    for (Speaker *speaker in speakers) {
         returnString = [returnString stringByAppendingFormat:@"%@, ",speaker.name];
     }
-    return [returnString substringToIndex:[returnString length] - 2];
+    return returnString;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -85,33 +85,27 @@
     [self performSegueWithIdentifier:@"EventSegue" sender:nil];
 }
 
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-//{
-//    SpeakerInfoViewController *destController = [segue destinationViewController];
-//    destController.speaker = [_seletedEventObject.speakers firstObject];
-//}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    SpeakerInfoViewController *destController = [segue destinationViewController];
+    destController.events = @[self.pSeletedEvent];
+}
+
+
+- (void)bookmarkButtonPressedOnCell:(ScheduleTableViewCell *)cell {
+    Event *event = [self.pBookmaredEvents objectAtIndex:[self.tableView indexPathForCell:cell].row];
+
+    BOOL isFavorite = [[DataManager sharedInstance] changeFavoriteStatusForEvent:event];
+    [cell.buttonImageView setImage:isFavorite ? [UIImage imageNamed:@"icon_bookmark.png"] : [UIImage imageNamed:@"icon_menu_bookmark.png"]];
+     [self p_reloadBookmarks];
+}
 //
-//#pragma mark Bookmakrs
-//
-//- (void)bookmarkButtonPressedOnCell:(ScheduleTableViewCell *)cell {
-//    Event *event = [_bookmaredEventsArray objectAtIndex:[self.tableView indexPathForCell:cell].row];
-//    Speaker *speaker = [event.speakers firstObject];
-//    
-//    BOOL isBookmarked = [[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.speakerID];
-//    [cell.buttonImageView setImage:isBookmarked ? [[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO] : [[DataManager sharedInstance] getActiveBookmarkImage]];
-//    
-//    [[DataManager sharedInstance] changeSpeakerBookmarkStateTo:!isBookmarked forSpeakerID:speaker.speakerID];
-//    _bookmaredEventsArray = [[DataManager sharedInstance] getAllBookmarkedEvents];
-//    self.labelNoBookmarks.hidden = [_bookmaredEventsArray count] ? YES : NO;
-//    [self.tableView reloadData];
-//}
-//
-//- (BOOL)hasSameTimeEventAs:(Event *)event {
-//    for (Event *bEvent in _bookmaredEventsArray) {
+- (BOOL)hasSameTimeEventAs:(Event *)event {
+#warning Compare conflicted times
+//    for (Event *bEvent in self.pBookmaredEvents) {
 //        if ([bEvent isEqual:event])continue;
 //        if ([bEvent.startTime isEqualToString:event.startTime]) return YES;
 //    }
-//    return NO;
-//}
+    return NO;
+}
 
 @end

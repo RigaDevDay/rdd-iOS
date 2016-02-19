@@ -27,7 +27,7 @@
 - (NSArray *)roomsForDay:(Day *)day;
 
 - (NSArray *)eventsForDay:(Day *)day andRoom:(Room *)room;
-- (NSArray *)eventsForDayOrder:(int)dayOrder andRoomOrder:(int)roomOrder;
+//- (NSArray *)eventsForDayOrder:(int)dayOrder andRoomOrder:(int)roomOrder;
 
 - (NSArray *)getAllSpeakers;
 - (NSArray *)getScheduleForHall:(NSInteger)roomID;

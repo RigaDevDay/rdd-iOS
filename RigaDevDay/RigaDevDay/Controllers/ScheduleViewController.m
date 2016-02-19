@@ -58,12 +58,32 @@
     NSMutableArray *items = [NSMutableArray array];
     for (int i = 0; i < roomNames.count; i++) {
         UITabBarItem *item = [[UITabBarItem alloc] initWithTitle:roomNames[i][@"name"] image:nil tag:i+1];
+        [item setImage:[UIImage imageNamed:[self p_imageNameForRoomName:roomNames[i][@"name"]]]];
         [items addObject:item];
     }
     [self.iboTabBar setItems:items];
 }
 - (IBAction)dayButtonTapped:(UIBarButtonItem *)sender {
     
+}
+
+- (NSString *)p_imageNameForRoomName:(NSString *)roomName {
+    if ([roomName isEqualToString:@"Room 1"]) {
+        return @"icn-1";
+    } else if ([roomName isEqualToString:@"Room 2"]) {
+        return @"icn-2";
+    } else if ([roomName isEqualToString:@"Room 3"]) {
+        return @"icn-3";
+    } else if ([roomName isEqualToString:@"Room 5"]) {
+        return @"icn-5";
+    } else if ([roomName isEqualToString:@"Room 6"]) {
+        return @"icn-6";
+    } else if ([roomName isEqualToString:@"Room 10"]) {
+        return @"icn-10";
+    } else if ([roomName isEqualToString:@"Room 13"]) {
+        return @"icn-13";
+    }
+    return @"Hall_imag";
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -100,8 +120,8 @@
         cell.labelPresentationSubTitle.text = event.subtitle;
         cell.labelPresentationDescription.text = event.eventDesc;
         cell.labelStartTime.text = event.interval.startTime;
-        
-        [cell.buttonImageView setImage:[event.isFavorite boolValue] ? [[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO] : [[DataManager sharedInstance] getActiveBookmarkImage]];
+
+        [cell.buttonImageView setImage:[event.isFavorite boolValue] ? [UIImage imageNamed:@"icon_bookmark.png"] : [UIImage imageNamed:@"icon_menu_bookmark.png"]];
         
         //        cell.backgroundColor = (indexPath.row % 2 == 0) ? [UIColor lightGrayColor] : [UIColor whiteColor];
         //        Speaker *speaker = [event.speakers firstObject];
@@ -161,7 +181,7 @@
         daysVC.delegate = self;
     } else if ([segue.identifier isEqualToString:@"EventSegue"]) {
         SpeakerInfoViewController *destController = [segue destinationViewController];
-        destController.event = self.pSelectedEvent;
+        destController.events = @[self.pSelectedEvent];
     }
 }
 //
@@ -169,7 +189,8 @@
     Event *event = [self.pEvents objectAtIndex:[self.iboTableView indexPathForCell:cell].row];
     if (event) {
         BOOL isFavorite = [[DataManager sharedInstance] changeFavoriteStatusForEvent:event];
-        [cell.buttonImageView setImage:isFavorite ? [[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO] : [[DataManager sharedInstance] getActiveBookmarkImage]];
+               [cell.buttonImageView setImage:isFavorite ? [UIImage imageNamed:@"icon_bookmark.png"] : [UIImage imageNamed:@"icon_menu_bookmark.png"]];
+        
     }
     //    Speaker *speaker = [event.speakers firstObject];
     //

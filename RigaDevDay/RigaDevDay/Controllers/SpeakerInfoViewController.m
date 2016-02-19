@@ -27,7 +27,7 @@
 @property (strong, nonatomic) IBOutlet UITextView *textViewInformation;
 @property (weak, nonatomic) IBOutlet UIButton *buttonBlog;
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewCountry;
-
+@property (strong, nonatomic) Speaker *pSpeaker;
 @end
 
 @implementation SpeakerInfoViewController
@@ -36,7 +36,7 @@
     [super viewDidLoad];
     self.buttonMenu.target = self;
     self.buttonMenu.action = @selector(backButtonPress);
-    
+    self.pSpeaker = (self.events.count) ? [[[self.events firstObject] speakers] anyObject] : nil;
     
     UISwipeGestureRecognizer * swipeleft=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeleft:)];
     swipeleft.direction=UISwipeGestureRecognizerDirectionLeft;
@@ -51,6 +51,10 @@
 //    } else {
 //        _event = [[DataManager sharedInstance] getEventForSpeakerWithID:self.speaker.speakerID];
 //    }
+    self.buttonBookmark.hidden = self.events.count > 1;
+    self.buttonBlog.hidden = self.pSpeaker.blogURL.length;
+    
+    
     [self setUpInfo];
     [self setAboutButtonSelected:NO];
     [self setSpeechButtonSelected:YES];
@@ -89,18 +93,28 @@
 }
 
 - (IBAction)onTwitterButtonPress:(id)sender {
-    Speaker *speaker = [self.event.speakers anyObject];
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://twitter.com/%@", speaker.twitterURL]]];
+    if (self.pSpeaker) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://twitter.com/%@", self.pSpeaker.twitterURL]]];
+    }
+
 }
 
 - (IBAction)onBookmarkButtonPress:(id)sender {
 //    BOOL isBookmarked = [[DataManager sharedInstance] isSpeakerBookmarkedWithID:self.speaker.speakerID];
-    [self.buttonBookmark setImage:[self.event.isFavorite boolValue] ? [[DataManager sharedInstance] getInActiveBookmarkImageForInfo:YES] : [[DataManager sharedInstance] getActiveBookmarkImage] forState:UIControlStateNormal];
+    if (self.events.count == 1) {
+        Event *event = [self.events firstObject];
+        [self.buttonBookmark setImage:[event.isFavorite boolValue] ? [[DataManager sharedInstance] getInActiveBookmarkImageForInfo:YES] : [[DataManager sharedInstance] getActiveBookmarkImage] forState:UIControlStateNormal];
+    }
+
 //    [[DataManager sharedInstance] changeSpeakerBookmarkStateTo:!isBookmarked forSpeakerID:self.speaker.speakerID];
 }
 - (IBAction)onBlogButtonPress:(id)sender {
-    Speaker *speaker = [self.event.speakers anyObject];
-    if (speaker.blogURL) [[UIApplication sharedApplication] openURL:[NSURL URLWithString:speaker.blogURL]];
+    if (self.pSpeaker) {
+        if (self.pSpeaker.blogURL) {
+           [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.pSpeaker.blogURL]];
+        } else {
+        }
+    }
 }
 
 - (IBAction)onSpeechButtonPress:(id)sender {
@@ -113,8 +127,10 @@
 }
 
 - (void)setAboutButtonSelected:(BOOL)selected {
-    Speaker *speaker = [self.event.speakers anyObject];
-    if (selected) self.textViewInformation.text = speaker.speakerDesc;
+    if (selected) {
+        NSAttributedString *attributedString = [[NSAttributedString alloc] initWithData:[self.pSpeaker.speakerDesc dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
+        self.textViewInformation.attributedText = attributedString;
+    }
     [self.buttonAbout setBackgroundColor: selected ? [UIColor whiteColor] : [UIColor blackColor]];
     [self.buttonAbout setTitleColor:selected ? [UIColor blackColor] : [UIColor whiteColor] forState:UIControlStateNormal];
     self.labelTileAndLocation.hidden = selected;
@@ -124,7 +140,14 @@
 }
 
 - (void)setSpeechButtonSelected:(BOOL)selected {
-    if (selected) self.textViewInformation.text = self.event.eventDesc;
+#warning TODO: add all speakers event descriptions
+    if (self.events.count) {
+        if (selected) {
+            NSAttributedString *attributedString = [[NSAttributedString alloc] initWithData:[[[self.events firstObject] eventDesc] dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
+            self.textViewInformation.attributedText = attributedString;
+        }
+    }
+
     [self.buttonSpeech setBackgroundColor: selected ? [UIColor whiteColor] : [UIColor blackColor]];
     [self.buttonSpeech setTitleColor:selected ? [UIColor blackColor] : [UIColor whiteColor] forState:UIControlStateNormal];
     self.labelTileAndLocation.hidden = !selected;
@@ -139,32 +162,35 @@
     [self.buttonTwitter.imageView setContentMode:UIViewContentModeScaleAspectFit];
     [self.buttonBookmark.imageView setContentMode:UIViewContentModeScaleAspectFit];
     
-    Speaker *speaker = [self.event.speakers anyObject];
+    
     // Speaker Info
-    self.labelSpeakerName.text = speaker.name;
-    self.labelWorkPlace.text = speaker.company;
-    self.imageViewProfile.image = [UIImage imageNamed:[NSString stringWithFormat:@"speaker_%li",(long)speaker.speakerID]];
-    self.imageViewBackground.image = [UIImage imageNamed:[NSString stringWithFormat:@"backstage_%li.jpeg",(long)speaker.speakerID]];
+    self.labelSpeakerName.text = self.pSpeaker.name;
+    self.labelWorkPlace.text = self.pSpeaker.company;
+    self.imageViewProfile.image = [UIImage imageNamed:[NSString stringWithFormat:@"speaker_%li",(long)self.pSpeaker.speakerID]];
+    self.imageViewBackground.image = [UIImage imageNamed:[NSString stringWithFormat:@"backstage_%li.jpeg",(long)self.pSpeaker.speakerID]];
     [self.buttonBlog setTitle:[self getBlogAndURLSrting] forState:UIControlStateNormal];
-//    BOOL isBookmarked = [[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.speakerID];
-    [self.imageViewCountry setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",speaker.country]]];
+    [self.imageViewCountry setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",self.pSpeaker.country]]];
     
-    [self.buttonBookmark setImage:[self.event.isFavorite boolValue] ? [[DataManager sharedInstance] getActiveBookmarkImage] : [[DataManager sharedInstance] getInActiveBookmarkImageForInfo:YES] forState:UIControlStateNormal];
-    
-    // Evnet Info
-    self.labelTileAndLocation.text = [self getEventTimeAndLocationString];
-    self.labelMainTitle.text = self.event.subtitle;
-    self.textViewInformation.text = self.event.eventDesc;
+    #warning TODO: add all speakers event descriptions
+    if (self.events.count == 1) {
+        Event *event = [self.events firstObject];
+        [self.buttonBookmark setImage:[event.isFavorite boolValue] ? [[DataManager sharedInstance] getInActiveBookmarkImageForInfo:YES] : [[DataManager sharedInstance] getActiveBookmarkImage] forState:UIControlStateNormal];
+        // Evnet Info
+        self.labelTileAndLocation.text = [self getTimeAndLocationStringForEvent:event];
+        self.labelMainTitle.text = event.subtitle;
+        
+        NSAttributedString *attributedString = [[NSAttributedString alloc] initWithData:[event.eventDesc dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
+        self.textViewInformation.attributedText = attributedString;
+    }
 }
 
-- (NSString *)getEventTimeAndLocationString {
-    return [NSString stringWithFormat:@"%@ - %@, %@",self.event.interval.startTime, self.event.interval.endTime, self.event.room.name];
+- (NSString *)getTimeAndLocationStringForEvent:(Event *)event {
+    return [NSString stringWithFormat:@"%@ - %@, %@", event.interval.startTime, event.interval.endTime, event.room.name];
 }
 
 - (NSString *)getBlogAndURLSrting {
-    Speaker *speaker = [self.event.speakers anyObject];
-    if (speaker.blogURL)  {
-        return [NSString stringWithFormat:@"Blog %@", speaker.blogURL];
+    if (self.pSpeaker.blogURL)  {
+        return [NSString stringWithFormat:@"Blog %@", self.pSpeaker.blogURL];
     }
     return @"";
 }

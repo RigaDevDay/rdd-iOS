@@ -166,8 +166,11 @@
     // Speaker Info
     self.labelSpeakerName.text = self.pSpeaker.name;
     self.labelWorkPlace.text = self.pSpeaker.company;
-    self.imageViewProfile.image = [UIImage imageNamed:[NSString stringWithFormat:@"speaker_%li",(long)self.pSpeaker.speakerID]];
-    self.imageViewBackground.image = [UIImage imageNamed:[NSString stringWithFormat:@"backstage_%li.jpeg",(long)self.pSpeaker.speakerID]];
+    
+    UIImage *profileImage = [UIImage imageNamed:[NSString stringWithFormat:@"speaker_%@",self.pSpeaker.speakerID]];
+    self.imageViewProfile.image = (profileImage) ? profileImage : [UIImage imageNamed:@"speaker_0"];
+    UIImage *backstageImage = [UIImage imageNamed:[NSString stringWithFormat:@"backstage_%@.jpeg",self.pSpeaker.speakerID]];
+    self.imageViewBackground.image = (backstageImage) ? backstageImage : [UIImage imageNamed:@"backstage_1.jpeg"];
     [self.buttonBlog setTitle:[self getBlogAndURLSrting] forState:UIControlStateNormal];
     [self.imageViewCountry setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",self.pSpeaker.country]]];
     

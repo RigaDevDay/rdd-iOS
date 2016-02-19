@@ -18,9 +18,8 @@
 
 @property id<SpeakerTableViewCellDelegate> delegate;
 
-@property (weak, nonatomic) IBOutlet UILabel *labelName;
-@property (weak, nonatomic) IBOutlet UILabel *labelPresentation;
-@property (weak, nonatomic) IBOutlet UIButton *buttonBookmark;
-@property (weak, nonatomic) IBOutlet UIImageView *buttonImage;
+@property (weak, nonatomic) IBOutlet UIImageView *iboSpeakerImageView;
+@property (weak, nonatomic) IBOutlet UILabel *iboNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *iboInfoLabel;
 
 @end

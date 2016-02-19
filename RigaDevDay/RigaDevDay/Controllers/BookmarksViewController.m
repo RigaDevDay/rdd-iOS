@@ -74,7 +74,7 @@
 //}
 
 - (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    Day *day = [[DataManager sharedInstance] dayWithOrder:section+1];
+    Day *day = [[DataManager sharedInstance] dayWithOrder:[self.pHeaderNames[section] integerValue]];
     if (day) {
         return day.title;
     }

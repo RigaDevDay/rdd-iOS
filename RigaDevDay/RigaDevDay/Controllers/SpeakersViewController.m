@@ -68,8 +68,10 @@
     Speaker *speaker = self.pSpeakers[indexPath.row];
     SpeakerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SpeakerCell"];
     cell.delegate = self;
-    cell.labelName.text = speaker.name;
-    cell.labelPresentation.text = [NSString stringWithFormat:@"%@, %@", speaker.company, speaker.jobTitle];
+    cell.iboNameLabel.text = speaker.name;
+    cell.iboInfoLabel.text = [NSString stringWithFormat:@"%@, %@", speaker.company, speaker.jobTitle];
+    UIImage *profileImage = [UIImage imageNamed:[NSString stringWithFormat:@"speaker_%@",speaker.speakerID]];
+    cell.iboSpeakerImageView.image = (profileImage) ? profileImage : [UIImage imageNamed:@"speaker_0"];
 //    if ([[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.speakerID]) {
 //        [cell.buttonImage setImage:[[DataManager sharedInstance] getActiveBookmarkImage]];
 //    } else {

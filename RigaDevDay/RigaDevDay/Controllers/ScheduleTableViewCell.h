@@ -17,6 +17,7 @@
 @interface ScheduleTableViewCell : UITableViewCell
 
 @property id<ScheduleTableViewCellDelegate> delegate;
+- (void)setEventTagNames:(NSArray *)tags;
 
 @property (weak, nonatomic) IBOutlet UILabel *labelSpeakerName;
 @property (weak, nonatomic) IBOutlet UILabel *labelPresentationDescription;
@@ -24,5 +25,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelStartTime;
 @property (weak, nonatomic) IBOutlet UIButton *buttonBookmark;
 @property (weak, nonatomic) IBOutlet UIImageView *buttonImageView;
+@property (weak, nonatomic) IBOutlet UIScrollView *iboTagsScrollView;
 
 @end

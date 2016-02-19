@@ -125,6 +125,7 @@
         cell.labelPresentationDescription.text = event.eventDesc;
         cell.labelStartTime.text = event.interval.startTime;
         [cell.buttonImageView setImage:[event.isFavorite boolValue] ? [UIImage imageNamed:@"icon_bookmark.png"] : [UIImage imageNamed:@"icon_menu_bookmark.png"]];
+        [cell setEventTagNames:[[DataManager sharedInstance] tagNamesForEvent:event]];
         cell.delegate = self;
         
         return cell;
@@ -141,7 +142,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     Event *event = self.pEvents[indexPath.row];
     if (event.title == nil) {
-        return 70.0f;
+        return 80.0f;
     } else {
         return 50.0f;
     }

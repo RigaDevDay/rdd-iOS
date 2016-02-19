@@ -131,6 +131,14 @@
     return returnString;
 }
 
+- (NSArray *)tagNamesForEvent:(Event *)event {
+    NSMutableArray *tagNames = [NSMutableArray array];
+    for (Tag *tag in event.tags) {
+        [tagNames addObject:[tag.name uppercaseString]];
+    }
+    return tagNames;
+}
+
 - (Day *)dayWithOrder:(NSInteger)order {
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;

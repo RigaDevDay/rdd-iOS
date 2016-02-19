@@ -106,10 +106,10 @@
 //      Image *image = [self p_imageForIndexPath:indexPath];
     Event *event = [self p_eventForIndexPath:indexPath];
     ScheduleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PresentationCell"];
-    cell.labelSpeakerName.text = [self getSpeakerStringFromArray:event.speakers];
+    cell.labelSpeakerName.text = [[DataManager sharedInstance] speakerStringFromSpeakers:event.speakers];
     cell.labelPresentationSubTitle.text = (event.subtitle.length) ? event.subtitle : @"Event";
     cell.labelPresentationDescription.text = event.eventDesc;
-    cell.labelStartTime.text = event.interval.startTime;
+    cell.labelStartTime.text = (event.room) ? [NSString stringWithFormat:@"%@, %@", event.room.name, event.interval.startTime] : [NSString stringWithFormat:@"All Rooms, %@", event.interval.startTime];
     cell.labelStartTime.textColor = [self hasSameTimeEventAs:event] ? [UIColor redColor] : [UIColor grayColor];
     
            [cell.buttonImageView setImage:[event.isFavorite boolValue] ? [UIImage imageNamed:@"icon_bookmark.png"] : [UIImage imageNamed:@"icon_menu_bookmark.png"]];
@@ -119,13 +119,6 @@
     return cell;
 }
 
-- (NSString *)getSpeakerStringFromArray:(NSSet *)speakers {
-    NSString *returnString = @"";
-    for (Speaker *speaker in speakers) {
-        returnString = [returnString stringByAppendingFormat:@"%@, ",speaker.name];
-    }
-    return returnString;
-}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     self.pSeletedEvent = [self p_eventForIndexPath:indexPath];

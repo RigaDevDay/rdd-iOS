@@ -113,6 +113,24 @@
     return nil;
 }
 
+- (NSString *)speakerStringFromSpeakers:(NSSet *)speakers {
+    NSString *returnString = @"";
+    if (speakers.count == 1) {
+        return [[speakers anyObject] name];
+    } else {
+        for (int i = 0; i < speakers.count; i++) {
+            Speaker *speaker = [speakers allObjects][i];
+            if (speakers.count - 1  == i) {
+                returnString = [returnString stringByAppendingFormat:@"%@",speaker.name];
+            } else {
+                returnString = [returnString stringByAppendingFormat:@"%@, ",speaker.name];
+            }
+            
+        }
+    }
+    return returnString;
+}
+
 - (Day *)dayWithOrder:(NSInteger)order {
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;

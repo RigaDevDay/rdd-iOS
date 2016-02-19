@@ -81,7 +81,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speaker Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Lpn-M9-fsb">
-                                                    <rect key="frame" x="18" y="8" width="507" height="20"/>
+                                                    <rect key="frame" x="18" y="8" width="454" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="473" id="ct1-8F-DAH"/>
                                                         <constraint firstAttribute="height" constant="20" id="hNq-cp-5dc"/>
@@ -95,8 +95,8 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XxP-XI-o2e">
-                                                    <rect key="frame" x="550" y="4" width="42" height="16"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room 10, 12:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XxP-XI-o2e">
+                                                    <rect key="frame" x="480" y="4" width="105" height="16"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                     <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -160,19 +160,21 @@
                                                 <constraint firstItem="kdq-gi-CGn" firstAttribute="top" secondItem="Lpn-M9-fsb" secondAttribute="bottom" constant="2" id="Gq1-i2-Wux"/>
                                                 <constraint firstItem="c7K-IH-hdy" firstAttribute="leading" secondItem="4jk-Mo-yKW" secondAttribute="leading" constant="533" id="J1F-21-HpI"/>
                                                 <constraint firstItem="kdq-gi-CGn" firstAttribute="leading" secondItem="4jk-Mo-yKW" secondAttribute="leading" constant="18" id="Sxg-r3-lhM"/>
+                                                <constraint firstAttribute="trailing" secondItem="XxP-XI-o2e" secondAttribute="trailing" constant="15" id="ZMK-EW-vsh"/>
                                                 <constraint firstItem="c7K-IH-hdy" firstAttribute="leading" secondItem="kdq-gi-CGn" secondAttribute="trailing" constant="29" id="cIs-u5-xOu"/>
                                                 <constraint firstItem="XxP-XI-o2e" firstAttribute="trailing" secondItem="c7K-IH-hdy" secondAttribute="trailing" id="dJa-H9-8bS"/>
                                                 <constraint firstItem="c7K-IH-hdy" firstAttribute="leading" secondItem="pTW-p8-mnM" secondAttribute="trailing" constant="29" id="eEg-VQ-IC4"/>
                                                 <constraint firstItem="pTW-p8-mnM" firstAttribute="leading" secondItem="4jk-Mo-yKW" secondAttribute="leading" constant="18" id="fQm-LB-Fse"/>
                                                 <constraint firstItem="c7K-IH-hdy" firstAttribute="top" secondItem="XxP-XI-o2e" secondAttribute="bottom" constant="3" id="jbZ-Y4-h2C"/>
-                                                <constraint firstItem="XxP-XI-o2e" firstAttribute="leading" secondItem="Lpn-M9-fsb" secondAttribute="trailing" constant="25" id="kYK-ws-gCa"/>
+                                                <constraint firstItem="XxP-XI-o2e" firstAttribute="leading" secondItem="Lpn-M9-fsb" secondAttribute="trailing" constant="8" id="kYK-ws-gCa"/>
                                                 <constraint firstAttribute="trailing" secondItem="c7K-IH-hdy" secondAttribute="trailing" constant="8" id="nix-fc-EiY"/>
-                                                <constraint firstItem="c7K-IH-hdy" firstAttribute="leading" secondItem="Lpn-M9-fsb" secondAttribute="trailing" constant="29" id="xXv-r8-NSB"/>
+                                                <constraint firstItem="c7K-IH-hdy" firstAttribute="leading" secondItem="Lpn-M9-fsb" secondAttribute="trailing" constant="82" id="xXv-r8-NSB"/>
                                                 <constraint firstItem="Lpn-M9-fsb" firstAttribute="top" secondItem="4jk-Mo-yKW" secondAttribute="topMargin" id="xpP-b7-lnh"/>
                                                 <constraint firstAttribute="bottom" secondItem="c7K-IH-hdy" secondAttribute="bottom" constant="8" id="yRZ-mi-IMo"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
+                                                    <exclude reference="dJa-H9-8bS"/>
                                                     <exclude reference="DjQ-vR-OtX"/>
                                                     <exclude reference="J1F-21-HpI"/>
                                                 </mask>
@@ -1439,6 +1441,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="WJ5-Q1-sZF"/>
-        <segue reference="bnl-aL-XxM"/>
+        <segue reference="DLS-5Y-Kcz"/>
     </inferredMetricsTieBreakers>
 </document>

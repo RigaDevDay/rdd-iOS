@@ -27,6 +27,8 @@
 - (NSArray *)roomsForDay:(Day *)day;
 - (Day *)dayWithOrder:(NSInteger)order;
 
+- (NSString *)speakerStringFromSpeakers:(NSSet *)speakers;
+
 - (NSArray *)eventsForDay:(Day *)day andRoom:(Room *)room;
 //- (NSArray *)eventsForDayOrder:(int)dayOrder andRoomOrder:(int)roomOrder;
 

@@ -120,7 +120,7 @@
     Event *event = self.pEvents[indexPath.row];
     if (event.title == nil) {
         ScheduleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PresentationCell"];
-        cell.labelSpeakerName.text = [self speakerStringFromSpeakers:[event speakers]];
+        cell.labelSpeakerName.text = [[DataManager sharedInstance] speakerStringFromSpeakers:[event speakers]];
         cell.labelPresentationSubTitle.text = event.subtitle;
         cell.labelPresentationDescription.text = event.eventDesc;
         cell.labelStartTime.text = event.interval.startTime;
@@ -162,23 +162,7 @@
     [self.iboTableView reloadData];
 }
 
-- (NSString *)speakerStringFromSpeakers:(NSSet *)speakers {
-    NSString *returnString = @"";
-    if (speakers.count == 1) {
-        return [[speakers anyObject] name];
-    } else {
-        for (int i = 0; i < speakers.count; i++) {
-            Speaker *speaker = [speakers allObjects][i];
-            if (speakers.count - 1  == i) {
-                returnString = [returnString stringByAppendingFormat:@"%@",speaker.name];
-            } else {
-                returnString = [returnString stringByAppendingFormat:@"%@, ",speaker.name];
-            }
-            
-        }
-    }
-    return returnString;
-}
+
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

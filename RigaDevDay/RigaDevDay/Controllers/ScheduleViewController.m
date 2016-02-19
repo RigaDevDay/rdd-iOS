@@ -62,6 +62,10 @@
         [items addObject:item];
     }
     [self.iboTabBar setItems:items];
+    if (items.count) {
+        [self.iboTabBar setSelectedItem:[items firstObject]];
+    }
+    
 }
 - (IBAction)dayButtonTapped:(UIBarButtonItem *)sender {
     
@@ -120,17 +124,7 @@
         cell.labelPresentationSubTitle.text = event.subtitle;
         cell.labelPresentationDescription.text = event.eventDesc;
         cell.labelStartTime.text = event.interval.startTime;
-
         [cell.buttonImageView setImage:[event.isFavorite boolValue] ? [UIImage imageNamed:@"icon_bookmark.png"] : [UIImage imageNamed:@"icon_menu_bookmark.png"]];
-        
-        //        cell.backgroundColor = (indexPath.row % 2 == 0) ? [UIColor lightGrayColor] : [UIColor whiteColor];
-        //        Speaker *speaker = [event.speakers firstObject];
-        //        if ([[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.speakerID]) {
-        //            [cell.buttonImageView setImage:[[DataManager sharedInstance] getActiveBookmarkImage]];
-        //        } else {
-        //            [cell.buttonImageView setImage:[[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO]];
-        //        }
-        
         cell.delegate = self;
         
         return cell;
@@ -138,7 +132,7 @@
         GlobalMetupTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GlobalMetupCell"];
         cell.labelPresentationName.text = (event.title.length) ? event.title : (event.subtitle.length) ? event.subtitle : @"Event";
         cell.labelStartTime.text = event.interval.startTime;
-        //        cell.backgroundColor = (indexPath.row % 2 == 0) ? [UIColor lightGrayColor] : [UIColor whiteColor];
+        //                cell.backgroundColor = (indexPath.row % 2 == 0) ? [UIColor lightGrayColor] : [UIColor whiteColor];
         return cell;
     }
 }
@@ -164,16 +158,28 @@
     DataManager *dataManager = [DataManager sharedInstance];
     [dataManager selectRoomWithOrder:item.tag];
     self.pEvents = [dataManager eventsForDay:dataManager.selectedDay andRoom:dataManager.selectedRoom];
+    self.title = dataManager.selectedRoom.name;
     [self.iboTableView reloadData];
 }
 
 - (NSString *)speakerStringFromSpeakers:(NSSet *)speakers {
     NSString *returnString = @"";
-    for (Speaker *speaker in [speakers allObjects]) {
-        returnString = [returnString stringByAppendingFormat:@"%@, ",speaker.name];
+    if (speakers.count == 1) {
+        return [[speakers anyObject] name];
+    } else {
+        for (int i = 0; i < speakers.count; i++) {
+            Speaker *speaker = [speakers allObjects][i];
+            if (speakers.count - 1  == i) {
+                returnString = [returnString stringByAppendingFormat:@"%@",speaker.name];
+            } else {
+                returnString = [returnString stringByAppendingFormat:@"%@, ",speaker.name];
+            }
+            
+        }
     }
     return returnString;
 }
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"DaysSegue"]) {
@@ -189,15 +195,8 @@
     Event *event = [self.pEvents objectAtIndex:[self.iboTableView indexPathForCell:cell].row];
     if (event) {
         BOOL isFavorite = [[DataManager sharedInstance] changeFavoriteStatusForEvent:event];
-               [cell.buttonImageView setImage:isFavorite ? [UIImage imageNamed:@"icon_bookmark.png"] : [UIImage imageNamed:@"icon_menu_bookmark.png"]];
-        
+        [cell.buttonImageView setImage:isFavorite ? [UIImage imageNamed:@"icon_bookmark.png"] : [UIImage imageNamed:@"icon_menu_bookmark.png"]];
     }
-    //    Speaker *speaker = [event.speakers firstObject];
-    //
-    //    BOOL isBookmarked = [[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.speakerID];
-    //    [cell.buttonImageView setImage:isBookmarked ? [[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO] : [[DataManager sharedInstance] getActiveBookmarkImage]];
-    //
-    //    [[DataManager sharedInstance] changeSpeakerBookmarkStateTo:!isBookmarked forSpeakerID:speaker.speakerID];
 }
 
 #pragma mark - DaysTableVCDelegate

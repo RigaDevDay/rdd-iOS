@@ -13,6 +13,7 @@
 
 @implementation Room (CoreDataProperties)
 
+@dynamic order;
 @dynamic name;
 @dynamic events;
 @dynamic days;

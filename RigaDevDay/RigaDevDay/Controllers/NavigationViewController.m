@@ -12,7 +12,7 @@ static NSString *simpleTableIdentifier = @"TableCell";
 @interface NavigationViewController () <UITableViewDataSource,UITableViewDelegate> {
     NSArray *_navigationArray;
 }
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+//@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 

@@ -12,10 +12,11 @@
 #import "SpeakerInfoViewController.h"
 #import "DataManager.h"
 
-@interface SpeakersViewController () <UITableViewDataSource, UITableViewDelegate, SpeakerTableViewCellDelegate> {
-    NSArray *_speakersArray;
-    Speaker *_selectedSpeaker;
-}
+@interface SpeakersViewController () <UITableViewDataSource, UITableViewDelegate, SpeakerTableViewCellDelegate>
+
+@property (nonatomic, strong) NSArray *pSpeakers;
+@property (nonatomic, strong) Speaker *pSelectedSpeaker;
+
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonMenu;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
@@ -30,7 +31,7 @@
     self.buttonMenu.action = @selector(revealToggle:);
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
-    _speakersArray = [[DataManager sharedInstance] getAllSpeakers];
+    self.pSpeakers = [[DataManager sharedInstance] allSpeakers];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(reloadScheduleData)
                                                  name:@"UpdateSchedule" object:nil];
@@ -43,7 +44,7 @@
 }
 
 - (void)reloadScheduleData {
-    _speakersArray = [[DataManager sharedInstance] getAllSpeakers];
+    self.pSpeakers = [[DataManager sharedInstance] allSpeakers];
     [self.tableView reloadData];
 }
 
@@ -60,26 +61,26 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [_speakersArray count];
+    return [self.pSpeakers count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    Speaker *speaker = _speakersArray[indexPath.row];
+    Speaker *speaker = self.pSpeakers[indexPath.row];
     SpeakerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SpeakerCell"];
     cell.delegate = self;
     cell.labelName.text = speaker.name;
-//    cell.labelPresentation.text = speaker.bio;
-    if ([[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.speakerID]) {
-        [cell.buttonImage setImage:[[DataManager sharedInstance] getActiveBookmarkImage]];
-    } else {
-        [cell.buttonImage setImage:[[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO]];
-    }
+    cell.labelPresentation.text = [NSString stringWithFormat:@"%@, %@", speaker.company, speaker.jobTitle];
+//    if ([[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.speakerID]) {
+//        [cell.buttonImage setImage:[[DataManager sharedInstance] getActiveBookmarkImage]];
+//    } else {
+//        [cell.buttonImage setImage:[[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO]];
+//    }
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    _selectedSpeaker = _speakersArray[indexPath.row];
+    self.pSelectedSpeaker = self.pSpeakers[indexPath.row];
     [self performSegueWithIdentifier:@"EventSegue" sender:nil];
 }
 
@@ -90,10 +91,10 @@
 }
 
 - (void)bookmarkButtonPressedOnCell:(SpeakerTableViewCell *)cell {
-    Speaker *speaker = [_speakersArray objectAtIndex:[self.tableView indexPathForCell:cell].row];
-    BOOL isBookmarked = [[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.speakerID];
-    [cell.buttonImage setImage:isBookmarked ? [[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO] : [[DataManager sharedInstance] getActiveBookmarkImage]];
-    [[DataManager sharedInstance] changeSpeakerBookmarkStateTo:!isBookmarked forSpeakerID:speaker.speakerID];
+//    Speaker *speaker = [self.pSpeakers objectAtIndex:[self.tableView indexPathForCell:cell].row];
+//    BOOL isBookmarked = [[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.speakerID];
+//    [cell.buttonImage setImage:isBookmarked ? [[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO] : [[DataManager sharedInstance] getActiveBookmarkImage]];
+//    [[DataManager sharedInstance] changeSpeakerBookmarkStateTo:!isBookmarked forSpeakerID:speaker.speakerID];
 }
 
 @end

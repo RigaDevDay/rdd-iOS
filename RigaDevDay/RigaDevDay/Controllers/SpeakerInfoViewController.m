@@ -171,7 +171,7 @@
 
 - (void)refreshSpeakerSpeachForward:(BOOL)forward {
     if (!self.imageViewCountry.hidden) return; // not update speach while in info
-    
+//    
 //    NSArray *events = [[DataManager sharedInstance] getEventsForSpeakerWithID:self.speaker.speakerID];
 //    int arrayCount = (int)[events count];
 //    int startPossition = (int)[events indexOfObject:_event];

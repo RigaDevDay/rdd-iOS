@@ -19,7 +19,12 @@
 @property (strong, nonatomic) Day *selectedDay;
 @property (strong, nonatomic) Room *selectedRoom;
 
+- (NSArray *)allDays;
+- (BOOL)changeFavoriteStatusForEvent:(Event *)event;
 - (void)selectRoomWithOrder:(NSInteger)order;
+- (NSArray *)allSpeakers;
+- (NSArray *)allBookmarks;
+- (NSArray *)roomsForDay:(Day *)day;
 
 - (NSArray *)eventsForDay:(Day *)day andRoom:(Room *)room;
 - (NSArray *)eventsForDayOrder:(int)dayOrder andRoomOrder:(int)roomOrder;
@@ -31,13 +36,13 @@
 
 - (void)changeSpeakerBookmarkStateTo:(BOOL)saved forSpeakerID:(NSInteger)speakerID;
 - (BOOL)isSpeakerBookmarkedWithID:(NSInteger)speakerID;
-- (NSArray *)getAllBookmarkedEvents;
+//- (NSArray *)getAllBookmarkedEvents;
 
 
 - (UIImage *)getActiveBookmarkImage;
 - (UIImage *)getInActiveBookmarkImageForInfo:(BOOL)forInfo;
 
-- (NSString *)getInfoStoryboardSegue;
+//- (NSString *)getInfoStoryboardSegue;
 
 - (void)updateScheduleIfNeeded;
 

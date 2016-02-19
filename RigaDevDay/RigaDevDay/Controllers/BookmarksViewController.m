@@ -12,10 +12,10 @@
 #import "SpeakerInfoViewController.h"
 #import "DataManager.h"
 
-@interface BookmarksViewController () <UITableViewDelegate, UITableViewDataSource, ScheduleTableViewCellDelegate> {
-    NSArray *_bookmaredEventsArray;
-    Event *_seletedEventObject;
-}
+@interface BookmarksViewController () <UITableViewDelegate, UITableViewDataSource, ScheduleTableViewCellDelegate>
+@property (nonatomic, strong) NSArray *pBookmaredEvents;
+@property (nonatomic, strong) Event *pSeletedEvent;
+
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonMenu;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *labelNoBookmarks;
@@ -36,8 +36,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    _bookmaredEventsArray = [[DataManager sharedInstance] getAllBookmarkedEvents];
-    self.labelNoBookmarks.hidden = [_bookmaredEventsArray count] ? YES : NO;
+    self.pBookmaredEvents = [[DataManager sharedInstance] allBookmarks];
+    self.labelNoBookmarks.hidden = [self.pBookmaredEvents count] ? YES : NO;
     [self.tableView reloadData];
 }
 
@@ -47,30 +47,30 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [_bookmaredEventsArray count];
+    return [self.pBookmaredEvents count];
 }
 
-//- (ScheduleTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    
+- (ScheduleTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
 //    Event *event = _bookmaredEventsArray[indexPath.row];
-//    ScheduleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PresentationCell"];
+    ScheduleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PresentationCell"];
 //    cell.labelSpeakerName.text = [self getSpeakerStringFromArray:event.speakers];
 //    cell.labelPresentationSubTitle.text = event.subTitle;
 //    cell.labelPresentationDescription.text = event.eventDescription;
 //    cell.labelStartTime.text = event.startTime;
 //    cell.labelStartTime.textColor = [self hasSameTimeEventAs:event] ? [UIColor redColor] : [UIColor grayColor];
-//    
+    
 //    Speaker *speaker = [event.speakers firstObject];
 //    if ([[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.speakerID]) {
 //        [cell.buttonImageView setImage:[[DataManager sharedInstance] getActiveBookmarkImage]];
 //    } else {
 //        [cell.buttonImageView setImage:[[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO]];
 //    }
-//
-//    cell.delegate = self;
-//    
-//    return cell;
-//}
+
+    cell.delegate = self;
+    
+    return cell;
+}
 
 - (NSString *)getSpeakerStringFromArray:(NSArray *)speakersArray {
     NSString *returnString = @"";
@@ -81,7 +81,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    _seletedEventObject = _bookmaredEventsArray[indexPath.row];
+    self.pSeletedEvent = self.pBookmaredEvents[indexPath.row];
     [self performSegueWithIdentifier:@"EventSegue" sender:nil];
 }
 

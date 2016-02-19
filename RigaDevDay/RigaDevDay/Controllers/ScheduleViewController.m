@@ -13,14 +13,16 @@
 #import "SpeakerInfoViewController.h"
 #import "DataManager.h"
 #import "Event.h"
+#import "DaysTableViewController.h"
 
-@interface ScheduleViewController () <UITableViewDataSource, UITableViewDelegate, UITabBarDelegate, ScheduleTableViewCellDelegate>
+@interface ScheduleViewController () <UITableViewDataSource, UITableViewDelegate, UITabBarDelegate, ScheduleTableViewCellDelegate, DaysTableVCDelegate>
 @property (nonatomic, strong) NSArray *pEvents;
 @property (nonatomic, strong) Event *pSelectedEvent;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonMenu;
 @property (weak, nonatomic) IBOutlet UITableView *iboTableView;
-@property (weak, nonatomic) IBOutlet UITabBar *tabBarController;
+@property (weak, nonatomic) IBOutlet UITabBar *iboTabBar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *iboDayBarButtonItem;
 
 @end
 
@@ -31,17 +33,37 @@
     self.buttonMenu.target = self.revealViewController;
     self.buttonMenu.action = @selector(revealToggle:);
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    [self p_reloadSchedule];
     
-    DataManager *dataManager = [DataManager sharedInstance];
-    self.pEvents = [dataManager eventsForDay:dataManager.selectedDay andRoom:dataManager.selectedRoom];
-    
-    self.tabBarController.selectedImageTintColor = [UIColor whiteColor];
-    [self.tabBarController setSelectedItem:[self.tabBarController.items firstObject]];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(reloadScheduleData)
                                                  name:@"UpdateSchedule" object:nil];
     // Do any additional setup after loading the view.
+}
+
+- (void)p_reloadSchedule {
+    DataManager *dataManager = [DataManager sharedInstance];
+    self.pEvents = [dataManager eventsForDay:dataManager.selectedDay andRoom:dataManager.selectedRoom];
+    self.title = dataManager.selectedRoom.name;
+    self.iboDayBarButtonItem.title = dataManager.selectedDay.title;
+    self.iboTabBar.selectedImageTintColor = [UIColor whiteColor];
+    [self.iboTabBar setSelectedItem:[self.iboTabBar.items firstObject]];
+    
+    NSArray *roomNames = [dataManager roomsForDay:dataManager.selectedDay];
+    self.iboTabBar.itemPositioning = UITabBarItemPositioningCentered;
+    //    self.iboTabBar.itemSpacing = 1.0;
+    self.iboTabBar.itemWidth = self.view.bounds.size.width / roomNames.count;
+    
+    NSMutableArray *items = [NSMutableArray array];
+    for (int i = 0; i < roomNames.count; i++) {
+        UITabBarItem *item = [[UITabBarItem alloc] initWithTitle:roomNames[i][@"name"] image:nil tag:i+1];
+        [items addObject:item];
+    }
+    [self.iboTabBar setItems:items];
+}
+- (IBAction)dayButtonTapped:(UIBarButtonItem *)sender {
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -51,7 +73,7 @@
 
 - (void)reloadScheduleData {
     //TODO
-//    _currentHallSchedule = [[DataManager sharedInstance] getScheduleForHall:1];
+    //    _currentHallSchedule = [[DataManager sharedInstance] getScheduleForHall:1];
     [self.iboTableView reloadData];
 }
 
@@ -79,13 +101,15 @@
         cell.labelPresentationDescription.text = event.eventDesc;
         cell.labelStartTime.text = event.interval.startTime;
         
-//        cell.backgroundColor = (indexPath.row % 2 == 0) ? [UIColor lightGrayColor] : [UIColor whiteColor];
-//        Speaker *speaker = [event.speakers firstObject];
-//        if ([[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.speakerID]) {
-//            [cell.buttonImageView setImage:[[DataManager sharedInstance] getActiveBookmarkImage]];
-//        } else {
-//            [cell.buttonImageView setImage:[[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO]];
-//        }
+        [cell.buttonImageView setImage:[event.isFavorite boolValue] ? [[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO] : [[DataManager sharedInstance] getActiveBookmarkImage]];
+        
+        //        cell.backgroundColor = (indexPath.row % 2 == 0) ? [UIColor lightGrayColor] : [UIColor whiteColor];
+        //        Speaker *speaker = [event.speakers firstObject];
+        //        if ([[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.speakerID]) {
+        //            [cell.buttonImageView setImage:[[DataManager sharedInstance] getActiveBookmarkImage]];
+        //        } else {
+        //            [cell.buttonImageView setImage:[[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO]];
+        //        }
         
         cell.delegate = self;
         
@@ -94,7 +118,7 @@
         GlobalMetupTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GlobalMetupCell"];
         cell.labelPresentationName.text = (event.title.length) ? event.title : (event.subtitle.length) ? event.subtitle : @"Event";
         cell.labelStartTime.text = event.interval.startTime;
-//        cell.backgroundColor = (indexPath.row % 2 == 0) ? [UIColor lightGrayColor] : [UIColor whiteColor];
+        //        cell.backgroundColor = (indexPath.row % 2 == 0) ? [UIColor lightGrayColor] : [UIColor whiteColor];
         return cell;
     }
 }
@@ -112,7 +136,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([[tableView cellForRowAtIndexPath:indexPath] isKindOfClass:[ScheduleTableViewCell class]]) {
         self.pSelectedEvent = self.pEvents[indexPath.row];
-       [self performSegueWithIdentifier:@"EventSegue" sender:nil];
+        [self performSegueWithIdentifier:@"EventSegue" sender:nil];
     }
 }
 
@@ -126,24 +150,41 @@
 - (NSString *)speakerStringFromSpeakers:(NSSet *)speakers {
     NSString *returnString = @"";
     for (Speaker *speaker in [speakers allObjects]) {
-       returnString = [returnString stringByAppendingFormat:@"%@, ",speaker.name];
+        returnString = [returnString stringByAppendingFormat:@"%@, ",speaker.name];
     }
     return returnString;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    SpeakerInfoViewController *destController = [segue destinationViewController];
-    destController.event = self.pSelectedEvent;
+    if ([segue.identifier isEqualToString:@"DaysSegue"]) {
+        DaysTableViewController *daysVC = segue.destinationViewController;
+        daysVC.delegate = self;
+    } else if ([segue.identifier isEqualToString:@"EventSegue"]) {
+        SpeakerInfoViewController *destController = [segue destinationViewController];
+        destController.event = self.pSelectedEvent;
+    }
 }
 //
 - (void)bookmarkButtonPressedOnCell:(ScheduleTableViewCell *)cell {
-//    Event *event = [_currentHallSchedule objectAtIndex:[self.tableView indexPathForCell:cell].row];
-//    Speaker *speaker = [event.speakers firstObject];
-//    
-//    BOOL isBookmarked = [[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.speakerID];
-//    [cell.buttonImageView setImage:isBookmarked ? [[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO] : [[DataManager sharedInstance] getActiveBookmarkImage]];
-//    
-//    [[DataManager sharedInstance] changeSpeakerBookmarkStateTo:!isBookmarked forSpeakerID:speaker.speakerID];
+    Event *event = [self.pEvents objectAtIndex:[self.iboTableView indexPathForCell:cell].row];
+    if (event) {
+        BOOL isFavorite = [[DataManager sharedInstance] changeFavoriteStatusForEvent:event];
+        [cell.buttonImageView setImage:isFavorite ? [[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO] : [[DataManager sharedInstance] getActiveBookmarkImage]];
+    }
+    //    Speaker *speaker = [event.speakers firstObject];
+    //
+    //    BOOL isBookmarked = [[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.speakerID];
+    //    [cell.buttonImageView setImage:isBookmarked ? [[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO] : [[DataManager sharedInstance] getActiveBookmarkImage]];
+    //
+    //    [[DataManager sharedInstance] changeSpeakerBookmarkStateTo:!isBookmarked forSpeakerID:speaker.speakerID];
+}
+
+#pragma mark - DaysTableVCDelegate
+
+- (void)daysTableVC:(DaysTableViewController *)daysVC didSelectDay:(Day *)day {
+    [DataManager sharedInstance].selectedDay = day;
+    [[DataManager sharedInstance] selectRoomWithOrder:1];
+    [self p_reloadSchedule];
 }
 
 @end

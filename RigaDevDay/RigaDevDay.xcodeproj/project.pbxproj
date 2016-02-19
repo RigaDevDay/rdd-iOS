@@ -193,6 +193,8 @@
 		B7FDD0EB1A4AC1560001C098 /* techhub.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0CA1A4AC1560001C098 /* techhub.png */; };
 		B7FDD1141A4B21110001C098 /* SpeakerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD1131A4B21110001C098 /* SpeakerTableViewCell.m */; };
 		B7FDD1221A4B4FDD0001C098 /* ScheduleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD1211A4B4FDD0001C098 /* ScheduleTableViewCell.m */; };
+		C00A14181C77B7E4009B60FF /* NSArray+LinqExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C00A14151C77B7E4009B60FF /* NSArray+LinqExtensions.m */; };
+		C00A14191C77B7E4009B60FF /* NSDictionary+LinqExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C00A14171C77B7E4009B60FF /* NSDictionary+LinqExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -431,6 +433,10 @@
 		B7FDD1131A4B21110001C098 /* SpeakerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerTableViewCell.m; path = RigaDevDay/Controllers/SpeakerTableViewCell.m; sourceTree = "<group>"; };
 		B7FDD1201A4B4FDD0001C098 /* ScheduleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleTableViewCell.h; path = RigaDevDay/Controllers/ScheduleTableViewCell.h; sourceTree = "<group>"; };
 		B7FDD1211A4B4FDD0001C098 /* ScheduleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleTableViewCell.m; path = RigaDevDay/Controllers/ScheduleTableViewCell.m; sourceTree = "<group>"; };
+		C00A14141C77B7E4009B60FF /* NSArray+LinqExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+LinqExtensions.h"; path = "RigaDevDay/Libs/LinqToObjectiveC/NSArray+LinqExtensions.h"; sourceTree = "<group>"; };
+		C00A14151C77B7E4009B60FF /* NSArray+LinqExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+LinqExtensions.m"; path = "RigaDevDay/Libs/LinqToObjectiveC/NSArray+LinqExtensions.m"; sourceTree = "<group>"; };
+		C00A14161C77B7E4009B60FF /* NSDictionary+LinqExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+LinqExtensions.h"; path = "RigaDevDay/Libs/LinqToObjectiveC/NSDictionary+LinqExtensions.h"; sourceTree = "<group>"; };
+		C00A14171C77B7E4009B60FF /* NSDictionary+LinqExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+LinqExtensions.m"; path = "RigaDevDay/Libs/LinqToObjectiveC/NSDictionary+LinqExtensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -816,6 +822,7 @@
 		B7B16D501A36201F005267AF /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				C00A141A1C77B7EC009B60FF /* LinqToObjectiveC */,
 				B7BFBA431A52B93600B46385 /* Reachability.h */,
 				B7BFBA441A52B93600B46385 /* Reachability.m */,
 				38B571F51C74A7370033E40E /* CoreData.framework */,
@@ -934,6 +941,17 @@
 			);
 			name = OrganizersLogo;
 			path = Resources/OrganizersLogo;
+			sourceTree = "<group>";
+		};
+		C00A141A1C77B7EC009B60FF /* LinqToObjectiveC */ = {
+			isa = PBXGroup;
+			children = (
+				C00A14141C77B7E4009B60FF /* NSArray+LinqExtensions.h */,
+				C00A14151C77B7E4009B60FF /* NSArray+LinqExtensions.m */,
+				C00A14161C77B7E4009B60FF /* NSDictionary+LinqExtensions.h */,
+				C00A14171C77B7E4009B60FF /* NSDictionary+LinqExtensions.m */,
+			);
+			name = LinqToObjectiveC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1190,11 +1208,13 @@
 				B7B16D4F1A36201B005267AF /* SWRevealViewController.m in Sources */,
 				97F8894A1A49BBEF00A135C9 /* MKMapView+ZoomLevel.m in Sources */,
 				38B5727B1C74B9E40033E40E /* Day.m in Sources */,
+				C00A14181C77B7E4009B60FF /* NSArray+LinqExtensions.m in Sources */,
 				97F8893B1A49A84E00A135C9 /* SpeakersViewController.m in Sources */,
 				B7B16D2A1A361B2D005267AF /* SpeakerInfoViewController.m in Sources */,
 				38B572641C74AE650033E40E /* Speaker+CoreDataProperties.m in Sources */,
 				B7B16D551A362646005267AF /* NavigationViewController.m in Sources */,
 				B70EEB571A485258008CD9C6 /* MHTabBarController.m in Sources */,
+				C00A14191C77B7E4009B60FF /* NSDictionary+LinqExtensions.m in Sources */,
 				B7B16D321A361BAC005267AF /* ScheduleViewController.m in Sources */,
 				38B5725A1C74AE650033E40E /* Event+CoreDataProperties.m in Sources */,
 				38B572611C74AE650033E40E /* Interval.m in Sources */,

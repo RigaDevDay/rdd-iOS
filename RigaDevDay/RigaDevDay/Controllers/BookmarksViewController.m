@@ -11,14 +11,18 @@
 #import "ScheduleTableViewCell.h"
 #import "SpeakerInfoViewController.h"
 #import "DataManager.h"
+#import "NSArray+LinqExtensions.h"
 
 @interface BookmarksViewController () <UITableViewDelegate, UITableViewDataSource, ScheduleTableViewCellDelegate>
-@property (nonatomic, strong) NSArray *pBookmaredEvents;
+//@property (nonatomic, strong) NSArray *pBookmaredEvents;
 @property (nonatomic, strong) Event *pSeletedEvent;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonMenu;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *labelNoBookmarks;
+
+@property (nonatomic, strong) NSMutableDictionary *pGroupedEvents;// by Day name
+@property (nonatomic, strong) NSMutableArray *pHeaderNames;
 
 @end
 
@@ -30,6 +34,7 @@
     self.buttonMenu.action = @selector(revealToggle:);
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+
     
     // Do any additional setup after loading the view.
 }
@@ -41,8 +46,15 @@
 }
 
 - (void)p_reloadBookmarks {
-    self.pBookmaredEvents = [[DataManager sharedInstance] allBookmarks];
-    self.labelNoBookmarks.hidden = [self.pBookmaredEvents count] ? YES : NO;
+    NSArray *bookmarkedEvents = [[DataManager sharedInstance] allBookmarks];
+
+ self.pGroupedEvents = [[bookmarkedEvents linq_groupBy:^id(Event *event) {
+        return event.interval.day.order;
+    }] mutableCopy];
+     self.pHeaderNames = [[[self.pGroupedEvents allKeys] linq_sort] mutableCopy];
+
+    
+    self.labelNoBookmarks.hidden = [self.pHeaderNames count] ? YES : NO;
     [self.tableView reloadData];
 }
 
@@ -51,13 +63,48 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (Event *)p_eventForIndexPath:(NSIndexPath *)indexPath {
+    NSString *headerName = self.pHeaderNames[(NSUInteger) indexPath.section];
+    NSArray *eventsForHeader = self.pGroupedEvents[headerName];
+    return eventsForHeader[(NSUInteger)indexPath.row];
+}
+
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//    return [self.pBookmaredEvents count];
+//}
+
+- (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    Day *day = [[DataManager sharedInstance] dayWithOrder:section+1];
+    if (day) {
+        return day.title;
+    }
+    return @"";
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.pBookmaredEvents count];
+    if ([self.pHeaderNames count]) {
+        NSString *headerName =  self.pHeaderNames[(NSUInteger) section];
+        NSArray *imagesForHeader = self.pGroupedEvents[headerName];
+        return imagesForHeader.count;
+    }
+    return 0;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return ([self.pHeaderNames count]) ? [self.pHeaderNames count] : 0;
+}
+
+//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+//    return  (self.pPreferenceModel.activitiesGroupingType == StoreGrouping) ? self.pHeaderNames[(NSUInteger) section] : [self.pHeaderNames[(NSUInteger)section] dateStringWithFormat:@"dd MMM yyyy"];
+//}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 25.0;
 }
 
 - (ScheduleTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    Event *event = self.pBookmaredEvents[indexPath.row];
+//      Image *image = [self p_imageForIndexPath:indexPath];
+    Event *event = [self p_eventForIndexPath:indexPath];
     ScheduleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PresentationCell"];
     cell.labelSpeakerName.text = [self getSpeakerStringFromArray:event.speakers];
     cell.labelPresentationSubTitle.text = (event.subtitle.length) ? event.subtitle : @"Event";
@@ -81,7 +128,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    self.pSeletedEvent = self.pBookmaredEvents[indexPath.row];
+    self.pSeletedEvent = [self p_eventForIndexPath:indexPath];
     [self performSegueWithIdentifier:@"EventSegue" sender:nil];
 }
 
@@ -92,8 +139,8 @@
 
 
 - (void)bookmarkButtonPressedOnCell:(ScheduleTableViewCell *)cell {
-    Event *event = [self.pBookmaredEvents objectAtIndex:[self.tableView indexPathForCell:cell].row];
-
+//    Event *event = [self.pBookmaredEvents objectAtIndex:[self.tableView indexPathForCell:cell].row];
+    Event *event = [self p_eventForIndexPath:[self.tableView indexPathForCell:cell]];
     BOOL isFavorite = [[DataManager sharedInstance] changeFavoriteStatusForEvent:event];
     [cell.buttonImageView setImage:isFavorite ? [UIImage imageNamed:@"icon_bookmark.png"] : [UIImage imageNamed:@"icon_menu_bookmark.png"]];
      [self p_reloadBookmarks];

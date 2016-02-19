@@ -113,6 +113,23 @@
     return nil;
 }
 
+- (Day *)dayWithOrder:(NSInteger)order {
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    [request setEntity: [NSEntityDescription entityForName:NSStringFromClass([Day class]) inManagedObjectContext: appDelegate.managedObjectContext]];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"order == %@", [NSNumber numberWithInteger:order]]];
+    request.fetchLimit = 1;
+    NSError *error = nil;
+    
+    NSArray *results = [appDelegate.managedObjectContext executeFetchRequest:request error:&error];
+    if (!error) {
+        if ([results count]) {
+            return [results firstObject];
+        }
+    }
+    return nil;
+}
+
 - (NSArray *)roomsForDay:(Day *)day {
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;

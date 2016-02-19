@@ -25,6 +25,7 @@
 - (NSArray *)allSpeakers;
 - (NSArray *)allBookmarks;
 - (NSArray *)roomsForDay:(Day *)day;
+- (Day *)dayWithOrder:(NSInteger)order;
 
 - (NSArray *)eventsForDay:(Day *)day andRoom:(Room *)room;
 //- (NSArray *)eventsForDayOrder:(int)dayOrder andRoomOrder:(int)roomOrder;

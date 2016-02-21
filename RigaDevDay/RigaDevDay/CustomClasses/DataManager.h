@@ -2,8 +2,8 @@
 //  DataManager.h
 //  RigaDevDay
 //
-//  Created by Deniss Kaibagarovs on 12/8/14.
-//  Copyright (c) 2014 Deniss Kaibagarovs. All rights reserved.
+//  Created by Ksenija Krilatiha on 21/02/16.
+//  Copyright © 2016 Riga Dev Day. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -19,34 +19,29 @@
 @property (strong, nonatomic) Day *selectedDay;
 @property (strong, nonatomic) Room *selectedRoom;
 
+//Day
 - (NSArray *)allDays;
-- (BOOL)changeFavoriteStatusForEvent:(Event *)event;
-- (void)selectRoomWithOrder:(NSInteger)order;
-- (NSArray *)allSpeakers;
-- (NSArray *)allBookmarks;
-- (NSArray *)roomsForDay:(Day *)day;
 - (Day *)dayWithOrder:(NSInteger)order;
 
-- (NSString *)speakerStringFromSpeakers:(NSSet *)speakers;
+//Event
+- (BOOL)changeFavoriteStatusForEvent:(Event *)event;
+- (NSArray *)allBookmarks;
+- (NSArray *)eventsForDay:(Day *)day andRoom:(Room *)room;
+
+//Room
+- (void)selectRoomWithOrder:(NSInteger)order;
+- (NSArray *)roomsForDay:(Day *)day;
+
+//Tag
 - (NSArray *)tagNamesForEvent:(Event *)event;
 
-- (NSArray *)eventsForDay:(Day *)day andRoom:(Room *)room;
-//- (NSArray *)eventsForDayOrder:(int)dayOrder andRoomOrder:(int)roomOrder;
+//Speaker
+- (NSArray *)allSpeakers;
+- (NSString *)speakerStringFromSpeakers:(NSSet *)speakers;
 
-//- (NSArray *)getAllSpeakers;
-//- (NSArray *)getScheduleForHall:(NSInteger)roomID;
-//- (Event *)getEventForSpeakerWithID:(NSInteger)speakerID;
-//- (NSArray *)getEventsForSpeakerWithID:(NSInteger)speakerID;
-
-//- (void)changeSpeakerBookmarkStateTo:(BOOL)saved forSpeakerID:(NSInteger)speakerID;
-//- (BOOL)isSpeakerBookmarkedWithID:(NSInteger)speakerID;
-//- (NSArray *)getAllBookmarkedEvents;
-
-//
+//Bookmark images
 - (UIImage *)getActiveBookmarkImage;
 - (UIImage *)getInActiveBookmarkImageForInfo:(BOOL)forInfo;
-
-//- (NSString *)getInfoStoryboardSegue;
 
 - (void)updateScheduleIfNeeded;
 

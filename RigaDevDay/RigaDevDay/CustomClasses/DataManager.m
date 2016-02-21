@@ -2,8 +2,8 @@
 //  DataManager.m
 //  RigaDevDay
 //
-//  Created by Deniss Kaibagarovs on 12/8/14.
-//  Copyright (c) 2014 Deniss Kaibagarovs. All rights reserved.
+//  Created by Ksenija Krilatiha on 21/02/16.
+//  Copyright © 2016 Riga Dev Day. All rights reserved.
 //
 
 #import "DataManager.h"

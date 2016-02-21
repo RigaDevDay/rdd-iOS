@@ -895,19 +895,9 @@
                                                         <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shT-tg-Vo8">
                                                             <rect key="frame" x="0.0" y="0.0" width="38" height="38"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="44" id="POg-Ke-CrZ"/>
-                                                                <constraint firstAttribute="width" constant="44" id="t0M-EP-w3L"/>
-                                                            </constraints>
                                                             <state key="normal">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
-                                                            <variation key="default">
-                                                                <mask key="constraints">
-                                                                    <exclude reference="POg-Ke-CrZ"/>
-                                                                    <exclude reference="t0M-EP-w3L"/>
-                                                                </mask>
-                                                            </variation>
                                                             <connections>
                                                                 <action selector="onBookmarkButtonPress:" destination="icJ-re-Mfe" eventType="touchUpInside" id="Zfh-MS-q89"/>
                                                             </connections>
@@ -915,17 +905,9 @@
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_menu_bookmark.png" translatesAutoresizingMaskIntoConstraints="NO" id="0b5-sW-GX7">
                                                             <rect key="frame" x="6" y="6" width="26" height="26"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="26" id="6RR-wS-0Aq"/>
                                                                 <constraint firstAttribute="height" constant="26" id="B0J-re-BC4"/>
                                                                 <constraint firstAttribute="width" constant="26" id="JGC-xQ-wt4"/>
-                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="26" id="iHB-3Q-SCg"/>
                                                             </constraints>
-                                                            <variation key="default">
-                                                                <mask key="constraints">
-                                                                    <exclude reference="6RR-wS-0Aq"/>
-                                                                    <exclude reference="iHB-3Q-SCg"/>
-                                                                </mask>
-                                                            </variation>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -945,7 +927,6 @@
                                                 </scrollView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Rmc-eD-gYq" firstAttribute="leading" secondItem="JAq-7K-VVs" secondAttribute="trailing" constant="29" id="1iL-17-zxJ"/>
                                                 <constraint firstItem="Rmc-eD-gYq" firstAttribute="leading" secondItem="dzs-8E-Smy" secondAttribute="trailing" constant="29" id="3tF-GQ-sYF"/>
                                                 <constraint firstItem="JAq-7K-VVs" firstAttribute="top" secondItem="f4K-l6-1ii" secondAttribute="bottom" constant="2" id="Ck0-1I-UtM"/>
                                                 <constraint firstItem="Rmc-eD-gYq" firstAttribute="leading" secondItem="JAq-7K-VVs" secondAttribute="trailing" constant="29" id="Khb-iS-LK6"/>
@@ -962,11 +943,6 @@
                                                 <constraint firstItem="f4K-l6-1ii" firstAttribute="top" secondItem="mEl-ZG-cCf" secondAttribute="topMargin" id="w8N-LS-KUC"/>
                                                 <constraint firstItem="dzs-8E-Smy" firstAttribute="leading" secondItem="mEl-ZG-cCf" secondAttribute="leading" constant="18" id="xIa-2G-Ij3"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="1iL-17-zxJ"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="buttonBookmark" destination="shT-tg-Vo8" id="2hQ-t6-kQl"/>
@@ -984,8 +960,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="39"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Global Meetup" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eue-aQ-RSh">
-                                                    <rect key="frame" x="23" y="10" width="519" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Global Meetup" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eue-aQ-RSh">
+                                                    <rect key="frame" x="23" y="10" width="554" height="21"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" red="0.25882352941176473" green="0.59999999999999998" blue="0.99215686274509807" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1011,50 +987,12 @@
                                             <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="Eue-aQ-RSh" firstAttribute="bottom" secondItem="mBP-9L-xLO" secondAttribute="bottomMargin" id="5qM-kx-NfG"/>
-                                                <constraint firstItem="yi8-g2-R2N" firstAttribute="top" secondItem="mBP-9L-xLO" secondAttribute="topMargin" constant="7" id="8eR-62-OB2"/>
-                                                <constraint firstItem="yi8-g2-R2N" firstAttribute="baseline" secondItem="Eue-aQ-RSh" secondAttribute="baseline" id="FJV-xb-tOM"/>
-                                                <constraint firstItem="yi8-g2-R2N" firstAttribute="bottom" secondItem="mBP-9L-xLO" secondAttribute="bottomMargin" id="GhY-YH-6mC"/>
-                                                <constraint firstItem="yi8-g2-R2N" firstAttribute="leading" secondItem="Eue-aQ-RSh" secondAttribute="trailing" constant="2" id="GoS-nR-xHv"/>
                                                 <constraint firstItem="Eue-aQ-RSh" firstAttribute="leading" secondItem="mBP-9L-xLO" secondAttribute="leadingMargin" constant="15" id="HVN-rE-ngn"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Eue-aQ-RSh" secondAttribute="bottom" constant="6" id="JpE-aw-m35"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="yi8-g2-R2N" secondAttribute="trailing" constant="8" id="KW2-SK-NZp"/>
-                                                <constraint firstItem="yi8-g2-R2N" firstAttribute="baseline" secondItem="Eue-aQ-RSh" secondAttribute="baseline" id="TWc-SR-XCT"/>
-                                                <constraint firstItem="yi8-g2-R2N" firstAttribute="top" secondItem="mBP-9L-xLO" secondAttribute="topMargin" constant="2" id="WeG-yc-Zp1"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Eue-aQ-RSh" secondAttribute="trailing" constant="15" id="PF6-Fo-DkS"/>
                                                 <constraint firstAttribute="trailing" secondItem="yi8-g2-R2N" secondAttribute="trailing" constant="8" id="Zw6-y3-ret"/>
-                                                <constraint firstItem="yi8-g2-R2N" firstAttribute="leading" secondItem="Eue-aQ-RSh" secondAttribute="trailing" constant="24" id="aI5-M5-DUj"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="yi8-g2-R2N" secondAttribute="bottom" constant="5" id="bDC-aX-9Xv"/>
-                                                <constraint firstItem="yi8-g2-R2N" firstAttribute="leading" secondItem="Eue-aQ-RSh" secondAttribute="trailing" constant="8" id="dhj-dM-SSt"/>
-                                                <constraint firstItem="yi8-g2-R2N" firstAttribute="top" secondItem="Eue-aQ-RSh" secondAttribute="top" id="gos-Xj-5FU"/>
                                                 <constraint firstItem="Eue-aQ-RSh" firstAttribute="top" secondItem="mBP-9L-xLO" secondAttribute="topMargin" constant="2" id="i6B-Sb-m3k"/>
-                                                <constraint firstItem="yi8-g2-R2N" firstAttribute="centerY" secondItem="Eue-aQ-RSh" secondAttribute="centerY" id="ill-zq-vEm"/>
-                                                <constraint firstItem="yi8-g2-R2N" firstAttribute="leading" secondItem="Eue-aQ-RSh" secondAttribute="trailing" constant="13" id="kL8-E1-s4H"/>
-                                                <constraint firstItem="yi8-g2-R2N" firstAttribute="trailing" secondItem="mBP-9L-xLO" secondAttribute="trailingMargin" constant="-8" id="nty-Y0-f85"/>
-                                                <constraint firstItem="yi8-g2-R2N" firstAttribute="centerY" secondItem="mBP-9L-xLO" secondAttribute="centerY" id="oCR-ce-1dD"/>
-                                                <constraint firstItem="Eue-aQ-RSh" firstAttribute="centerY" secondItem="mBP-9L-xLO" secondAttribute="centerY" id="rlA-uh-jtN"/>
                                                 <constraint firstItem="yi8-g2-R2N" firstAttribute="centerY" secondItem="mBP-9L-xLO" secondAttribute="centerY" id="sEO-i3-YD5"/>
-                                                <constraint firstItem="Eue-aQ-RSh" firstAttribute="top" secondItem="mBP-9L-xLO" secondAttribute="topMargin" constant="7" id="zxx-Z5-wWw"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="JpE-aw-m35"/>
-                                                    <exclude reference="rlA-uh-jtN"/>
-                                                    <exclude reference="zxx-Z5-wWw"/>
-                                                    <exclude reference="8eR-62-OB2"/>
-                                                    <exclude reference="FJV-xb-tOM"/>
-                                                    <exclude reference="GhY-YH-6mC"/>
-                                                    <exclude reference="GoS-nR-xHv"/>
-                                                    <exclude reference="KW2-SK-NZp"/>
-                                                    <exclude reference="TWc-SR-XCT"/>
-                                                    <exclude reference="WeG-yc-Zp1"/>
-                                                    <exclude reference="aI5-M5-DUj"/>
-                                                    <exclude reference="bDC-aX-9Xv"/>
-                                                    <exclude reference="gos-Xj-5FU"/>
-                                                    <exclude reference="ill-zq-vEm"/>
-                                                    <exclude reference="kL8-E1-s4H"/>
-                                                    <exclude reference="nty-Y0-f85"/>
-                                                    <exclude reference="oCR-ce-1dD"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="labelPresentationName" destination="Eue-aQ-RSh" id="psb-3o-NLU"/>

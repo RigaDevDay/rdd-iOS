@@ -197,6 +197,9 @@
 		C00A14191C77B7E4009B60FF /* NSDictionary+LinqExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C00A14171C77B7E4009B60FF /* NSDictionary+LinqExtensions.m */; };
 		C00A141E1C791823009B60FF /* CAPSPageMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = C00A141D1C791823009B60FF /* CAPSPageMenu.m */; };
 		C00A14211C791B0D009B60FF /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C00A14201C791B0D009B60FF /* PageViewController.m */; };
+		C00A14251C7A0270009B60FF /* UIColor+App.m in Sources */ = {isa = PBXBuildFile; fileRef = C00A14241C7A0270009B60FF /* UIColor+App.m */; };
+		C00A14271C7A0AE7009B60FF /* bg-devdays.png in Resources */ = {isa = PBXBuildFile; fileRef = C00A14261C7A0AE7009B60FF /* bg-devdays.png */; };
+		C00A14291C7A0AF0009B60FF /* bg-riga.png in Resources */ = {isa = PBXBuildFile; fileRef = C00A14281C7A0AF0009B60FF /* bg-riga.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -443,6 +446,10 @@
 		C00A141D1C791823009B60FF /* CAPSPageMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CAPSPageMenu.m; path = RigaDevDay/Libs/PageMenu/CAPSPageMenu.m; sourceTree = "<group>"; };
 		C00A141F1C791B0D009B60FF /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PageViewController.h; path = RigaDevDay/Controllers/PageViewController.h; sourceTree = "<group>"; };
 		C00A14201C791B0D009B60FF /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PageViewController.m; path = RigaDevDay/Controllers/PageViewController.m; sourceTree = "<group>"; };
+		C00A14231C7A0270009B60FF /* UIColor+App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+App.h"; path = "RigaDevDay/Libs/Utils/UIColor+App.h"; sourceTree = "<group>"; };
+		C00A14241C7A0270009B60FF /* UIColor+App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+App.m"; path = "RigaDevDay/Libs/Utils/UIColor+App.m"; sourceTree = "<group>"; };
+		C00A14261C7A0AE7009B60FF /* bg-devdays.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-devdays.png"; sourceTree = "<group>"; };
+		C00A14281C7A0AF0009B60FF /* bg-riga.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-riga.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -536,6 +543,8 @@
 		B70F60C11A483F96004EA563 /* drawable */ = {
 			isa = PBXGroup;
 			children = (
+				C00A14281C7A0AF0009B60FF /* bg-riga.png */,
+				C00A14261C7A0AE7009B60FF /* bg-devdays.png */,
 				B7FB3D411A62CA3B000A73E9 /* twitter-menu.png */,
 				B70F60C21A483F96004EA563 /* backstage_1.jpeg */,
 				B70F60C31A483F96004EA563 /* backstage_10.jpeg */,
@@ -830,6 +839,7 @@
 		B7B16D501A36201F005267AF /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				C00A14221C7A0250009B60FF /* Utils */,
 				C00A141B1C791818009B60FF /* PageMenu */,
 				C00A141A1C77B7EC009B60FF /* LinqToObjectiveC */,
 				B7BFBA431A52B93600B46385 /* Reachability.h */,
@@ -972,6 +982,15 @@
 			name = PageMenu;
 			sourceTree = "<group>";
 		};
+		C00A14221C7A0250009B60FF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C00A14231C7A0270009B60FF /* UIColor+App.h */,
+				C00A14241C7A0270009B60FF /* UIColor+App.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1099,6 +1118,7 @@
 				B7FDD0E11A4AC1560001C098 /* openshift.png in Resources */,
 				B70F613D1A483F96004EA563 /* speaker_19.png in Resources */,
 				B70F61111A483F96004EA563 /* backstage_16.jpeg in Resources */,
+				C00A14291C7A0AF0009B60FF /* bg-riga.png in Resources */,
 				B7FB3D6E1A62FC31000A73E9 /* UK.png in Resources */,
 				B70F61511A483F96004EA563 /* speaker_9.png in Resources */,
 				B70F613B1A483F96004EA563 /* speaker_17.png in Resources */,
@@ -1143,6 +1163,7 @@
 				B71B187E1A5141CC00A295B1 /* Default-568h@2x.png in Resources */,
 				B7519A031A517F350036E2D6 /* speakers.json in Resources */,
 				B70F61371A483F96004EA563 /* speaker_13.png in Resources */,
+				C00A14271C7A0AE7009B60FF /* bg-devdays.png in Resources */,
 				B70F611F1A483F96004EA563 /* backstage_29.jpeg in Resources */,
 				B70F61151A483F96004EA563 /* backstage_2.jpeg in Resources */,
 				B7FDD0D81A4AC1560001C098 /* jug-kpi.png in Resources */,
@@ -1221,6 +1242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38B5727C1C74B9E40033E40E /* Room+CoreDataProperties.m in Sources */,
+				C00A14251C7A0270009B60FF /* UIColor+App.m in Sources */,
 				B7BFBA451A52B93600B46385 /* Reachability.m in Sources */,
 				B70F61561A4846C6004EA563 /* ShowCaseCell.m in Sources */,
 				B7B16D4F1A36201B005267AF /* SWRevealViewController.m in Sources */,

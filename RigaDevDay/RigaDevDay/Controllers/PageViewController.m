@@ -13,6 +13,7 @@
 #import "SpeakerInfoViewController.h"
 #import "DaysTableViewController.h"
 #import "DataManager.h"
+#import "UIColor+App.h"
 
 @interface PageViewController () <DaysTableVCDelegate>
 @property (nonatomic) CAPSPageMenu *pageMenu;
@@ -33,7 +34,7 @@
     [self p_reloadPageMenuWithDay:[DataManager sharedInstance].selectedDay];
 }
 
-- (void)didTapGoToLeft {
+- (void)p_didTapGoToLeft {
     NSInteger currentIndex = self.pageMenu.currentPageIndex;
     
     if (currentIndex > 0) {
@@ -41,7 +42,7 @@
     }
 }
 
-- (void)didTapGoToRight {
+- (void)p_didTapGoToRight {
     NSInteger currentIndex = self.pageMenu.currentPageIndex;
     
     if (currentIndex < self.pageMenu.controllerArray.count) {
@@ -63,11 +64,11 @@
         [controllers addObject:scheduleVC];
     }
     NSDictionary *parameters = @{
-                                 CAPSPageMenuOptionScrollMenuBackgroundColor: [UIColor colorWithRed:30.0/255.0 green:30.0/255.0 blue:30.0/255.0 alpha:1.0],
-                                 CAPSPageMenuOptionViewBackgroundColor: [UIColor colorWithRed:20.0/255.0 green:20.0/255.0 blue:20.0/255.0 alpha:1.0],
-                                 CAPSPageMenuOptionSelectionIndicatorColor: [UIColor orangeColor],
+                                 CAPSPageMenuOptionScrollMenuBackgroundColor: [UIColor appBlack],
+                                 CAPSPageMenuOptionViewBackgroundColor: [UIColor whiteColor],
+                                 CAPSPageMenuOptionSelectionIndicatorColor: [UIColor appOrange],
                                  CAPSPageMenuOptionBottomMenuHairlineColor: [UIColor colorWithRed:70.0/255.0 green:70.0/255.0 blue:70.0/255.0 alpha:1.0],
-                                 CAPSPageMenuOptionMenuItemFont: [UIFont fontWithName:@"HelveticaNeue" size:13.0],
+                                 CAPSPageMenuOptionMenuItemFont: [UIFont fontWithName:@"HelveticaNeue-Medium" size:13.0],
                                  CAPSPageMenuOptionMenuHeight: @(40.0),
                                  CAPSPageMenuOptionMenuItemWidth: @(90.0),
                                  CAPSPageMenuOptionCenterMenuItems: @(YES)

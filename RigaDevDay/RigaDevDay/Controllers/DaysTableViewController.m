@@ -22,6 +22,7 @@
     
     self.pDays = [[DataManager sharedInstance] allDays];
     [self.iboTableView reloadData];
+    self.iboTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 - (void)didReceiveMemoryWarning {

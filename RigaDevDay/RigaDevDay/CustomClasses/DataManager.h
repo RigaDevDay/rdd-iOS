@@ -33,16 +33,16 @@
 - (NSArray *)eventsForDay:(Day *)day andRoom:(Room *)room;
 //- (NSArray *)eventsForDayOrder:(int)dayOrder andRoomOrder:(int)roomOrder;
 
-- (NSArray *)getAllSpeakers;
-- (NSArray *)getScheduleForHall:(NSInteger)roomID;
-- (Event *)getEventForSpeakerWithID:(NSInteger)speakerID;
-- (NSArray *)getEventsForSpeakerWithID:(NSInteger)speakerID;
+//- (NSArray *)getAllSpeakers;
+//- (NSArray *)getScheduleForHall:(NSInteger)roomID;
+//- (Event *)getEventForSpeakerWithID:(NSInteger)speakerID;
+//- (NSArray *)getEventsForSpeakerWithID:(NSInteger)speakerID;
 
-- (void)changeSpeakerBookmarkStateTo:(BOOL)saved forSpeakerID:(NSInteger)speakerID;
-- (BOOL)isSpeakerBookmarkedWithID:(NSInteger)speakerID;
+//- (void)changeSpeakerBookmarkStateTo:(BOOL)saved forSpeakerID:(NSInteger)speakerID;
+//- (BOOL)isSpeakerBookmarkedWithID:(NSInteger)speakerID;
 //- (NSArray *)getAllBookmarkedEvents;
 
-
+//
 - (UIImage *)getActiveBookmarkImage;
 - (UIImage *)getInActiveBookmarkImageForInfo:(BOOL)forInfo;
 

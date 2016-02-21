@@ -195,6 +195,8 @@
 		B7FDD1221A4B4FDD0001C098 /* ScheduleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD1211A4B4FDD0001C098 /* ScheduleTableViewCell.m */; };
 		C00A14181C77B7E4009B60FF /* NSArray+LinqExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C00A14151C77B7E4009B60FF /* NSArray+LinqExtensions.m */; };
 		C00A14191C77B7E4009B60FF /* NSDictionary+LinqExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C00A14171C77B7E4009B60FF /* NSDictionary+LinqExtensions.m */; };
+		C00A141E1C791823009B60FF /* CAPSPageMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = C00A141D1C791823009B60FF /* CAPSPageMenu.m */; };
+		C00A14211C791B0D009B60FF /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C00A14201C791B0D009B60FF /* PageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -437,6 +439,10 @@
 		C00A14151C77B7E4009B60FF /* NSArray+LinqExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+LinqExtensions.m"; path = "RigaDevDay/Libs/LinqToObjectiveC/NSArray+LinqExtensions.m"; sourceTree = "<group>"; };
 		C00A14161C77B7E4009B60FF /* NSDictionary+LinqExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+LinqExtensions.h"; path = "RigaDevDay/Libs/LinqToObjectiveC/NSDictionary+LinqExtensions.h"; sourceTree = "<group>"; };
 		C00A14171C77B7E4009B60FF /* NSDictionary+LinqExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+LinqExtensions.m"; path = "RigaDevDay/Libs/LinqToObjectiveC/NSDictionary+LinqExtensions.m"; sourceTree = "<group>"; };
+		C00A141C1C791823009B60FF /* CAPSPageMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAPSPageMenu.h; path = RigaDevDay/Libs/PageMenu/CAPSPageMenu.h; sourceTree = "<group>"; };
+		C00A141D1C791823009B60FF /* CAPSPageMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CAPSPageMenu.m; path = RigaDevDay/Libs/PageMenu/CAPSPageMenu.m; sourceTree = "<group>"; };
+		C00A141F1C791B0D009B60FF /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PageViewController.h; path = RigaDevDay/Controllers/PageViewController.h; sourceTree = "<group>"; };
+		C00A14201C791B0D009B60FF /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PageViewController.m; path = RigaDevDay/Controllers/PageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -777,6 +783,8 @@
 				B7FA0F1C1A4C731F002BD598 /* GlobalMetupTableViewCell.m */,
 				38A0AACB1C7747220005A0B5 /* DaysTableViewController.h */,
 				38A0AACC1C7747220005A0B5 /* DaysTableViewController.m */,
+				C00A141F1C791B0D009B60FF /* PageViewController.h */,
+				C00A14201C791B0D009B60FF /* PageViewController.m */,
 			);
 			name = Schedule;
 			path = ..;
@@ -822,6 +830,7 @@
 		B7B16D501A36201F005267AF /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				C00A141B1C791818009B60FF /* PageMenu */,
 				C00A141A1C77B7EC009B60FF /* LinqToObjectiveC */,
 				B7BFBA431A52B93600B46385 /* Reachability.h */,
 				B7BFBA441A52B93600B46385 /* Reachability.m */,
@@ -952,6 +961,15 @@
 				C00A14171C77B7E4009B60FF /* NSDictionary+LinqExtensions.m */,
 			);
 			name = LinqToObjectiveC;
+			sourceTree = "<group>";
+		};
+		C00A141B1C791818009B60FF /* PageMenu */ = {
+			isa = PBXGroup;
+			children = (
+				C00A141C1C791823009B60FF /* CAPSPageMenu.h */,
+				C00A141D1C791823009B60FF /* CAPSPageMenu.m */,
+			);
+			name = PageMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1220,10 +1238,12 @@
 				38B572611C74AE650033E40E /* Interval.m in Sources */,
 				B7B16D3A1A361BE8005267AF /* AboutViewController.m in Sources */,
 				38A0AACD1C7747220005A0B5 /* DaysTableViewController.m in Sources */,
+				C00A141E1C791823009B60FF /* CAPSPageMenu.m in Sources */,
 				38B571F41C74A6B70033E40E /* ScheduleModel.xcdatamodeld in Sources */,
 				B7FDD1221A4B4FDD0001C098 /* ScheduleTableViewCell.m in Sources */,
 				B7B16D041A361966005267AF /* AppDelegate.m in Sources */,
 				38B5725E1C74AE650033E40E /* Tag+CoreDataProperties.m in Sources */,
+				C00A14211C791B0D009B60FF /* PageViewController.m in Sources */,
 				97F889441A49B64600A135C9 /* VenueViewController.m in Sources */,
 				B7B16D2E1A361B7A005267AF /* SpeechInfoViewController.m in Sources */,
 				38B5725B1C74AE650033E40E /* Event.m in Sources */,

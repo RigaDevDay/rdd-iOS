@@ -1,5 +1,5 @@
 {
-    "version": 1,
+    "version": 2,
     "staff": [
               {
               "name": "Dmitry Buzdin",
@@ -233,7 +233,7 @@
                  "country": "Schweiz",
                  "img": "assets/img/photos/martin_naumann.jpg",
                  "twitter": "https://twitter.com/g33konaut",
-                 "description": "Martin is open source contributor and web evangelist by heart from Zurich with a decade experience from the trenches of software engineering in multiple fields. He works as a software engineer at Archilogic in front- and backend.He devotes his time to moving the web forward, fixing problems, building applications and systems and breaking things for fun & profit. Martin believes in the web platform and is working with bleeding edge technologies that will allow the web to prosper."
+                 "description": "Martin is open source contributor and web evangelist by heart from Zurich\nwith a decade experience from the trenches of software engineering in multiple fields.\n\nHe works as a software engineer at Archilogic in front- and backend.\nHe devotes his time to moving the web forward, fixing problems, building applications and systems\nand breaking things for fun & profit.\n\nMartin believes in the web platform and is working with bleeding edge technologies that will allow the web to prosper."
                  },
                  {
                  "id": 22,
@@ -243,7 +243,7 @@
                  "country": "Austria",
                  "img": "assets/img/photos/christoph_strobl.png",
                  "twitter": "https://twitter.com/stroblchristoph",
-                 "description": "As part of the engineering team at Pivotal Software Inc.,Christoph Strobl maintains and contributes mainly to the Spring Data modules around Redis, MongoDB, KeyValue and Solr. He is keen about all Data Access and has a passion about design and testing."
+                 "description": "As part of the engineering team at Pivotal Software Inc.,\nChristoph Strobl maintains and contributes mainly to the Spring Data modules around Redis,\nMongoDB, KeyValue and Solr. He is keen about all Data Access and has a passion about\ndesign and testing."
                  },
                  {
                  "id": 23,
@@ -253,7 +253,7 @@
                  "country": "Poland",
                  "img": "assets/img/photos/tomasz_borek.png",
                  "twitter": "https://twitter.com/LAFK_pl",
-                 "description": "Thankful to everybody who helps me while I hop along. Proud of: <a href=\"http://sckrk.com\">http://sckrk.com</a> and <a href=\"http://geecon.org\">http://geecon.org</a>.<br/><br/>Co-leads: SCKRK, Polish JUG, Lambda Lounge Kraków. <br/><br/>I’m a flawed human, and unafraid to say so.<br/><br/>Into: people, software, music, role-playing, honesty, learning.<br/>Dislikes: doing unnecessary things, doing “because I can”."
+                 "description": "Thankful to everybody who helps me while I hop along.\nProud of: <a href=\"http://sckrk.com\">http://sckrk.com</a> and <a href=\"http://geecon.org\">http://geecon.org</a>.\n<br/><br/>\nCo-leads: SCKRK, Polish JUG, Lambda Lounge Kraków.\n<br/><br/>\nI’m a flawed human, and unafraid to say so.\n<br/><br/>\nInto: people, software, music, role-playing, honesty, learning.\n<br/>\nDislikes: doing unnecessary things, doing “because I can”."
                  },
                  {
                  "id": 25,
@@ -263,7 +263,7 @@
                  "country": "Germany",
                  "img": "assets/img/photos/dalibor_topic.jpg",
                  "twitter": "https://twitter.com/robilad",
-                 "description": "Dalibor Topić lives in Hamburg, Germany, and works as principal product manager for Oracle. He joined the OpenJDK project in order to help make it a successful open source project,and stayed for anchoring Java in Linux distributions, and as an all-around Java F/OSS community guy. Topić joined the Java strategy team at Oracle to help provide community feedback into long-term strategic planning."
+                 "description": "Dalibor Topić lives in Hamburg, Germany, and works as principal product manager for Oracle.\nHe joined the OpenJDK project in order to help make it a successful open source project,\nand stayed for anchoring Java in Linux distributions, and as an all-around Java F/OSS community guy.\nTopić joined the Java strategy team at Oracle to help provide community feedback into long-term strategic planning."
                  },
                  {
                  "id": 26,
@@ -293,7 +293,7 @@
                  "country": "Sweden",
                  "img": "assets/img/photos/claus_ibsen.jpg",
                  "twitter": "https://twitter.com/davsclaus",
-                 "description": "Claus Ibsen is a principal software engineer from Red Hat.<br><br>Claus is working full time as Apache Camel committer. And is author of the Camel in Action books.<br><br>He is also heavily involved with fabric8 and hawtio projects, especially with functionality that involves Camel."
+                 "description": "Claus Ibsen is a principal software engineer from Red Hat.\n<br><br>\nClaus is working full time as Apache Camel committer. And is author of the Camel in Action books.\n<br><br>\nHe is also heavily involved with fabric8 and hawtio projects, especially with functionality that involves Camel."
                  },
                  {
                  "id": 29,
@@ -303,7 +303,7 @@
                  "country": "Norway",
                  "img": "assets/img/photos/maxim_salnikov.jpg",
                  "twitter": "https://twitter.com/webmaxru",
-                 "description": "Maxim Salnikov is Oslo-based web UI developer, a Google Developer Expert with strong passion to mobile. He has 10+ years experience in development front-ends for complex web applications. He knows everything about web front-end: starting from user interfaces prototyping, going through HTML/CSS/JS implementation and finishing with architecting RESTful APIs.<br><br>Working daily with web front-end technologies he is happy to experiment with the same stack for building hybrid mobile apps using latest hybrid frameworks. On evenings he runs Norway’s largest meetups dedicated to web front-end: Framsia, AngularJS Oslo. Also he is leader of Norway's biggest community dedicated to mobile development (Mobile Meetup Oslo) and currently working on organizing conference for mobile developers in 2016.<br><br>Maxim likes to travel the world visiting developers events and open for offers to share his experiences and knowledge by speaking at conferences and meetups."
+                 "description": "Maxim Salnikov is Oslo-based web UI developer, a Google Developer Expert with strong passion to mobile. He has 10+ years experience in development front-ends for complex web applications. He knows everything about web front-end: starting from user interfaces prototyping, going through HTML/CSS/JS implementation and finishing with architecting RESTful APIs.\n<br><br>\nWorking daily with web front-end technologies he is happy to experiment with the same stack for building hybrid mobile apps using latest hybrid frameworks. On evenings he runs Norway’s largest meetups dedicated to web front-end: Framsia, AngularJS Oslo. Also he is leader of Norway's biggest community dedicated to mobile development (Mobile Meetup Oslo) and currently working on organizing conference for mobile developers in 2016.\n<br><br>\nMaxim likes to travel the world visiting developers events and open for offers to share his experiences and knowledge by speaking at conferences and meetups."
                  },
                  {
                  "id": 30,
@@ -323,7 +323,7 @@
                  "country": "Israel",
                  "img": "assets/img/photos/shay_friedman.jpg",
                  "twitter": "https://twitter.com/ironshay",
-                 "description": "Shay Friedman is the founder and web division leader at CodeValue, and also a Microsoft .NET MVP. In the last years, Shay has migrated numerous companies to modern web technologies like angularjs, html5 and css3. He's spoken in lots of international conferences and conducted various web related courses around the world. In his spare time Shay plays the guitar, plays basketball and drinks beer. And, most important, he's a nice guy!"
+                 "description": "Shay Friedman is the founder and web division leader at CodeValue, and also\na Microsoft .NET MVP. In the last years, Shay has migrated numerous\ncompanies to modern web technologies like angularjs, html5 and css3. He's\nspoken in lots of international conferences and conducted various web related\ncourses around the world. In his spare time Shay plays the guitar, plays\nbasketball and drinks beer. And, most important, he's a nice guy!"
                  },
                  {
                  "id": 32,
@@ -333,7 +333,7 @@
                  "country": "Latvia",
                  "img": "assets/img/photos/oleg_anastasyev.jpg",
                  "twitter": "https://twitter.com/m0nstermind",
-                 "description": "Oleg Anastasyev started his career in computer programming in 1995. He developed banking, telecom software as well as software for the government of Latvia.<br><br>Oleg is a leading developer at Odnoklassniki. His primary responsibilities as a Platform Team member are development of architectures and solutions for highly loaded as well as big data services, solving performance and availability problems."
+                 "description": "Oleg Anastasyev started his career in computer programming in 1995. He developed banking, telecom software as well as software for the government of Latvia.\n<br><br>\nOleg is a leading developer at Odnoklassniki. His primary responsibilities as a Platform Team member are development of architectures and solutions for highly loaded as well as big data services, solving performance and availability problems."
                  },
                  {
                  "id": 33,
@@ -361,7 +361,7 @@
                  "title": "Sales Engineer",
                  "country": "Poland",
                  "img": "assets/img/photos/slawomir_michalik.jpg",
-                 "description": "I'm APM passionate with solid experience in pre- and post-sales support, having +10 years of experience in working with advanced IT solutions and integrated services.<br><br>I'm Sales Engineer (by DNA), offering comprehensive approach for end-to-end IT service, to cover all aspects of IT infrastructure and application support.<br><br>On-daily basis I'm working with my Customers from Poland, EE and Russia, helping them to reduce the complexity of application management, starting from Dev & Test practices to end-up in Application Performance Management in Production environments."
+                 "description": "I'm APM passionate with solid experience in pre- and post-sales support, having +10 years of experience in working with advanced IT solutions and integrated services.\n<br><br>I'm Sales Engineer (by DNA), offering comprehensive approach for end-to-end IT service, to cover all aspects of IT infrastructure and application support.\n<br><br>On-daily basis I'm working with my Customers from Poland, EE and Russia, helping them to reduce the complexity of application management, starting from Dev & Test practices to end-up in Application Performance Management in Production environments."
                  },
                  {
                  "id": 36,
@@ -391,7 +391,7 @@
                  "title": "Head of Application Integration Capability",
                  "country": "Latvia",
                  "img": "assets/img/photos/antons_matrosovs.png",
-                 "description": "He has 9 years of hands-on experience working with various integration platforms and participating in a wide variety of projects in different roles, thus becoming an expert in enterprise and integration architecture, business analysis, as well as project and team management.</br>Antons is particularly interested in API Management lately – he has recently taken part in several big projects, where it was defined as one of the highest priorities."
+                 "description": "He has 9 years of hands-on experience working with various integration platforms and participating in a wide variety of projects in different roles, thus becoming an expert in enterprise and integration architecture, business analysis, as well as project and team management.\n</br>Antons is particularly interested in API Management lately – he has recently taken part in several big projects, where it was defined as one of the highest priorities."
                  },
                  {
                  "id": 39,
@@ -455,7 +455,7 @@
                  "twitter": "https://twitter.com/delabassee",
                  "blog": "http://delabassee.com/blog/",
                  "img": "assets/img/photos/david_dalabassee.png",
-                 "description": "David Delabassée is a Software Evangelist working for Oracle; his primary focus is Java on the Server-Side, i.e. Java Enterprise Edition. Prior to Oracle, David spent a decade at Sun Microsystems focusing on Java end-to-end (from the smart card to the high end server), related technologies and developer tools. In his various roles, David has been involved in numerous Java projects since the early days of this technology.</br></br>David lives in Belgium. In his spare time, he enjoys playing video games with his daughter and tinkering with technologies such as Java, Home Automation,3D printers, electronics and pinballs."
+                 "description": "David Delabassée is a Software Evangelist working for Oracle; his primary focus is Java on the Server-Side, i.e. Java Enterprise Edition. Prior to Oracle, David spent a decade at Sun Microsystems focusing on Java end-to-end (from the smart card to the high end server), related technologies and developer tools. In his various roles, David has been involved in numerous Java projects since the early days of this technology.\n</br></br>David lives in Belgium. In his spare time, he enjoys playing video games with his daughter and tinkering with technologies such as Java, Home Automation,3D printers, electronics and pinballs."
                  },
                  {
                  "id": 45,
@@ -524,7 +524,7 @@
                  "country": "Finland",
                  "twitter": "https://twitter.com/microservices_stuff",
                  "img": "assets/img/photos/vladimir_nedashkovsky.jpg",
-                 "description": "In my role as Sales Director, Emerging Technologies, I bring 20+ years of experience in helping clients harness technology to meet their business challenges and opportunities.</br>Most recently I have been heavily involved in the development of the Accenture Innovative Aerial Monitoring Solution, an exciting new way to help clients, such as oil and gas, utility and agricultural businesses, with extensive physical assets to monitor and maintain achieve better, faster and lower cost results by innovatively combining unmanned aerial vehicles, computer visualization and Big Data.</br>I help our clients to drive the maximum returns from their technology investments, combining technological expertise and business insights to help them achieve high performance.  To that end I bring deep knowledge of robotics, computer imaging, big data and analytics alongside extensive commercial experience, business modelling and process engineering gained in environments as diverse as the luxury mobile business Vertu to the Ministry of Finance. "
+                 "description": "In my role as Sales Director, Emerging Technologies, I bring 20+ years of experience in helping clients harness technology to meet their business challenges and opportunities.\n</br>Most recently I have been heavily involved in the development of the Accenture Innovative Aerial Monitoring Solution, an exciting new way to help clients, such as oil and gas, utility and agricultural businesses, with extensive physical assets to monitor and maintain achieve better, faster and lower cost results by innovatively combining unmanned aerial vehicles, computer visualization and Big Data.\n</br>I help our clients to drive the maximum returns from their technology investments, combining technological expertise and business insights to help them achieve high performance.  To that end I bring deep knowledge of robotics, computer imaging, big data and analytics alongside extensive commercial experience, business modelling and process engineering gained in environments as diverse as the luxury mobile business Vertu to the Ministry of Finance. "
                  },
                  {
                  "id": 52,
@@ -544,7 +544,7 @@
                  "img": "assets/img/photos/patrick_curran.jpeg",
                  "twitter": "https://twitter.com/patrickcurran",
                  "blog": "https://blogs.oracle.com/pcurran/",
-                 "description": "Patrick Curran is Chair of the Java Community Process organization. In this role he oversees the activities of the JCP's Program Management Office including evolving the process and the organization, managing its membership, guiding specification leads and experts through the process, chairing Executive Committee meetings, and managing the JCP.org web site</br></br>Patrick has worked in the software industry for more than 30 years. He has a long-standing record in conformance testing, and before joining the JCP he led the Java Conformance Engineering team in Sun's Client Software Group. He was also chair of Sun's Conformance Council, which was responsible for defining Sun's policies and strategies around Java conformance and compatibility.</br></br>Patrick has participated actively in several consortia and communities including the W3C (as a member of the Quality Assurance Working Group and co-chair of the Quality Assurance Interest Group), and OASIS (as co-chair of the Test Assertions Guidelines Technical Committee)."
+                 "description": "Patrick Curran is Chair of the Java Community Process organization. In this role he oversees the activities of the JCP's Program Management Office including evolving the process and the organization, managing its membership, guiding specification leads and experts through the process, chairing Executive Committee meetings, and managing the JCP.org web site\n</br></br>Patrick has worked in the software industry for more than 30 years. He has a long-standing record in conformance testing, and before joining the JCP he led the Java Conformance Engineering team in Sun's Client Software Group. He was also chair of Sun's Conformance Council, which was responsible for defining Sun's policies and strategies around Java conformance and compatibility.\n</br></br>Patrick has participated actively in several consortia and communities including the W3C (as a member of the Quality Assurance Working Group and co-chair of the Quality Assurance Interest Group), and OASIS (as co-chair of the Test Assertions Guidelines Technical Committee)."
                  },
                  {
                  "id": 54,
@@ -628,7 +628,7 @@
                           "events": [
                                      {
                                      "subtitle": "Prepare for JDK 9!",
-                                     "description": "The modularization of the Java SE Platform in JDK 9 will bring many benefits, but also many changes. Existing code that uses only official Java SE Platform APIs and supported JDK-specific APIs should continue to work without change.Code that uses certain deprecated features, however, or any JDK-internal APIs, is likely to break.This session will show you how to prepare existing libraries and applications for JDK 9, and how to get old code working on JDK 9 even when you can't update it.",
+                                     "description": "The modularization of the Java SE Platform in JDK 9 will bring many benefits, but also many changes.\nExisting code that uses only official Java SE Platform APIs and supported JDK-specific APIs should continue to work without change.\nCode that uses certain deprecated features, however, or any JDK-internal APIs, is likely to break.\nThis session will show you how to prepare existing libraries and applications for JDK 9,\nand how to get old code working on JDK 9 even when you can't update it.",
                                      "speakers": [
                                                   25
                                                   ],
@@ -649,7 +649,7 @@
                                      },
                                      {
                                      "subtitle": "New Cassandra 3 features that change your (developer) life",
-                                     "description": "Cassandra 3.0 has been released for a while, it's high time to look at the new features that will make your life easier:<ol><li>the new User Defined Functions and User Defined Aggregates which allow you to create code in the language of your choice (JVM compatible) and push the computation to the server</li><li>the JSON syntax that can be used to push data directly into Cassandra without the pain of converting JSON to regular literal values</li><li>the new Materialized Views that make de-normalization easier for the developers</li><li>the new full text search feature that will be available soon in Cassandra 3.4, allowing you to perform dynamic queries on your Cassandra data</li></ol>",
+                                     "description": "Cassandra 3.0 has been released for a while, it's high time to look at the new features that will make your life easier:\n<ol>\n<li>the new User Defined Functions and User Defined Aggregates which allow you to create code in the language of your choice (JVM compatible) and push the computation to the server</li>\n<li>the JSON syntax that can be used to push data directly into Cassandra without the pain of converting JSON to regular literal values</li>\n<li>the new Materialized Views that make de-normalization easier for the developers</li>\n<li>the new full text search feature that will be available soon in Cassandra 3.4, allowing you to perform dynamic queries on your Cassandra data</li>\n</ol>",
                                      "speakers": [
                                                   6
                                                   ],
@@ -722,7 +722,7 @@
                                      },
                                      {
                                      "subtitle": "Unique Identification enables Secure Travel, Trade, and Inclusion",
-                                     "description": "Review public and private sector use cases for Unique Identification:<ul><li>Border Management (Schengen Smart Borders Initiative, EU-VIS/BMS, US-VISIT) including future trends like drone-based FitC</li><li>Financial Services (Confidential - Biometric payment cards, Barclays - Call center Speaker Recognition)</li><li>Inclusion (UNHCR – ration distribution, UIDAI – India’s National Identification agency)</li></ul>",
+                                     "description": "Review public and private sector use cases for Unique Identification:\n<ul>\n  <li>Border Management (Schengen Smart Borders Initiative, EU-VIS/BMS, US-VISIT) including future trends like drone-based FitC</li>\n  <li>Financial Services (Confidential - Biometric payment cards, Barclays - Call center Speaker Recognition)</li>\n  <li>Inclusion (UNHCR – ration distribution, UIDAI – India’s National Identification agency)</li>\n</ul>",
                                      "speakers": [
                                                   33
                                                   ],
@@ -733,7 +733,7 @@
                                      },
                                      {
                                      "subtitle": "Google Apps Integration in Oracle Apex",
-                                     "description": "Google Apps is a great platform for your everyday activities. Using a few techniques, you'll have the full potential at your disposal to use within your APEX application. This presentation will cover logging in using a Google account, retrieving data from the Google Drive and Calendar, and sending email.</br></br>Attendees will get a technical insight for: </br><ol><ul><b>Using Google Authentication.</b> Attendees will get insight in the authentication process and how to implement both server-side as client-side.</ul><ul><b>The Google Calendar.</b> Reading data as well as storing data will be covered.</ul><ul><b>The Google Drive.</b> Reading and writing from the google drive means creating Google Documents (Word), Google Spreadsheets etc. I will cover Documents and Spreadsheets.</ul><ul><b>Sending mail using Gmail.</b> When integrating you apex-application with Google Apps, it is a must-have to be able to have the application send email using Google as well.</ul>",
+                                     "description": "Google Apps is a great platform for your everyday activities. Using a few techniques, you'll have the full potential at your disposal to use within your APEX application. This presentation will cover logging in using a Google account, retrieving data from the Google Drive and Calendar, and sending email.\n</br></br>Attendees will get a technical insight for:\n</br><ol>\n<ul><b>Using Google Authentication.</b> Attendees will get insight in the authentication process and how to implement both server-side as client-side.</ul>\n<ul><b>The Google Calendar.</b> Reading data as well as storing data will be covered.</ul>\n<ul><b>The Google Drive.</b> Reading and writing from the google drive means creating Google Documents (Word), Google Spreadsheets etc. I will cover Documents and Spreadsheets.</ul>\n<ul><b>Sending mail using Gmail.</b> When integrating you apex-application with Google Apps, it is a must-have to be able to have the application send email using Google as well.</ul>",
                                      "speakers": [
                                                   50
                                                   ],
@@ -761,7 +761,7 @@
                           "events": [
                                      {
                                      "subtitle": "Distributed Systems at ok.ru",
-                                     "description": "ok.ru is one of top 10 internet sites of the World, according to similarweb.com. Under the hood, it has several thousand servers. Each of those servers own only fraction of the data or business logic. Shared nothing architecture can be hardly applied to social network, due to its nature, so a lot of communication happens between these servers, diverse in kind and volume. This makes ok.ru one of the  largest, complicated, yet highly loaded distributed systems in the world.<br><br>This talk is about our experience in building always available, resilient to failures distributed systems in Java, their basic and not so basic failure and recovery scenarios, methods of failure testing and diagnostics. We’ll also discuss on possible disasters and how to prevent or get over them.",
+                                     "description": "ok.ru is one of top 10 internet sites of the World, according to similarweb.com. Under the hood, it has several thousand servers. Each of those servers own only fraction of the data or business logic. Shared nothing architecture can be hardly applied to social network, due to its nature, so a lot of communication happens between these servers, diverse in kind and volume. This makes ok.ru one of the  largest, complicated, yet highly loaded distributed systems in the world.\n<br><br>\nThis talk is about our experience in building always available, resilient to failures distributed systems in Java, their basic and not so basic failure and recovery scenarios, methods of failure testing and diagnostics. We’ll also discuss on possible disasters and how to prevent or get over them.",
                                      "speakers": [
                                                   32
                                                   ],
@@ -837,7 +837,7 @@
                           "events": [
                                      {
                                      "subtitle": "Spring Data, Hypermedia and the Cloud",
-                                     "description": "HATEOAS, REST, JSON Schema, APLS, Cloud, Docker,... are those just buzzwords? <br/>No! With Spring Data we allow you to expose your repositories as a REST resource including ALPS metadata,JSON Schema and simply everything you would probably expect. Join Christoph Strobl on his journey through the Spring stack while creating and deploying REST Services as Docker containers, on Cloud Foundry and Lattice.",
+                                     "description": "HATEOAS, REST, JSON Schema, APLS, Cloud, Docker,... are those just buzzwords? <br/>\nNo! With Spring Data we allow you to expose your repositories as a REST resource including ALPS metadata,\nJSON Schema and simply everything you would probably expect. Join Christoph Strobl on his journey through the Spring stack\nwhile creating and deploying REST Services as Docker containers, on Cloud Foundry and Lattice.",
                                      "speakers": [
                                                   22
                                                   ],
@@ -858,7 +858,7 @@
                                      },
                                      {
                                      "subtitle": "Is Lambda Architecture is a new normal for cloud native apps?",
-                                     "description": "Cloud-native helps us quickly to create robust applications. Wait! How about cost effective as well? Why not to go even to \"server-less\" apps for some use cases?</br></br> What is Lambda and how it can help us to write apps focusing on code rather than on infrastructure and still be cloud-native?",
+                                     "description": "Cloud-native helps us quickly to create robust applications. Wait! How about cost effective as well? Why not to go even to \"server-less\" apps for some use cases?\n</br></br> What is Lambda and how it can help us to write apps focusing on code rather than on infrastructure and still be cloud-native?",
                                      "speakers": [
                                                   34
                                                   ],
@@ -879,7 +879,7 @@
                                      },
                                      {
                                      "subtitle": "Avoiding software fails. Few metrics to improve application reliability",
-                                     "description": "Managing application complexity might be simple and this is all about testing for top performance problems.<\br>During my presentation I'd like to share couple of hints, helping to dramatically reduce application <\br>It's all about lessons learnt from my Customers and Prospects.",
+                                     "description": "Managing application complexity might be simple and this is all about testing for top performance problems.\n<\br>During my presentation I'd like to share couple of hints, helping to dramatically reduce application (performance) issues.\n<\br>It's all about lessons learnt from my Customers and Prospects.",
                                      "speakers": [
                                                   35
                                                   ],
@@ -910,7 +910,7 @@
                                      },
                                      {
                                      "subtitle": "Practical Prototyping",
-                                     "description": "Effective collaboration between developers and designers has often been a challenge. Several aspects of software, like interactivity, animation or business requirements can be elusive by nature and therefore difficult to validate before they are actually built.</br></br>Through many years of experience, we have found a way to build the bridge between both groups. And that bridge are prototypes. In this talk we are going to review modern prototyping tools, including Framer, Origami, Pixate, Principle and InVision to demonstrate how designers and developers can perform cost-effective software iterations before a single line of production code has been written.",
+                                     "description": "Effective collaboration between developers and designers has often been a challenge. Several aspects of software, like interactivity, animation or business requirements can be elusive by nature and therefore difficult to validate before they are actually built.\n</br></br>Through many years of experience, we have found a way to build the bridge between both groups. And that bridge are prototypes. In this talk we are going to review modern prototyping tools, including Framer, Origami, Pixate, Principle and InVision to demonstrate how designers and developers can perform cost-effective software iterations before a single line of production code has been written.",
                                      "speakers": [
                                                   42,
                                                   43
@@ -922,7 +922,7 @@
                                      },
                                      {
                                      "subtitle": "Java EE 8 - What's new of the Web Front?",
-                                     "description": "With the introduction of Web Socket, JSON-P and the various enhancements on JAX-RS (e.g. JAX-RS Client API) HTML 5 support was one of the key themes of Java EE 7. Java EE 8 will continue to build on that and improve the support for writing and deploying HTML 5 based application.</br></br>This session will look in details at some of the Web related enhancements planned in Java EE 8 such as<ul><li>Servlet 4.0 and HTTP/2 support</li><li>Addition of a new Action-Based MVC framework</li><li>Support for SSE (Server-Sent Event) in JAX-RS</li><li>Improvements around JSON-P and the addition of a new JSON binding API, i.e. JSON-B.</li><li>etc.</li></ul>",
+                                     "description": "With the introduction of Web Socket, JSON-P and the various enhancements on JAX-RS (e.g. JAX-RS Client API) HTML 5 support was one of the key themes of Java EE 7. Java EE 8 will continue to build on that and improve the support for writing and deploying HTML 5 based application.\n</br></br>This session will look in details at some of the Web related enhancements planned in Java EE 8 such as\n<ul>\n<li>Servlet 4.0 and HTTP/2 support</li>\n<li>Addition of a new Action-Based MVC framework</li>\n<li>Support for SSE (Server-Sent Event) in JAX-RS</li>\n<li>Improvements around JSON-P and the addition of a new JSON binding API, i.e. JSON-B.</li>\n<li>etc.</li>\n</ul>",
                                      "speakers": [
                                                   44
                                                   ],
@@ -932,7 +932,7 @@
                                      },
                                      {
                                      "subtitle": "SQL Model Clause: A Gentle Introduction",
-                                     "description": "The Model Clause adds spreadsheet-like functionality to the SQL language. Very powerful stuff, yet the syntax can be quite daunting. With the Model Clause, you define a multidimensional array from query results and then apply formulas to this array to calculate new values.<br/><br/>This presentation will give you a gentle introduction in the complex syntax of the Model Clause and will show you some real life examples where the Model Clause was invaluable.",
+                                     "description": "The Model Clause adds spreadsheet-like functionality to the SQL language. Very powerful stuff, yet the syntax can be quite daunting. With the Model Clause, you define a multidimensional array from query results and then apply formulas to this array to calculate new values.\n<br/><br/>\nThis presentation will give you a gentle introduction in the complex syntax of the Model Clause and will show you some real life examples where the Model Clause was invaluable.",
                                      "speakers": [
                                                   12
                                                   ],
@@ -981,7 +981,7 @@
                                      },
                                      {
                                      "subtitle": "Faster Java by Adding Structs (Sort Of)",
-                                     "description": "The ObjectLayout package provides a set of data structure classes designed with optimised memory layout in mind. In languages like C and C++, the use of structs and explicit pointers can deliver high performance for data access through hardware optimisations for caching and pre-fetching. Java's use of implicit pointers, mutable arrays and general inheritance forces the use of reference lookups whenever an object needs to be accessed.</br></br>This session will look at the ObjectLayout package (www.objectlayout.org) which provides a new set of APIs that are aimed at matching the natural speed benefits similar data structure constructs enable in most C-style languages while maintaining an idiomatic Java feel and a natural fit with existing code and libraries.</br></br>The session will talk through the need for these APIs then describe how they work in practice. We'll also look at how the JVM can further optimise the implementation of the API by making this intrinsic.",
+                                     "description": "The ObjectLayout package provides a set of data structure classes designed with optimised memory layout in mind. In languages like C and C++, the use of structs and explicit pointers can deliver high performance for data access through hardware optimisations for caching and pre-fetching. Java's use of implicit pointers, mutable arrays and general inheritance forces the use of reference lookups whenever an object needs to be accessed.\n</br></br>This session will look at the ObjectLayout package (www.objectlayout.org) which provides a new set of APIs that are aimed at matching the natural speed benefits similar data structure constructs enable in most C-style languages while maintaining an idiomatic Java feel and a natural fit with existing code and libraries.\n</br></br>The session will talk through the need for these APIs then describe how they work in practice. We'll also look at how the JVM can further optimise the implementation of the API by making this intrinsic.",
                                      "speakers": [
                                                   41
                                                   ],
@@ -1098,7 +1098,7 @@
                           "events": [
                                      {
                                      "subtitle": "Modular Development With JDK 9",
-                                     "description": "First part will be a a gentle introduction, with examples, to the forthcoming Java Platform Module System. Learn how to create a module from scratch, compile it, test it, and run it.This session will also show basic techniques for modularizing existing libraries and applications.<br/><br/>Second part : Modularizing an existing library or application, or creating new modules from scratch,can raise many difficult and subtle design issues. This session will present a set of principles for modular development, with examples taken from the JDK itself.",
+                                     "description": "First part will be a a gentle introduction, with examples, to the forthcoming Java Platform Module System.\nLearn how to create a module from scratch, compile it, test it, and run it.\nThis session will also show basic techniques for modularizing existing libraries and applications.\n<br/><br/>\nSecond part : Modularizing an existing library or application, or creating new modules from scratch,\ncan raise many difficult and subtle design issues. This session will present a set of principles for modular development,\nwith examples taken from the JDK itself.",
                                      "speakers": [
                                                   25
                                                   ],
@@ -1108,7 +1108,7 @@
                                      },
                                      {
                                      "subtitle": "Microservices adoption practical lessons with examples",
-                                     "description": "When a software system is getting bigger and older, it's also harder to change it due to many reasons: it absorbed too many coding styles from too many people, it was build upon some obsolete or redundant technologies, it has a lot of dependencies, which you can't get rid of, there are a lot of hidden assumptions inside, which cannot be decrypted and etc. That's a pain of our industry and there are many solutions to this.</br>Personally, to solve this, I found that it's easier to start developing an application as a bunch of microservices, but after few attempts, I also have found that it is also easy to build them wrong, missing some key components of microservices architecture or to postpone 'em until the very last moment and then to find out that your other services can't work together as they should.</br>In order to address this problem I'm offering this talk. It will contain:<ul><li>Description of what microservices really are</li><li>Explanation of the problem they intend to solve and how exactly it should happen</li><li>Problems with microservices adoption with practical examples</li><li>Solution to these problems with practical examples</li></ul></br>Solutions will include explanation of three key components for every microservices app: Service Registry, Gateway API and Health-check System. Also I'd like to give some examples of the components implementation using modern JVM -based tools and frameworks, just to show how easily it could be done.</br></br>Also, it will be slightly cloud-related talk, since many of these tools are designed to work in cloud environment.",
+                                     "description": "When a software system is getting bigger and older, it's also harder to change it due to many reasons: it absorbed too many coding styles from too many people, it was build upon some obsolete or redundant technologies, it has a lot of dependencies, which you can't get rid of, there are a lot of hidden assumptions inside, which cannot be decrypted and etc. That's a pain of our industry and there are many solutions to this.\n</br>Personally, to solve this, I found that it's easier to start developing an application as a bunch of microservices, but after few attempts, I also have found that it is also easy to build them wrong, missing some key components of microservices architecture or to postpone 'em until the very last moment and then to find out that your other services can't work together as they should.\n</br>In order to address this problem I'm offering this talk. It will contain:\n<ul>\n<li>Description of what microservices really are</li>\n<li>Explanation of the problem they intend to solve and how exactly it should happen</li>\n<li>Problems with microservices adoption with practical examples</li>\n<li>Solution to these problems with practical examples</li>\n</ul>\n</br>Solutions will include explanation of three key components for every microservices app: Service Registry, Gateway API and Health-check System. Also I'd like to give some examples of the components implementation using modern JVM -based tools and frameworks, just to show how easily it could be done.\n</br></br>Also, it will be slightly cloud-related talk, since many of these tools are designed to work in cloud environment.",
                                      "speakers": [
                                                   49
                                                   ],
@@ -1142,7 +1142,7 @@
                                      },
                                      {
                                      "subtitle": "Hello EcmaScript2015... and also to you, EcmaScript2016",
-                                     "description": "EcmaScript, the standard which is the base for JavaScript, is finally starting to movefast. It is making JavaScript better and better, providing various different tools tosolve our common everyday programming tasks.<br><br>In this session we will go through what’s new with ES2015 and ES2016, and evenget a glimpse of what the exciting future holds for web development!",
+                                     "description": "EcmaScript, the standard which is the base for JavaScript, is finally starting to move\nfast. It is making JavaScript better and better, providing various different tools to\nsolve our common everyday programming tasks.\n<br><br>\nIn this session we will go through what’s new with ES2015 and ES2016, and even\nget a glimpse of what the exciting future holds for web development!",
                                      "speakers": [
                                                   31
                                                   ],
@@ -1171,7 +1171,7 @@
                           "events": [
                                      {
                                      "subtitle": "Non-blocking synchronization: what is it and why we (don't?) need it",
-                                     "description": "This talk will introduce you in disadvantages of locking and show you a possible alternative. We will talk about CAS operations and Java Atomic classes. This talk will be interesting:<br>1. for programmers who have heard about CAS and lock-free, but who have no experience in writing non-blocking code — I'll give a short introduction.<br>2. for experienced multi-threaded programmers — we will talk about CAS/atomics implementation details!<br>3. for hipsters (special offer!): we will cover \"immutable vs. mutable\" internet hype!",
+                                     "description": "This talk will introduce you in disadvantages of locking and show you a possible alternative. We will talk about CAS operations and Java Atomic classes. This talk will be interesting:\n<br>\n1. for programmers who have heard about CAS and lock-free, but who have no experience in writing non-blocking code — I'll give a short introduction.\n<br>\n2. for experienced multi-threaded programmers — we will talk about CAS/atomics implementation details!\n<br>\n3. for hipsters (special offer!): we will cover \"\"immutable vs. mutable\"\" internet hype!",
                                      "speakers": [
                                                   40
                                                   ],
@@ -1191,7 +1191,7 @@
                                      },
                                      {
                                      "subtitle": "The Java Community Process: how you can help to define the future of Java",
-                                     "description": "This session will explain how Java is evolved through the Java Community Process (JCP) program and how you can participate in that evolution as an individual, as a representative of your employer, or as a member of a non-profit organization such as a Java User Group.</br>We will discuss the Adopt-a-JSR program and provide examples of the ways in which Java User Groups from all over the world have helped to define, to implement, and to test the Java EE 7 and Java SE 8 platforms.</br></br>Java EE 8 and Java SE 9 are being developed now. You can help, and in the process you will have fun, learn new skills, and advance your career.</br>Learn how to make the future Java!",
+                                     "description": "This session will explain how Java is evolved through the Java Community Process (JCP) program and how you can participate in that evolution as an individual, as a representative of your employer, or as a member of a non-profit organization such as a Java User Group.\n</br>We will discuss the Adopt-a-JSR program and provide examples of the ways in which Java User Groups from all over the world have helped to define, to implement, and to test the Java EE 7 and Java SE 8 platforms.\n</br></br>Java EE 8 and Java SE 9 are being developed now. You can help, and in the process you will have fun, learn new skills, and advance your career.\n</br>Learn how to make the future Java!",
                                      "speakers": [
                                                   53
                                                   ],
@@ -1201,7 +1201,7 @@
                                      },
                                      {
                                      "subtitle": "Fabric8 Camel Microservices for Docker and Kubernetes",
-                                     "description": "The so-called experts are saying microservices and containers will change the way we build, maintain, operate, and integrate applications. This talk is intended for Java developers who wants to hear and see how you can develop Java microservices that runs in containers.<br><br>This talk uses Apache Camel as the Java library to build microservice architectured applications.At first we introduce you to Apache Camel and show how you can easily get started with Camel on your computer, and build a microservice application that runs on CDI and Spring-Boot.<br><br>The second part of this talk is about running Camel (or any Java project) on Docker and Kubernetes.<br><br>We start covering the basic concepts you as a Java developer must understand about Kubernetes. Then we show how to migrate Java projects to build as Docker images and deployable on Kubernetes, with help from fabric8 Maven tooling.<br><br>You will also hear about how to make your microservices scalable and distributed by leveraging the facilities that Kubernetes provides for truly distributed services with load balancing and location independence.<br><br>You will also see how to manage your container using the Kubernetes CLI and the fabric8 web console.<br><br>At the end we have a bit of fun with scaling up and down your Camel application to see how resilient the application is, when we kill containers.<br><br>This talk is a 50/50 mix between slides and demo.",
+                                     "description": "The so-called experts are saying microservices and containers will change the way we build, maintain, operate, and integrate applications. This talk is intended for Java developers who wants to hear and see how you can develop Java microservices that runs in containers.\n<br><br>\nThis talk uses Apache Camel as the Java library to build microservice architectured applications.\nAt first we introduce you to Apache Camel and show how you can easily get started with Camel on your computer, and build a microservice application that runs on CDI and Spring-Boot.\n<br><br>\nThe second part of this talk is about running Camel (or any Java project) on Docker and Kubernetes.\n<br><br>\nWe start covering the basic concepts you as a Java developer must understand about Kubernetes. Then we show how to migrate Java projects to build as Docker images and deployable on Kubernetes, with help from fabric8 Maven tooling.\n<br><br>\nYou will also hear about how to make your microservices scalable and distributed by leveraging the facilities that Kubernetes provides for truly distributed services with load balancing and location independence.\n<br><br>\nYou will also see how to manage your container using the Kubernetes CLI and the fabric8 web console.\n<br><br>\nAt the end we have a bit of fun with scaling up and down your Camel application to see how resilient the application is, when we kill containers.\n<br><br>\nThis talk is a 50/50 mix between slides and demo.",
                                      "speakers": [
                                                   28
                                                   ],
@@ -1212,7 +1212,7 @@
                                      },
                                      {
                                      "subtitle": "Angular2: key concepts and getting started",
-                                     "description": "On this presentation first we'll go shortly through history of Angular for better understanding what Angular2 was introduced for and why it's not backward-compatible with 1.x.<br><br>Then we'll list key concepts of Angular2 like cross-component communication, one-directional data flow, user input handling and url routing and others.<br><br>As a result of our practical hands-on tour we'll discuss the main tools for making our Angular2 life easier and build a functioning app.",
+                                     "description": "On this presentation first we'll go shortly through history of Angular for better understanding what Angular2 was introduced for and why it's not backward-compatible with 1.x.\n<br><br>\nThen we'll list key concepts of Angular2 like cross-component communication, one-directional data flow, user input handling and url routing and others.\n<br><br>\nAs a result of our practical hands-on tour we'll discuss the main tools for making our Angular2 life easier and build a functioning app.",
                                      "speakers": [
                                                   29
                                                   ],
@@ -1310,7 +1310,7 @@
                                      },
                                      {
                                      "subtitle": "The secrets behind HybridSQL database architecture",
-                                     "description": "In this session Jurgis will describe Clusterpoint's approach for building its HybridSQL database, which combines the best features of SQL and NoSQL database architecture. Such setup enables instant scalability within distributed environment while maintaining full data consistency and ACID transaction compliance, access to structured and unstructured data, and possibility to execute arbitrary JavaScript-based code directly inside the database. This setup provides a simple and powerful computational model that ensures data is accessed through efficient indices directly in the database, thus massively accelerating data manipulation operations.Throughout his presentation, Jurgis will go deep into the code and present examples of how advanced computation can be done directly in the database, including an analysis of geospatial data, real-time analytics and the application of statistical model-like logistic regression to derive predictions.",
+                                     "description": "In this session Jurgis will describe Clusterpoint's approach for building its HybridSQL database, which combines the best features of SQL and NoSQL database architecture. Such setup enables instant scalability within distributed environment while maintaining full data consistency and ACID transaction compliance, access to structured and unstructured data, and possibility to execute arbitrary JavaScript-based code directly inside the database. This setup provides a simple and powerful computational model that ensures data is accessed through efficient indices directly in the database, thus massively accelerating data manipulation operations.\n                Throughout his presentation, Jurgis will go deep into the code and present examples of how advanced computation can be done directly in the database, including an analysis of geospatial data, real-time analytics and the application of statistical model-like logistic regression to derive predictions.",
                                      "speakers": [
                                                   46
                                                   ],
@@ -1322,7 +1322,7 @@
                                      },
                                      {
                                      "subtitle": "Java EE, WebLogic, Microservices... and some myths busting",
-                                     "description": "Microservices Architecture (MSA) is the new black! For many, it is the way to go. Those people also tends to depict Java EE (and Java EE containers) as an antinomy to MSA... It's one or to other but certainly not both!</br></br>In this session, we'll look at the main microservices concepts and see if it is really a bad idea to use some of them within a Java EE context (hint: it's not always a bad idea!).</br></br>We will then look at some of the WebLogic features and see if there's any that might be useful to use in a more Microservices oriented approach.</br></br>MSA is not just about the tooling; it's also about the people, their skills and their culture. The goal of this session is to give a fair balanced view of Java EE and WebLogic in a MSA context to help you to make your own judgment.",
+                                     "description": "Microservices Architecture (MSA) is the new black! For many, it is the way to go. Those people also tends to depict Java EE (and Java EE containers) as an antinomy to MSA... It's one or to other but certainly not both!\n</br></br>In this session, we'll look at the main microservices concepts and see if it is really a bad idea to use some of them within a Java EE context (hint: it's not always a bad idea!).\n</br></br>We will then look at some of the WebLogic features and see if there's any that might be useful to use in a more Microservices oriented approach.\n</br></br>MSA is not just about the tooling; it's also about the people, their skills and their culture. The goal of this session is to give a fair balanced view of Java EE and WebLogic in a MSA context to help you to make your own judgment.",
                                      "speakers": [
                                                   44
                                                   ],
@@ -1362,7 +1362,7 @@
                           "events": [
                                      {
                                      "subtitle": "How To Write Unmaintainable Code In Scala",
-                                     "description": "Scala language is not a new kid on the block. It was released more than ten years ago and become quite a popular choice among the developers to create the highly scalable top notch performance solutions.</br></br>There is a lot of information floating around on how to use it properly both as a written documentation, such as books and articles, and as online courses, most famous available on Coursera.</br></br>There is, however, an amazing lack of a good documentation on how to use it improperly to create more fun for the people supporting the systems and ensure the excellent job security for the authors. This talk tries to address this gap. </br></br>The presentation is inspired by a famous essay of Roedy Green.",
+                                     "description": "Scala language is not a new kid on the block. It was released more than ten years ago and become quite a popular choice among the developers to create the highly scalable top notch performance solutions.\n</br></br>There is a lot of information floating around on how to use it properly both as a written documentation, such as books and articles, and as online courses, most famous available on Coursera.\n</br></br>There is, however, an amazing lack of a good documentation on how to use it improperly to create more fun for the people supporting the systems and ensure the excellent job security for the authors. This talk tries to address this gap.\n</br></br>The presentation is inspired by a famous essay of Roedy Green.",
                                      "speakers": [
                                                   52
                                                   ],
@@ -1384,7 +1384,7 @@
                                      },
                                      {
                                      "subtitle": "SQL Magic - Tricks to Demonstrate SQL Features You've Probably Never Used",
-                                     "description": "In this fun session you’ll see SQL versions of classic magic tricks. These include the cup and balls trick, where rows inserted into one table magically reappear in another, a card trick where a randomly selected “card” (row) from a “deck” (table) floats to the top of the deck and the magically changing row trick where the value returned by a query changes just by issuing a select statement!<br><br>Unlike real magicians however, I’ll show you how the tricks are done. This will enable you to perform your own SQL “magic” and apply these principles when building Oracle database applications.<br><br>This session is intended for developers, DBAs and data modelers looking to expand their SQL skills, highlighting features that are new to 12c as well as little used existing options.",
+                                     "description": "In this fun session you’ll see SQL versions of classic magic tricks. These include the cup and balls trick, where rows inserted into one table magically reappear in another, a card trick where a randomly selected “card” (row) from a “deck” (table) floats to the top of the deck and the magically changing row trick where the value returned by a query changes just by issuing a select statement!\n<br><br>\nUnlike real magicians however, I’ll show you how the tricks are done. This will enable you to perform your own SQL “magic” and apply these principles when building Oracle database applications.\n<br><br>\nThis session is intended for developers, DBAs and data modelers looking to expand their SQL skills, highlighting features that are new to 12c as well as little used existing options.",
                                      "speakers": [
                                                   16
                                                   ],
@@ -1394,7 +1394,7 @@
                                      },
                                      {
                                      "subtitle": "An introduction to API Management",
-                                     "description": "The rise of \"API economy\" driven by Mobile devices, SaaS, the Internet of Things creates numerous opportunities for organizations to expose their existing IT assets (services and data) to partners and customers via publicly-available APIs.</br></br>Game rules for system integration established in SOA world are mostly targeted internal users and might not applicable for public API world, where interaction between API providers and API consumers happens outside the internal network boundary and at a completely different scale.</br></br>We'll highlight the challenges developers are faced with when designing, implementing and maintaining publicly-available APIs and how we can benefit from using API management platforms.",
+                                     "description": "The rise of \"API economy\" driven by Mobile devices, SaaS, the Internet of Things creates numerous opportunities for organizations to expose their existing IT assets (services and data) to partners and customers via publicly-available APIs.\n</br></br>Game rules for system integration established in SOA world are mostly targeted internal users and might not applicable for public API world, where interaction between API providers and API consumers happens outside the internal network boundary and at a completely different scale.\n</br></br>We'll highlight the challenges developers are faced with when designing, implementing and maintaining publicly-available APIs and how we can benefit from using API management platforms.",
                                      "speakers": [
                                                   38
                                                   ],
@@ -1405,7 +1405,7 @@
                                      },
                                      {
                                      "subtitle": "WebGL & WebVR: Take the web to the third dimension",
-                                     "description": "In this talk you will learn how to unlock the 3rd dimension on the web and use it to create impressive new visualisations, stories and experiences.<br><br>You will see how WebGL can then be taken even further by using technologies such as Oculus Rift, Google Cardboard or LEAPMotion with WebVR to enable truly immersive experiences right from your browser.<br><br>We will start with the basics of WebGL and the render pipeline, see how 3D on the web has evolved and what can be done with it and then do a little live coding that will conclude with how Virtual Reality can be implemented with web technologies.",
+                                     "description": "In this talk you will learn how to unlock the 3rd dimension on the web and use it to create impressive new visualisations, stories and experiences.\n<br><br>\nYou will see how WebGL can then be taken even further by using technologies such as Oculus Rift, Google Cardboard or LEAPMotion with WebVR to enable truly immersive experiences right from your browser.\n<br><br>\nWe will start with the basics of WebGL and the render pipeline, see how 3D on the web has evolved and what can be done with it and then do a little live coding that will conclude with how Virtual Reality can be implemented with web technologies.",
                                      "speakers": [
                                                   21
                                                   ],
@@ -1444,7 +1444,7 @@
                                      },
                                      {
                                      "subtitle": "4th Industrial Revolution with Drones",
-                                     "description": "For industries like utilities, energy, forestry and mining with extensive assets on the ground, keeping track of maintenance and other monitoring activities is time consuming and very costly. Power cables can extend for hundreds of kilometers, often through difficult terrain. Forestry plantations can cover hundreds of thousands of hectares. Gas pipelines often run through inaccessible and wild locations.</br>By combining existing technologies – unmanned aircraft and computer vision, big data and predictive analytics – it is now becoming feasible to achieve detailed imagery and automated object detection and analysis that can dramatically improve the speed, extent and accuracy of asset monitoring and maintenance. Integration of these technologies can help businesses charged with maintaining extensive physical assets – a particular concern for many businesses in the Nordics – to achieve more effective results and predictive analysis of potential problems at a considerably lower cost than the manual methods they use today.",
+                                     "description": "For industries like utilities, energy, forestry and mining with extensive assets on the ground, keeping track of maintenance and other monitoring activities is time consuming and very costly. Power cables can extend for hundreds of kilometers, often through difficult terrain. Forestry plantations can cover hundreds of thousands of hectares. Gas pipelines often run through inaccessible and wild locations.\n</br>By combining existing technologies – unmanned aircraft and computer vision, big data and predictive analytics – it is now becoming feasible to achieve detailed imagery and automated object detection and analysis that can dramatically improve the speed, extent and accuracy of asset monitoring and maintenance. Integration of these technologies can help businesses charged with maintaining extensive physical assets – a particular concern for many businesses in the Nordics – to achieve more effective results and predictive analysis of potential problems at a considerably lower cost than the manual methods they use today.",
                                      "speakers": [
                                                   51
                                                   ],
@@ -1456,7 +1456,7 @@
                                      },
                                      {
                                      "subtitle": "It's not always application's fault",
-                                     "description": "Infrastructure primer for busy developer. Tells what can go wrong when you deploy your application,where infrastructure may influence the end result.<br><br>Tells devops what they need to give/teach their developers, offering hints how to do so.<br>Takes viewer through: monitoring, backups, server room, virtualization, sharing, common problems and offers insight.<br><br>Flash-based version of this talk is on <a href=\"http://prezi.com/7usyzvjmj0io/?utm_campaign=share&utm_medium=copy\">Prezi</a>.<br>Presented on Atmosphere, Java Developer Days, ChamberConf and Java Day Lviv.",
+                                     "description": "Infrastructure primer for busy developer. Tells what can go wrong when you deploy your application,\nwhere infrastructure may influence the end result.\n<br><br>\nTells devops what they need to give/teach their developers, offering hints how to do so.\n<br>\nTakes viewer through: monitoring, backups, server room, virtualization, sharing, common problems and offers insight.\n<br><br>\nFlash-based version of this talk is on <a href=\"http://prezi.com/7usyzvjmj0io/?utm_campaign=share&utm_medium=copy\">Prezi</a>.\n<br>\nPresented on Atmosphere, Java Developer Days, ChamberConf and Java Day Lviv.",
                                      "speakers": [
                                                   23
                                                   ],
@@ -1528,7 +1528,7 @@
                                      },
                                      {
                                      "subtitle": "JVM tuning in a rush",
-                                     "description": "When performance hits rock-bottom everybody (and their dog) is called upon andall of a sudden developers should have been responsible for last half a year or so andcode with performance in mind (and deadlines, but that of course goes unsaid).So, here I'm talking about what can a dev do to meet those unreasonable demands) and what might he do anticipating them.<br><br>Strictly JVM, mostly Sun Hotspot impl, but number of points can be used to other JVMs as well.",
+                                     "description": "When performance hits rock-bottom everybody (and their dog) is called upon and\nall of a sudden developers should have been responsible for last half a year or so and\ncode with performance in mind (and deadlines, but that of course goes unsaid).\nSo, here I'm talking about what can a dev do to meet those unreasonable demands) and what might he do anticipating them.\n<br><br>\nStrictly JVM, mostly Sun Hotspot impl, but number of points can be used to other JVMs as well.",
                                      "speakers": [
                                                   23
                                                   ],
@@ -1578,7 +1578,7 @@
                                      },
                                      {
                                      "subtitle": "Deep Dive Into Angular 2",
-                                     "description": "Angular 2 is a revolutionary development platform for creating applications using modern web standards and powered by the Open Source Community following the success of AngularJS.<br><br>Angular 2 introduces some major improvements over its predecessor. We are going to cover the main areas so you can start creating your own projects and enjoy its benefits Today.<br><br>At Angular Labs we have been following Angular 2 since the initial pre-release versions and sharing our learnings with the community. You can access our lab sessions online and follow the latest topics around Angular.",
+                                     "description": "Angular 2 is a revolutionary development platform for creating applications using modern web standards and powered by the Open Source Community following the success of AngularJS.\n<br><br>\nAngular 2 introduces some major improvements over its predecessor. We are going to cover the main areas so you can start creating your own projects and enjoy its benefits Today.\n<br><br>\nAt Angular Labs we have been following Angular 2 since the initial pre-release versions and sharing our learnings with the community. You can access our lab sessions online and follow the latest topics around Angular.",
                                      "speakers": [
                                                   27
                                                   ],
@@ -1588,7 +1588,7 @@
                                      },
                                      {
                                      "subtitle": "Hands on with Kotlin",
-                                     "description": "The Kotlin programming language is gaining popularity nowadays. It’s a modern language that gives more power in everyday routines. Kotlin code generally looks cleaner and nicer, and it’s much easier to work with when you have less verbosity or code duplication.</br></br>An important characteristic of the Kotlin language is a relatively fast learning curve: you pick it up very easily. Most of the features and idioms are not unique, so you just have to get used to the new syntax (automatic Java to Kotlin converter can help you with it). Other unfamiliar but powerful language features can be learned fairly fast as well.</br></br>This workshop is based on <a href=\"https://try.kotlinlang.org/koans\">Kotlin Koans</a>. It's a series of step-by-step small tasks explaining different features of the Kotlin language. They can be solved either online or in the IDE. If you do it by your own you have to read the language documentation to find out the details. However, during this workshop all the necessary information will be explained, so you could concentrate on the tasks.",
+                                     "description": "The Kotlin programming language is gaining popularity nowadays. It’s a modern language that gives more power in everyday routines. Kotlin code generally looks cleaner and nicer, and it’s much easier to work with when you have less verbosity or code duplication.\n</br></br>An important characteristic of the Kotlin language is a relatively fast learning curve: you pick it up very easily. Most of the features and idioms are not unique, so you just have to get used to the new syntax (automatic Java to Kotlin converter can help you with it). Other unfamiliar but powerful language features can be learned fairly fast as well.\n</br></br>This workshop is based on <a href=\"https://try.kotlinlang.org/koans\">Kotlin Koans</a>. It's a series of step-by-step small tasks explaining different features of the Kotlin language. They can be solved either online or in the IDE. If you do it by your own you have to read the language documentation to find out the details. However, during this workshop all the necessary information will be explained, so you could concentrate on the tasks.",
                                      "speakers": [
                                                   18
                                                   ],

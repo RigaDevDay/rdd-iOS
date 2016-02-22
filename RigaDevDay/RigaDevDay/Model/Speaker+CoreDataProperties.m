@@ -23,5 +23,6 @@
 @dynamic blogURL;
 @dynamic speakerDesc;
 @dynamic events;
+@dynamic linkedInURL;
 
 @end

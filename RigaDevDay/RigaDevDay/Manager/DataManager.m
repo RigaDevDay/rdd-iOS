@@ -367,6 +367,7 @@
                 speaker.twitterURL = (speakerDict[@"twitter"]) ? speakerDict[@"twitter"] : @"";
                 speaker.blogURL = (speakerDict[@"blog"]) ? speakerDict[@"blog"] : @"";
                 speaker.speakerDesc = speakerDict[@"description"];
+                speaker.linkedInURL = (speakerDict[@"linkedin"]) ? speakerDict[@"linkedin"] : @"";
             }
             [appDelegate saveContext];
             

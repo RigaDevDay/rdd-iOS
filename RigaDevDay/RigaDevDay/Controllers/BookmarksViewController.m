@@ -110,7 +110,7 @@
     cell.labelPresentationSubTitle.text = (event.subtitle.length) ? event.subtitle : @"Event";
    [cell setEventTagNames:[[DataManager sharedInstance] tagNamesForEvent:event]];
     cell.labelStartTime.text = (event.room) ? [NSString stringWithFormat:@"%@, %@", event.room.name, event.interval.startTime] : [NSString stringWithFormat:@" %@", event.interval.startTime];
-    cell.labelStartTime.textColor = [self hasSameTimeEventAs:event] ? [UIColor redColor] : [UIColor grayColor];
+//    cell.labelStartTime.textColor = [self hasSameTimeEventAs:event] ? [UIColor redColor] : [UIColor grayColor];
     
            [cell.buttonImageView setImage:[event.isFavorite boolValue] ? [UIImage imageNamed:@"icon_bookmark.png"] : [UIImage imageNamed:@"icon_menu_bookmark.png"]];
 
@@ -138,14 +138,6 @@
     [cell.buttonImageView setImage:isFavorite ? [UIImage imageNamed:@"icon_bookmark.png"] : [UIImage imageNamed:@"icon_menu_bookmark.png"]];
      [self p_reloadBookmarks];
 }
-//
-- (BOOL)hasSameTimeEventAs:(Event *)event {
-#warning Compare conflicted times
-//    for (Event *bEvent in self.pBookmaredEvents) {
-//        if ([bEvent isEqual:event])continue;
-//        if ([bEvent.startTime isEqualToString:event.startTime]) return YES;
-//    }
-    return NO;
-}
+
 
 @end

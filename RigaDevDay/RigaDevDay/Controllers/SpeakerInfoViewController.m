@@ -30,6 +30,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.iboLinkedInButton.hidden = !self.speaker.linkedInURL.length;
+    self.iboBlogButton.hidden = !self.speaker.blogURL.length;
+    self.iboTwitterButton.hidden = !self.speaker.twitterURL.length;
+    
     self.title = self.speaker.name;
     self.iboNameLabel.text = self.speaker.name;
     self.iboJobTitleLabel.text = [NSString stringWithFormat:@"%@ at %@", self.speaker.jobTitle, self.speaker.company];
@@ -69,8 +73,7 @@
 #pragma mark - Action methods
 
 - (IBAction)linkedInButtonTapped:(id)sender {
-#warning Add linkedIn
-    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.speaker.linkedInURL]];
 }
 
 - (IBAction)twitterButtonTapped:(id)sender {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F1605" minimumToolsVersion="Xcode 7.0">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Xcode 7.0">
     <entity name="Day" representedClassName="Day" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -36,6 +36,7 @@
         <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="imgPath" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="jobTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="linkedInURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="speakerDesc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="speakerID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -51,7 +52,7 @@
         <element name="Event" positionX="16" positionY="-118" width="128" height="165"/>
         <element name="Interval" positionX="-261" positionY="-192" width="128" height="118"/>
         <element name="Room" positionX="268" positionY="-412" width="128" height="105"/>
-        <element name="Speaker" positionX="-450" positionY="-153" width="128" height="193"/>
+        <element name="Speaker" positionX="-450" positionY="-153" width="128" height="210"/>
         <element name="Tag" positionX="277" positionY="-84" width="128" height="73"/>
     </elements>
 </model>

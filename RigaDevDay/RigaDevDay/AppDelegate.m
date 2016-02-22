@@ -103,17 +103,14 @@ NSString *const kNotificationErrorMessage = @"kNotificationErrorMessage";
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"ScheduleModel.sqlite"];
     NSError *error = nil;
-    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
-        BOOL result = [self deleteDataBase];
-        if (result) {
-            [_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error];
-            if (error) {
-                NSLog(@"Error creating DB: %@", error.localizedDescription);
-            } else {
-                NSLog(@"Successfully created DB");
-            }
+    NSDictionary *options = @{NSMigratePersistentStoresAutomaticallyOption:@YES,
+                              NSInferMappingModelAutomaticallyOption: @YES};
+    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error]) {
+        [_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error];
+        if (error) {
+            NSLog(@"Error creating DB: %@", error.localizedDescription);
         } else {
-            NSLog(@"An error has occurred while deleting DB error: %@", error);
+            NSLog(@"Successfully created DB");
         }
     } else {
         NSLog(@"Successfully connected to DB");

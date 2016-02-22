@@ -45,18 +45,6 @@
     }
 }
 
-// Called when a button is clicked. The view will be automatically dismissed after this call returns
-//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-////    if (buttonIndex == 0) {
-////        // Cancel
-////    } else {
-////        if (&UIApplicationOpenSettingsURLString != NULL) {
-////            NSURL *appSettings = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
-////            [[UIApplication sharedApplication] openURL:appSettings];
-////        }
-////    }
-//}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

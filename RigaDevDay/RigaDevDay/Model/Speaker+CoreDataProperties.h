@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *twitterURL;
 @property (nullable, nonatomic, retain) NSString *blogURL;
 @property (nullable, nonatomic, retain) NSString *speakerDesc;
+@property (nullable, nonatomic, retain) NSString *linkedInURL;
 @property (nullable, nonatomic, retain) NSSet<Event *> *events;
 
 @end

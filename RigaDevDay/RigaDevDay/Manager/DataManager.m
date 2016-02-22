@@ -326,6 +326,7 @@
     if (![data length]) {
         data = [self p_localSchedule];
     }
+//     data = [self p_localSchedule];
     
     // Now create a NSDictionary from the JSON data
     NSError *error;
@@ -339,6 +340,7 @@
         
         
         if (![currentScheduleVersion isEqualToString:latestScheduleVersion]) {
+
             // Save latest version
             [[NSUserDefaults standardUserDefaults] setValue:latestScheduleVersion forKey:SCHEDULE_VERSION_KEY];
             [[NSUserDefaults standardUserDefaults] synchronize];
@@ -346,6 +348,12 @@
             //Parse new data
             NSArray *speakers = jsonDict[@"speakers"];
             AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+        
+        
+        if ([appDelegate deleteDataBase]) {
+            
+        }
+//        return;
             NSManagedObjectContext *managedObjectContext = appDelegate.managedObjectContext;
             for (NSDictionary *speakerDict in speakers) {
                 Speaker *speaker = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Speaker class])

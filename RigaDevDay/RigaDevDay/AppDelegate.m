@@ -10,6 +10,11 @@
 #import "DataManager.h"
 #import "WebserviceManager.h"
 
+NSString *const kErrorLoadingScheduleNotification = @"kErrorLoadingScheduleNotification";
+NSString *const kScheduleLoadedNotification = @"kScheduleLoadedNotification";
+NSString *const kNoInternetNotification = @"kNoInternetNotification";
+NSString *const kNotificationErrorMessage = @"kNotificationErrorMessage";
+
 @interface AppDelegate ()
 
 @end
@@ -19,15 +24,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-//    [[DataManager sharedInstance] updateScheduleIfNeeded];
-    [[WebserviceManager sharedInstance] loadScheduleWithCompletionBlock:^(id data) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-    [[DataManager sharedInstance] updateScheduleIfNeededWithData:data];
-        });
+    [self updateSchedule];
     
-    } andErrorBlock:^(NSError *error) {
-        NSLog(@"Error loading schedule: %@", error.localizedDescription);
-    }];
     return YES;
 }
 
@@ -47,12 +45,31 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     
-
+    
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Public methods
+
+- (void)updateSchedule {
+    [[WebserviceManager sharedInstance] setIsScheduleLoading:YES];
+    [[WebserviceManager sharedInstance] loadScheduleWithCompletionBlock:^(id data) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[DataManager sharedInstance] updateScheduleIfNeededWithData:data];
+            [[WebserviceManager sharedInstance] setIsScheduleLoading:NO];
+            [[NSNotificationCenter defaultCenter] postNotificationName:kScheduleLoadedNotification object:self];
+        });
+    } andErrorBlock:^(NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[WebserviceManager sharedInstance] setIsScheduleLoading:NO];
+            [[NSNotificationCenter defaultCenter] postNotificationName:kErrorLoadingScheduleNotification object:self userInfo:@{kNotificationErrorMessage : error.localizedDescription}];
+        });
+        
+    }];
 }
 
 #pragma mark - Core Data stack
@@ -99,7 +116,7 @@
             NSLog(@"An error has occurred while deleting DB error: %@", error);
         }
     } else {
-          NSLog(@"Successfully connected to DB");
+        NSLog(@"Successfully connected to DB");
     }
     
     return _persistentStoreCoordinator;
@@ -117,6 +134,7 @@
             result = [[NSFileManager defaultManager] removeItemAtURL:url error:&error];
         }
     }
+    _persistentStoreCoordinator = nil;
     return result;
 }
 

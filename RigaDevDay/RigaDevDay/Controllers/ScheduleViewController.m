@@ -17,7 +17,6 @@
 
 @interface ScheduleViewController () <UITableViewDataSource, UITableViewDelegate, ScheduleTableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *iboTableView;
-
 @end
 
 @implementation ScheduleViewController
@@ -26,22 +25,12 @@
     [super viewDidLoad];
     
     self.iboTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    
-    //    [[NSNotificationCenter defaultCenter] addObserver:self
-    //                                             selector:@selector(reloadScheduleData)
-    //                                                 name:@"UpdateSchedule" object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
     [self.iboTableView reloadData];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning {

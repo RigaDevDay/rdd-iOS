@@ -40,6 +40,7 @@ NSString *const kSpeakerImageURL = @"https://raw.githubusercontent.com/RigaDevDa
     if (self) {
         _pPersistanceService = [[PersistanceService alloc] init];
         _pTaskCount = 0;
+        _isScheduleLoading = YES;
     }
     return self;
 }

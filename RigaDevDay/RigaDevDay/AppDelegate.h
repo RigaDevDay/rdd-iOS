@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
+extern NSString *const kErrorLoadingScheduleNotification;
+extern NSString *const kScheduleLoadedNotification;
+extern NSString *const kNoInternetNotification;
+extern NSString *const kNotificationErrorMessage;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
@@ -20,6 +25,9 @@
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 - (BOOL)deleteDataBase;
+- (void)updateSchedule;
+
+
 
 
 @end

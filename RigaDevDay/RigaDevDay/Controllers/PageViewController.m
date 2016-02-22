@@ -14,10 +14,15 @@
 #import "DaysTableViewController.h"
 #import "DataManager.h"
 #import "UIColor+App.h"
+#import "AppDelegate.h"
+#import "WebserviceManager.h"
 
 @interface PageViewController () <DaysTableVCDelegate>
 @property (nonatomic) CAPSPageMenu *pageMenu;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonMenu;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *iboActivityIndicator;
+
+@property (weak, nonatomic) IBOutlet UIButton *iboRetryButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *iboDayBarButtonItem;
 @end
 
@@ -26,13 +31,37 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    if ([[WebserviceManager sharedInstance] isScheduleLoading]) {
+        [self p_enableViews:NO];
+    } else {
+        [self p_enableViews:YES];
+        [self p_reloadPageMenuWithDay:[DataManager sharedInstance].selectedDay];
+    }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(scheduleLoadedNotification:)
+                                                 name:kScheduleLoadedNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(errorLoadingScheduleNotification:)
+                                                 name:kErrorLoadingScheduleNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(noInternetNotification:)
+                                                 name:kNoInternetNotification
+                                               object:nil];
+    
     self.title = @"Schedule";
     self.buttonMenu.target = self.revealViewController;
     self.buttonMenu.action = @selector(revealToggle:);
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    
-    [self p_reloadPageMenuWithDay:[DataManager sharedInstance].selectedDay];
 }
+
+- (IBAction)retryButtonTapped:(id)sender {
+    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    [appDelegate updateSchedule];
+}
+
 
 - (void)p_didTapGoToLeft {
     NSInteger currentIndex = self.pageMenu.currentPageIndex;
@@ -53,13 +82,13 @@
 - (void)p_initViewControllersWithRooms:(NSArray *)rooms {
     [_pageMenu.view removeFromSuperview];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-
+    
     NSMutableArray *controllers = [NSMutableArray array];
     for (Room *room in rooms) {
         ScheduleViewController *scheduleVC =  (ScheduleViewController*)[storyboard instantiateViewControllerWithIdentifier:@"ScheduleViewController"];
         scheduleVC.title = room.name;
         DataManager *dataManager = [DataManager sharedInstance];
-       scheduleVC.events = [dataManager eventsForDay:dataManager.selectedDay andRoom:room];
+        scheduleVC.events = [dataManager eventsForDay:dataManager.selectedDay andRoom:room];
         scheduleVC.pageVC = self;
         [controllers addObject:scheduleVC];
     }
@@ -79,10 +108,12 @@
 }
 
 - (void)p_reloadPageMenuWithDay:(Day *)day {
-    DataManager *dataManager= [DataManager sharedInstance];
-    self.iboDayBarButtonItem.title = dataManager.selectedDay.title;
-    NSArray *roomNames = [dataManager roomsForDay:day];
-    [self p_initViewControllersWithRooms:roomNames];
+    if (day) {
+        DataManager *dataManager= [DataManager sharedInstance];
+        self.iboDayBarButtonItem.title = dataManager.selectedDay.title;
+        NSArray *roomNames = [dataManager roomsForDay:day];
+        [self p_initViewControllersWithRooms:roomNames];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -95,13 +126,75 @@
     }
 }
 
+- (void)p_enableViews:(BOOL)enable {
+    if (enable) {
+        self.pageMenu.view.userInteractionEnabled = YES;
+        self.iboDayBarButtonItem.enabled = YES;
+        self.buttonMenu.enabled = YES;
+        [self.iboActivityIndicator stopAnimating];
+    } else {
+        self.pageMenu.view.userInteractionEnabled = NO;
+        [self.iboActivityIndicator startAnimating];
+        self.buttonMenu.enabled = NO;
+        self.iboDayBarButtonItem.enabled = NO;
+    }
+}
+
 #pragma mark - DaysTableVCDelegate
 
 - (void)daysTableVC:(DaysTableViewController *)daysVC didSelectDay:(Day *)day {
-    [DataManager sharedInstance].selectedDay = day;
-    [[DataManager sharedInstance] selectRoomWithOrder:1];
-    
-    [self p_reloadPageMenuWithDay:day];
+    if (![[DataManager sharedInstance].selectedDay isEqual:day]) {
+        [DataManager sharedInstance].selectedDay = day;
+        [[DataManager sharedInstance] selectRoomWithOrder:1];
+        
+        [self p_reloadPageMenuWithDay:day];
+    }
+}
+
+- (void)p_showCancelAlertWithText:(NSString *)text {
+    if ([UIAlertController class]) {
+        // use UIAlertController
+        UIAlertController *alert= [UIAlertController
+                                   alertControllerWithTitle:@"Riga Dev Days 2016"
+                                   message:text
+                                   preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault
+                                                       handler:^(UIAlertAction * action) {
+                                                           [alert dismissViewControllerAnimated:YES completion:nil];
+                                                       }];
+        
+        [alert addAction:cancel];
+        [self presentViewController:alert animated:YES completion:nil];
+    } else {
+        // use UIAlertView
+        UIAlertView* dialog = [[UIAlertView alloc] initWithTitle:@"Riga Dev Days 2016"
+                                                         message:text
+                                                        delegate:self
+                                               cancelButtonTitle:@"Cancel"
+                                               otherButtonTitles:nil];
+        [dialog show];
+    }
+}
+
+#pragma mark - NSNotification methods
+
+- (void)scheduleLoadedNotification:(NSNotification *)notification {
+    [self p_enableViews:YES];
+    [self p_reloadPageMenuWithDay:[DataManager sharedInstance].selectedDay];
+}
+
+- (void)errorLoadingScheduleNotification:(NSNotification *)notification {
+    self.iboRetryButton.hidden = NO;
+    [self p_enableViews:NO];
+    NSString *message = notification.userInfo[kNotificationErrorMessage];
+    [self p_showCancelAlertWithText:message];
+}
+
+- (void)noInternetNotification:(NSNotification *)notification {
+    self.iboRetryButton.hidden = NO;
+    [self p_enableViews:NO];
+    NSString *message = notification.userInfo[kNotificationErrorMessage];
+    [self p_showCancelAlertWithText:message];
 }
 
 @end

@@ -17,6 +17,8 @@ typedef void (^ErrorBlock)(NSError *error);
 
 + (WebserviceManager *)sharedInstance;
 
+@property (nonatomic) BOOL isScheduleLoading;
+
 - (void)loadScheduleWithCompletionBlock:(CompletionBlock)cblock andErrorBlock:(ErrorBlock)eblock;
 - (void)loadImage:(NSString*)imageUrl withCompletionBlock:(CompletionBlock)cblock andErrorBlock:(ErrorBlock)eblock;
 

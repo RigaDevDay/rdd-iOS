@@ -19,6 +19,8 @@
 @property (strong, nonatomic) Day *selectedDay;
 @property (strong, nonatomic) Room *selectedRoom;
 
+
+
 //Day
 - (NSArray *)allDays;
 - (Day *)dayWithOrder:(NSInteger)order;

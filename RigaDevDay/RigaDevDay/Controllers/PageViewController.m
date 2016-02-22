@@ -10,7 +10,7 @@
 #import "CAPSPageMenu.h"
 #import "ScheduleViewController.h"
 #import "SWRevealViewController.h"
-#import "SpeakerInfoViewController.h"
+#import "EventViewController.h"
 #import "DaysTableViewController.h"
 #import "DataManager.h"
 #import "UIColor+App.h"
@@ -90,8 +90,8 @@
         DaysTableViewController *daysVC = segue.destinationViewController;
         daysVC.delegate = self;
     } else if ([segue.identifier isEqualToString:@"EventSegue"]) {
-        SpeakerInfoViewController *destController = [segue destinationViewController];
-        destController.events = self.selectedEvents;
+        EventViewController *destController = [segue destinationViewController];
+        destController.event = self.selectedEvent;
     }
 }
 

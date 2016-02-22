@@ -27,6 +27,7 @@
 - (BOOL)changeFavoriteStatusForEvent:(Event *)event;
 - (NSArray *)allBookmarks;
 - (NSArray *)eventsForDay:(Day *)day andRoom:(Room *)room;
+- (NSAttributedString *)attributedStringFromHtml:(NSString *)html withFont:(UIFont *)font;
 
 //Room
 - (void)selectRoomWithOrder:(NSInteger)order;

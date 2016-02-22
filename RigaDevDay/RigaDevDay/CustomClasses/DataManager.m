@@ -53,6 +53,23 @@
 
 #pragma mark - Public methods
 
+- (NSAttributedString *)attributedStringFromHtml:(NSString *)html withFont:(UIFont *)font {
+    NSDictionary *dictAttrib = @{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,  NSCharacterEncodingDocumentAttribute: @(NSUTF8StringEncoding)};
+    NSMutableAttributedString *attrib = [[NSMutableAttributedString alloc]initWithData:[html dataUsingEncoding:NSUTF8StringEncoding] options:dictAttrib documentAttributes:nil error:nil];
+    [attrib beginEditing];
+    
+    [attrib enumerateAttribute:NSFontAttributeName inRange:NSMakeRange(0, attrib.length) options:0 usingBlock:^(id value, NSRange range, BOOL *stop) {
+        if (value) {
+            // remove old font
+            [attrib removeAttribute:NSFontAttributeName range:range];
+            //replace your font with new.
+            [attrib addAttribute:NSFontAttributeName value:font range:range];
+        }
+    }];
+    [attrib endEditing];
+    return attrib;
+}
+
 - (void)updateScheduleIfNeeded {
     [self checkForJSONs];
     // Copy to drive in needed

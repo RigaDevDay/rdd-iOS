@@ -10,7 +10,7 @@
 #import "SWRevealViewController.h"
 #import "ScheduleTableViewCell.h"
 #import "GlobalMetupTableViewCell.h"
-#import "SpeakerInfoViewController.h"
+#import "EventViewController.h"
 #import "DataManager.h"
 #import "Event.h"
 #import "DaysTableViewController.h"
@@ -89,7 +89,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([[tableView cellForRowAtIndexPath:indexPath] isKindOfClass:[ScheduleTableViewCell class]]) {
-        self.pageVC.selectedEvents = @[self.events[indexPath.row]];
+        self.pageVC.selectedEvent = self.events[indexPath.row];
         [self.pageVC performSegueWithIdentifier:@"EventSegue" sender:nil];
     }
 }

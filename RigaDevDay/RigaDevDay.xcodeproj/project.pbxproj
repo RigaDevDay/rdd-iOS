@@ -123,7 +123,7 @@
 		B7B16D0C1A361966005267AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7B16D0B1A361966005267AF /* Images.xcassets */; };
 		B7B16D0F1A361966005267AF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7B16D0D1A361966005267AF /* LaunchScreen.xib */; };
 		B7B16D1B1A361966005267AF /* RigaDevDayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D1A1A361966005267AF /* RigaDevDayTests.m */; };
-		B7B16D2A1A361B2D005267AF /* SpeakerInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D291A361B2D005267AF /* SpeakerInfoViewController.m */; };
+		B7B16D2A1A361B2D005267AF /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D291A361B2D005267AF /* EventViewController.m */; };
 		B7B16D2E1A361B7A005267AF /* SpeechInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D2D1A361B7A005267AF /* SpeechInfoViewController.m */; };
 		B7B16D321A361BAC005267AF /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D311A361BAC005267AF /* ScheduleViewController.m */; };
 		B7B16D361A361BD0005267AF /* BookmarksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D351A361BD0005267AF /* BookmarksViewController.m */; };
@@ -200,6 +200,11 @@
 		C00A14251C7A0270009B60FF /* UIColor+App.m in Sources */ = {isa = PBXBuildFile; fileRef = C00A14241C7A0270009B60FF /* UIColor+App.m */; };
 		C00A14271C7A0AE7009B60FF /* bg-devdays.png in Resources */ = {isa = PBXBuildFile; fileRef = C00A14261C7A0AE7009B60FF /* bg-devdays.png */; };
 		C00A14291C7A0AF0009B60FF /* bg-riga.png in Resources */ = {isa = PBXBuildFile; fileRef = C00A14281C7A0AF0009B60FF /* bg-riga.png */; };
+		C05C15F01C7A7EE600ABA469 /* SpeakerInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C05C15EF1C7A7EE600ABA469 /* SpeakerInfoViewController.m */; };
+		C05C15F21C7A801100ABA469 /* robert_nyman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C05C15F11C7A801100ABA469 /* robert_nyman.jpg */; };
+		C05C15F61C7A821700ABA469 /* icn-linkedin.png in Resources */ = {isa = PBXBuildFile; fileRef = C05C15F31C7A821700ABA469 /* icn-linkedin.png */; };
+		C05C15F71C7A821700ABA469 /* icn-safari.png in Resources */ = {isa = PBXBuildFile; fileRef = C05C15F41C7A821700ABA469 /* icn-safari.png */; };
+		C05C15F81C7A821700ABA469 /* icn-twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = C05C15F51C7A821700ABA469 /* icn-twitter.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -353,8 +358,8 @@
 		B7B16D141A361966005267AF /* RigaDevDayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RigaDevDayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7B16D191A361966005267AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7B16D1A1A361966005267AF /* RigaDevDayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RigaDevDayTests.m; sourceTree = "<group>"; };
-		B7B16D281A361B2D005267AF /* SpeakerInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakerInfoViewController.h; path = RigaDevDay/Controllers/SpeakerInfoViewController.h; sourceTree = "<group>"; };
-		B7B16D291A361B2D005267AF /* SpeakerInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerInfoViewController.m; path = RigaDevDay/Controllers/SpeakerInfoViewController.m; sourceTree = "<group>"; };
+		B7B16D281A361B2D005267AF /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventViewController.h; path = RigaDevDay/Controllers/EventViewController.h; sourceTree = "<group>"; };
+		B7B16D291A361B2D005267AF /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventViewController.m; path = RigaDevDay/Controllers/EventViewController.m; sourceTree = "<group>"; };
 		B7B16D2C1A361B7A005267AF /* SpeechInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeechInfoViewController.h; path = RigaDevDay/Controllers/SpeechInfoViewController.h; sourceTree = "<group>"; };
 		B7B16D2D1A361B7A005267AF /* SpeechInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeechInfoViewController.m; path = RigaDevDay/Controllers/SpeechInfoViewController.m; sourceTree = "<group>"; };
 		B7B16D301A361BAC005267AF /* ScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleViewController.h; path = RigaDevDay/Controllers/ScheduleViewController.h; sourceTree = "<group>"; };
@@ -450,6 +455,12 @@
 		C00A14241C7A0270009B60FF /* UIColor+App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+App.m"; path = "RigaDevDay/Libs/Utils/UIColor+App.m"; sourceTree = "<group>"; };
 		C00A14261C7A0AE7009B60FF /* bg-devdays.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-devdays.png"; sourceTree = "<group>"; };
 		C00A14281C7A0AF0009B60FF /* bg-riga.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-riga.png"; sourceTree = "<group>"; };
+		C05C15EE1C7A7EE600ABA469 /* SpeakerInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakerInfoViewController.h; path = RigaDevDay/Controllers/SpeakerInfoViewController.h; sourceTree = "<group>"; };
+		C05C15EF1C7A7EE600ABA469 /* SpeakerInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerInfoViewController.m; path = RigaDevDay/Controllers/SpeakerInfoViewController.m; sourceTree = "<group>"; };
+		C05C15F11C7A801100ABA469 /* robert_nyman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = robert_nyman.jpg; sourceTree = "<group>"; };
+		C05C15F31C7A821700ABA469 /* icn-linkedin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icn-linkedin.png"; sourceTree = "<group>"; };
+		C05C15F41C7A821700ABA469 /* icn-safari.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icn-safari.png"; sourceTree = "<group>"; };
+		C05C15F51C7A821700ABA469 /* icn-twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icn-twitter.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -543,6 +554,10 @@
 		B70F60C11A483F96004EA563 /* drawable */ = {
 			isa = PBXGroup;
 			children = (
+				C05C15F31C7A821700ABA469 /* icn-linkedin.png */,
+				C05C15F41C7A821700ABA469 /* icn-safari.png */,
+				C05C15F51C7A821700ABA469 /* icn-twitter.png */,
+				C05C15F11C7A801100ABA469 /* robert_nyman.jpg */,
 				C00A14281C7A0AF0009B60FF /* bg-riga.png */,
 				C00A14261C7A0AE7009B60FF /* bg-devdays.png */,
 				B7FB3D411A62CA3B000A73E9 /* twitter-menu.png */,
@@ -666,6 +681,7 @@
 		B7B16CFD1A361966005267AF /* RigaDevDay */ = {
 			isa = PBXGroup;
 			children = (
+				C00A142A1C7A33BB009B60FF /* View */,
 				38B571DF1C749FD40033E40E /* Model */,
 				B7B16D261A361A46005267AF /* Controllers */,
 				B7B16D3F1A361D19005267AF /* CustomClasses */,
@@ -762,10 +778,12 @@
 			children = (
 				97F889391A49A84E00A135C9 /* SpeakersViewController.h */,
 				97F8893A1A49A84E00A135C9 /* SpeakersViewController.m */,
-				B7B16D281A361B2D005267AF /* SpeakerInfoViewController.h */,
-				B7B16D291A361B2D005267AF /* SpeakerInfoViewController.m */,
+				B7B16D281A361B2D005267AF /* EventViewController.h */,
+				B7B16D291A361B2D005267AF /* EventViewController.m */,
 				B7FDD1121A4B21110001C098 /* SpeakerTableViewCell.h */,
 				B7FDD1131A4B21110001C098 /* SpeakerTableViewCell.m */,
+				C05C15EE1C7A7EE600ABA469 /* SpeakerInfoViewController.h */,
+				C05C15EF1C7A7EE600ABA469 /* SpeakerInfoViewController.m */,
 			);
 			name = Speakers;
 			path = ..;
@@ -991,6 +1009,13 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
+		C00A142A1C7A33BB009B60FF /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1081,6 +1106,7 @@
 				B7FDD0D31A4AC1560001C098 /* google.png in Resources */,
 				B70F61271A483F96004EA563 /* backstage_8.jpeg in Resources */,
 				B70F610A1A483F96004EA563 /* backstage_1.jpeg in Resources */,
+				C05C15F61C7A821700ABA469 /* icn-linkedin.png in Resources */,
 				B7FB3D601A62FC31000A73E9 /* Czech Republic.png in Resources */,
 				B7FDD0D61A4AC1560001C098 /* innowate.png in Resources */,
 				B70F61351A483F96004EA563 /* speaker_11.png in Resources */,
@@ -1104,6 +1130,7 @@
 				97F889411A49B46E00A135C9 /* back_button_VECTOR.pdf in Resources */,
 				B70F612D1A483F96004EA563 /* icon_menu_organizers.png in Resources */,
 				B71B187F1A5141CC00A295B1 /* Default-667h@2x.png in Resources */,
+				C05C15F81C7A821700ABA469 /* icn-twitter.png in Resources */,
 				B7FDD0CD1A4AC1560001C098 /* ctco_logo.png in Resources */,
 				B70F61391A483F96004EA563 /* speaker_15.png in Resources */,
 				B7FDD0DC1A4AC1560001C098 /* kursors.png in Resources */,
@@ -1121,6 +1148,7 @@
 				C00A14291C7A0AF0009B60FF /* bg-riga.png in Resources */,
 				B7FB3D6E1A62FC31000A73E9 /* UK.png in Resources */,
 				B70F61511A483F96004EA563 /* speaker_9.png in Resources */,
+				C05C15F21C7A801100ABA469 /* robert_nyman.jpg in Resources */,
 				B70F613B1A483F96004EA563 /* speaker_17.png in Resources */,
 				B7FB3D661A62FC31000A73E9 /* Greece.png in Resources */,
 				B7657A891A4DAEA900EDAA28 /* Hall_imag@2x.png in Resources */,
@@ -1204,6 +1232,7 @@
 				B70F61411A483F96004EA563 /* speaker_22.png in Resources */,
 				B7657A861A4DADE900EDAA28 /* Hall_imag.png in Resources */,
 				B70F61231A483F96004EA563 /* backstage_4.jpeg in Resources */,
+				C05C15F71C7A821700ABA469 /* icn-safari.png in Resources */,
 				B7FDD0E71A4AC1560001C098 /* riga-comm.png in Resources */,
 				B70F61341A483F96004EA563 /* speaker_10.png in Resources */,
 				B70F614A1A483F96004EA563 /* speaker_30.png in Resources */,
@@ -1250,8 +1279,9 @@
 				38B5727B1C74B9E40033E40E /* Day.m in Sources */,
 				C00A14181C77B7E4009B60FF /* NSArray+LinqExtensions.m in Sources */,
 				97F8893B1A49A84E00A135C9 /* SpeakersViewController.m in Sources */,
-				B7B16D2A1A361B2D005267AF /* SpeakerInfoViewController.m in Sources */,
+				B7B16D2A1A361B2D005267AF /* EventViewController.m in Sources */,
 				38B572641C74AE650033E40E /* Speaker+CoreDataProperties.m in Sources */,
+				C05C15F01C7A7EE600ABA469 /* SpeakerInfoViewController.m in Sources */,
 				B7B16D551A362646005267AF /* NavigationViewController.m in Sources */,
 				B70EEB571A485258008CD9C6 /* MHTabBarController.m in Sources */,
 				C00A14191C77B7E4009B60FF /* NSDictionary+LinqExtensions.m in Sources */,

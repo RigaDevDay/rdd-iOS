@@ -9,7 +9,7 @@
 #import "BookmarksViewController.h"
 #import "SWRevealViewController.h"
 #import "ScheduleTableViewCell.h"
-#import "SpeakerInfoViewController.h"
+#import "EventViewController.h"
 #import "DataManager.h"
 #import "NSArray+LinqExtensions.h"
 
@@ -126,8 +126,8 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    SpeakerInfoViewController *destController = [segue destinationViewController];
-    destController.events = @[self.pSeletedEvent];
+    EventViewController *destController = [segue destinationViewController];
+//    destController.events = @[self.pSeletedEvent];
 }
 
 

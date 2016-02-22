@@ -9,10 +9,11 @@
 #import "SpeakersViewController.h"
 #import "SWRevealViewController.h"
 #import "SpeakerTableViewCell.h"
-#import "SpeakerInfoViewController.h"
+#import "EventViewController.h"
 #import "DataManager.h"
+#import "SpeakerInfoViewController.h"
 
-@interface SpeakersViewController () <UITableViewDataSource, UITableViewDelegate, SpeakerTableViewCellDelegate>
+@interface SpeakersViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) NSArray *pSpeakers;
 @property (nonatomic, strong) Speaker *pSelectedSpeaker;
@@ -67,36 +68,23 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     Speaker *speaker = self.pSpeakers[indexPath.row];
     SpeakerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SpeakerCell"];
-    cell.delegate = self;
     cell.iboNameLabel.text = speaker.name;
     cell.iboInfoLabel.text = [NSString stringWithFormat:@"%@, %@", speaker.company, speaker.jobTitle];
     UIImage *profileImage = [UIImage imageNamed:[NSString stringWithFormat:@"speaker_%@",speaker.speakerID]];
     cell.iboSpeakerImageView.image = (profileImage) ? profileImage : [UIImage imageNamed:@"speaker_0"];
-//    if ([[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.speakerID]) {
-//        [cell.buttonImage setImage:[[DataManager sharedInstance] getActiveBookmarkImage]];
-//    } else {
-//        [cell.buttonImage setImage:[[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO]];
-//    }
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     self.pSelectedSpeaker = self.pSpeakers[indexPath.row];
-    [self performSegueWithIdentifier:@"EventSegue" sender:nil];
+    [self performSegueWithIdentifier:@"SpeakerSegue" sender:nil];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     SpeakerInfoViewController *destController = [segue destinationViewController];
-    destController.events = [self.pSelectedSpeaker.events allObjects];
+    destController.speaker = self.pSelectedSpeaker;
 }
 
-- (void)bookmarkButtonPressedOnCell:(SpeakerTableViewCell *)cell {
-//    Speaker *speaker = [self.pSpeakers objectAtIndex:[self.tableView indexPathForCell:cell].row];
-//    BOOL isBookmarked = [[DataManager sharedInstance] isSpeakerBookmarkedWithID:speaker.speakerID];
-//    [cell.buttonImage setImage:isBookmarked ? [[DataManager sharedInstance] getInActiveBookmarkImageForInfo:NO] : [[DataManager sharedInstance] getActiveBookmarkImage]];
-//    [[DataManager sharedInstance] changeSpeakerBookmarkStateTo:!isBookmarked forSpeakerID:speaker.speakerID];
-}
 
 @end

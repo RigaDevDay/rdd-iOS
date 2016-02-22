@@ -2,16 +2,13 @@
 //  SpeakerInfoViewController.h
 //  RigaDevDay
 //
-//  Created by Deniss Kaibagarovs on 12/8/14.
-//  Copyright (c) 2014 Deniss Kaibagarovs. All rights reserved.
+//  Created by Ksenija Krilatiha on 22/02/16.
+//  Copyright © 2016 Riga Dev Day. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "DataManager.h"
-#import "Event.h"
+#import "Speaker.h"
 
 @interface SpeakerInfoViewController : UIViewController
-
-@property (strong, nonatomic) NSArray *events;
-
+@property (nonatomic, strong) Speaker *speaker;
 @end

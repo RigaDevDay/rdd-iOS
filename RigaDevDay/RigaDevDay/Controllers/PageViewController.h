@@ -10,5 +10,5 @@
 #import "Event.h"
 
 @interface PageViewController : UIViewController
-@property (nonatomic, strong) NSArray *selectedEvents;
+@property (nonatomic, strong) Event *selectedEvent;
 @end

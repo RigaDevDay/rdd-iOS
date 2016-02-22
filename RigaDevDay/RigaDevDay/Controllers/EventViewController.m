@@ -10,29 +10,14 @@
 #import "SWRevealViewController.h"
 
 @interface EventViewController ()
-//@property (nonatomic, strong) Event *pEvent;
-//    NSArray *_evenets;
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonMenu;
-//@property (strong, nonatomic) IBOutlet UIImageView *imageViewBackground;
-//@property (strong, nonatomic) IBOutlet UIImageView *imageViewProfile;
-//@property (strong, nonatomic) IBOutlet UILabel *labelSpeakerName;
-//@property (strong, nonatomic) IBOutlet UILabel *labelWorkPlace;
-//@property (strong, nonatomic) IBOutlet UIButton *buttonTwitter;
-//@property (strong, nonatomic) IBOutlet UIButton *buttonBookmark;
-//@property (strong, nonatomic) IBOutlet UIButton *buttonSpeech;
-//@property (strong, nonatomic) IBOutlet UIButton *buttonAbout;
-//@property (strong, nonatomic) IBOutlet UILabel *labelTileAndLocation;
-//@property (strong, nonatomic) IBOutlet UILabel *labelMainTitle;
-//@property (strong, nonatomic) IBOutlet UITextView *textViewInformation;
-//@property (weak, nonatomic) IBOutlet UIButton *buttonBlog;
-//@property (weak, nonatomic) IBOutlet UIImageView *imageViewCountry;
 @property (weak, nonatomic) IBOutlet UIScrollView *iboScrollView;
 @property (weak, nonatomic) IBOutlet UILabel *iboTimeLocationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *iboEventTitleLabel;
 @property (weak, nonatomic) IBOutlet UITextView *iboEventDescriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *iboSpeakersLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *iboImageView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *iboTextViewHeight;
 
 @property (strong, nonatomic) Speaker *pSpeaker;
 @end
@@ -41,16 +26,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.buttonMenu.target = self;
-    self.buttonMenu.action = @selector(backButtonPress);
     
     [self p_setupUI];
-//    self.pSpeaker = (self.events.count) ? [[[self.events firstObject] speakers] anyObject] : nil;
-    
-//    [self setUpInfo];
-//    [self setAboutButtonSelected:NO];
-//    [self setSpeechButtonSelected:YES];
-//    [self p_layoutScrollView];
 }
 
 - (void)p_setupUI {
@@ -61,6 +38,10 @@
     self.iboSpeakersLabel.text = [[DataManager sharedInstance] speakerStringFromSpeakers:self.event.speakers];
     UIImage *backstageImage = [UIImage imageNamed:[NSString stringWithFormat:@"backstage_%@.jpeg",self.event.interval.order]];
     self.iboImageView.image = (backstageImage) ? backstageImage : [UIImage imageNamed:@"backstage_1.jpeg"];
+    
+//    [self.iboEventDescriptionLabel sizeToFit];
+//    [self.iboTextViewHeight setConstant:self.iboEventDescriptionLabel.contentSize.height];
+        [self.iboTextViewHeight setConstant:[self.iboEventDescriptionLabel sizeThatFits:CGSizeMake(self.view.frame.size.width - 20.0, CGFLOAT_MAX)].height];
     [self.iboScrollView layoutIfNeeded];
 }
 
@@ -213,11 +194,6 @@
     //    self.buttonSpeech.frame = buttonFrame;
 }
 
-#pragma mark Buttons
-
-- (void)backButtonPress {
-    [self.navigationController popViewControllerAnimated:YES];
-}
 
 //- (IBAction)onTwitterButtonPress:(id)sender {
 //    if (self.pSpeaker) {

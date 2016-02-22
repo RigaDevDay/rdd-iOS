@@ -22,6 +22,9 @@
 		38B5727B1C74B9E40033E40E /* Day.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B572751C74B9E40033E40E /* Day.m */; };
 		38B5727C1C74B9E40033E40E /* Room+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B572771C74B9E40033E40E /* Room+CoreDataProperties.m */; };
 		38B5727D1C74B9E40033E40E /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B572791C74B9E40033E40E /* Room.m */; };
+		38F3D3921C7B0D2A003B6835 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F3D3911C7B0D2A003B6835 /* DataManager.m */; };
+		38F3D3951C7B0D63003B6835 /* WebserviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F3D3941C7B0D63003B6835 /* WebserviceManager.m */; };
+		38F3D3981C7B1209003B6835 /* PersistanceService.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F3D3971C7B1209003B6835 /* PersistanceService.m */; };
 		97F8893B1A49A84E00A135C9 /* SpeakersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F8893A1A49A84E00A135C9 /* SpeakersViewController.m */; };
 		97F8893D1A49B35500A135C9 /* icon_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 97F8893C1A49B35500A135C9 /* icon_back.png */; };
 		97F889411A49B46E00A135C9 /* back_button_VECTOR.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 97F889401A49B46E00A135C9 /* back_button_VECTOR.pdf */; };
@@ -128,7 +131,6 @@
 		B7B16D321A361BAC005267AF /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D311A361BAC005267AF /* ScheduleViewController.m */; };
 		B7B16D361A361BD0005267AF /* BookmarksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D351A361BD0005267AF /* BookmarksViewController.m */; };
 		B7B16D3A1A361BE8005267AF /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D391A361BE8005267AF /* AboutViewController.m */; };
-		B7B16D3E1A361D16005267AF /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D3D1A361D16005267AF /* DataManager.m */; };
 		B7B16D4F1A36201B005267AF /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D4E1A36201B005267AF /* SWRevealViewController.m */; };
 		B7B16D551A362646005267AF /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D541A362646005267AF /* NavigationViewController.m */; };
 		B7BFBA421A52B91100B46385 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7FDD0EC1A4B16A40001C098 /* SystemConfiguration.framework */; };
@@ -246,6 +248,12 @@
 		38B572771C74B9E40033E40E /* Room+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Room+CoreDataProperties.m"; path = "Model/Room+CoreDataProperties.m"; sourceTree = "<group>"; };
 		38B572781C74B9E40033E40E /* Room.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Room.h; path = Model/Room.h; sourceTree = "<group>"; };
 		38B572791C74B9E40033E40E /* Room.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Room.m; path = Model/Room.m; sourceTree = "<group>"; };
+		38F3D3901C7B0D2A003B6835 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = Manager/DataManager.h; sourceTree = "<group>"; };
+		38F3D3911C7B0D2A003B6835 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataManager.m; path = Manager/DataManager.m; sourceTree = "<group>"; };
+		38F3D3931C7B0D63003B6835 /* WebserviceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebserviceManager.h; path = Manager/WebserviceManager.h; sourceTree = "<group>"; };
+		38F3D3941C7B0D63003B6835 /* WebserviceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebserviceManager.m; path = Manager/WebserviceManager.m; sourceTree = "<group>"; };
+		38F3D3961C7B1209003B6835 /* PersistanceService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PersistanceService.h; path = Manager/PersistanceService.h; sourceTree = "<group>"; };
+		38F3D3971C7B1209003B6835 /* PersistanceService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PersistanceService.m; path = Manager/PersistanceService.m; sourceTree = "<group>"; };
 		97F889391A49A84E00A135C9 /* SpeakersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakersViewController.h; path = RigaDevDay/Controllers/SpeakersViewController.h; sourceTree = "<group>"; };
 		97F8893A1A49A84E00A135C9 /* SpeakersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakersViewController.m; path = RigaDevDay/Controllers/SpeakersViewController.m; sourceTree = "<group>"; };
 		97F8893C1A49B35500A135C9 /* icon_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_back.png; sourceTree = "<group>"; };
@@ -368,8 +376,6 @@
 		B7B16D351A361BD0005267AF /* BookmarksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookmarksViewController.m; path = RigaDevDay/Controllers/BookmarksViewController.m; sourceTree = "<group>"; };
 		B7B16D381A361BE8005267AF /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutViewController.h; path = RigaDevDay/Controllers/AboutViewController.h; sourceTree = "<group>"; };
 		B7B16D391A361BE8005267AF /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutViewController.m; path = RigaDevDay/Controllers/AboutViewController.m; sourceTree = "<group>"; };
-		B7B16D3C1A361D16005267AF /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = CustomClasses/DataManager.h; sourceTree = "<group>"; };
-		B7B16D3D1A361D16005267AF /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataManager.m; path = CustomClasses/DataManager.m; sourceTree = "<group>"; };
 		B7B16D4D1A36201B005267AF /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = RigaDevDay/Libs/SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
 		B7B16D4E1A36201B005267AF /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = RigaDevDay/Libs/SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
 		B7B16D531A362646005267AF /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NavigationViewController.h; path = Controllers/NavigationViewController.h; sourceTree = "<group>"; };
@@ -522,6 +528,19 @@
 				38B572591C74AE650033E40E /* Speaker.m */,
 			);
 			name = ManagedObjects;
+			sourceTree = "<group>";
+		};
+		38F3D38F1C7B0D05003B6835 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				38F3D3901C7B0D2A003B6835 /* DataManager.h */,
+				38F3D3911C7B0D2A003B6835 /* DataManager.m */,
+				38F3D3931C7B0D63003B6835 /* WebserviceManager.h */,
+				38F3D3941C7B0D63003B6835 /* WebserviceManager.m */,
+				38F3D3961C7B1209003B6835 /* PersistanceService.h */,
+				38F3D3971C7B1209003B6835 /* PersistanceService.m */,
+			);
+			name = Manager;
 			sourceTree = "<group>";
 		};
 		97F889471A49B6D900A135C9 /* Venue */ = {
@@ -681,12 +700,12 @@
 		B7B16CFD1A361966005267AF /* RigaDevDay */ = {
 			isa = PBXGroup;
 			children = (
-				C00A142A1C7A33BB009B60FF /* View */,
-				38B571DF1C749FD40033E40E /* Model */,
+				38F3D38F1C7B0D05003B6835 /* Manager */,
 				B7B16D261A361A46005267AF /* Controllers */,
-				B7B16D3F1A361D19005267AF /* CustomClasses */,
 				B7B16D501A36201F005267AF /* Libs */,
+				38B571DF1C749FD40033E40E /* Model */,
 				B7B16CFE1A361966005267AF /* Supporting Files */,
+				C00A142A1C7A33BB009B60FF /* View */,
 			);
 			path = RigaDevDay;
 			sourceTree = "<group>";
@@ -835,23 +854,6 @@
 			);
 			name = About;
 			path = ..;
-			sourceTree = "<group>";
-		};
-		B7B16D3F1A361D19005267AF /* CustomClasses */ = {
-			isa = PBXGroup;
-			children = (
-				B7B16D431A361D37005267AF /* DataManager */,
-			);
-			name = CustomClasses;
-			sourceTree = "<group>";
-		};
-		B7B16D431A361D37005267AF /* DataManager */ = {
-			isa = PBXGroup;
-			children = (
-				B7B16D3C1A361D16005267AF /* DataManager.h */,
-				B7B16D3D1A361D16005267AF /* DataManager.m */,
-			);
-			name = DataManager;
 			sourceTree = "<group>";
 		};
 		B7B16D501A36201F005267AF /* Libs */ = {
@@ -1282,9 +1284,11 @@
 				B7B16D2A1A361B2D005267AF /* EventViewController.m in Sources */,
 				38B572641C74AE650033E40E /* Speaker+CoreDataProperties.m in Sources */,
 				C05C15F01C7A7EE600ABA469 /* SpeakerInfoViewController.m in Sources */,
+				38F3D3921C7B0D2A003B6835 /* DataManager.m in Sources */,
 				B7B16D551A362646005267AF /* NavigationViewController.m in Sources */,
 				B70EEB571A485258008CD9C6 /* MHTabBarController.m in Sources */,
 				C00A14191C77B7E4009B60FF /* NSDictionary+LinqExtensions.m in Sources */,
+				38F3D3951C7B0D63003B6835 /* WebserviceManager.m in Sources */,
 				B7B16D321A361BAC005267AF /* ScheduleViewController.m in Sources */,
 				38B5725A1C74AE650033E40E /* Event+CoreDataProperties.m in Sources */,
 				38B572611C74AE650033E40E /* Interval.m in Sources */,
@@ -1298,6 +1302,7 @@
 				C00A14211C791B0D009B60FF /* PageViewController.m in Sources */,
 				97F889441A49B64600A135C9 /* VenueViewController.m in Sources */,
 				B7B16D2E1A361B7A005267AF /* SpeechInfoViewController.m in Sources */,
+				38F3D3981C7B1209003B6835 /* PersistanceService.m in Sources */,
 				38B5725B1C74AE650033E40E /* Event.m in Sources */,
 				B7FA0F1D1A4C731F002BD598 /* GlobalMetupTableViewCell.m in Sources */,
 				B7B16D361A361BD0005267AF /* BookmarksViewController.m in Sources */,
@@ -1310,7 +1315,6 @@
 				38B5727D1C74B9E40033E40E /* Room.m in Sources */,
 				B7FB3D451A62CCD2000A73E9 /* TwitterViewController.m in Sources */,
 				B7FDD09D1A4ABB1B0001C098 /* OrganizersViewController.m in Sources */,
-				B7B16D3E1A361D16005267AF /* DataManager.m in Sources */,
 				B7B16D011A361966005267AF /* main.m in Sources */,
 				38B572651C74AE650033E40E /* Speaker.m in Sources */,
 			);

@@ -44,6 +44,6 @@
 - (UIImage *)getActiveBookmarkImage;
 - (UIImage *)getInActiveBookmarkImageForInfo:(BOOL)forInfo;
 
-- (void)updateScheduleIfNeeded;
+- (void)updateScheduleIfNeededWithData:(NSData *)data;
 
 @end

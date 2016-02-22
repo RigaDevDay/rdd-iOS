@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "DataManager.h"
+#import "WebserviceManager.h"
 
 @interface AppDelegate ()
 
@@ -18,7 +19,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-//    [DataManager sharedInstance];
+//    [[DataManager sharedInstance] updateScheduleIfNeeded];
+    [[WebserviceManager sharedInstance] loadScheduleWithCompletionBlock:^(id data) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+    [[DataManager sharedInstance] updateScheduleIfNeededWithData:data];
+        });
+    
+    } andErrorBlock:^(NSError *error) {
+        NSLog(@"Error loading schedule: %@", error.localizedDescription);
+    }];
     return YES;
 }
 
@@ -38,7 +47,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     
-    [[DataManager sharedInstance] updateScheduleIfNeeded];
+
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 
@@ -78,17 +87,7 @@
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"ScheduleModel.sqlite"];
     NSError *error = nil;
     if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
-        NSURL *walURL = [[storeURL URLByDeletingPathExtension] URLByAppendingPathExtension:@"sqlite-wal"];
-        NSURL *shmURL = [[storeURL URLByDeletingPathExtension] URLByAppendingPathExtension:@"sqlite-shm"];
-        
-        BOOL result = YES;
-        
-        for (NSURL *url in @[storeURL, walURL, shmURL]) {
-            if ([[NSFileManager defaultManager] fileExistsAtPath:url.path]) {
-                result = [[NSFileManager defaultManager] removeItemAtURL:url error:&error];
-            }
-        }
-        
+        BOOL result = [self deleteDataBase];
         if (result) {
             [_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error];
             if (error) {
@@ -104,6 +103,21 @@
     }
     
     return _persistentStoreCoordinator;
+}
+
+- (BOOL)deleteDataBase {
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"ScheduleModel.sqlite"];
+    NSURL *walURL = [[storeURL URLByDeletingPathExtension] URLByAppendingPathExtension:@"sqlite-wal"];
+    NSURL *shmURL = [[storeURL URLByDeletingPathExtension] URLByAppendingPathExtension:@"sqlite-shm"];
+    NSError *error = nil;
+    BOOL result = YES;
+    
+    for (NSURL *url in @[storeURL, walURL, shmURL]) {
+        if ([[NSFileManager defaultManager] fileExistsAtPath:url.path]) {
+            result = [[NSFileManager defaultManager] removeItemAtURL:url error:&error];
+        }
+    }
+    return result;
 }
 
 

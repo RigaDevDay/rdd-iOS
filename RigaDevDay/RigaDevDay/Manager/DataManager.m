@@ -70,29 +70,8 @@
     return attrib;
 }
 
-- (void)updateScheduleIfNeeded {
-    [self checkForJSONs];
-    // Copy to drive in needed
-    //    NSArray *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    //    NSString *documentsDirectory = [path firstObject];
-    //    _schedulePath = [documentsDirectory stringByAppendingPathComponent:@"schedule.json"];
-    //
-    //    // Check for schedule
-    //    if (![[NSFileManager defaultManager] fileExistsAtPath:_schedulePath]) {
-    //        NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-    //        NSString *resourcePath = [bundle pathForResource:@"schedule" ofType:@"json"];
-    //        NSError *error;
-    //        [[NSFileManager defaultManager] copyItemAtPath:resourcePath toPath:_schedulePath error:&error];
-    //        if (error) {
-    //            NSLog(@"%@", [error localizedDescription]);
-    //        }
-    //        // update user defines
-    //        [[NSUserDefaults standardUserDefaults] setValue:@"2" forKey:SCHEDULE_VERSION_KEY];
-    //        [[NSUserDefaults standardUserDefaults] synchronize];
-    //    }
-    
-    
-    
+- (void)updateScheduleIfNeededWithData:(NSData *)data {
+    [self p_parseDataAndSaveToDB:data];
     
     //    // Check for Interner
     //    if(!_reach) {
@@ -108,47 +87,41 @@
     //    };
     //
     //    [_reach startNotifier];
-    
-    
-    // Download JSON
-    // Parse JSON
-    // Check with Local Version
 }
 
-- (void)checkForJSONs {
-    
-    //    [_reach stopNotifier];
-    //
-    //    NSURL *url = [NSURL URLWithString:@"https://raw.githubusercontent.com/RigaDevDay/RigaDevDay.github.io/58b43589bbe2f24e39f8925117c31c20fac47037/assets/data/main.json"];
-    //
-    //    NSURLRequest *request = [NSURLRequest requestWithURL:url
-    //                                             cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
-    //                                         timeoutInterval:3.0];
-    //
-    //    // Get the data
-    //    NSURLResponse *response;
-    //    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
-    NSArray *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [path firstObject];
-    _schedulePath = [documentsDirectory stringByAppendingPathComponent:@"schedule.json"];
-    if (![[NSFileManager defaultManager] fileExistsAtPath:_schedulePath]) {
-        NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-        NSString *resourcePath = [bundle pathForResource:@"schedule" ofType:@"json"];
-        NSError *error;
-        [[NSFileManager defaultManager] copyItemAtPath:resourcePath toPath:_schedulePath error:&error];
-        if (error) {
-            NSLog(@"%@", [error localizedDescription]);
-        }
-        //            // update user defines
-        //            [[NSUserDefaults standardUserDefaults] setValue:@"2" forKey:SCHEDULE_VERSION_KEY];
-        //            [[NSUserDefaults standardUserDefaults] synchronize];
-    }
-    NSData *data = [NSData dataWithContentsOfFile:_schedulePath];
-    if (![data length]) return;
-    //    [data writeToFile:_schedulePath atomically:YES];
-    
-    [self p_parseData:data];
-}
+
+
+//- (void)checkForJSONs {
+//    
+//    //    [_reach stopNotifier];
+//    //
+//    //    NSURL *url = [NSURL URLWithString:@"https://raw.githubusercontent.com/RigaDevDay/RigaDevDay.github.io/58b43589bbe2f24e39f8925117c31c20fac47037/assets/data/main.json"];
+//    //
+//    //    NSURLRequest *request = [NSURLRequest requestWithURL:url
+//    //                                             cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+//    //                                         timeoutInterval:3.0];
+//    //
+//    //    // Get the data
+//    //    NSURLResponse *response;
+//    //    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
+//    NSArray *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//    NSString *documentsDirectory = [path firstObject];
+//    _schedulePath = [documentsDirectory stringByAppendingPathComponent:@"schedule.json"];
+//    if (![[NSFileManager defaultManager] fileExistsAtPath:_schedulePath]) {
+//        NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+//        NSString *resourcePath = [bundle pathForResource:@"schedule" ofType:@"json"];
+//        NSError *error;
+//        [[NSFileManager defaultManager] copyItemAtPath:resourcePath toPath:_schedulePath error:&error];
+//        if (error) {
+//            NSLog(@"%@", [error localizedDescription]);
+//        }
+//    }
+//    NSData *data = [NSData dataWithContentsOfFile:_schedulePath];
+//    if (![data length]) return;
+//    //    [data writeToFile:_schedulePath atomically:YES];
+//    
+//    [self p_parseDataAndSaveToDB:data];
+//}
 
 #pragma mark - Public methods - Day
 
@@ -323,6 +296,23 @@
 
 #pragma  mark - Private methods
 
+- (NSData *)p_localSchedule {
+    NSArray *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [path firstObject];
+    _schedulePath = [documentsDirectory stringByAppendingPathComponent:@"schedule.json"];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:_schedulePath]) {
+        NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+        NSString *resourcePath = [bundle pathForResource:@"schedule" ofType:@"json"];
+        NSError *error;
+        [[NSFileManager defaultManager] copyItemAtPath:resourcePath toPath:_schedulePath error:&error];
+        if (error) {
+            NSLog(@"%@", [error localizedDescription]);
+        }
+    }
+    NSData *data = [NSData dataWithContentsOfFile:_schedulePath];
+    return data;
+}
+
 - (NSData *)p_dataFromJSONFileNamed:(NSString *)fileName
 {
     NSBundle *bundle = [NSBundle bundleForClass:[self class]];
@@ -331,9 +321,11 @@
     return jsonData;
 }
 
-- (void)p_parseData:(NSData *)data {
+- (void)p_parseDataAndSaveToDB:(NSData *)data {
     //    NSData *data = [NSData dataWithContentsOfFile:_schedulePath];
-        if (![data length]) return;
+    if (![data length]) {
+        data = [self p_localSchedule];
+    }
     
     // Now create a NSDictionary from the JSON data
     NSError *error;
@@ -434,11 +426,13 @@
                         event.subtitle = (events[0][@"subtitle"]) ? events[0][@"subtitle"] : @"";
                         event.eventDesc = (events[0][@"description"]) ? events[0][@"description"] : @"";
                         event.interval = interval;
+                         [appDelegate saveContext];
                         
                         [self p_addSpeakers:events[0][@"speakers"] toEvent:event];
+//                         [appDelegate saveContext];
                         [self p_addTags:events[0][@"tags"] toEvent:event];
                         
-                        [appDelegate saveContext];
+//                        [appDelegate saveContext];
                     } else {
                         
                         for (NSDictionary *eventDict in events) {
@@ -447,14 +441,18 @@
                             event.subtitle = eventDict[@"subtitle"];
                             event.eventDesc = eventDict[@"description"];
                             event.interval = interval;
-                            
+//                             [appDelegate saveContext];
                             [self p_addRoomWithName:roomNames[eventCount] order:++eventCount day:day toEvent:event];
+//                             [appDelegate saveContext];
                             [self p_addSpeakers:eventDict[@"speakers"] toEvent:event];
+//                             [appDelegate saveContext];
                             [self p_addTags:eventDict[@"tags"] toEvent:event];
+//                             [appDelegate saveContext];
                         }
                         
-                        [appDelegate saveContext];
+                        
                     }
+                    [appDelegate saveContext];
                 }
             }
             [appDelegate saveContext];
@@ -480,15 +478,18 @@
 }
 
 - (void)p_addRoomWithName:(NSString *)name order:(int)order day:(Day *)day toEvent:(Event *)event {
-       AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     
     [request setEntity: [NSEntityDescription entityForName:NSStringFromClass([Room class]) inManagedObjectContext: appDelegate.managedObjectContext]];
     [request setPredicate:[NSPredicate predicateWithFormat:@"ANY days == %@ AND name LIKE %@ AND order == %@", day, name, [NSNumber numberWithInt:order]]];
     request.fetchLimit = 1;
     NSError *error = nil;
-    
-    NSArray *results = [appDelegate.managedObjectContext executeFetchRequest:request error:&error];
+    NSArray *results;
+//    @synchronized(appDelegate.managedObjectContext) {
+        results = [appDelegate.managedObjectContext executeFetchRequest:request error:&error];
+//    }
+
     if (!error) {
         if ([results count]) {
             event.room = [results firstObject];
@@ -497,7 +498,7 @@
 }
 
 - (void)p_addTags:(NSArray *)tags toEvent:(Event *)event {
-            AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     for (NSString *tagName in tags) {
         NSFetchRequest *request = [[NSFetchRequest alloc] init];
         
@@ -522,10 +523,10 @@
 }
 
 - (void)p_addSpeakers:(NSArray *)speakers toEvent:(Event *)event {
-            AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     for (int i = 0; i < speakers.count; i++) {
         NSFetchRequest *request = [[NSFetchRequest alloc] init];
-
+        
         [request setEntity: [NSEntityDescription entityForName:NSStringFromClass([Speaker class]) inManagedObjectContext: appDelegate.managedObjectContext]];
         [request setPredicate:[NSPredicate predicateWithFormat:@"speakerID == %@", speakers[i]]];
         request.fetchLimit = 1;

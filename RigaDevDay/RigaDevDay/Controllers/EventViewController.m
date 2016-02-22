@@ -31,6 +31,7 @@
 }
 
 - (void)p_setupUI {
+    self.title = @"Event";
     self.iboTimeLocationLabel.text = (self.event.room) ? [NSString stringWithFormat:@"%@ - %@, %@", self.event.interval.startTime, self.event.interval.endTime, self.event.room.name] : [NSString stringWithFormat:@"%@ - %@", self.event.interval.startTime, self.event.interval.endTime];
     self.iboEventTitleLabel.text = (self.event.title.length) ? self.event.title : self.event.subtitle;
     self.iboEventDescriptionLabel.attributedText = [[DataManager sharedInstance] attributedStringFromHtml:self.event.eventDesc withFont:[UIFont fontWithName:@"HelveticaNeue" size:16.0]];

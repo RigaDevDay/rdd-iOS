@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		381FE0461C7CA30F0080C9EC /* Sponsor+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 381FE0431C7CA30F0080C9EC /* Sponsor+CoreDataProperties.m */; };
+		381FE0471C7CA30F0080C9EC /* Sponsor.m in Sources */ = {isa = PBXBuildFile; fileRef = 381FE0451C7CA30F0080C9EC /* Sponsor.m */; };
+		381FE04A1C7CAC810080C9EC /* SponsorCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 381FE0491C7CAC810080C9EC /* SponsorCollectionViewCell.m */; };
 		38A0AACD1C7747220005A0B5 /* DaysTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A0AACC1C7747220005A0B5 /* DaysTableViewController.m */; };
 		38B571F41C74A6B70033E40E /* ScheduleModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 38B571F21C74A6B70033E40E /* ScheduleModel.xcdatamodeld */; };
 		38B571F61C74A7370033E40E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B571F51C74A7370033E40E /* CoreData.framework */; };
@@ -117,8 +120,7 @@
 		B7FB3D6D1A62FC31000A73E9 /* Sweden.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FB3D5B1A62FC31000A73E9 /* Sweden.png */; };
 		B7FB3D6E1A62FC31000A73E9 /* UK.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FB3D5C1A62FC31000A73E9 /* UK.png */; };
 		B7FB3D6F1A62FC31000A73E9 /* USA.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FB3D5D1A62FC31000A73E9 /* USA.png */; };
-		B7FDD09D1A4ABB1B0001C098 /* OrganizersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD09C1A4ABB1B0001C098 /* OrganizersViewController.m */; };
-		B7FDD0A81A4ABFFE0001C098 /* OrganizersTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD0A71A4ABFFE0001C098 /* OrganizersTableViewCell.m */; };
+		B7FDD09D1A4ABB1B0001C098 /* SponsorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD09C1A4ABB1B0001C098 /* SponsorsViewController.m */; };
 		B7FDD0CB1A4AC1560001C098 /* 4finance_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0AA1A4AC1560001C098 /* 4finance_logo.png */; };
 		B7FDD0CC1A4AC1560001C098 /* accenture.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0AB1A4AC1560001C098 /* accenture.png */; };
 		B7FDD0CD1A4AC1560001C098 /* ctco_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0AC1A4AC1560001C098 /* ctco_logo.png */; };
@@ -180,6 +182,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		381FE0421C7CA30F0080C9EC /* Sponsor+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Sponsor+CoreDataProperties.h"; path = "Model/Sponsor+CoreDataProperties.h"; sourceTree = "<group>"; };
+		381FE0431C7CA30F0080C9EC /* Sponsor+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Sponsor+CoreDataProperties.m"; path = "Model/Sponsor+CoreDataProperties.m"; sourceTree = "<group>"; };
+		381FE0441C7CA30F0080C9EC /* Sponsor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sponsor.h; path = Model/Sponsor.h; sourceTree = "<group>"; };
+		381FE0451C7CA30F0080C9EC /* Sponsor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Sponsor.m; path = Model/Sponsor.m; sourceTree = "<group>"; };
+		381FE0481C7CAC810080C9EC /* SponsorCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SponsorCollectionViewCell.h; path = Controllers/SponsorCollectionViewCell.h; sourceTree = "<group>"; };
+		381FE0491C7CAC810080C9EC /* SponsorCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SponsorCollectionViewCell.m; path = Controllers/SponsorCollectionViewCell.m; sourceTree = "<group>"; };
 		38A0AACB1C7747220005A0B5 /* DaysTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DaysTableViewController.h; path = RigaDevDay/Controllers/DaysTableViewController.h; sourceTree = "<group>"; };
 		38A0AACC1C7747220005A0B5 /* DaysTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DaysTableViewController.m; path = RigaDevDay/Controllers/DaysTableViewController.m; sourceTree = "<group>"; };
 		38B571F31C74A6B70033E40E /* ScheduleModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ScheduleModel.xcdatamodel; sourceTree = "<group>"; };
@@ -322,10 +330,8 @@
 		B7FB3D5B1A62FC31000A73E9 /* Sweden.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sweden.png; sourceTree = "<group>"; };
 		B7FB3D5C1A62FC31000A73E9 /* UK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UK.png; sourceTree = "<group>"; };
 		B7FB3D5D1A62FC31000A73E9 /* USA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = USA.png; sourceTree = "<group>"; };
-		B7FDD09B1A4ABB1B0001C098 /* OrganizersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrganizersViewController.h; path = Controllers/OrganizersViewController.h; sourceTree = "<group>"; };
-		B7FDD09C1A4ABB1B0001C098 /* OrganizersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrganizersViewController.m; path = Controllers/OrganizersViewController.m; sourceTree = "<group>"; };
-		B7FDD0A61A4ABFFE0001C098 /* OrganizersTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrganizersTableViewCell.h; path = Controllers/OrganizersTableViewCell.h; sourceTree = "<group>"; };
-		B7FDD0A71A4ABFFE0001C098 /* OrganizersTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrganizersTableViewCell.m; path = Controllers/OrganizersTableViewCell.m; sourceTree = "<group>"; };
+		B7FDD09B1A4ABB1B0001C098 /* SponsorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SponsorsViewController.h; path = Controllers/SponsorsViewController.h; sourceTree = "<group>"; };
+		B7FDD09C1A4ABB1B0001C098 /* SponsorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SponsorsViewController.m; path = Controllers/SponsorsViewController.m; sourceTree = "<group>"; };
 		B7FDD0AA1A4AC1560001C098 /* 4finance_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4finance_logo.png; sourceTree = "<group>"; };
 		B7FDD0AB1A4AC1560001C098 /* accenture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = accenture.png; sourceTree = "<group>"; };
 		B7FDD0AC1A4AC1560001C098 /* ctco_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ctco_logo.png; sourceTree = "<group>"; };
@@ -420,6 +426,10 @@
 		38B5720B1C74AB980033E40E /* ManagedObjects */ = {
 			isa = PBXGroup;
 			children = (
+				381FE0421C7CA30F0080C9EC /* Sponsor+CoreDataProperties.h */,
+				381FE0431C7CA30F0080C9EC /* Sponsor+CoreDataProperties.m */,
+				381FE0441C7CA30F0080C9EC /* Sponsor.h */,
+				381FE0451C7CA30F0080C9EC /* Sponsor.m */,
 				38B572721C74B9E40033E40E /* Day+CoreDataProperties.h */,
 				38B572731C74B9E40033E40E /* Day+CoreDataProperties.m */,
 				38B572741C74B9E40033E40E /* Day.h */,
@@ -764,10 +774,10 @@
 		B7FDD09E1A4ABB200001C098 /* Organizers */ = {
 			isa = PBXGroup;
 			children = (
-				B7FDD09B1A4ABB1B0001C098 /* OrganizersViewController.h */,
-				B7FDD09C1A4ABB1B0001C098 /* OrganizersViewController.m */,
-				B7FDD0A61A4ABFFE0001C098 /* OrganizersTableViewCell.h */,
-				B7FDD0A71A4ABFFE0001C098 /* OrganizersTableViewCell.m */,
+				B7FDD09B1A4ABB1B0001C098 /* SponsorsViewController.h */,
+				B7FDD09C1A4ABB1B0001C098 /* SponsorsViewController.m */,
+				381FE0481C7CAC810080C9EC /* SponsorCollectionViewCell.h */,
+				381FE0491C7CAC810080C9EC /* SponsorCollectionViewCell.m */,
 			);
 			name = Organizers;
 			sourceTree = "<group>";
@@ -1077,6 +1087,7 @@
 				B7B16D4F1A36201B005267AF /* SWRevealViewController.m in Sources */,
 				C05C15FB1C7BCC5E00ABA469 /* VenuePageViewController.m in Sources */,
 				38B5727B1C74B9E40033E40E /* Day.m in Sources */,
+				381FE0461C7CA30F0080C9EC /* Sponsor+CoreDataProperties.m in Sources */,
 				C00A14181C77B7E4009B60FF /* NSArray+LinqExtensions.m in Sources */,
 				97F8893B1A49A84E00A135C9 /* SpeakersViewController.m in Sources */,
 				B7B16D2A1A361B2D005267AF /* EventViewController.m in Sources */,
@@ -1099,16 +1110,17 @@
 				C00A14211C791B0D009B60FF /* RoomPageViewController.m in Sources */,
 				97F889441A49B64600A135C9 /* VenueViewController.m in Sources */,
 				38F3D3981C7B1209003B6835 /* PersistanceService.m in Sources */,
+				381FE04A1C7CAC810080C9EC /* SponsorCollectionViewCell.m in Sources */,
 				38B5725B1C74AE650033E40E /* Event.m in Sources */,
 				B7FA0F1D1A4C731F002BD598 /* GlobalMetupTableViewCell.m in Sources */,
 				B7B16D361A361BD0005267AF /* BookmarksViewController.m in Sources */,
+				381FE0471C7CA30F0080C9EC /* Sponsor.m in Sources */,
 				38B5727A1C74B9E40033E40E /* Day+CoreDataProperties.m in Sources */,
 				B7FDD1141A4B21110001C098 /* SpeakerTableViewCell.m in Sources */,
-				B7FDD0A81A4ABFFE0001C098 /* OrganizersTableViewCell.m in Sources */,
 				38B5725F1C74AE650033E40E /* Tag.m in Sources */,
 				38B572601C74AE650033E40E /* Interval+CoreDataProperties.m in Sources */,
 				38B5727D1C74B9E40033E40E /* Room.m in Sources */,
-				B7FDD09D1A4ABB1B0001C098 /* OrganizersViewController.m in Sources */,
+				B7FDD09D1A4ABB1B0001C098 /* SponsorsViewController.m in Sources */,
 				B7B16D011A361966005267AF /* main.m in Sources */,
 				38B572651C74AE650033E40E /* Speaker.m in Sources */,
 				C05C16021C7BD61900ABA469 /* Venue.m in Sources */,

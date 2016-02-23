@@ -20,7 +20,7 @@ static NSString *simpleTableIdentifier = @"TableCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _navigationArray = @[@"Schedule", @"Speakers", @"My Bookmarks", @"Venue", @"Organizers"];
+    _navigationArray = @[@"Schedule", @"Speakers", @"My Bookmarks", @"Venue", @"Sponsors"];
      // Small UI Improvments
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.tableView.contentInset = UIEdgeInsetsMake(21, 0, 0, 0);
@@ -45,7 +45,7 @@ static NSString *simpleTableIdentifier = @"TableCell";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"Cell %@ selected",[_navigationArray objectAtIndex:indexPath.row]);
+//    NSLog(@"Cell %@ selected",[_navigationArray objectAtIndex:indexPath.row]);
 }
 
 @end

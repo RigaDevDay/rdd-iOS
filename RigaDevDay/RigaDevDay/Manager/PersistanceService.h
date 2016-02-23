@@ -17,6 +17,7 @@
 - (void)saveDataToFileWithUniqueName:(NSData*)data onCompletion:(CompletionBlock)cblock onError:(ErrorBlock)eblock;
 - (void)removeFile:(NSString*)filePath onCompletion:(CompletionBlock)cblock onError:(ErrorBlock)eblock;
 
+
 - (void)saveImage:(UIImage*)data forUrl:(NSString*)url onCompletion:(CompletionBlock)cblock onError:(ErrorBlock)eblock;
 - (void)loadImageForUrl:(NSString*)url onCompletion:(CompletionBlock)cblock onError:(ErrorBlock)eblock;
 - (void)removeAllImagesOnCompletion:(CompletionBlock)cblock onError:(ErrorBlock)eblock;

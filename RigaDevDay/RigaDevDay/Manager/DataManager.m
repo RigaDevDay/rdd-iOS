@@ -16,6 +16,7 @@
 #import "Tag.h"
 #import "Room.h"
 #import "Venue.h"
+#import "Sponsor.h"
 
 #define SCHEDULE_VERSION_KEY @"scheduleVersion"
 #define SPEAKERS_VERSION_KEY @"speakersVersion"
@@ -73,6 +74,22 @@
 
 - (void)updateScheduleIfNeededWithData:(NSData *)data {
     [self p_parseDataAndSaveToDB:data];
+}
+
+#pragma mark - Public methods - Venue
+
+- (NSArray *)allSponsors {
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    [request setEntity: [NSEntityDescription entityForName:NSStringFromClass([Sponsor class]) inManagedObjectContext: appDelegate.managedObjectContext]];
+    [request setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"sponsorID" ascending:YES]]];
+    NSError *error = nil;
+    
+    NSArray *results = [appDelegate.managedObjectContext executeFetchRequest:request error:&error];
+    if (!error) {
+        return results;
+    }
+    return @[];
 }
 
 #pragma mark - Public methods - Venue
@@ -220,7 +237,7 @@
     [request setEntity: [NSEntityDescription entityForName:NSStringFromClass([Speaker class]) inManagedObjectContext: appDelegate.managedObjectContext]];
     [request setPredicate:[NSPredicate predicateWithFormat:@"(name CONTAINS[cd] %@) OR (company CONTAINS[cd] %@) OR (jobTitle CONTAINS[cd] %@)", name, name, name]];
     [request setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]]];
-
+    
     NSError *error = nil;
     
     NSArray *results = [appDelegate.managedObjectContext executeFetchRequest:request error:&error];
@@ -333,7 +350,7 @@
     if (![data length]) {
         data = [self p_localSchedule];
     }
-//     data = [self p_localSchedule];
+    //     data = [self p_localSchedule];
     
     // Now create a NSDictionary from the JSON data
     NSError *error;
@@ -347,7 +364,7 @@
         
         
         if (![currentScheduleVersion isEqualToString:latestScheduleVersion]) {
-
+            
             // Save latest version
             [[NSUserDefaults standardUserDefaults] setValue:latestScheduleVersion forKey:SCHEDULE_VERSION_KEY];
             [[NSUserDefaults standardUserDefaults] synchronize];
@@ -355,16 +372,26 @@
             //Parse new data
             NSArray *speakers = jsonDict[@"speakers"];
             AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-        
-        
-        if ([appDelegate deleteDataBase]) {
             
-        }
-//        return;
-            NSManagedObjectContext *managedObjectContext = appDelegate.managedObjectContext;
+            
+            if ([appDelegate deleteDataBase]) {
+                
+            }
+            
+            NSArray *sponsors = jsonDict[@"sponsors"];
+            for (NSDictionary *sponsorDict in sponsors) {
+                Sponsor *sponsor = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Sponsor class])
+                                                                 inManagedObjectContext:appDelegate.managedObjectContext];
+                sponsor.sponsorID = sponsorDict[@"id"];
+                sponsor.img = sponsorDict[@"img"];
+                sponsor.sponsorDesc = sponsorDict[@"description"];
+                sponsor.url = sponsorDict[@"url"];
+            }
+            [appDelegate saveContext];
+            
             for (NSDictionary *speakerDict in speakers) {
                 Speaker *speaker = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Speaker class])
-                                                                 inManagedObjectContext:managedObjectContext];
+                                                                 inManagedObjectContext:appDelegate.managedObjectContext];
                 speaker.speakerID =  [NSNumber numberWithInteger:[speakerDict[@"id"] integerValue]];
                 speaker.name = speakerDict[@"name"];
                 speaker.country = speakerDict[@"country"];
@@ -383,7 +410,7 @@
             int order = 1;
             for (NSDictionary *dayDict in days) {
                 Day *day = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Day class])
-                                                         inManagedObjectContext:managedObjectContext];
+                                                         inManagedObjectContext:appDelegate.managedObjectContext];
                 day.order = [NSNumber numberWithInt:order];
                 order++;
                 day.title = dayDict[@"title"];
@@ -408,7 +435,7 @@
                             room = [results firstObject];
                         } else {
                             room = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Room class])
-                                                                 inManagedObjectContext:managedObjectContext];
+                                                                 inManagedObjectContext:appDelegate.managedObjectContext];
                             room.name = roomName;
                             room.order = [NSNumber numberWithInt:roomOrder];
                             
@@ -423,7 +450,7 @@
                 int intervalOrder = 1;
                 for (NSDictionary *intervalDict in intervals) {
                     Interval *interval = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Interval class])
-                                                                       inManagedObjectContext:managedObjectContext];
+                                                                       inManagedObjectContext:appDelegate.managedObjectContext];
                     interval.order = [NSNumber numberWithInt:intervalOrder];
                     intervalOrder++;
                     interval.startTime = intervalDict[@"time"];
@@ -437,33 +464,33 @@
                     
                     if (events.count == 1) {
                         Event *event = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Event class])
-                                                                     inManagedObjectContext:managedObjectContext];
+                                                                     inManagedObjectContext:appDelegate.managedObjectContext];
                         event.title = (events[0][@"title"]) ? events[0][@"title"] : @"";
                         event.subtitle = (events[0][@"subtitle"]) ? events[0][@"subtitle"] : @"";
                         event.eventDesc = (events[0][@"description"]) ? events[0][@"description"] : @"";
                         event.interval = interval;
-                         [appDelegate saveContext];
+                        [appDelegate saveContext];
                         
                         [self p_addSpeakers:events[0][@"speakers"] toEvent:event];
-//                         [appDelegate saveContext];
+                        //                         [appDelegate saveContext];
                         [self p_addTags:events[0][@"tags"] toEvent:event];
                         
-//                        [appDelegate saveContext];
+                        //                        [appDelegate saveContext];
                     } else {
                         
                         for (NSDictionary *eventDict in events) {
                             Event *event = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Event class])
-                                                                         inManagedObjectContext:managedObjectContext];
+                                                                         inManagedObjectContext:appDelegate.managedObjectContext];
                             event.subtitle = eventDict[@"subtitle"];
                             event.eventDesc = eventDict[@"description"];
                             event.interval = interval;
-//                             [appDelegate saveContext];
+                            //                             [appDelegate saveContext];
                             [self p_addRoomWithName:roomNames[eventCount] order:++eventCount day:day toEvent:event];
-//                             [appDelegate saveContext];
+                            //                             [appDelegate saveContext];
                             [self p_addSpeakers:eventDict[@"speakers"] toEvent:event];
-//                             [appDelegate saveContext];
+                            //                             [appDelegate saveContext];
                             [self p_addTags:eventDict[@"tags"] toEvent:event];
-//                             [appDelegate saveContext];
+                            //                             [appDelegate saveContext];
                         }
                         
                         
@@ -502,10 +529,10 @@
     request.fetchLimit = 1;
     NSError *error = nil;
     NSArray *results;
-//    @synchronized(appDelegate.managedObjectContext) {
-        results = [appDelegate.managedObjectContext executeFetchRequest:request error:&error];
-//    }
-
+    //    @synchronized(appDelegate.managedObjectContext) {
+    results = [appDelegate.managedObjectContext executeFetchRequest:request error:&error];
+    //    }
+    
     if (!error) {
         if ([results count]) {
             event.room = [results firstObject];

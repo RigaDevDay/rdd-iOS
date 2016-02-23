@@ -19,6 +19,9 @@
 @property (strong, nonatomic) Day *selectedDay;
 @property (strong, nonatomic) Room *selectedRoom;
 
+//Sponsor
+- (NSArray *)allSponsors;
+
 //Venue
 - (NSArray *)allVenues;
 

@@ -1,5 +1,5 @@
 //
-//  OrganizersTableViewCell.h
+//  OrganizersViewController.h
 //  RigaDevDay
 //
 //  Created by Deniss Kaibagarovs on 12/24/14.
@@ -8,7 +8,5 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OrganizersTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
-
+@interface SponsorsViewController : UIViewController
 @end

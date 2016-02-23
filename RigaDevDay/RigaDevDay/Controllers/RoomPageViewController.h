@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "Event.h"
 
-@interface PageViewController : UIViewController
+@interface RoomPageViewController : UIViewController
 @property (nonatomic, strong) Event *selectedEvent;
 @end

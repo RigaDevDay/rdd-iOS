@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Venue.h"
 
 @interface VenueViewController : UIViewController
-
+@property (nonatomic, strong) Venue *venue;
 @end

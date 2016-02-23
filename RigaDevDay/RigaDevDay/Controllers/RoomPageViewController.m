@@ -6,7 +6,7 @@
 //  Copyright © 2016 Riga Dev Day. All rights reserved.
 //
 
-#import "PageViewController.h"
+#import "RoomPageViewController.h"
 #import "CAPSPageMenu.h"
 #import "ScheduleViewController.h"
 #import "SWRevealViewController.h"
@@ -17,7 +17,7 @@
 #import "AppDelegate.h"
 #import "WebserviceManager.h"
 
-@interface PageViewController () <DaysTableVCDelegate>
+@interface RoomPageViewController () <DaysTableVCDelegate>
 @property (nonatomic) CAPSPageMenu *pageMenu;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonMenu;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *iboActivityIndicator;
@@ -26,7 +26,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *iboDayBarButtonItem;
 @end
 
-@implementation PageViewController
+@implementation RoomPageViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

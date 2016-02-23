@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PageViewController.h"
+#import "RoomPageViewController.h"
 
 @interface ScheduleViewController : UIViewController
-@property (nonatomic, strong) PageViewController *pageVC;
+@property (nonatomic, strong) RoomPageViewController *pageVC;
 @property (nonatomic, strong) NSArray *events;
 @end

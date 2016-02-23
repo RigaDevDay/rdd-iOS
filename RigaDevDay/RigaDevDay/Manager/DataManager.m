@@ -15,6 +15,7 @@
 #import "Interval.h"
 #import "Tag.h"
 #import "Room.h"
+#import "Venue.h"
 
 #define SCHEDULE_VERSION_KEY @"scheduleVersion"
 #define SPEAKERS_VERSION_KEY @"speakersVersion"
@@ -72,56 +73,46 @@
 
 - (void)updateScheduleIfNeededWithData:(NSData *)data {
     [self p_parseDataAndSaveToDB:data];
-    
-    //    // Check for Interner
-    //    if(!_reach) {
-    //        _reach = [Reachability reachabilityWithHostname:@"www.google.com"];
-    //    }
-    //    // Set the blocks
-    //    _reach.reachableBlock = ^(Reachability*reach)
-    //    {
-    //        dispatch_async(dispatch_get_main_queue(), ^{
-    //            NSLog(@"REACHABLE!");
-    ////            [self checkForJSONs];
-    //        });
-    //    };
-    //
-    //    [_reach startNotifier];
 }
 
+#pragma mark - Public methods - Venue
 
-
-//- (void)checkForJSONs {
-//    
-//    //    [_reach stopNotifier];
-//    //
-//    //    NSURL *url = [NSURL URLWithString:@"https://raw.githubusercontent.com/RigaDevDay/RigaDevDay.github.io/58b43589bbe2f24e39f8925117c31c20fac47037/assets/data/main.json"];
-//    //
-//    //    NSURLRequest *request = [NSURLRequest requestWithURL:url
-//    //                                             cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
-//    //                                         timeoutInterval:3.0];
-//    //
-//    //    // Get the data
-//    //    NSURLResponse *response;
-//    //    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
-//    NSArray *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//    NSString *documentsDirectory = [path firstObject];
-//    _schedulePath = [documentsDirectory stringByAppendingPathComponent:@"schedule.json"];
-//    if (![[NSFileManager defaultManager] fileExistsAtPath:_schedulePath]) {
-//        NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-//        NSString *resourcePath = [bundle pathForResource:@"schedule" ofType:@"json"];
-//        NSError *error;
-//        [[NSFileManager defaultManager] copyItemAtPath:resourcePath toPath:_schedulePath error:&error];
-//        if (error) {
-//            NSLog(@"%@", [error localizedDescription]);
-//        }
-//    }
-//    NSData *data = [NSData dataWithContentsOfFile:_schedulePath];
-//    if (![data length]) return;
-//    //    [data writeToFile:_schedulePath atomically:YES];
-//    
-//    [self p_parseDataAndSaveToDB:data];
-//}
+- (NSArray *)allVenues {
+    NSMutableArray *venues = [NSMutableArray array];
+    Venue *venue1 = [[Venue alloc] init];
+    venue1.name = @"Kino Citadele";
+    venue1.venueDesc = @"Kino Citadele - main conference venue, the largest cinema complex in the very centre of Riga.";
+    venue1.address = @"13 Janvara street, 8";
+    venue1.webURL = @"http://www.forumcinemas.lv";
+    venue1.googleMapsURL = @"https://www.google.com/maps/place/Forum+Cinemas+%22Kino+Citadele%22/@56.9461196,24.1147513,17z/data=!3m1!4b1!4m2!3m1!1s0x46eecfd48a65f113:0x45e2f9b438f63703";
+    [venues addObject:venue1];
+    
+    Venue *venue2 = [[Venue alloc] init];
+    venue2.name = @"Mercure Hotel";
+    venue2.venueDesc = @"Workshops will take place at Mercure Hotel.<br><br>Please mention conference code <b>RIGADEVDAY</b> when you request the reservation at the hotel.<br><br>Classic Single room - 68.00 EUR per night.<br>Classic Double room - 73.00 EUR per night.<br><br>Price includes a rich breakfast buffet, free WIFI and VAT<br><br>Make your reservation online at Mercure Hotel Riga (http://mercureriga.lv/en/hotel.html) or by reservations e-mail H9436@accor.com.";
+    venue2.address = @"Elizabetes street, 101";
+    venue2.webURL = @"http://mercureriga.lv/en/hotel.html";
+    venue2.googleMapsURL = @"https://www.google.com/maps/place/Hotel+Mercure+Riga+Centre/@56.947663,24.1211103,17z/data=!3m1!4b1!4m2!3m1!1s0x46eece2cb098446f:0x4ec855f9f6f64474";
+    [venues addObject:venue2];
+    
+    Venue *venue3 = [[Venue alloc] init];
+    venue3.name = @"RockCafe";
+    venue3.venueDesc = @"The official afterparty location after the fist conference day on Wednesday (March 2nd). Everyone is invited!";
+    venue3.address = @"Marstalu iela 2/4";
+    venue3.webURL = @"http://rockcafe.lv/";
+    venue3.googleMapsURL = @"https://www.google.com/maps/place/Latvijas+Pirma+Rokkafejnīca+-+Reiterna+nams/@56.9468666,24.1086241,17.06z/data=!4m2!3m1!1s0x46eecfd428188ce5:0xb212ba4381473440";
+    [venues addObject:venue3];
+    
+    Venue *venue4 = [[Venue alloc] init];
+    venue4.name = @"Avalon Hotel";
+    venue4.venueDesc = @"Please mention conference code RIGADEVDAY when you request the reservation at the hotel.<br><br>Standard Single room EUR 55.00 per night.<br>Standard Double room EUR 60.00 per night.<br>Superior Single room EUR 60.00 per night.<br>Superior Double room EUR 70.00 per night.<br><br>Price includes a rich breakfast \"buffet\", high speed WIFI and VAT.<br>Additional discount for stays of 3 nights min 15%.<br><br>Make your reservation online at Avalon Hotel (http://www.hotelavalon.eu) or by e-mail Reservations@hotelavalon.eu.";
+    venue4.address = @"13.Janvara street, 19";
+    venue4.webURL = @"http://www.hotelavalon.eu";
+    venue4.googleMapsURL = @"https://www.google.com/maps/place/Avalon+hotel/@56.9454923,24.1098326,17z/data=!3m1!4b1!4m2!3m1!1s0x46eecfd5b5c3cc05:0xa226af01150b5eac";
+    [venues addObject:venue4];
+    
+    return venues;
+}
 
 #pragma mark - Public methods - Day
 

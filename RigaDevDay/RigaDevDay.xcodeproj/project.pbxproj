@@ -202,7 +202,6 @@
 		97F8893C1A49B35500A135C9 /* icon_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_back.png; sourceTree = "<group>"; };
 		97F889421A49B64600A135C9 /* VenueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VenueViewController.h; path = Controllers/VenueViewController.h; sourceTree = "<group>"; };
 		97F889431A49B64600A135C9 /* VenueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VenueViewController.m; path = Controllers/VenueViewController.m; sourceTree = "<group>"; };
-		97F889451A49B6D300A135C9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B70F60C21A483F96004EA563 /* backstage_1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backstage_1.jpeg; sourceTree = "<group>"; };
 		B70F60C31A483F96004EA563 /* backstage_10.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backstage_10.jpeg; sourceTree = "<group>"; };
 		B70F60C41A483F96004EA563 /* backstage_11.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backstage_11.jpeg; sourceTree = "<group>"; };
@@ -305,7 +304,6 @@
 		B7FB3D5D1A62FC31000A73E9 /* USA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = USA.png; sourceTree = "<group>"; };
 		B7FDD09B1A4ABB1B0001C098 /* SponsorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SponsorsViewController.h; path = Controllers/SponsorsViewController.h; sourceTree = "<group>"; };
 		B7FDD09C1A4ABB1B0001C098 /* SponsorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SponsorsViewController.m; path = Controllers/SponsorsViewController.m; sourceTree = "<group>"; };
-		B7FDD0EC1A4B16A40001C098 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B7FDD1121A4B21110001C098 /* SpeakerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakerTableViewCell.h; path = RigaDevDay/Controllers/SpeakerTableViewCell.h; sourceTree = "<group>"; };
 		B7FDD1131A4B21110001C098 /* SpeakerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerTableViewCell.m; path = RigaDevDay/Controllers/SpeakerTableViewCell.m; sourceTree = "<group>"; };
 		B7FDD1201A4B4FDD0001C098 /* ScheduleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleTableViewCell.h; path = RigaDevDay/Controllers/ScheduleTableViewCell.h; sourceTree = "<group>"; };
@@ -658,8 +656,6 @@
 				B7BFBA431A52B93600B46385 /* Reachability.h */,
 				B7BFBA441A52B93600B46385 /* Reachability.m */,
 				38B571F51C74A7370033E40E /* CoreData.framework */,
-				B7FDD0EC1A4B16A40001C098 /* SystemConfiguration.framework */,
-				97F889451A49B6D300A135C9 /* MapKit.framework */,
 				B7B16D521A362056005267AF /* SlideOutController */,
 			);
 			name = Libs;

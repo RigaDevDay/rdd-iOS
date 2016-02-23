@@ -9,7 +9,6 @@
 @import MapKit;
 
 #import "VenueViewController.h"
-#import "MKMapView+ZoomLevel.h"
 #import "SWRevealViewController.h"
 #import "DataManager.h"
 
@@ -17,7 +16,6 @@
     BOOL _updateStartLocation;
 }
 @property (strong, nonatomic) CLLocationManager *locationManager;
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UILabel *iboNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *iboAddressLabel;
 @property (weak, nonatomic) IBOutlet UIButton *iboWebLinkButton;

@@ -28,9 +28,6 @@
 		97F8893B1A49A84E00A135C9 /* SpeakersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F8893A1A49A84E00A135C9 /* SpeakersViewController.m */; };
 		97F8893D1A49B35500A135C9 /* icon_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 97F8893C1A49B35500A135C9 /* icon_back.png */; };
 		97F889441A49B64600A135C9 /* VenueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F889431A49B64600A135C9 /* VenueViewController.m */; };
-		97F889461A49B6D300A135C9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F889451A49B6D300A135C9 /* MapKit.framework */; };
-		97F8894A1A49BBEF00A135C9 /* MKMapView+ZoomLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F889491A49BBEF00A135C9 /* MKMapView+ZoomLevel.m */; };
-		B70EEB571A485258008CD9C6 /* MHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B70EEB561A485258008CD9C6 /* MHTabBarController.m */; };
 		B70F610A1A483F96004EA563 /* backstage_1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B70F60C21A483F96004EA563 /* backstage_1.jpeg */; };
 		B70F610B1A483F96004EA563 /* backstage_10.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B70F60C31A483F96004EA563 /* backstage_10.jpeg */; };
 		B70F610C1A483F96004EA563 /* backstage_11.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B70F60C41A483F96004EA563 /* backstage_11.jpeg */; };
@@ -73,8 +70,6 @@
 		B70F61311A483F96004EA563 /* icon_twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = B70F60E91A483F96004EA563 /* icon_twitter.png */; };
 		B70F61321A483F96004EA563 /* speaker_0.png in Resources */ = {isa = PBXBuildFile; fileRef = B70F60EA1A483F96004EA563 /* speaker_0.png */; };
 		B70F61531A484386004EA563 /* ic_drawer.png in Resources */ = {isa = PBXBuildFile; fileRef = B70F61521A484386004EA563 /* ic_drawer.png */; };
-		B70F61561A4846C6004EA563 /* ShowCaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B70F61551A4846C6004EA563 /* ShowCaseCell.m */; };
-		B70F61591A4846EB004EA563 /* ShowcaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B70F61581A4846EB004EA563 /* ShowcaseViewController.m */; };
 		B71B187E1A5141CC00A295B1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71B18771A5141CC00A295B1 /* Default-568h@2x.png */; };
 		B71B187F1A5141CC00A295B1 /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71B18781A5141CC00A295B1 /* Default-667h@2x.png */; };
 		B71B18801A5141CC00A295B1 /* Default-Portrait-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71B18791A5141CC00A295B1 /* Default-Portrait-736h@3x.png */; };
@@ -99,11 +94,9 @@
 		B7B16D3A1A361BE8005267AF /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D391A361BE8005267AF /* AboutViewController.m */; };
 		B7B16D4F1A36201B005267AF /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D4E1A36201B005267AF /* SWRevealViewController.m */; };
 		B7B16D551A362646005267AF /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B16D541A362646005267AF /* NavigationViewController.m */; };
-		B7BFBA421A52B91100B46385 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7FDD0EC1A4B16A40001C098 /* SystemConfiguration.framework */; };
 		B7BFBA451A52B93600B46385 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B7BFBA441A52B93600B46385 /* Reachability.m */; };
 		B7FA0F1D1A4C731F002BD598 /* GlobalMetupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7FA0F1C1A4C731F002BD598 /* GlobalMetupTableViewCell.m */; };
 		B7FB3D421A62CA3B000A73E9 /* twitter-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FB3D411A62CA3B000A73E9 /* twitter-menu.png */; };
-		B7FB3D451A62CCD2000A73E9 /* TwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7FB3D441A62CCD2000A73E9 /* TwitterViewController.m */; };
 		B7FB3D491A62F249000A73E9 /* BdaLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FB3D471A62F249000A73E9 /* BdaLogo.png */; };
 		B7FB3D4A1A62F249000A73E9 /* MCE_black_normal_large.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FB3D481A62F249000A73E9 /* MCE_black_normal_large.png */; };
 		B7FB3D5E1A62FC31000A73E9 /* Belgium.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FB3D4C1A62FC31000A73E9 /* Belgium.png */; };
@@ -227,10 +220,6 @@
 		97F889421A49B64600A135C9 /* VenueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VenueViewController.h; path = Controllers/VenueViewController.h; sourceTree = "<group>"; };
 		97F889431A49B64600A135C9 /* VenueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VenueViewController.m; path = Controllers/VenueViewController.m; sourceTree = "<group>"; };
 		97F889451A49B6D300A135C9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		97F889481A49BBEF00A135C9 /* MKMapView+ZoomLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MKMapView+ZoomLevel.h"; path = "RigaDevDay/Libs/MKMapView+ZoomLevel.h"; sourceTree = "<group>"; };
-		97F889491A49BBEF00A135C9 /* MKMapView+ZoomLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MKMapView+ZoomLevel.m"; path = "RigaDevDay/Libs/MKMapView+ZoomLevel.m"; sourceTree = "<group>"; };
-		B70EEB551A485258008CD9C6 /* MHTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHTabBarController.h; path = RigaDevDay/Libs/MHTabBarController/MHTabBarController.h; sourceTree = "<group>"; };
-		B70EEB561A485258008CD9C6 /* MHTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHTabBarController.m; path = RigaDevDay/Libs/MHTabBarController/MHTabBarController.m; sourceTree = "<group>"; };
 		B70F60C21A483F96004EA563 /* backstage_1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backstage_1.jpeg; sourceTree = "<group>"; };
 		B70F60C31A483F96004EA563 /* backstage_10.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backstage_10.jpeg; sourceTree = "<group>"; };
 		B70F60C41A483F96004EA563 /* backstage_11.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backstage_11.jpeg; sourceTree = "<group>"; };
@@ -273,10 +262,6 @@
 		B70F60E91A483F96004EA563 /* icon_twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_twitter.png; sourceTree = "<group>"; };
 		B70F60EA1A483F96004EA563 /* speaker_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speaker_0.png; sourceTree = "<group>"; };
 		B70F61521A484386004EA563 /* ic_drawer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_drawer.png; sourceTree = "<group>"; };
-		B70F61541A4846C6004EA563 /* ShowCaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShowCaseCell.h; path = Controllers/ShowCaseCell.h; sourceTree = "<group>"; };
-		B70F61551A4846C6004EA563 /* ShowCaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShowCaseCell.m; path = Controllers/ShowCaseCell.m; sourceTree = "<group>"; };
-		B70F61571A4846EB004EA563 /* ShowcaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShowcaseViewController.h; path = Controllers/ShowcaseViewController.h; sourceTree = "<group>"; };
-		B70F61581A4846EB004EA563 /* ShowcaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShowcaseViewController.m; path = Controllers/ShowcaseViewController.m; sourceTree = "<group>"; };
 		B71B18771A5141CC00A295B1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		B71B18781A5141CC00A295B1 /* Default-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-667h@2x.png"; sourceTree = "<group>"; };
 		B71B18791A5141CC00A295B1 /* Default-Portrait-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait-736h@3x.png"; sourceTree = "<group>"; };
@@ -317,8 +302,6 @@
 		B7FA0F1B1A4C731F002BD598 /* GlobalMetupTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GlobalMetupTableViewCell.h; path = RigaDevDay/Controllers/GlobalMetupTableViewCell.h; sourceTree = "<group>"; };
 		B7FA0F1C1A4C731F002BD598 /* GlobalMetupTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GlobalMetupTableViewCell.m; path = RigaDevDay/Controllers/GlobalMetupTableViewCell.m; sourceTree = "<group>"; };
 		B7FB3D411A62CA3B000A73E9 /* twitter-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-menu.png"; sourceTree = "<group>"; };
-		B7FB3D431A62CCD2000A73E9 /* TwitterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TwitterViewController.h; path = Controllers/TwitterViewController.h; sourceTree = "<group>"; };
-		B7FB3D441A62CCD2000A73E9 /* TwitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TwitterViewController.m; path = Controllers/TwitterViewController.m; sourceTree = "<group>"; };
 		B7FB3D471A62F249000A73E9 /* BdaLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BdaLogo.png; sourceTree = "<group>"; };
 		B7FB3D481A62F249000A73E9 /* MCE_black_normal_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MCE_black_normal_large.png; sourceTree = "<group>"; };
 		B7FB3D4C1A62FC31000A73E9 /* Belgium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Belgium.png; sourceTree = "<group>"; };
@@ -410,8 +393,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				38B571F61C74A7370033E40E /* CoreData.framework in Frameworks */,
-				B7BFBA421A52B91100B46385 /* SystemConfiguration.framework in Frameworks */,
-				97F889461A49B6D300A135C9 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,24 +470,6 @@
 				C05C15FA1C7BCC5E00ABA469 /* VenuePageViewController.m */,
 			);
 			name = Venue;
-			sourceTree = "<group>";
-		};
-		97F8894B1A49BBF900A135C9 /* MapView + Zoom */ = {
-			isa = PBXGroup;
-			children = (
-				97F889481A49BBEF00A135C9 /* MKMapView+ZoomLevel.h */,
-				97F889491A49BBEF00A135C9 /* MKMapView+ZoomLevel.m */,
-			);
-			name = "MapView + Zoom";
-			sourceTree = "<group>";
-		};
-		B70EEB581A48525F008CD9C6 /* MHTabBarController */ = {
-			isa = PBXGroup;
-			children = (
-				B70EEB551A485258008CD9C6 /* MHTabBarController.h */,
-				B70EEB561A485258008CD9C6 /* MHTabBarController.m */,
-			);
-			name = MHTabBarController;
 			sourceTree = "<group>";
 		};
 		B70F60C11A483F96004EA563 /* drawable */ = {
@@ -676,24 +639,11 @@
 				B7B16D331A361BAF005267AF /* Schedule */,
 				97F889471A49B6D900A135C9 /* Venue */,
 				B7B16D2B1A361B32005267AF /* Speakers */,
-				B7B16D271A361A52005267AF /* Showcase */,
 				B7B16D561A36264B005267AF /* Navigation */,
 				B7FDD09E1A4ABB200001C098 /* Organizers */,
-				B7FB3D461A62CCDA000A73E9 /* Twitter */,
 				B7B16D081A361966005267AF /* Main.storyboard */,
 			);
 			name = Controllers;
-			sourceTree = "<group>";
-		};
-		B7B16D271A361A52005267AF /* Showcase */ = {
-			isa = PBXGroup;
-			children = (
-				B70F61541A4846C6004EA563 /* ShowCaseCell.h */,
-				B70F61551A4846C6004EA563 /* ShowCaseCell.m */,
-				B70F61571A4846EB004EA563 /* ShowcaseViewController.h */,
-				B70F61581A4846EB004EA563 /* ShowcaseViewController.m */,
-			);
-			name = Showcase;
 			sourceTree = "<group>";
 		};
 		B7B16D2B1A361B32005267AF /* Speakers */ = {
@@ -761,8 +711,6 @@
 				38B571F51C74A7370033E40E /* CoreData.framework */,
 				B7FDD0EC1A4B16A40001C098 /* SystemConfiguration.framework */,
 				97F889451A49B6D300A135C9 /* MapKit.framework */,
-				97F8894B1A49BBF900A135C9 /* MapView + Zoom */,
-				B70EEB581A48525F008CD9C6 /* MHTabBarController */,
 				B7B16D521A362056005267AF /* SlideOutController */,
 			);
 			name = Libs;
@@ -785,15 +733,6 @@
 				B7B16D541A362646005267AF /* NavigationViewController.m */,
 			);
 			name = Navigation;
-			sourceTree = "<group>";
-		};
-		B7FB3D461A62CCDA000A73E9 /* Twitter */ = {
-			isa = PBXGroup;
-			children = (
-				B7FB3D431A62CCD2000A73E9 /* TwitterViewController.h */,
-				B7FB3D441A62CCD2000A73E9 /* TwitterViewController.m */,
-			);
-			name = Twitter;
 			sourceTree = "<group>";
 		};
 		B7FB3D4B1A62FC31000A73E9 /* Countries */ = {
@@ -1135,10 +1074,8 @@
 				38B5727C1C74B9E40033E40E /* Room+CoreDataProperties.m in Sources */,
 				C00A14251C7A0270009B60FF /* UIColor+App.m in Sources */,
 				B7BFBA451A52B93600B46385 /* Reachability.m in Sources */,
-				B70F61561A4846C6004EA563 /* ShowCaseCell.m in Sources */,
 				B7B16D4F1A36201B005267AF /* SWRevealViewController.m in Sources */,
 				C05C15FB1C7BCC5E00ABA469 /* VenuePageViewController.m in Sources */,
-				97F8894A1A49BBEF00A135C9 /* MKMapView+ZoomLevel.m in Sources */,
 				38B5727B1C74B9E40033E40E /* Day.m in Sources */,
 				C00A14181C77B7E4009B60FF /* NSArray+LinqExtensions.m in Sources */,
 				97F8893B1A49A84E00A135C9 /* SpeakersViewController.m in Sources */,
@@ -1147,7 +1084,6 @@
 				C05C15F01C7A7EE600ABA469 /* SpeakerInfoViewController.m in Sources */,
 				38F3D3921C7B0D2A003B6835 /* DataManager.m in Sources */,
 				B7B16D551A362646005267AF /* NavigationViewController.m in Sources */,
-				B70EEB571A485258008CD9C6 /* MHTabBarController.m in Sources */,
 				C00A14191C77B7E4009B60FF /* NSDictionary+LinqExtensions.m in Sources */,
 				38F3D3951C7B0D63003B6835 /* WebserviceManager.m in Sources */,
 				B7B16D321A361BAC005267AF /* ScheduleViewController.m in Sources */,
@@ -1167,13 +1103,11 @@
 				B7FA0F1D1A4C731F002BD598 /* GlobalMetupTableViewCell.m in Sources */,
 				B7B16D361A361BD0005267AF /* BookmarksViewController.m in Sources */,
 				38B5727A1C74B9E40033E40E /* Day+CoreDataProperties.m in Sources */,
-				B70F61591A4846EB004EA563 /* ShowcaseViewController.m in Sources */,
 				B7FDD1141A4B21110001C098 /* SpeakerTableViewCell.m in Sources */,
 				B7FDD0A81A4ABFFE0001C098 /* OrganizersTableViewCell.m in Sources */,
 				38B5725F1C74AE650033E40E /* Tag.m in Sources */,
 				38B572601C74AE650033E40E /* Interval+CoreDataProperties.m in Sources */,
 				38B5727D1C74B9E40033E40E /* Room.m in Sources */,
-				B7FB3D451A62CCD2000A73E9 /* TwitterViewController.m in Sources */,
 				B7FDD09D1A4ABB1B0001C098 /* OrganizersViewController.m in Sources */,
 				B7B16D011A361966005267AF /* main.m in Sources */,
 				38B572651C74AE650033E40E /* Speaker.m in Sources */,

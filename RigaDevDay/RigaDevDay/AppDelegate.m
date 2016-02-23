@@ -24,6 +24,7 @@ NSString *const kNotificationErrorMessage = @"kNotificationErrorMessage";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [application setStatusBarStyle:UIStatusBarStyleLightContent];
     [self updateSchedule];
     
     return YES;

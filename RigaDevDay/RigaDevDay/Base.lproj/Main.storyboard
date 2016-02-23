@@ -237,6 +237,7 @@
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="iboMenuButton" destination="cn0-u5-GbE" id="Oo3-Ie-yZA"/>
                     </connections>
@@ -492,6 +493,7 @@
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="buttonMenu" destination="Ehe-fn-VMM" id="0mx-3t-fwg"/>
                         <outlet property="iboSearchBar" destination="xaT-ef-cGZ" id="XBx-XF-kqj"/>
@@ -1475,6 +1477,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zqx-ZM-03J" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="lil-ZG-nCP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1550,7 +1553,7 @@
         <image name="speaker_0.png" width="126" height="138"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WJ5-Q1-sZF"/>
+        <segue reference="cVm-aZ-C91"/>
         <segue reference="LGa-vG-AbV"/>
         <segue reference="aTD-GC-86D"/>
     </inferredMetricsTieBreakers>

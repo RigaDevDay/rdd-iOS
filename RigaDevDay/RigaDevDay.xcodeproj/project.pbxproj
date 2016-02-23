@@ -105,8 +105,6 @@
 		B7BFBA451A52B93600B46385 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B7BFBA441A52B93600B46385 /* Reachability.m */; };
 		B7FA0F1D1A4C731F002BD598 /* GlobalMetupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7FA0F1C1A4C731F002BD598 /* GlobalMetupTableViewCell.m */; };
 		B7FB3D421A62CA3B000A73E9 /* twitter-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FB3D411A62CA3B000A73E9 /* twitter-menu.png */; };
-		B7FB3D491A62F249000A73E9 /* BdaLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FB3D471A62F249000A73E9 /* BdaLogo.png */; };
-		B7FB3D4A1A62F249000A73E9 /* MCE_black_normal_large.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FB3D481A62F249000A73E9 /* MCE_black_normal_large.png */; };
 		B7FB3D5E1A62FC31000A73E9 /* Belgium.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FB3D4C1A62FC31000A73E9 /* Belgium.png */; };
 		B7FB3D5F1A62FC31000A73E9 /* Bulgaria.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FB3D4D1A62FC31000A73E9 /* Bulgaria.png */; };
 		B7FB3D601A62FC31000A73E9 /* Czech Republic.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FB3D4E1A62FC31000A73E9 /* Czech Republic.png */; };
@@ -126,39 +124,6 @@
 		B7FB3D6E1A62FC31000A73E9 /* UK.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FB3D5C1A62FC31000A73E9 /* UK.png */; };
 		B7FB3D6F1A62FC31000A73E9 /* USA.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FB3D5D1A62FC31000A73E9 /* USA.png */; };
 		B7FDD09D1A4ABB1B0001C098 /* SponsorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD09C1A4ABB1B0001C098 /* SponsorsViewController.m */; };
-		B7FDD0CB1A4AC1560001C098 /* 4finance_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0AA1A4AC1560001C098 /* 4finance_logo.png */; };
-		B7FDD0CC1A4AC1560001C098 /* accenture.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0AB1A4AC1560001C098 /* accenture.png */; };
-		B7FDD0CD1A4AC1560001C098 /* ctco_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0AC1A4AC1560001C098 /* ctco_logo.png */; };
-		B7FDD0CE1A4AC1560001C098 /* devclub.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0AD1A4AC1560001C098 /* devclub.png */; };
-		B7FDD0CF1A4AC1560001C098 /* enjoy.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0AE1A4AC1560001C098 /* enjoy.png */; };
-		B7FDD0D01A4AC1560001C098 /* gdg-riga.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0AF1A4AC1560001C098 /* gdg-riga.png */; };
-		B7FDD0D11A4AC1560001C098 /* gi.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0B01A4AC1560001C098 /* gi.png */; };
-		B7FDD0D21A4AC1560001C098 /* github.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0B11A4AC1560001C098 /* github.png */; };
-		B7FDD0D31A4AC1560001C098 /* google.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0B21A4AC1560001C098 /* google.png */; };
-		B7FDD0D41A4AC1560001C098 /* gtug_sthlm.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0B31A4AC1560001C098 /* gtug_sthlm.png */; };
-		B7FDD0D51A4AC1560001C098 /* idea-port-riga.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0B41A4AC1560001C098 /* idea-port-riga.png */; };
-		B7FDD0D61A4AC1560001C098 /* innowate.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0B51A4AC1560001C098 /* innowate.png */; };
-		B7FDD0D71A4AC1560001C098 /* javaguru.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0B61A4AC1560001C098 /* javaguru.png */; };
-		B7FDD0D81A4AC1560001C098 /* jug-kpi.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0B71A4AC1560001C098 /* jug-kpi.png */; };
-		B7FDD0D91A4AC1560001C098 /* jug.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0B81A4AC1560001C098 /* jug.png */; };
-		B7FDD0DA1A4AC1560001C098 /* jug_kaunas.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0B91A4AC1560001C098 /* jug_kaunas.png */; };
-		B7FDD0DB1A4AC1560001C098 /* jug_vilnius.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0BA1A4AC1560001C098 /* jug_vilnius.png */; };
-		B7FDD0DC1A4AC1560001C098 /* kursors.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0BB1A4AC1560001C098 /* kursors.png */; };
-		B7FDD0DD1A4AC1560001C098 /* ldn.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0BC1A4AC1560001C098 /* ldn.png */; };
-		B7FDD0DE1A4AC1560001C098 /* lvoug.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0BD1A4AC1560001C098 /* lvoug.png */; };
-		B7FDD0DF1A4AC1560001C098 /* neueda.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0BE1A4AC1560001C098 /* neueda.png */; };
-		B7FDD0E01A4AC1560001C098 /* ok_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0BF1A4AC1560001C098 /* ok_logo.png */; };
-		B7FDD0E11A4AC1560001C098 /* openshift.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0C01A4AC1560001C098 /* openshift.png */; };
-		B7FDD0E21A4AC1560001C098 /* oraclepress.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0C11A4AC1560001C098 /* oraclepress.png */; };
-		B7FDD0E31A4AC1560001C098 /* oreilly.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0C21A4AC1560001C098 /* oreilly.jpg */; };
-		B7FDD0E41A4AC1560001C098 /* ouge.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0C31A4AC1560001C098 /* ouge.png */; };
-		B7FDD0E51A4AC1560001C098 /* pluralsight.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0C41A4AC1560001C098 /* pluralsight.png */; };
-		B7FDD0E61A4AC1560001C098 /* progmeistars.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0C51A4AC1560001C098 /* progmeistars.png */; };
-		B7FDD0E71A4AC1560001C098 /* riga-comm.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0C61A4AC1560001C098 /* riga-comm.png */; };
-		B7FDD0E81A4AC1560001C098 /* rubylight.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0C71A4AC1560001C098 /* rubylight.png */; };
-		B7FDD0E91A4AC1560001C098 /* startup-latvia.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0C81A4AC1560001C098 /* startup-latvia.png */; };
-		B7FDD0EA1A4AC1560001C098 /* startuphunt.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0C91A4AC1560001C098 /* startuphunt.png */; };
-		B7FDD0EB1A4AC1560001C098 /* techhub.png in Resources */ = {isa = PBXBuildFile; fileRef = B7FDD0CA1A4AC1560001C098 /* techhub.png */; };
 		B7FDD1141A4B21110001C098 /* SpeakerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD1131A4B21110001C098 /* SpeakerTableViewCell.m */; };
 		B7FDD1221A4B4FDD0001C098 /* ScheduleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7FDD1211A4B4FDD0001C098 /* ScheduleTableViewCell.m */; };
 		C00A14181C77B7E4009B60FF /* NSArray+LinqExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C00A14151C77B7E4009B60FF /* NSArray+LinqExtensions.m */; };
@@ -320,8 +285,6 @@
 		B7FA0F1B1A4C731F002BD598 /* GlobalMetupTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GlobalMetupTableViewCell.h; path = RigaDevDay/Controllers/GlobalMetupTableViewCell.h; sourceTree = "<group>"; };
 		B7FA0F1C1A4C731F002BD598 /* GlobalMetupTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GlobalMetupTableViewCell.m; path = RigaDevDay/Controllers/GlobalMetupTableViewCell.m; sourceTree = "<group>"; };
 		B7FB3D411A62CA3B000A73E9 /* twitter-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-menu.png"; sourceTree = "<group>"; };
-		B7FB3D471A62F249000A73E9 /* BdaLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BdaLogo.png; sourceTree = "<group>"; };
-		B7FB3D481A62F249000A73E9 /* MCE_black_normal_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MCE_black_normal_large.png; sourceTree = "<group>"; };
 		B7FB3D4C1A62FC31000A73E9 /* Belgium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Belgium.png; sourceTree = "<group>"; };
 		B7FB3D4D1A62FC31000A73E9 /* Bulgaria.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bulgaria.png; sourceTree = "<group>"; };
 		B7FB3D4E1A62FC31000A73E9 /* Czech Republic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Czech Republic.png"; sourceTree = "<group>"; };
@@ -342,39 +305,6 @@
 		B7FB3D5D1A62FC31000A73E9 /* USA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = USA.png; sourceTree = "<group>"; };
 		B7FDD09B1A4ABB1B0001C098 /* SponsorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SponsorsViewController.h; path = Controllers/SponsorsViewController.h; sourceTree = "<group>"; };
 		B7FDD09C1A4ABB1B0001C098 /* SponsorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SponsorsViewController.m; path = Controllers/SponsorsViewController.m; sourceTree = "<group>"; };
-		B7FDD0AA1A4AC1560001C098 /* 4finance_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4finance_logo.png; sourceTree = "<group>"; };
-		B7FDD0AB1A4AC1560001C098 /* accenture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = accenture.png; sourceTree = "<group>"; };
-		B7FDD0AC1A4AC1560001C098 /* ctco_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ctco_logo.png; sourceTree = "<group>"; };
-		B7FDD0AD1A4AC1560001C098 /* devclub.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = devclub.png; sourceTree = "<group>"; };
-		B7FDD0AE1A4AC1560001C098 /* enjoy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enjoy.png; sourceTree = "<group>"; };
-		B7FDD0AF1A4AC1560001C098 /* gdg-riga.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gdg-riga.png"; sourceTree = "<group>"; };
-		B7FDD0B01A4AC1560001C098 /* gi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gi.png; sourceTree = "<group>"; };
-		B7FDD0B11A4AC1560001C098 /* github.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = github.png; sourceTree = "<group>"; };
-		B7FDD0B21A4AC1560001C098 /* google.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = google.png; sourceTree = "<group>"; };
-		B7FDD0B31A4AC1560001C098 /* gtug_sthlm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gtug_sthlm.png; sourceTree = "<group>"; };
-		B7FDD0B41A4AC1560001C098 /* idea-port-riga.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "idea-port-riga.png"; sourceTree = "<group>"; };
-		B7FDD0B51A4AC1560001C098 /* innowate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = innowate.png; sourceTree = "<group>"; };
-		B7FDD0B61A4AC1560001C098 /* javaguru.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = javaguru.png; sourceTree = "<group>"; };
-		B7FDD0B71A4AC1560001C098 /* jug-kpi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jug-kpi.png"; sourceTree = "<group>"; };
-		B7FDD0B81A4AC1560001C098 /* jug.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jug.png; sourceTree = "<group>"; };
-		B7FDD0B91A4AC1560001C098 /* jug_kaunas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jug_kaunas.png; sourceTree = "<group>"; };
-		B7FDD0BA1A4AC1560001C098 /* jug_vilnius.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jug_vilnius.png; sourceTree = "<group>"; };
-		B7FDD0BB1A4AC1560001C098 /* kursors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kursors.png; sourceTree = "<group>"; };
-		B7FDD0BC1A4AC1560001C098 /* ldn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ldn.png; sourceTree = "<group>"; };
-		B7FDD0BD1A4AC1560001C098 /* lvoug.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lvoug.png; sourceTree = "<group>"; };
-		B7FDD0BE1A4AC1560001C098 /* neueda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = neueda.png; sourceTree = "<group>"; };
-		B7FDD0BF1A4AC1560001C098 /* ok_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ok_logo.png; sourceTree = "<group>"; };
-		B7FDD0C01A4AC1560001C098 /* openshift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = openshift.png; sourceTree = "<group>"; };
-		B7FDD0C11A4AC1560001C098 /* oraclepress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = oraclepress.png; sourceTree = "<group>"; };
-		B7FDD0C21A4AC1560001C098 /* oreilly.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = oreilly.jpg; sourceTree = "<group>"; };
-		B7FDD0C31A4AC1560001C098 /* ouge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ouge.png; sourceTree = "<group>"; };
-		B7FDD0C41A4AC1560001C098 /* pluralsight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pluralsight.png; sourceTree = "<group>"; };
-		B7FDD0C51A4AC1560001C098 /* progmeistars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = progmeistars.png; sourceTree = "<group>"; };
-		B7FDD0C61A4AC1560001C098 /* riga-comm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "riga-comm.png"; sourceTree = "<group>"; };
-		B7FDD0C71A4AC1560001C098 /* rubylight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rubylight.png; sourceTree = "<group>"; };
-		B7FDD0C81A4AC1560001C098 /* startup-latvia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "startup-latvia.png"; sourceTree = "<group>"; };
-		B7FDD0C91A4AC1560001C098 /* startuphunt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startuphunt.png; sourceTree = "<group>"; };
-		B7FDD0CA1A4AC1560001C098 /* techhub.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = techhub.png; sourceTree = "<group>"; };
 		B7FDD0EC1A4B16A40001C098 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B7FDD1121A4B21110001C098 /* SpeakerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakerTableViewCell.h; path = RigaDevDay/Controllers/SpeakerTableViewCell.h; sourceTree = "<group>"; };
 		B7FDD1131A4B21110001C098 /* SpeakerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerTableViewCell.m; path = RigaDevDay/Controllers/SpeakerTableViewCell.m; sourceTree = "<group>"; };
@@ -634,7 +564,6 @@
 			children = (
 				B7FB3D4B1A62FC31000A73E9 /* Countries */,
 				B7519A001A517F350036E2D6 /* schedule.json */,
-				B7FDD0A91A4AC1560001C098 /* OrganizersLogo */,
 				B7B16D0B1A361966005267AF /* Images.xcassets */,
 				B70F60C11A483F96004EA563 /* drawable */,
 				B7B16D251A3619C8005267AF /* LaunchSceen */,
@@ -797,49 +726,6 @@
 			name = Organizers;
 			sourceTree = "<group>";
 		};
-		B7FDD0A91A4AC1560001C098 /* OrganizersLogo */ = {
-			isa = PBXGroup;
-			children = (
-				B7FB3D471A62F249000A73E9 /* BdaLogo.png */,
-				B7FB3D481A62F249000A73E9 /* MCE_black_normal_large.png */,
-				B7FDD0AA1A4AC1560001C098 /* 4finance_logo.png */,
-				B7FDD0AB1A4AC1560001C098 /* accenture.png */,
-				B7FDD0AC1A4AC1560001C098 /* ctco_logo.png */,
-				B7FDD0AD1A4AC1560001C098 /* devclub.png */,
-				B7FDD0AE1A4AC1560001C098 /* enjoy.png */,
-				B7FDD0AF1A4AC1560001C098 /* gdg-riga.png */,
-				B7FDD0B01A4AC1560001C098 /* gi.png */,
-				B7FDD0B11A4AC1560001C098 /* github.png */,
-				B7FDD0B21A4AC1560001C098 /* google.png */,
-				B7FDD0B31A4AC1560001C098 /* gtug_sthlm.png */,
-				B7FDD0B41A4AC1560001C098 /* idea-port-riga.png */,
-				B7FDD0B51A4AC1560001C098 /* innowate.png */,
-				B7FDD0B61A4AC1560001C098 /* javaguru.png */,
-				B7FDD0B71A4AC1560001C098 /* jug-kpi.png */,
-				B7FDD0B81A4AC1560001C098 /* jug.png */,
-				B7FDD0B91A4AC1560001C098 /* jug_kaunas.png */,
-				B7FDD0BA1A4AC1560001C098 /* jug_vilnius.png */,
-				B7FDD0BB1A4AC1560001C098 /* kursors.png */,
-				B7FDD0BC1A4AC1560001C098 /* ldn.png */,
-				B7FDD0BD1A4AC1560001C098 /* lvoug.png */,
-				B7FDD0BE1A4AC1560001C098 /* neueda.png */,
-				B7FDD0BF1A4AC1560001C098 /* ok_logo.png */,
-				B7FDD0C01A4AC1560001C098 /* openshift.png */,
-				B7FDD0C11A4AC1560001C098 /* oraclepress.png */,
-				B7FDD0C21A4AC1560001C098 /* oreilly.jpg */,
-				B7FDD0C31A4AC1560001C098 /* ouge.png */,
-				B7FDD0C41A4AC1560001C098 /* pluralsight.png */,
-				B7FDD0C51A4AC1560001C098 /* progmeistars.png */,
-				B7FDD0C61A4AC1560001C098 /* riga-comm.png */,
-				B7FDD0C71A4AC1560001C098 /* rubylight.png */,
-				B7FDD0C81A4AC1560001C098 /* startup-latvia.png */,
-				B7FDD0C91A4AC1560001C098 /* startuphunt.png */,
-				B7FDD0CA1A4AC1560001C098 /* techhub.png */,
-			);
-			name = OrganizersLogo;
-			path = Resources/OrganizersLogo;
-			sourceTree = "<group>";
-		};
 		C00A141A1C77B7EC009B60FF /* LinqToObjectiveC */ = {
 			isa = PBXGroup;
 			children = (
@@ -963,14 +849,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7B16D0A1A361966005267AF /* Main.storyboard in Resources */,
-				B7FDD0D31A4AC1560001C098 /* google.png in Resources */,
 				B70F61271A483F96004EA563 /* backstage_8.jpeg in Resources */,
 				B70F610A1A483F96004EA563 /* backstage_1.jpeg in Resources */,
 				C05C15F61C7A821700ABA469 /* icn-linkedin.png in Resources */,
 				B7FB3D601A62FC31000A73E9 /* Czech Republic.png in Resources */,
-				B7FDD0D61A4AC1560001C098 /* innowate.png in Resources */,
 				B7B16D0F1A361966005267AF /* LaunchScreen.xib in Resources */,
-				B7FDD0CB1A4AC1560001C098 /* 4finance_logo.png in Resources */,
 				B70F61191A483F96004EA563 /* backstage_23.jpeg in Resources */,
 				B7B16D0C1A361966005267AF /* Images.xcassets in Resources */,
 				B70F610D1A483F96004EA563 /* backstage_12.jpeg in Resources */,
@@ -986,15 +869,10 @@
 				B70F612D1A483F96004EA563 /* icon_menu_organizers.png in Resources */,
 				B71B187F1A5141CC00A295B1 /* Default-667h@2x.png in Resources */,
 				C05C15F81C7A821700ABA469 /* icn-twitter.png in Resources */,
-				B7FDD0CD1A4AC1560001C098 /* ctco_logo.png in Resources */,
-				B7FDD0DC1A4AC1560001C098 /* kursors.png in Resources */,
-				B7FDD0E01A4AC1560001C098 /* ok_logo.png in Resources */,
 				B70F61221A483F96004EA563 /* backstage_31.jpeg in Resources */,
 				B70F610E1A483F96004EA563 /* backstage_13.jpeg in Resources */,
-				B7FDD0EB1A4AC1560001C098 /* techhub.png in Resources */,
 				B7FB3D6C1A62FC31000A73E9 /* Spain.png in Resources */,
 				B70F61291A483F96004EA563 /* icon_bookmark.png in Resources */,
-				B7FDD0E11A4AC1560001C098 /* openshift.png in Resources */,
 				B70F61111A483F96004EA563 /* backstage_16.jpeg in Resources */,
 				C00A14291C7A0AF0009B60FF /* bg-riga.png in Resources */,
 				B7FB3D6E1A62FC31000A73E9 /* UK.png in Resources */,
@@ -1002,11 +880,8 @@
 				B7657A891A4DAEA900EDAA28 /* Hall_imag@2x.png in Resources */,
 				B71B18801A5141CC00A295B1 /* Default-Portrait-736h@3x.png in Resources */,
 				381FE0541C7CBAE30080C9EC /* Norway.png in Resources */,
-				B7FDD0D91A4AC1560001C098 /* jug.png in Resources */,
 				B7FB3D651A62FC31000A73E9 /* Germany.png in Resources */,
 				B70F611E1A483F96004EA563 /* backstage_28.jpeg in Resources */,
-				B7FDD0D01A4AC1560001C098 /* gdg-riga.png in Resources */,
-				B7FDD0E91A4AC1560001C098 /* startup-latvia.png in Resources */,
 				B70F611C1A483F96004EA563 /* backstage_26.jpeg in Resources */,
 				B70F612E1A483F96004EA563 /* icon_menu_schedule.png in Resources */,
 				B70F61531A484386004EA563 /* ic_drawer.png in Resources */,
@@ -1016,15 +891,12 @@
 				B7FB3D6F1A62FC31000A73E9 /* USA.png in Resources */,
 				C05C15FF1C7BD1C500ABA469 /* icn-map.png in Resources */,
 				B70F61281A483F96004EA563 /* backstage_9.jpeg in Resources */,
-				B7FDD0E81A4AC1560001C098 /* rubylight.png in Resources */,
-				B7FDD0D11A4AC1560001C098 /* gi.png in Resources */,
 				B70F61251A483F96004EA563 /* backstage_6.jpeg in Resources */,
 				B71B18861A5142EE00A295B1 /* LaunchScreenPNG.png in Resources */,
 				B71B18821A5141CC00A295B1 /* Default-Portrait@2x.png in Resources */,
 				B70F61201A483F96004EA563 /* backstage_3.jpeg in Resources */,
 				B70F61321A483F96004EA563 /* speaker_0.png in Resources */,
 				B7657A8A1A4DAEA900EDAA28 /* Hall_imag@3x.png in Resources */,
-				B7FDD0D41A4AC1560001C098 /* gtug_sthlm.png in Resources */,
 				B70F610B1A483F96004EA563 /* backstage_10.jpeg in Resources */,
 				381FE0501C7CB9A30080C9EC /* Austria.png in Resources */,
 				B7FB3D5E1A62FC31000A73E9 /* Belgium.png in Resources */,
@@ -1034,56 +906,35 @@
 				B71B187E1A5141CC00A295B1 /* Default-568h@2x.png in Resources */,
 				B70F611F1A483F96004EA563 /* backstage_29.jpeg in Resources */,
 				B70F61151A483F96004EA563 /* backstage_2.jpeg in Resources */,
-				B7FDD0D81A4AC1560001C098 /* jug-kpi.png in Resources */,
-				B7FDD0D71A4AC1560001C098 /* javaguru.png in Resources */,
 				B70F612A1A483F96004EA563 /* icon_bookmark_empty.png in Resources */,
 				B70F61161A483F96004EA563 /* backstage_20.jpeg in Resources */,
 				B70F61131A483F96004EA563 /* backstage_18.jpeg in Resources */,
 				B7FB3D681A62FC31000A73E9 /* Latvia.png in Resources */,
-				B7FDD0DE1A4AC1560001C098 /* lvoug.png in Resources */,
 				B70F61141A483F96004EA563 /* backstage_19.jpeg in Resources */,
-				B7FDD0DA1A4AC1560001C098 /* jug_kaunas.png in Resources */,
-				B7FDD0D21A4AC1560001C098 /* github.png in Resources */,
 				B70F610C1A483F96004EA563 /* backstage_11.jpeg in Resources */,
 				B7FB3D631A62FC31000A73E9 /* Finland.png in Resources */,
-				B7FB3D4A1A62F249000A73E9 /* MCE_black_normal_large.png in Resources */,
 				B70F61311A483F96004EA563 /* icon_twitter.png in Resources */,
 				B70F611D1A483F96004EA563 /* backstage_27.jpeg in Resources */,
-				B7FDD0E41A4AC1560001C098 /* ouge.png in Resources */,
-				B7FDD0EA1A4AC1560001C098 /* startuphunt.png in Resources */,
 				B70F611B1A483F96004EA563 /* backstage_25.jpeg in Resources */,
-				B7FDD0DD1A4AC1560001C098 /* ldn.png in Resources */,
-				B7FDD0E31A4AC1560001C098 /* oreilly.jpg in Resources */,
-				B7FDD0E51A4AC1560001C098 /* pluralsight.png in Resources */,
 				B70F61211A483F96004EA563 /* backstage_30.jpeg in Resources */,
-				B7FDD0CF1A4AC1560001C098 /* enjoy.png in Resources */,
 				B70F61301A483F96004EA563 /* icon_menu_venue.png in Resources */,
 				B7519A021A517F350036E2D6 /* schedule.json in Resources */,
 				381FE0521C7CBA670080C9EC /* Schweiz.png in Resources */,
 				B7FB3D671A62FC31000A73E9 /* Israel.png in Resources */,
-				B7FDD0DB1A4AC1560001C098 /* jug_vilnius.png in Resources */,
 				B70F61241A483F96004EA563 /* backstage_5.jpeg in Resources */,
 				B7FB3D6A1A62FC31000A73E9 /* Poland.png in Resources */,
 				B70F61101A483F96004EA563 /* backstage_15.jpeg in Resources */,
 				B7657A861A4DADE900EDAA28 /* Hall_imag.png in Resources */,
 				B70F61231A483F96004EA563 /* backstage_4.jpeg in Resources */,
 				C05C15F71C7A821700ABA469 /* icn-safari.png in Resources */,
-				B7FDD0E71A4AC1560001C098 /* riga-comm.png in Resources */,
-				B7FDD0D51A4AC1560001C098 /* idea-port-riga.png in Resources */,
 				97F8893D1A49B35500A135C9 /* icon_back.png in Resources */,
 				B70F61171A483F96004EA563 /* backstage_21.jpeg in Resources */,
 				B7FB3D5F1A62FC31000A73E9 /* Bulgaria.png in Resources */,
 				381FE04C1C7CB8C20080C9EC /* Switzerland.png in Resources */,
-				B7FDD0CC1A4AC1560001C098 /* accenture.png in Resources */,
 				B7FB3D621A62FC31000A73E9 /* Estonia.png in Resources */,
-				B7FB3D491A62F249000A73E9 /* BdaLogo.png in Resources */,
 				B7FB3D6B1A62FC31000A73E9 /* Russia.png in Resources */,
-				B7FDD0E61A4AC1560001C098 /* progmeistars.png in Resources */,
 				B70F611A1A483F96004EA563 /* backstage_24.jpeg in Resources */,
-				B7FDD0CE1A4AC1560001C098 /* devclub.png in Resources */,
-				B7FDD0DF1A4AC1560001C098 /* neueda.png in Resources */,
 				B70F61261A483F96004EA563 /* backstage_7.jpeg in Resources */,
-				B7FDD0E21A4AC1560001C098 /* oraclepress.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

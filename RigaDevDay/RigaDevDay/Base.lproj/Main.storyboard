@@ -187,7 +187,7 @@
                                     <constraint firstAttribute="height" constant="20" id="Py0-L5-22b"/>
                                     <constraint firstAttribute="width" constant="200" id="zyO-by-tgd"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -774,8 +774,15 @@
                                             <constraint firstAttribute="height" constant="350" id="mSy-gG-cXb"/>
                                         </constraints>
                                     </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UK.png" translatesAutoresizingMaskIntoConstraints="NO" id="do2-UY-LTn">
+                                        <rect key="frame" x="564" y="303" width="28" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="28" id="VVd-5t-PV1"/>
+                                            <constraint firstAttribute="height" constant="40" id="WHb-oj-bzv"/>
+                                        </constraints>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Surname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFm-ik-QAj">
-                                        <rect key="frame" x="10" y="298" width="569" height="40"/>
+                                        <rect key="frame" x="10" y="298" width="546" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Ubh-Of-HUE"/>
@@ -797,21 +804,25 @@
                                     <constraint firstAttribute="trailing" secondItem="7n8-nA-KlJ" secondAttribute="trailing" constant="10" id="Lgu-UY-6A6"/>
                                     <constraint firstItem="IZZ-2B-xtE" firstAttribute="top" secondItem="owE-hR-E8a" secondAttribute="bottom" constant="8" symbolic="YES" id="Q2N-fw-Dyc"/>
                                     <constraint firstItem="owE-hR-E8a" firstAttribute="leading" secondItem="VFm-ik-QAj" secondAttribute="leading" id="SUI-jF-f9a"/>
+                                    <constraint firstItem="owE-hR-E8a" firstAttribute="top" secondItem="do2-UY-LTn" secondAttribute="bottom" constant="15" id="Shf-q1-eRp"/>
                                     <constraint firstItem="Co8-bb-T3K" firstAttribute="centerX" secondItem="AYa-3x-fTa" secondAttribute="centerX" id="W4O-wA-UZh"/>
                                     <constraint firstItem="7n8-nA-KlJ" firstAttribute="leading" secondItem="owE-hR-E8a" secondAttribute="leading" id="Y6P-2h-viO"/>
                                     <constraint firstItem="7n8-nA-KlJ" firstAttribute="top" secondItem="IZZ-2B-xtE" secondAttribute="bottom" constant="8" symbolic="YES" id="alH-di-npZ"/>
                                     <constraint firstAttribute="bottom" secondItem="7n8-nA-KlJ" secondAttribute="bottom" constant="79" id="fqp-fw-Rr9"/>
                                     <constraint firstAttribute="trailing" secondItem="owE-hR-E8a" secondAttribute="trailing" constant="29" id="i6o-Y5-5KD"/>
                                     <constraint firstItem="Co8-bb-T3K" firstAttribute="centerY" secondItem="AYa-3x-fTa" secondAttribute="centerY" id="lk3-wE-Jnh"/>
+                                    <constraint firstAttribute="trailing" secondItem="do2-UY-LTn" secondAttribute="trailing" constant="8" id="pbC-aY-BER"/>
                                     <constraint firstItem="Co8-bb-T3K" firstAttribute="leading" secondItem="u10-Xh-Ji7" secondAttribute="leading" id="pfs-QK-4jR"/>
                                     <constraint firstItem="7n8-nA-KlJ" firstAttribute="trailing" secondItem="owE-hR-E8a" secondAttribute="trailing" id="qXY-vJ-7zD"/>
                                     <constraint firstItem="owE-hR-E8a" firstAttribute="top" secondItem="Co8-bb-T3K" secondAttribute="bottom" constant="8" symbolic="YES" id="t7m-4T-p1P"/>
                                     <constraint firstItem="VFm-ik-QAj" firstAttribute="leading" secondItem="u10-Xh-Ji7" secondAttribute="leading" constant="10" id="uQM-95-KBe"/>
                                     <constraint firstItem="owE-hR-E8a" firstAttribute="centerX" secondItem="Co8-bb-T3K" secondAttribute="centerX" id="xY4-QY-mxu"/>
                                     <constraint firstItem="IZZ-2B-xtE" firstAttribute="centerX" secondItem="u10-Xh-Ji7" secondAttribute="centerX" id="y9g-qQ-aaB"/>
+                                    <constraint firstItem="do2-UY-LTn" firstAttribute="leading" secondItem="VFm-ik-QAj" secondAttribute="trailing" constant="8" id="z7j-A5-9xe"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="IJA-48-kFr"/>
                                         <exclude reference="i6o-Y5-5KD"/>
                                         <exclude reference="4fb-MV-x01"/>
                                         <exclude reference="Lgu-UY-6A6"/>
@@ -835,6 +846,7 @@
                         <outlet property="iboAboutTexxtView" destination="7n8-nA-KlJ" id="XKE-4Z-62z"/>
                         <outlet property="iboActivityIndicator" destination="AYa-3x-fTa" id="FpH-lL-MlJ"/>
                         <outlet property="iboBlogButton" destination="EaY-cP-DVA" id="Kki-Ij-jOH"/>
+                        <outlet property="iboCountryImageView" destination="do2-UY-LTn" id="W1a-8k-HgN"/>
                         <outlet property="iboDescViewHeight" destination="XX6-lM-036" id="hPo-kz-JFd"/>
                         <outlet property="iboImageHeight" destination="mSy-gG-cXb" id="ddM-5w-5X2"/>
                         <outlet property="iboJobLabelHeight" destination="SCn-pH-7nE" id="sJe-fN-s88"/>
@@ -847,7 +859,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tgN-Me-5fF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="262" y="-2223"/>
+            <point key="canvasLocation" x="-46" y="-2324"/>
         </scene>
         <!--Days Table View Controller-->
         <scene sceneID="eKA-W7-PFc">
@@ -1546,6 +1558,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="UK.png" width="64" height="64"/>
         <image name="backstage_1.jpeg" width="470" height="328"/>
         <image name="bg-riga.png" width="436" height="206"/>
         <image name="ic_drawer.png" width="24" height="24"/>
@@ -1563,7 +1576,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="WJ5-Q1-sZF"/>
+        <segue reference="DLS-5Y-Kcz"/>
         <segue reference="aTD-GC-86D"/>
-        <segue reference="LGa-vG-AbV"/>
     </inferredMetricsTieBreakers>
 </document>

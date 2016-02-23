@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *iboDescViewHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *iboJobLabelHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *iboImageHeight;
+@property (weak, nonatomic) IBOutlet UIImageView *iboCountryImageView;
 
 @end
 
@@ -42,6 +43,8 @@
     [self.iboDescViewHeight setConstant:[self.iboAboutTexxtView sizeThatFits:CGSizeMake(self.view.frame.size.width - 22.0, CGFLOAT_MAX)].height];
     [self.iboJobTitleLabel sizeToFit];
     [self.iboProfileImageView.superview layoutIfNeeded];
+    
+    [self.iboCountryImageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",self.speaker.country]]];
     
     [self.iboActivityIndicator startAnimating];
     [[WebserviceManager sharedInstance] loadImage:self.speaker.imgPath withCompletionBlock:^(id data) {

@@ -10,6 +10,11 @@
 		381FE0461C7CA30F0080C9EC /* Sponsor+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 381FE0431C7CA30F0080C9EC /* Sponsor+CoreDataProperties.m */; };
 		381FE0471C7CA30F0080C9EC /* Sponsor.m in Sources */ = {isa = PBXBuildFile; fileRef = 381FE0451C7CA30F0080C9EC /* Sponsor.m */; };
 		381FE04A1C7CAC810080C9EC /* SponsorCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 381FE0491C7CAC810080C9EC /* SponsorCollectionViewCell.m */; };
+		381FE04C1C7CB8C20080C9EC /* Switzerland.png in Resources */ = {isa = PBXBuildFile; fileRef = 381FE04B1C7CB8C20080C9EC /* Switzerland.png */; };
+		381FE04E1C7CB93E0080C9EC /* Portugal.png in Resources */ = {isa = PBXBuildFile; fileRef = 381FE04D1C7CB93E0080C9EC /* Portugal.png */; };
+		381FE0501C7CB9A30080C9EC /* Austria.png in Resources */ = {isa = PBXBuildFile; fileRef = 381FE04F1C7CB9A30080C9EC /* Austria.png */; };
+		381FE0521C7CBA670080C9EC /* Schweiz.png in Resources */ = {isa = PBXBuildFile; fileRef = 381FE0511C7CBA670080C9EC /* Schweiz.png */; };
+		381FE0541C7CBAE30080C9EC /* Norway.png in Resources */ = {isa = PBXBuildFile; fileRef = 381FE0531C7CBAE30080C9EC /* Norway.png */; };
 		38A0AACD1C7747220005A0B5 /* DaysTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A0AACC1C7747220005A0B5 /* DaysTableViewController.m */; };
 		38B571F41C74A6B70033E40E /* ScheduleModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 38B571F21C74A6B70033E40E /* ScheduleModel.xcdatamodeld */; };
 		38B571F61C74A7370033E40E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B571F51C74A7370033E40E /* CoreData.framework */; };
@@ -188,6 +193,11 @@
 		381FE0451C7CA30F0080C9EC /* Sponsor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Sponsor.m; path = Model/Sponsor.m; sourceTree = "<group>"; };
 		381FE0481C7CAC810080C9EC /* SponsorCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SponsorCollectionViewCell.h; path = Controllers/SponsorCollectionViewCell.h; sourceTree = "<group>"; };
 		381FE0491C7CAC810080C9EC /* SponsorCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SponsorCollectionViewCell.m; path = Controllers/SponsorCollectionViewCell.m; sourceTree = "<group>"; };
+		381FE04B1C7CB8C20080C9EC /* Switzerland.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Switzerland.png; sourceTree = "<group>"; };
+		381FE04D1C7CB93E0080C9EC /* Portugal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Portugal.png; sourceTree = "<group>"; };
+		381FE04F1C7CB9A30080C9EC /* Austria.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Austria.png; sourceTree = "<group>"; };
+		381FE0511C7CBA670080C9EC /* Schweiz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Schweiz.png; sourceTree = "<group>"; };
+		381FE0531C7CBAE30080C9EC /* Norway.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Norway.png; sourceTree = "<group>"; };
 		38A0AACB1C7747220005A0B5 /* DaysTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DaysTableViewController.h; path = RigaDevDay/Controllers/DaysTableViewController.h; sourceTree = "<group>"; };
 		38A0AACC1C7747220005A0B5 /* DaysTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DaysTableViewController.m; path = RigaDevDay/Controllers/DaysTableViewController.m; sourceTree = "<group>"; };
 		38B571F31C74A6B70033E40E /* ScheduleModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ScheduleModel.xcdatamodel; sourceTree = "<group>"; };
@@ -748,6 +758,9 @@
 		B7FB3D4B1A62FC31000A73E9 /* Countries */ = {
 			isa = PBXGroup;
 			children = (
+				381FE0531C7CBAE30080C9EC /* Norway.png */,
+				381FE04F1C7CB9A30080C9EC /* Austria.png */,
+				381FE04D1C7CB93E0080C9EC /* Portugal.png */,
 				B7FB3D4C1A62FC31000A73E9 /* Belgium.png */,
 				B7FB3D4D1A62FC31000A73E9 /* Bulgaria.png */,
 				B7FB3D4E1A62FC31000A73E9 /* Czech Republic.png */,
@@ -764,6 +777,8 @@
 				B7FB3D591A62FC31000A73E9 /* Russia.png */,
 				B7FB3D5A1A62FC31000A73E9 /* Spain.png */,
 				B7FB3D5B1A62FC31000A73E9 /* Sweden.png */,
+				381FE04B1C7CB8C20080C9EC /* Switzerland.png */,
+				381FE0511C7CBA670080C9EC /* Schweiz.png */,
 				B7FB3D5C1A62FC31000A73E9 /* UK.png */,
 				B7FB3D5D1A62FC31000A73E9 /* USA.png */,
 			);
@@ -962,6 +977,7 @@
 				B70F61181A483F96004EA563 /* backstage_22.jpeg in Resources */,
 				B70F61121A483F96004EA563 /* backstage_17.jpeg in Resources */,
 				B70F612B1A483F96004EA563 /* icon_menu_about.png in Resources */,
+				381FE04E1C7CB93E0080C9EC /* Portugal.png in Resources */,
 				B7FB3D6D1A62FC31000A73E9 /* Sweden.png in Resources */,
 				B7FB3D691A62FC31000A73E9 /* Netherlands.png in Resources */,
 				B7FB3D421A62CA3B000A73E9 /* twitter-menu.png in Resources */,
@@ -985,6 +1001,7 @@
 				B7FB3D661A62FC31000A73E9 /* Greece.png in Resources */,
 				B7657A891A4DAEA900EDAA28 /* Hall_imag@2x.png in Resources */,
 				B71B18801A5141CC00A295B1 /* Default-Portrait-736h@3x.png in Resources */,
+				381FE0541C7CBAE30080C9EC /* Norway.png in Resources */,
 				B7FDD0D91A4AC1560001C098 /* jug.png in Resources */,
 				B7FB3D651A62FC31000A73E9 /* Germany.png in Resources */,
 				B70F611E1A483F96004EA563 /* backstage_28.jpeg in Resources */,
@@ -1009,6 +1026,7 @@
 				B7657A8A1A4DAEA900EDAA28 /* Hall_imag@3x.png in Resources */,
 				B7FDD0D41A4AC1560001C098 /* gtug_sthlm.png in Resources */,
 				B70F610B1A483F96004EA563 /* backstage_10.jpeg in Resources */,
+				381FE0501C7CB9A30080C9EC /* Austria.png in Resources */,
 				B7FB3D5E1A62FC31000A73E9 /* Belgium.png in Resources */,
 				B70F612F1A483F96004EA563 /* icon_menu_speakers.png in Resources */,
 				B70F612C1A483F96004EA563 /* icon_menu_bookmark.png in Resources */,
@@ -1041,6 +1059,7 @@
 				B7FDD0CF1A4AC1560001C098 /* enjoy.png in Resources */,
 				B70F61301A483F96004EA563 /* icon_menu_venue.png in Resources */,
 				B7519A021A517F350036E2D6 /* schedule.json in Resources */,
+				381FE0521C7CBA670080C9EC /* Schweiz.png in Resources */,
 				B7FB3D671A62FC31000A73E9 /* Israel.png in Resources */,
 				B7FDD0DB1A4AC1560001C098 /* jug_vilnius.png in Resources */,
 				B70F61241A483F96004EA563 /* backstage_5.jpeg in Resources */,
@@ -1054,6 +1073,7 @@
 				97F8893D1A49B35500A135C9 /* icon_back.png in Resources */,
 				B70F61171A483F96004EA563 /* backstage_21.jpeg in Resources */,
 				B7FB3D5F1A62FC31000A73E9 /* Bulgaria.png in Resources */,
+				381FE04C1C7CB8C20080C9EC /* Switzerland.png in Resources */,
 				B7FDD0CC1A4AC1560001C098 /* accenture.png in Resources */,
 				B7FB3D621A62FC31000A73E9 /* Estonia.png in Resources */,
 				B7FB3D491A62F249000A73E9 /* BdaLogo.png in Resources */,

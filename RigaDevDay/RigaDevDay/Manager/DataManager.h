@@ -41,6 +41,7 @@
 
 //Speaker
 - (NSArray *)allSpeakers;
+- (NSArray *)speakersWithNameOrCompanyOrJobWithName:(NSString *)name;
 - (NSString *)speakerStringFromSpeakers:(NSSet *)speakers;
 
 //Bookmark images

@@ -20,6 +20,8 @@
 @property (nonatomic, strong) Speaker *pSelectedSpeaker;
 
 
+@property (weak, nonatomic) IBOutlet UITableView *iboTableView;
+@property (weak, nonatomic) IBOutlet UISearchBar *iboSearchBar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *buttonMenu;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
@@ -71,7 +73,7 @@
     SpeakerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SpeakerCell"];
     cell.iboNameLabel.text = speaker.name;
     cell.iboInfoLabel.text = [NSString stringWithFormat:@"%@, %@", speaker.company, speaker.jobTitle];
-//    UIImage *profileImage = [UIImage imageNamed:[NSString stringWithFormat:@"speaker_%@",speaker.speakerID]];
+    //    UIImage *profileImage = [UIImage imageNamed:[NSString stringWithFormat:@"speaker_%@",speaker.speakerID]];
     
     [[WebserviceManager sharedInstance] loadImage:speaker.imgPath withCompletionBlock:^(id data) {
         
@@ -83,11 +85,11 @@
         }
     } andErrorBlock:^(NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
-           cell.iboSpeakerImageView.image = [UIImage imageNamed:@"speaker_0"];
+            cell.iboSpeakerImageView.image = [UIImage imageNamed:@"speaker_0"];
         });
         
     }];
-
+    
     return cell;
 }
 
@@ -100,6 +102,29 @@
     SpeakerInfoViewController *destController = [segue destinationViewController];
     destController.speaker = self.pSelectedSpeaker;
 }
+
+#pragma mark - UISearchBarDelegate
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    if (searchText.length) {
+        self.pSpeakers = [[DataManager sharedInstance] speakersWithNameOrCompanyOrJobWithName:searchText];
+    } else {
+        self.pSpeakers = [[DataManager sharedInstance] allSpeakers];
+    }
+    
+    [self.iboTableView reloadData];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
+}
+
+#pragma mark - UIScrollViewDelegate methods
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    [self.iboSearchBar resignFirstResponder];
+}
+
 
 
 @end

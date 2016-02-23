@@ -214,6 +214,22 @@
     return @[];
 }
 
+- (NSArray *)speakersWithNameOrCompanyOrJobWithName:(NSString *)name {
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    [request setEntity: [NSEntityDescription entityForName:NSStringFromClass([Speaker class]) inManagedObjectContext: appDelegate.managedObjectContext]];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"(name CONTAINS[cd] %@) OR (company CONTAINS[cd] %@) OR (jobTitle CONTAINS[cd] %@)", name, name, name]];
+    [request setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]]];
+
+    NSError *error = nil;
+    
+    NSArray *results = [appDelegate.managedObjectContext executeFetchRequest:request error:&error];
+    if (!error) {
+        return results;
+    }
+    return @[];
+}
+
 
 - (NSString *)speakerStringFromSpeakers:(NSSet *)speakers {
     NSString *returnString = @"";

@@ -56,11 +56,11 @@ NSString *const kSpeakerImageURL = @"https://raw.githubusercontent.com/RigaDevDa
                                 NSError *error) {
                 [self p_decrementTaskCount];
                 if (error) {
-                    NSLog(@"Error loading schedule %@", error.localizedDescription);
+//                    NSLog(@"Error loading schedule %@", error.localizedDescription);
                     eblock(error);
                 }
                 if (data) {
-                    NSLog(@"Schedule loaded");
+//                    NSLog(@"Schedule loaded");
                     cblock(data);
                 }
                 
@@ -72,7 +72,7 @@ NSString *const kSpeakerImageURL = @"https://raw.githubusercontent.com/RigaDevDa
     if ([self.pPersistanceService imageExistsWithPath:lastPath]) {
         // Load from cache
         [self.pPersistanceService loadImageForUrl:lastPath onCompletion:^(id data) {
-            NSLog(@"Image %@ loaded from cache", lastPath);
+//            NSLog(@"Image %@ loaded from cache", lastPath);
             cblock(data);
         } onError:^(NSError *error) {
             eblock(error);
@@ -93,9 +93,9 @@ NSString *const kSpeakerImageURL = @"https://raw.githubusercontent.com/RigaDevDa
                                                                      UIImage *image = [UIImage imageWithData:data];
                                                                      if (image) {
                                                                          [self.pPersistanceService saveImage:image forUrl:lastPath onCompletion:^(id data) {
-                                                                             NSLog(@"Image with name %@ saved to cache", lastPath);
+//                                                                             NSLog(@"Image with name %@ saved to cache", lastPath);
                                                                          } onError:^(NSError *error) {
-                                                                             NSLog(@"Error %@ saving image with name %@ to cache", error.localizedDescription, lastPath);
+//                                                                             NSLog(@"Error %@ saving image with name %@ to cache", error.localizedDescription, lastPath);
                                                                          }];
                                                                         cblock(data);
 

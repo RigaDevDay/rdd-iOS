@@ -12,6 +12,7 @@
 #import "EventViewController.h"
 #import "DataManager.h"
 #import "SpeakerInfoViewController.h"
+#import "WebserviceManager.h"
 
 @interface SpeakersViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -70,8 +71,26 @@
     SpeakerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SpeakerCell"];
     cell.iboNameLabel.text = speaker.name;
     cell.iboInfoLabel.text = [NSString stringWithFormat:@"%@, %@", speaker.company, speaker.jobTitle];
-    UIImage *profileImage = [UIImage imageNamed:[NSString stringWithFormat:@"speaker_%@",speaker.speakerID]];
-    cell.iboSpeakerImageView.image = (profileImage) ? profileImage : [UIImage imageNamed:@"speaker_0"];
+//    UIImage *profileImage = [UIImage imageNamed:[NSString stringWithFormat:@"speaker_%@",speaker.speakerID]];
+    
+    [[WebserviceManager sharedInstance] loadImage:speaker.imgPath withCompletionBlock:^(id data) {
+        
+        UIImage *image = [UIImage imageWithData:data];
+        if (image) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                cell.iboSpeakerImageView.image = image;
+            });
+        }
+    } andErrorBlock:^(NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+           cell.iboSpeakerImageView.image = [UIImage imageNamed:@"speaker_0"];
+        });
+        
+    }];
+
+    
+    
+   
     
     return cell;
 }

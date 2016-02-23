@@ -60,7 +60,9 @@
             });
         }
     } andErrorBlock:^(NSError *error) {
-        self.iboProfileImageView.image = [UIImage imageNamed:@""];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.iboProfileImageView.image = [UIImage imageNamed:@"speaker_0"];
+        });
     }];
     
 }

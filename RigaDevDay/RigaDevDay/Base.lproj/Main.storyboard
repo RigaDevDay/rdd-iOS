@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cp2-fC-y6q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cp2-fC-y6q">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -419,7 +419,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="speaker_0.png" translatesAutoresizingMaskIntoConstraints="NO" id="NPl-x3-GRM">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NPl-x3-GRM">
                                                     <rect key="frame" x="19" y="7" width="55" height="55"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -436,10 +436,19 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="zST-DQ-oA2">
+                                                    <rect key="frame" x="36" y="25" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="jvK-Og-qsx"/>
+                                                        <constraint firstAttribute="width" constant="20" id="tjQ-0W-KNQ"/>
+                                                    </constraints>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="zST-DQ-oA2" firstAttribute="centerY" secondItem="NPl-x3-GRM" secondAttribute="centerY" id="13z-Mq-JdL"/>
                                                 <constraint firstItem="0zC-Xf-gkX" firstAttribute="top" secondItem="T8u-lq-iX8" secondAttribute="top" constant="7" id="CMa-PC-oRX"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="4AJ-8f-hWq" secondAttribute="trailing" constant="15" id="GW2-5t-eot"/>
+                                                <constraint firstItem="zST-DQ-oA2" firstAttribute="centerX" secondItem="NPl-x3-GRM" secondAttribute="centerX" id="Trk-al-Hw6"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="0zC-Xf-gkX" secondAttribute="trailing" constant="15" id="UT7-MK-hbE"/>
                                                 <constraint firstAttribute="bottom" secondItem="4AJ-8f-hWq" secondAttribute="bottom" constant="8" id="YBZ-HH-axK"/>
                                                 <constraint firstItem="4AJ-8f-hWq" firstAttribute="leading" secondItem="NPl-x3-GRM" secondAttribute="trailing" constant="8" id="oXR-O0-O11"/>
@@ -450,6 +459,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="iboActivityIndicator" destination="zST-DQ-oA2" id="czK-NO-Xff"/>
                                             <outlet property="iboInfoLabel" destination="4AJ-8f-hWq" id="usb-nc-Lu8"/>
                                             <outlet property="iboNameLabel" destination="0zC-Xf-gkX" id="gL4-uc-0Ix"/>
                                             <outlet property="iboSpeakerImageView" destination="NPl-x3-GRM" id="9Gl-8J-3Zg"/>
@@ -1572,7 +1582,6 @@
         <image name="icon_menu_schedule.png" width="51" height="51"/>
         <image name="icon_menu_speakers.png" width="46" height="62"/>
         <image name="icon_menu_venue.png" width="41" height="57"/>
-        <image name="speaker_0.png" width="126" height="138"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="WJ5-Q1-sZF"/>

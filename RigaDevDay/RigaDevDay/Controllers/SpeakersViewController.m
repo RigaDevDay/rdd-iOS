@@ -1,24 +1,23 @@
 //
-//  SpeakersViewController.m
-//  RigaDevDay
+// SpeakersViewController.m
+// RigaDevDay
 //
-//  Created by Denis Kaibagarov on 12/23/14.
-//  Copyright (c) 2014 Deniss Kaibagarovs. All rights reserved.
+// Created by Denis Kaibagarov on 12/23/14.
+// Copyright (c) 2014 Deniss Kaibagarovs. All rights reserved.
 //
 
-#import "SpeakersViewController.h"
-#import "SWRevealViewController.h"
-#import "SpeakerTableViewCell.h"
-#import "EventViewController.h"
 #import "DataManager.h"
+#import "EventViewController.h"
+#import "SWRevealViewController.h"
 #import "SpeakerInfoViewController.h"
+#import "SpeakerTableViewCell.h"
+#import "SpeakersViewController.h"
 #import "WebserviceManager.h"
 
 @interface SpeakersViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) NSArray *pSpeakers;
 @property (nonatomic, strong) Speaker *pSelectedSpeaker;
-
 
 @property (weak, nonatomic) IBOutlet UITableView *iboTableView;
 @property (weak, nonatomic) IBOutlet UISearchBar *iboSearchBar;
@@ -34,7 +33,7 @@
     self.buttonMenu.target = self.revealViewController;
     self.buttonMenu.action = @selector(revealToggle:);
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    
+
     self.pSpeakers = [[DataManager sharedInstance] allSpeakers];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(reloadScheduleData)
@@ -54,7 +53,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    
+
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
@@ -62,7 +61,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.pSpeakers count];
@@ -73,23 +71,28 @@
     SpeakerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SpeakerCell"];
     cell.iboNameLabel.text = speaker.name;
     cell.iboInfoLabel.text = [NSString stringWithFormat:@"%@, %@", speaker.company, speaker.jobTitle];
-    //    UIImage *profileImage = [UIImage imageNamed:[NSString stringWithFormat:@"speaker_%@",speaker.speakerID]];
-    
+    // UIImage *profileImage = [UIImage imageNamed:[NSString stringWithFormat:@"speaker_%@",speaker.speakerID]];
+
+    cell.iboSpeakerImageView.hidden = YES;
+    [cell.iboActivityIndicator startAnimating];
+
     [[WebserviceManager sharedInstance] loadImage:speaker.imgPath withCompletionBlock:^(id data) {
-        
-        UIImage *image = [UIImage imageWithData:data];
-        if (image) {
-            dispatch_async(dispatch_get_main_queue(), ^{
+         UIImage *image = [UIImage imageWithData:data];
+         if (image) {
+             dispatch_async(dispatch_get_main_queue(), ^{
+                cell.iboSpeakerImageView.hidden = NO;
+                [cell.iboActivityIndicator stopAnimating];
                 cell.iboSpeakerImageView.image = image;
             });
-        }
-    } andErrorBlock:^(NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
+         }
+     } andErrorBlock:^(NSError *error) {
+         dispatch_async(dispatch_get_main_queue(), ^{
+            cell.iboSpeakerImageView.hidden = NO;
+            [cell.iboActivityIndicator stopAnimating];
             cell.iboSpeakerImageView.image = [UIImage imageNamed:@"speaker_0"];
         });
-        
-    }];
-    
+     }];
+
     return cell;
 }
 
@@ -108,10 +111,11 @@
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     if (searchText.length) {
         self.pSpeakers = [[DataManager sharedInstance] speakersWithNameOrCompanyOrJobWithName:searchText];
-    } else {
+    }
+    else {
         self.pSpeakers = [[DataManager sharedInstance] allSpeakers];
     }
-    
+
     [self.iboTableView reloadData];
 }
 
@@ -124,7 +128,5 @@
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     [self.iboSearchBar resignFirstResponder];
 }
-
-
 
 @end
